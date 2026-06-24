@@ -1,260 +1,328 @@
 <template>
-    <div class="container py-5 position-relative">
-        <!-- Glowing background lights -->
-        <div class="glow-bg glow-top-left"></div>
-        <div class="glow-bg glow-bottom-right"></div>
-        <div class="glow-bg glow-center"></div>
-
-        <!-- Header / Hero Section -->
-        <header class="text-center mb-5 mt-4 fade-in-up">
-            <div class="float-animation">
-                <div
-                    class="d-inline-block px-3 py-1 mb-3 rounded-pill bg-dark bg-opacity-50 border border-secondary text-secondary fw-bold fade-in-up anim-delay-100"
-                    style="
-                        font-size: 0.85rem;
-                        letter-spacing: 1px;
-                        border-color: rgba(255, 255, 255, 0.2) !important;
-                        color: #cbd5e1 !important;
-                    "
-                >
-                    ★ PAMERAN PRODI TEKNOLOGI INFORMASI ★
-                </div>
-                <h1
-                    class="display-3 fw-extrabold text-white mb-3 fade-in-up anim-delay-200"
-                >
-                    Pameran
-                    <span class="text-gradient-silver">Teknologi</span> &amp;
-                    <span class="text-gradient-titanium">Inovasi</span>
-                </h1>
-                <p
-                    class="lead text-secondary mx-auto mb-4 fade-in-up anim-delay-300"
-                    style="max-width: 720px"
-                >
-                    Selamat datang di Platform Showcase Tugas Akhir dan Proyek
-                    Inovatif Mahasiswa Teknologi Informasi Telkom University
-                    Surabaya. Kami menampilkan hasil karya mahasiswa dengan
-                    Tingkat Kesiapan Teknologi (TKT) minimal Level 5 dari 3
-                    platform berbeda.
-                </p>
-
-                <!-- Stats Counters -->
-                <div
-                    class="row justify-content-center g-3 mt-4"
-                    style="max-width: 800px; margin: 0 auto"
-                >
-                    <div class="col-6 col-md-3 fade-in-up anim-delay-400">
-                        <div class="glass-card p-3 text-center">
-                            <h3 class="fw-bold text-info mb-1">13</h3>
-                            <small class="text-secondary d-block"
-                                >Total Proyek</small
-                            >
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 fade-in-up anim-delay-500">
-                        <div class="glass-card p-3 text-center">
-                            <h3 class="fw-bold text-warning mb-1">Min 5</h3>
-                            <small class="text-secondary d-block"
-                                >TKT Level</small
-                            >
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 fade-in-up anim-delay-500">
-                        <div class="glass-card p-3 text-center">
-                            <h3
-                                class="fw-bold text-secondary mb-1"
-                                style="color: #cbd5e1 !important"
-                            >
-                                5
-                            </h3>
-                            <small class="text-secondary d-block"
-                                >Dosen Pembimbing</small
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Search & Filters Row -->
-        <section class="mb-5 fade-in-up anim-delay-500">
-            <div class="glass-card p-4">
-                <div class="row g-4 align-items-center">
-                    <!-- Search input -->
-                    <div class="col-lg-6">
-                        <label
-                            class="text-secondary small fw-bold mb-2 uppercase-tracking d-block"
-                            >Cari Proyek</label
-                        >
-                        <input
-                            type="text"
-                            v-model="searchQuery"
-                            class="form-control form-control-custom w-100"
-                            placeholder="Cari nama, tagline, fitur, atau mitra..."
-                        />
-                    </div>
-
-                    <!-- Supervisor filter -->
-                    <div class="col-lg-6">
-                        <label
-                            class="text-secondary small fw-bold mb-2 uppercase-tracking d-block"
-                            >Dosen Pembimbing</label
-                        >
-                        <select
-                            v-model="selectedSupervisor"
-                            class="form-select form-select-custom w-100"
-                        >
-                            <option value="all">Semua Dosen Pembimbing</option>
-                            <option value="MDB">
-                                MDB (Muhammad Adib Kamali, S.T., M.Eng)
-                            </option>
-                            <option value="FZK">
-                                FZK (Dr. Farah Zakiyah Rahmanti, S.ST., M.T)
-                            </option>
-                            <option value="MUN">
-                                MUN (Mastuty Ayu Ningtyas, S.Kom., M.MT.)
-                            </option>
-                            <option value="YOH">
-                                YOH (Yohanes Setiawan. S.Si., M.Kom.)
-                            </option>
-                            <option value="CAP">
-                                CAP (Dr. Helmy Widyantara, S.Kom., M.Eng.)
-                            </option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Category Buttons Row -->
-                <div
-                    class="mt-4 pt-3 border-top border-secondary border-opacity-10"
-                >
-                    <label
-                        class="text-secondary small fw-bold mb-3 d-block uppercase-tracking"
-                        >Jenis Platform</label
-                    >
-                    <div class="d-flex flex-wrap gap-2">
-                        <button
-                            type="button"
-                            @click="selectedType = 'all'"
-                            :class="[
-                                'btn-filter',
-                                selectedType === 'all' ? 'active' : '',
-                            ]"
-                        >
-                            <span class="btn-filter-icon">🌐</span> Semua
-                            Kategori
-                        </button>
-                        <button
-                            type="button"
-                            @click="selectedType = 'web'"
-                            :class="[
-                                'btn-filter',
-                                selectedType === 'web' ? 'active' : '',
-                            ]"
-                        >
-                            <span class="btn-filter-icon">💻</span> Web-Based
-                        </button>
-                        <button
-                            type="button"
-                            @click="selectedType = 'mobile'"
-                            :class="[
-                                'btn-filter',
-                                selectedType === 'mobile' ? 'active' : '',
-                            ]"
-                        >
-                            <span class="btn-filter-icon">📱</span> Mobile-Based
-                        </button>
-                        <button
-                            type="button"
-                            @click="selectedType = 'hardware'"
-                            :class="[
-                                'btn-filter',
-                                selectedType === 'hardware' ? 'active' : '',
-                            ]"
-                        >
-                            <span class="btn-filter-icon">⚡</span>
-                            Hardware-Based
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Empty State -->
-        <div
-            v-if="filteredProjects.length === 0"
-            class="text-center py-5 glass-card fade-in-up"
-        >
-            <div class="fs-1 mb-2">📂</div>
-            <h5 class="text-secondary mb-3">
-                Tidak ditemukan proyek yang cocok dengan kriteria filter Anda
-            </h5>
-            <button class="btn btn-silver" @click="resetFilters">
-                Reset Filter
-            </button>
+    <div class="platform-wrapper position-relative">
+        <!-- Glowing background lights wrapper to prevent viewport overflow -->
+        <div class="glow-container">
+            <div class="glow-bg glow-top-left"></div>
+            <div class="glow-bg glow-bottom-right"></div>
+            <div class="glow-bg glow-center"></div>
         </div>
 
-        <!-- Standard 3-Column Project Grid -->
-        <transition-group v-else name="project-list" tag="div" class="row g-4">
-            <div
-                v-for="project in filteredProjects"
-                :key="project.id"
-                class="col-12 col-md-6 col-lg-4"
-            >
-                <div
-                    class="glass-card h-100 p-4 d-flex flex-column justify-content-between"
-                >
-                    <div>
-                        <!-- Card Header -->
-                        <div
-                            class="d-flex justify-content-between align-items-start mb-3"
-                        >
-                            <div class="d-flex align-items-center">
-                                <!-- Initials logo frame -->
-                                <div
-                                    class="logo-frame bg-dark bg-opacity-50 border border-secondary rounded-3 d-flex justify-content-center align-items-center me-3"
-                                    style="
-                                        width: 50px;
-                                        height: 50px;
-                                        border-color: rgba(
-                                            255,
-                                            255,
-                                            255,
-                                            0.15
-                                        ) !important;
-                                    "
+        <div class="container py-5">
+            <transition name="fade" mode="out-in">
+                <!-- Grid View -->
+                <div v-if="currentView === 'grid'" key="grid">
+                    <!-- Header / Hero Section -->
+                    <header class="text-center mb-5 mt-4 fade-in-up">
+                        <div class="float-animation">
+                            <div
+                                class="d-inline-block px-3 py-1 mb-3 rounded-pill bg-dark bg-opacity-50 border border-secondary text-secondary fw-bold fade-in-up anim-delay-100"
+                                style="
+                                    font-size: 0.85rem;
+                                    letter-spacing: 1px;
+                                    border-color: rgba(
+                                        255,
+                                        255,
+                                        255,
+                                        0.2
+                                    ) !important;
+                                    color: #cbd5e1 !important;
+                                "
+                            >
+                                ★ PAMERAN PRODI TEKNOLOGI INFORMASI ★
+                            </div>
+                            <h1
+                                class="display-3 fw-extrabold text-white mb-3 fade-in-up anim-delay-200"
+                            >
+                                Pameran
+                                <span class="text-gradient-silver"
+                                    >Teknologi</span
                                 >
-                                    <span class="fs-4 fw-extrabold text-info">{{
-                                        project.name
-                                            .substring(0, 2)
-                                            .toUpperCase()
-                                    }}</span>
+                                &amp;
+                                <span class="text-gradient-titanium"
+                                    >Inovasi</span
+                                >
+                            </h1>
+                            <p
+                                class="lead text-secondary mx-auto mb-4 fade-in-up anim-delay-300"
+                                style="max-width: 720px"
+                            >
+                                Selamat datang di Platform Showcase Tugas Akhir
+                                dan Proyek Inovatif Mahasiswa Teknologi
+                                Informasi Telkom University Surabaya. Kami
+                                menampilkan hasil karya mahasiswa dengan Tingkat
+                                Kesiapan Teknologi (TKT) minimal Level 5 dari 3
+                                platform berbeda.
+                            </p>
+
+                            <!-- Stats Counters -->
+                            <div
+                                class="row justify-content-center g-2 g-sm-3 mt-4"
+                                style="max-width: 800px; margin: 0 auto"
+                            >
+                                <div class="col-4 fade-in-up anim-delay-400">
+                                    <div
+                                        class="glass-card p-2 p-sm-3 text-center"
+                                    >
+                                        <h3
+                                            class="fw-bold text-info mb-1 stats-number"
+                                        >
+                                            13
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Total Proyek</small
+                                        >
+                                    </div>
                                 </div>
-                                <div>
-                                    <h5
-                                        class="fw-bold text-white mb-0 text-truncate"
-                                        style="max-width: 140px"
-                                        :title="project.name"
+                                <div class="col-4 fade-in-up anim-delay-500">
+                                    <div
+                                        class="glass-card p-2 p-sm-3 text-center"
                                     >
-                                        {{ project.name }}
-                                    </h5>
-                                    <span
-                                        class="text-secondary"
-                                        style="font-size: 0.75rem"
-                                        >Dosen: {{ project.supervisor }}</span
+                                        <h3
+                                            class="fw-bold text-warning mb-1 stats-number"
+                                        >
+                                            Min 5
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >TKT Level</small
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col-4 fade-in-up anim-delay-500">
+                                    <div
+                                        class="glass-card p-2 p-sm-3 text-center"
                                     >
+                                        <h3
+                                            class="fw-bold text-secondary mb-1 stats-number"
+                                            style="color: #cbd5e1 !important"
+                                        >
+                                            5
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Dosen Pembimbing</small
+                                        >
+                                    </div>
                                 </div>
                             </div>
-                            <span class="badge badge-premium badge-tkt"
-                                >TKT {{ project.tkt }}</span
-                            >
                         </div>
+                    </header>
 
-                        <!-- Tagline -->
-                        <h6 class="small fw-bold text-light opacity-75 mb-2">
-                            {{ project.tagline }}
-                        </h6>
-                        <!-- Description -->
-                        <p
+                    <!-- Search & Filters Row -->
+                    <section class="mb-5 fade-in-up anim-delay-500">
+                        <div class="glass-card p-3 p-sm-4">
+                            <div class="row g-4 align-items-center">
+                                <!-- Search input -->
+                                <div class="col-lg-6">
+                                    <label
+                                        class="text-secondary small fw-bold mb-2 uppercase-tracking d-block"
+                                        >Cari Proyek</label
+                                    >
+                                    <input
+                                        type="text"
+                                        v-model="searchQuery"
+                                        class="form-control form-control-custom w-100"
+                                        placeholder="Cari nama, tagline, fitur, atau mitra..."
+                                    />
+                                </div>
+
+                                <!-- Supervisor filter -->
+                                <div class="col-lg-6">
+                                    <label
+                                        class="text-secondary small fw-bold mb-2 uppercase-tracking d-block"
+                                        >Dosen Pembimbing</label
+                                    >
+                                    <select
+                                        v-model="selectedSupervisor"
+                                        class="form-select form-select-custom w-100"
+                                    >
+                                        <option value="all">
+                                            Semua Dosen Pembimbing
+                                        </option>
+                                        <option value="MDB">
+                                            MDB (Muhammad Adib Kamali, S.T.,
+                                            M.Eng)
+                                        </option>
+                                        <option value="FZK">
+                                            FZK (Dr. Farah Zakiyah Rahmanti,
+                                            S.ST., M.T)
+                                        </option>
+                                        <option value="MUN">
+                                            MUN (Mastuty Ayu Ningtyas, S.Kom.,
+                                            M.MT.)
+                                        </option>
+                                        <option value="YOH">
+                                            YOH (Yohanes Setiawan. S.Si.,
+                                            M.Kom.)
+                                        </option>
+                                        <option value="CAP">
+                                            CAP (Dr. Helmy Widyantara, S.Kom.,
+                                            M.Eng.)
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Category Buttons Row -->
+                            <div
+                                class="mt-4 pt-3 border-top border-secondary border-opacity-10"
+                            >
+                                <label
+                                    class="text-secondary small fw-bold mb-3 d-block uppercase-tracking"
+                                    >Jenis Platform</label
+                                >
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button
+                                        type="button"
+                                        @click="selectedType = 'all'"
+                                        :class="[
+                                            'btn-filter',
+                                            selectedType === 'all'
+                                                ? 'active'
+                                                : '',
+                                        ]"
+                                    >
+                                        <span class="btn-filter-icon">🌐</span>
+                                        Semua Kategori
+                                    </button>
+                                    <button
+                                        type="button"
+                                        @click="selectedType = 'web'"
+                                        :class="[
+                                            'btn-filter',
+                                            selectedType === 'web'
+                                                ? 'active'
+                                                : '',
+                                        ]"
+                                    >
+                                        <span class="btn-filter-icon">💻</span>
+                                        Web-Based
+                                    </button>
+                                    <button
+                                        type="button"
+                                        @click="selectedType = 'mobile'"
+                                        :class="[
+                                            'btn-filter',
+                                            selectedType === 'mobile'
+                                                ? 'active'
+                                                : '',
+                                        ]"
+                                    >
+                                        <span class="btn-filter-icon">📱</span>
+                                        Mobile-Based
+                                    </button>
+                                    <button
+                                        type="button"
+                                        @click="selectedType = 'hardware'"
+                                        :class="[
+                                            'btn-filter',
+                                            selectedType === 'hardware'
+                                                ? 'active'
+                                                : '',
+                                        ]"
+                                    >
+                                        <span class="btn-filter-icon">⚡</span>
+                                        Hardware-Based
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Empty State -->
+                    <div
+                        v-if="filteredProjects.length === 0"
+                        class="text-center py-5 glass-card fade-in-up"
+                    >
+                        <div class="fs-1 mb-2">📂</div>
+                        <h5 class="text-secondary mb-3">
+                            Tidak ditemukan proyek yang cocok dengan kriteria
+                            filter Anda
+                        </h5>
+                        <button class="btn btn-silver" @click="resetFilters">
+                            Reset Filter
+                        </button>
+                    </div>
+
+                    <!-- Standard 3-Column Project Grid -->
+                    <transition-group
+                        v-else
+                        name="project-list"
+                        tag="div"
+                        class="row g-4"
+                    >
+                        <div
+                            v-for="project in filteredProjects"
+                            :key="project.id"
+                            class="col-12 col-md-6 col-lg-4"
+                        >
+                            <div
+                                class="glass-card h-100 p-3 p-sm-4 d-flex flex-column justify-content-between"
+                            >
+                                <div>
+                                    <!-- Card Header -->
+                                    <div
+                                        class="d-flex justify-content-between align-items-start mb-3 gap-2"
+                                    >
+                                        <div
+                                            class="d-flex align-items-center"
+                                            style="min-width: 0; flex: 1"
+                                        >
+                                            <!-- Initials logo frame -->
+                                            <div
+                                                class="logo-frame bg-dark bg-opacity-50 border border-secondary rounded-3 d-flex justify-content-center align-items-center me-3 flex-shrink-0"
+                                                style="
+                                                    width: 50px;
+                                                    height: 50px;
+                                                    border-color: rgba(
+                                                        255,
+                                                        255,
+                                                        255,
+                                                        0.15
+                                                    ) !important;
+                                                "
+                                            >
+                                                <span
+                                                    class="fs-4 fw-extrabold text-info"
+                                                    >{{
+                                                        project.name
+                                                            .substring(0, 2)
+                                                            .toUpperCase()
+                                                    }}</span
+                                                >
+                                            </div>
+                                            <div style="min-width: 0; flex: 1">
+                                                <h5
+                                                    class="fw-bold text-white mb-0 text-truncate"
+                                                    :title="project.name"
+                                                >
+                                                    {{ project.name }}
+                                                </h5>
+                                                <span
+                                                    class="text-secondary text-truncate d-block"
+                                                    style="font-size: 0.75rem"
+                                                    >Dosen:
+                                                    {{
+                                                        project.supervisor
+                                                    }}</span
+                                                >
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="badge badge-premium badge-tkt flex-shrink-0"
+                                            >TKT {{ project.tkt }}</span
+                                        >
+                                    </div>
+
+                                    <!-- Tagline -->
+                                    <h6
+                                        class="project-card-tagline fw-bold text-light opacity-75 mb-2"
+                                    >
+                                        {{ project.tagline }}
+                                    </h6>
+                                    <!-- Description -->
+                                    <!-- <p
                             class="small text-secondary mb-4"
                             style="line-height: 1.6"
                         >
@@ -264,390 +332,893 @@
                                       "..."
                                     : project.description
                             }}
-                        </p>
+                        </p> -->
+                                </div>
+
+                                <!-- Card Footer Buttons -->
+                                <div>
+                                    <div
+                                        class="d-flex justify-content-between align-items-center border-top border-secondary border-opacity-20 pt-3 mb-3"
+                                    >
+                                        <span
+                                            :class="[
+                                                'badge badge-premium',
+                                                getTypeBadgeClass(project.type),
+                                            ]"
+                                        >
+                                            {{ formatType(project.type) }}
+                                        </span>
+                                        <span class="text-secondary small">
+                                            Demo:
+                                            <span
+                                                class="text-capitalize fw-bold text-white"
+                                                >{{ project.demo_level }}</span
+                                            >
+                                        </span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button
+                                            @click="handleShowcase(project)"
+                                            class="btn btn-outline-silver flex-grow-1 text-nowrap py-2"
+                                            style="font-size: 0.85rem"
+                                        >
+                                            Showcase
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </transition-group>
+                </div>
+                <!-- Closes currentView === 'grid' -->
+
+                <!-- Project Detail Showcase View -->
+                <div
+                    v-else-if="currentView === 'detail' && selectedProject"
+                    key="detail"
+                    class="project-detail-view pb-5 fade-in-up"
+                >
+                    <!-- Back Button -->
+                    <div class="mb-4">
+                        <button
+                            @click="backToGrid"
+                            class="btn btn-outline-silver btn-back py-2 px-4 d-inline-flex align-items-center gap-2"
+                            style="font-size: 0.9rem"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-arrow-left"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                                />
+                            </svg>
+                            Kembali ke Galeri
+                        </button>
                     </div>
 
-                    <!-- Card Footer Buttons -->
-                    <div>
-                        <div
-                            class="d-flex justify-content-between align-items-center border-top border-secondary border-opacity-20 pt-3 mb-3"
-                        >
-                            <span
-                                :class="[
-                                    'badge badge-premium',
-                                    getTypeBadgeClass(project.type),
-                                ]"
+                    <!-- Hero / Title Header Banner -->
+                    <div class="glass-card p-4 p-md-5 mb-5">
+                        <div class="row align-items-center g-4">
+                            <div
+                                class="col-md-8 d-flex align-items-center flex-column flex-sm-row text-center text-sm-start gap-4"
                             >
-                                {{ formatType(project.type) }}
-                            </span>
-                            <span class="text-secondary small">
-                                Demo:
-                                <span
-                                    class="text-capitalize fw-bold text-white"
-                                    >{{ project.demo_level }}</span
+                                <!-- Initials logo frame -->
+                                <div
+                                    class="logo-frame bg-dark bg-opacity-50 border border-secondary rounded-4 d-flex justify-content-center align-items-center flex-shrink-0"
+                                    style="
+                                        width: 80px;
+                                        height: 80px;
+                                        border-color: rgba(
+                                            255,
+                                            255,
+                                            255,
+                                            0.15
+                                        ) !important;
+                                    "
                                 >
-                            </span>
-                        </div>
-                        <div class="d-flex gap-2">
-                            <button
-                                @click="showDetail(project)"
-                                class="btn btn-outline-silver flex-grow-1 text-nowrap py-2"
-                                style="font-size: 0.85rem"
+                                    <span class="fs-2 fw-extrabold text-info">{{
+                                        selectedProject.name
+                                            .substring(0, 2)
+                                            .toUpperCase()
+                                    }}</span>
+                                </div>
+                                <div>
+                                    <h1
+                                        class="display-6 fw-extrabold text-white mb-2"
+                                    >
+                                        {{ selectedProject.name }}
+                                    </h1>
+                                    <p
+                                        class="lead text-secondary mb-0"
+                                        style="
+                                            font-size: 1rem;
+                                            line-height: 1.5;
+                                        "
+                                    >
+                                        {{ selectedProject.tagline }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="col-md-4 d-flex flex-wrap justify-content-center justify-content-md-end gap-2"
                             >
-                                Showcase
+                                <span
+                                    :class="[
+                                        'badge badge-premium py-2 px-3',
+                                        getTypeBadgeClass(selectedProject.type),
+                                    ]"
+                                >
+                                    {{ formatType(selectedProject.type) }}
+                                </span>
+                                <span
+                                    class="badge badge-premium badge-tkt py-2 px-3"
+                                    >TKT Level {{ selectedProject.tkt }}</span
+                                >
+                                <span
+                                    class="badge bg-secondary bg-opacity-20 border border-secondary border-opacity-35 text-white py-2 px-3 text-capitalize"
+                                    style="font-size: 0.75rem"
+                                    >Demo:
+                                    {{ selectedProject.demo_level }}</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Sections -->
+                    <div class="row g-4">
+                        <!-- Left: Interactive Sandbox & Description -->
+                        <div class="col-lg-8">
+                            <!-- Screenshots Grid (Mobile-based) -->
+                            <div
+                                v-if="selectedProject.type === 'mobile'"
+                                class="glass-card p-4 mb-4"
+                            >
+                                <h4
+                                    class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
+                                >
+                                    <span>📱 Pratinjau Antarmuka Aplikasi</span>
+                                </h4>
+                                <div
+                                    v-if="
+                                        selectedProject.screenshots &&
+                                        selectedProject.screenshots.length > 0
+                                    "
+                                    class="screenshots-grid-container"
+                                >
+                                    <div class="row g-3 justify-content-center">
+                                        <div
+                                            v-for="(
+                                                scr, idx
+                                            ) in selectedProject.screenshots"
+                                            :key="idx"
+                                            class="col-6 col-sm-4 text-center"
+                                        >
+                                            <div
+                                                class="screenshot-wrapper p-2 bg-dark bg-opacity-25 rounded border border-secondary border-opacity-30"
+                                            >
+                                                <img
+                                                    :src="scr"
+                                                    class="img-fluid rounded shadow-sm screenshot-static-img"
+                                                    alt="Screenshot"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div v-else class="text-center py-5">
+                                    <span class="fs-1 d-block mb-2">📱</span>
+                                    <p class="text-secondary small mb-0">
+                                        Screenshot Tidak Tersedia
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Video / Hardware Demo (Hardware-based) -->
+                            <div
+                                v-else-if="selectedProject.type === 'hardware'"
+                                class="glass-card p-4 mb-4"
+                            >
+                                <h4
+                                    class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
+                                >
+                                    <span>🎬 Video Dokumentasi Alat</span>
+                                </h4>
+                                <div
+                                    class="video-container"
+                                    v-if="selectedProject.video_url"
+                                >
+                                    <iframe
+                                        :src="selectedProject.video_url"
+                                        frameborder="0"
+                                        allow="
+                                            accelerometer;
+                                            autoplay;
+                                            clipboard-write;
+                                            encrypted-media;
+                                            gyroscope;
+                                            picture-in-picture;
+                                        "
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                                <div v-else class="text-center py-5">
+                                    <span class="fs-1 d-block mb-3">🛠️</span>
+                                    <h5 class="text-white fw-bold">
+                                        Prototipe Fisik &amp; Integrasi
+                                    </h5>
+                                    <p
+                                        class="text-secondary small mx-auto mb-0"
+                                        style="max-width: 480px"
+                                    >
+                                        Hubungkan daya alat dan jalankan
+                                        demonstrasi hardware secara real-time di
+                                        stand pameran. Anggota tim kami siap
+                                        membantu Anda mengoperasikan modul
+                                        fisik.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Description Card -->
+                            <div class="glass-card p-4 p-md-5 mb-4">
+                                <h4
+                                    class="fw-bold text-white border-bottom border-secondary border-opacity-20 pb-3 mb-4"
+                                >
+                                    Deskripsi Proyek
+                                </h4>
+                                <p
+                                    class="text-secondary leading-relaxed mb-0"
+                                    style="font-size: 1rem; line-height: 1.75"
+                                >
+                                    {{ selectedProject.description }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Right: Specifications & Achievements -->
+                        <div class="col-lg-4">
+                            <!-- Specifications Details Card -->
+                            <div class="glass-card p-4 mb-4">
+                                <h4
+                                    class="fw-bold text-white border-bottom border-secondary border-opacity-20 pb-3 mb-4"
+                                >
+                                    Detail Spesifikasi
+                                </h4>
+                                <div class="d-flex flex-column gap-3">
+                                    <div>
+                                        <span
+                                            class="text-secondary d-block small mb-1"
+                                            >Dosen Pembimbing</span
+                                        >
+                                        <span
+                                            class="text-white fw-bold d-block"
+                                            >{{
+                                                getSupervisorFullName(
+                                                    selectedProject.supervisor,
+                                                )
+                                            }}</span
+                                        >
+                                    </div>
+                                    <hr
+                                        class="my-2 border-secondary border-opacity-10"
+                                    />
+                                    <div>
+                                        <span
+                                            class="text-secondary d-block small mb-1"
+                                            >Tingkat Kesiapan Teknologi</span
+                                        >
+                                        <span
+                                            class="text-white fw-bold d-flex align-items-center gap-2"
+                                        >
+                                            <span
+                                                class="badge bg-dark border border-secondary text-info"
+                                                >TKT
+                                                {{ selectedProject.tkt }}</span
+                                            >
+                                            <small
+                                                class="text-secondary"
+                                                style="font-size: 0.8rem"
+                                            >
+                                                {{
+                                                    getTktExplanation(
+                                                        selectedProject.tkt,
+                                                    )
+                                                }}
+                                            </small>
+                                        </span>
+                                    </div>
+                                    <hr
+                                        class="my-2 border-secondary border-opacity-10"
+                                    />
+                                    <div>
+                                        <span
+                                            class="text-secondary d-block small mb-1"
+                                            >Cakupan Demonstrasi</span
+                                        >
+                                        <span
+                                            class="text-white fw-bold text-capitalize"
+                                            >{{
+                                                selectedProject.demo_level
+                                            }}</span
+                                        >
+                                    </div>
+                                    <hr
+                                        class="my-2 border-secondary border-opacity-10"
+                                    />
+                                    <div>
+                                        <span
+                                            class="text-secondary d-block small mb-2"
+                                            >Mitra</span
+                                        >
+                                        <div
+                                            v-if="
+                                                selectedProject.partners &&
+                                                selectedProject.partners
+                                                    .length > 0
+                                            "
+                                            class="d-flex flex-wrap gap-2"
+                                        >
+                                            <span
+                                                v-for="(
+                                                    partner, idx
+                                                ) in selectedProject.partners"
+                                                :key="idx"
+                                                class="badge bg-dark bg-opacity-40 border border-secondary text-secondary py-1.5 px-3 rounded"
+                                                style="font-size: 0.75rem"
+                                            >
+                                                🤝 {{ partner }}
+                                            </span>
+                                        </div>
+                                        <span
+                                            v-else
+                                            class="text-muted text-italic small"
+                                            >Tidak ada mitra spesifik</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Features & Advantages List -->
+                            <div class="glass-card p-4 mb-4">
+                                <h4
+                                    class="fw-bold text-white border-bottom border-secondary border-opacity-20 pb-3 mb-4"
+                                >
+                                    Fitur Unggulan
+                                </h4>
+                                <ul
+                                    class="list-unstyled mb-0 d-flex flex-column gap-3"
+                                >
+                                    <li
+                                        v-for="(
+                                            feature, idx
+                                        ) in selectedProject.features"
+                                        :key="idx"
+                                        class="d-flex align-items-start gap-2 text-secondary"
+                                    >
+                                        <span
+                                            class="text-info mt-1"
+                                            style="font-size: 1rem"
+                                            >✦</span
+                                        >
+                                        <span
+                                            style="
+                                                font-size: 0.9rem;
+                                                line-height: 1.5;
+                                            "
+                                            >{{ feature }}</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Awards and Funding -->
+                            <div
+                                class="glass-card p-4"
+                                v-if="
+                                    selectedProject.funding_awards &&
+                                    selectedProject.funding_awards.length > 0
+                                "
+                            >
+                                <h4
+                                    class="fw-bold text-white border-bottom border-secondary border-opacity-20 pb-3 mb-4 d-flex align-items-center gap-2"
+                                >
+                                    <span style="color: #fbbf24">🏆</span>
+                                    Pendanaan &amp; Prestasi
+                                </h4>
+                                <ul
+                                    class="list-unstyled mb-0 d-flex flex-column gap-3"
+                                >
+                                    <li
+                                        v-for="(
+                                            award, idx
+                                        ) in selectedProject.funding_awards"
+                                        :key="idx"
+                                        class="d-flex align-items-start gap-2 text-secondary"
+                                    >
+                                        <span
+                                            class="text-warning mt-1"
+                                            style="font-size: 1rem"
+                                            >★</span
+                                        >
+                                        <span
+                                            style="
+                                                font-size: 0.9rem;
+                                                line-height: 1.5;
+                                            "
+                                            >{{ award }}</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Grid Section -->
+                    <div class="mt-5 pt-4">
+                        <h3
+                            class="fw-extrabold text-white text-center mb-4 text-gradient-silver"
+                        >
+                            Tim Inovator
+                        </h3>
+                        <p
+                            class="text-secondary text-center mx-auto mb-5"
+                            style="max-width: 600px"
+                        >
+                            Mahasiswa di balik rancangan, implementasi, dan
+                            pengujian sistem inovatif ini.
+                        </p>
+
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center"
+                        >
+                            <div
+                                class="col"
+                                v-for="(
+                                    member, idx
+                                ) in selectedProject.team_members"
+                                :key="idx"
+                            >
+                                <div
+                                    class="team-member-card h-100 d-flex flex-column align-items-center text-center"
+                                >
+                                    <!-- Custom Initials Avatar -->
+                                    <div
+                                        class="team-avatar d-flex justify-content-center align-items-center text-white fw-bold fs-4 mb-3"
+                                    >
+                                        {{
+                                            member.nickname
+                                                .substring(0, 2)
+                                                .toUpperCase()
+                                        }}
+                                    </div>
+                                    <h5
+                                        class="text-white fw-bold mb-1 text-truncate w-100"
+                                    >
+                                        {{ member.nickname }}
+                                    </h5>
+                                    <p
+                                        class="text-secondary mb-2 small text-truncate w-100"
+                                    >
+                                        {{ member.fullname }}
+                                    </p>
+                                    <span
+                                        v-if="member.role"
+                                        class="badge bg-dark border border-secondary text-secondary mb-4 w-100 text-truncate"
+                                        style="
+                                            font-size: 11px;
+                                            padding: 6px 10px;
+                                        "
+                                    >
+                                        {{ member.role }}
+                                    </span>
+
+                                    <!-- Social Media Links -->
+                                    <div class="d-flex gap-3 mt-auto">
+                                        <a
+                                            v-if="member.linkedin"
+                                            :href="member.linkedin"
+                                            target="_blank"
+                                            class="text-info hover-scale"
+                                            title="LinkedIn"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="18"
+                                                height="18"
+                                                fill="currentColor"
+                                                class="bi bi-linkedin"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                                                />
+                                            </svg>
+                                        </a>
+                                        <a
+                                            v-if="
+                                                member.social_media &&
+                                                member.social_media.instagram
+                                            "
+                                            :href="
+                                                member.social_media.instagram
+                                            "
+                                            target="_blank"
+                                            class="text-danger hover-scale"
+                                            title="Instagram"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="18"
+                                                height="18"
+                                                fill="currentColor"
+                                                class="bi bi-instagram"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+
+            <!-- Details View Modal Component -->
+            <project-detail-modal
+                :project="selectedProject"
+            ></project-detail-modal>
+
+            <!-- Mobile Emulator Frame Modal -->
+            <div
+                class="modal fade"
+                id="mobileEmulatorModal"
+                tabindex="-1"
+                aria-labelledby="mobileEmulatorModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div
+                        class="modal-content modal-content-glass"
+                        v-if="activeMobileProject"
+                        style="max-width: 400px; margin: 0 auto"
+                    >
+                        <div class="modal-header border-0 pb-0">
+                            <button
+                                type="button"
+                                class="btn-close btn-close-white"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body py-4 text-center">
+                            <h4 class="text-white fw-bold mb-1">
+                                {{ activeMobileProject.name }}
+                            </h4>
+                            <p class="text-secondary small mb-3">
+                                {{ activeMobileProject.tagline }}
+                            </p>
+
+                            <div class="phone-emulator-container mb-4">
+                                <div class="phone-emulator">
+                                    <div class="phone-speaker"></div>
+                                    <div class="phone-screen text-start">
+                                        <div
+                                            class="d-flex justify-content-between align-items-center border-bottom border-secondary pb-2 mb-3"
+                                        >
+                                            <span class="fw-bold text-light"
+                                                >★
+                                                {{
+                                                    activeMobileProject.name
+                                                }}</span
+                                            >
+                                            <small class="text-muted"
+                                                >100% 🔋</small
+                                            >
+                                        </div>
+                                        <div
+                                            class="bg-dark bg-opacity-25 rounded p-2.5 mb-3 border border-secondary"
+                                            style="
+                                                border-color: rgba(
+                                                    255,
+                                                    255,
+                                                    255,
+                                                    0.08
+                                                ) !important;
+                                            "
+                                        >
+                                            <h6
+                                                class="fw-bold text-white mb-1"
+                                                style="font-size: 11px"
+                                            >
+                                                Fitur Aplikasi:
+                                            </h6>
+                                            <ul
+                                                class="list-unstyled mb-0 text-secondary"
+                                                style="
+                                                    font-size: 10px;
+                                                    line-height: 1.45;
+                                                "
+                                            >
+                                                <li
+                                                    v-for="(
+                                                        feat, i
+                                                    ) in activeMobileProject.features"
+                                                    :key="i"
+                                                    class="mb-1"
+                                                >
+                                                    • {{ feat }}
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Screenshots -->
+                                        <div
+                                            class="row g-2 mb-3"
+                                            v-if="
+                                                activeMobileProject.screenshots &&
+                                                activeMobileProject.screenshots
+                                                    .length > 0
+                                            "
+                                        >
+                                            <div
+                                                class="col-6"
+                                                v-for="(
+                                                    scr, idx
+                                                ) in activeMobileProject.screenshots"
+                                                :key="idx"
+                                            >
+                                                <img
+                                                    :src="scr"
+                                                    class="img-fluid rounded border border-secondary"
+                                                    alt="Mock Screen"
+                                                    style="
+                                                        border-color: rgba(
+                                                            255,
+                                                            255,
+                                                            255,
+                                                            0.1
+                                                        ) !important;
+                                                    "
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="bg-secondary bg-opacity-10 border border-secondary rounded p-2.5 text-center"
+                                            style="
+                                                border-color: rgba(
+                                                    255,
+                                                    255,
+                                                    255,
+                                                    0.08
+                                                ) !important;
+                                            "
+                                        >
+                                            <span
+                                                class="text-light fw-bold d-block mb-1"
+                                                style="font-size: 11px"
+                                                >Uji Fungsionalitas</span
+                                            >
+                                            <small
+                                                class="text-muted"
+                                                style="font-size: 9.5px"
+                                                >Silakan datangi stand pameran
+                                                untuk menguji model ini pada
+                                                perangkat smartphone uji coba
+                                                kami.</small
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="alert alert-secondary border border-secondary bg-dark bg-opacity-50 text-light text-start mb-0"
+                                style="
+                                    border-color: rgba(
+                                        255,
+                                        255,
+                                        255,
+                                        0.1
+                                    ) !important;
+                                "
+                            >
+                                <h6
+                                    class="alert-heading fw-bold mb-1"
+                                    style="
+                                        font-size: 0.85rem;
+                                        color: var(--accent-silver) !important;
+                                    "
+                                >
+                                    👋 Silakan Coba Langsung di Stand!
+                                </h6>
+                                <p
+                                    class="small mb-0"
+                                    style="
+                                        font-size: 0.78rem;
+                                        line-height: 1.4;
+                                        color: var(--text-secondary) !important;
+                                    "
+                                >
+                                    Aplikasi mobile ini siap dicoba. Datang ke
+                                    stand pembimbing
+                                    <strong>{{
+                                        activeMobileProject.supervisor
+                                    }}</strong>
+                                    untuk mendemonstrasikan sistem pada HP uji
+                                    coba kami.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button
+                                type="button"
+                                class="btn btn-secondary w-100 py-2.5"
+                                data-bs-dismiss="modal"
+                                style="
+                                    background: rgba(255, 255, 255, 0.08);
+                                    border-color: rgba(255, 255, 255, 0.1);
+                                    color: white;
+                                    border-radius: 12px;
+                                "
+                            >
+                                Tutup
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </transition-group>
 
-        <!-- Details View Modal Component -->
-        <project-detail-modal :project="selectedProject"></project-detail-modal>
+            <!-- Video Player Modal -->
+            <div
+                class="modal fade"
+                id="videoPlayerModal"
+                tabindex="-1"
+                aria-labelledby="videoPlayerModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div
+                        class="modal-content modal-content-glass"
+                        v-if="activeHardwareProject"
+                    >
+                        <div class="modal-header border-0 pb-0">
+                            <h5
+                                class="modal-title fw-bold text-white d-flex align-items-center gap-2"
+                                id="videoPlayerModalLabel"
+                            >
+                                <span>🎬</span> Video Dokumentasi Alat
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close btn-close-white"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body py-4">
+                            <h4 class="text-white fw-bold mb-1">
+                                {{ activeHardwareProject.name }}
+                            </h4>
+                            <p class="text-secondary small mb-4">
+                                {{ activeHardwareProject.tagline }}
+                            </p>
 
-        <!-- Mobile Emulator Frame Modal -->
-        <div
-            class="modal fade"
-            id="mobileEmulatorModal"
-            tabindex="-1"
-            aria-labelledby="mobileEmulatorModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-dialog-centered">
-                <div
-                    class="modal-content modal-content-glass"
-                    v-if="activeMobileProject"
-                    style="max-width: 400px; margin: 0 auto"
-                >
-                    <div class="modal-header border-0 pb-0">
-                        <h6
-                            class="modal-title fw-bold text-white d-flex align-items-center gap-2"
-                            id="mobileEmulatorModalLabel"
-                        >
-                            <span>📱</span> Demo Aplikasi Mobile
-                        </h6>
-                        <button
-                            type="button"
-                            class="btn-close btn-close-white"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-                    <div class="modal-body py-4 text-center">
-                        <h4 class="text-white fw-bold mb-1">
-                            {{ activeMobileProject.name }}
-                        </h4>
-                        <p class="text-secondary small mb-3">
-                            {{ activeMobileProject.tagline }}
-                        </p>
+                            <div
+                                class="video-container mb-4"
+                                v-if="activeHardwareProject.video_url"
+                            >
+                                <iframe
+                                    :src="activeHardwareProject.video_url"
+                                    frameborder="0"
+                                    allow="
+                                        accelerometer;
+                                        autoplay;
+                                        clipboard-write;
+                                        encrypted-media;
+                                        gyroscope;
+                                        picture-in-picture;
+                                    "
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
 
-                        <div class="phone-emulator-container mb-4">
-                            <div class="phone-emulator">
-                                <div class="phone-speaker"></div>
-                                <div class="phone-screen text-start">
-                                    <div
-                                        class="d-flex justify-content-between align-items-center border-bottom border-secondary pb-2 mb-3"
+                            <div
+                                class="p-3 bg-dark bg-opacity-25 rounded border border-secondary mb-4"
+                                style="
+                                    border-color: rgba(
+                                        255,
+                                        255,
+                                        255,
+                                        0.08
+                                    ) !important;
+                                "
+                            >
+                                <h6
+                                    class="fw-bold text-white mb-2"
+                                    style="font-family: Outfit"
+                                >
+                                    Integrasi &amp; Komponen Hardware:
+                                </h6>
+                                <ul
+                                    class="list-unstyled mb-0 text-secondary small"
+                                    style="line-height: 1.6"
+                                >
+                                    <li
+                                        v-for="(
+                                            feat, i
+                                        ) in activeHardwareProject.features"
+                                        :key="i"
+                                        class="mb-1"
                                     >
-                                        <span class="fw-bold text-light"
-                                            >★
-                                            {{ activeMobileProject.name }}</span
-                                        >
-                                        <small class="text-muted"
-                                            >100% 🔋</small
-                                        >
-                                    </div>
-                                    <div
-                                        class="bg-dark bg-opacity-25 rounded p-2.5 mb-3 border border-secondary"
-                                        style="
-                                            border-color: rgba(
-                                                255,
-                                                255,
-                                                255,
-                                                0.08
-                                            ) !important;
-                                        "
-                                    >
-                                        <h6
-                                            class="fw-bold text-white mb-1"
-                                            style="font-size: 11px"
-                                        >
-                                            Fitur Aplikasi:
-                                        </h6>
-                                        <ul
-                                            class="list-unstyled mb-0 text-secondary"
-                                            style="
-                                                font-size: 10px;
-                                                line-height: 1.45;
-                                            "
-                                        >
-                                            <li
-                                                v-for="(
-                                                    feat, i
-                                                ) in activeMobileProject.features"
-                                                :key="i"
-                                                class="mb-1"
-                                            >
-                                                • {{ feat }}
-                                            </li>
-                                        </ul>
-                                    </div>
+                                        ⚡ {{ feat }}
+                                    </li>
+                                </ul>
+                            </div>
 
-                                    <!-- Screenshots -->
-                                    <div
-                                        class="row g-2 mb-3"
-                                        v-if="
-                                            activeMobileProject.screenshots &&
-                                            activeMobileProject.screenshots
-                                                .length > 0
-                                        "
-                                    >
-                                        <div
-                                            class="col-6"
-                                            v-for="(
-                                                scr, idx
-                                            ) in activeMobileProject.screenshots"
-                                            :key="idx"
-                                        >
-                                            <img
-                                                :src="scr"
-                                                class="img-fluid rounded border border-secondary"
-                                                alt="Mock Screen"
-                                                style="
-                                                    border-color: rgba(
-                                                        255,
-                                                        255,
-                                                        255,
-                                                        0.1
-                                                    ) !important;
-                                                "
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="bg-secondary bg-opacity-10 border border-secondary rounded p-2.5 text-center"
-                                        style="
-                                            border-color: rgba(
-                                                255,
-                                                255,
-                                                255,
-                                                0.08
-                                            ) !important;
-                                        "
-                                    >
-                                        <span
-                                            class="text-light fw-bold d-block mb-1"
-                                            style="font-size: 11px"
-                                            >Uji Fungsionalitas</span
-                                        >
-                                        <small
-                                            class="text-muted"
-                                            style="font-size: 9.5px"
-                                            >Silakan datangi stand pameran untuk
-                                            menguji model ini pada perangkat
-                                            smartphone uji coba kami.</small
-                                        >
-                                    </div>
-                                </div>
+                            <div
+                                class="alert alert-secondary border border-secondary bg-dark bg-opacity-50 text-light mb-0"
+                                style="
+                                    border-color: rgba(
+                                        255,
+                                        255,
+                                        255,
+                                        0.1
+                                    ) !important;
+                                "
+                            >
+                                <h6
+                                    class="alert-heading fw-bold mb-1"
+                                    style="
+                                        font-size: 0.88rem;
+                                        color: var(--accent-silver) !important;
+                                    "
+                                >
+                                    🛠 Coba Prototipe di Stand Pameran!
+                                </h6>
+                                <p
+                                    class="small mb-0"
+                                    style="
+                                        line-height: 1.4;
+                                        font-size: 0.8rem;
+                                        color: var(--text-secondary) !important;
+                                    "
+                                >
+                                    Alat fisik ini telah dipasang dan
+                                    dikonfigurasi di stand pembimbing
+                                    <strong>{{
+                                        activeHardwareProject.supervisor
+                                    }}</strong
+                                    >. Silakan kunjungi stand kami untuk mencoba
+                                    mengoperasikan prototipe secara langsung.
+                                </p>
                             </div>
                         </div>
-
-                        <div
-                            class="alert alert-secondary border border-secondary bg-dark bg-opacity-50 text-light text-start mb-0"
-                            style="
-                                border-color: rgba(
-                                    255,
-                                    255,
-                                    255,
-                                    0.1
-                                ) !important;
-                            "
-                        >
-                            <h6
-                                class="alert-heading fw-bold mb-1"
+                        <div class="modal-footer border-0">
+                            <button
+                                type="button"
+                                class="btn btn-secondary py-2.5 px-4"
+                                data-bs-dismiss="modal"
                                 style="
-                                    font-size: 0.85rem;
-                                    color: var(--accent-silver) !important;
+                                    background: rgba(255, 255, 255, 0.08);
+                                    border-color: rgba(255, 255, 255, 0.1);
+                                    color: white;
+                                    border-radius: 12px;
                                 "
                             >
-                                👋 Silakan Coba Langsung di Stand!
-                            </h6>
-                            <p
-                                class="small mb-0"
-                                style="
-                                    font-size: 0.78rem;
-                                    line-height: 1.4;
-                                    color: var(--text-secondary) !important;
-                                "
-                            >
-                                Aplikasi mobile ini siap dicoba. Datang ke stand
-                                pembimbing
-                                <strong>{{
-                                    activeMobileProject.supervisor
-                                }}</strong>
-                                untuk mendemonstrasikan sistem pada HP uji coba
-                                kami.
-                            </p>
+                                Tutup
+                            </button>
                         </div>
-                    </div>
-                    <div class="modal-footer border-0">
-                        <button
-                            type="button"
-                            class="btn btn-secondary w-100 py-2.5"
-                            data-bs-dismiss="modal"
-                            style="
-                                background: rgba(255, 255, 255, 0.08);
-                                border-color: rgba(255, 255, 255, 0.1);
-                                color: white;
-                                border-radius: 12px;
-                            "
-                        >
-                            Tutup
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Video Player Modal -->
-        <div
-            class="modal fade"
-            id="videoPlayerModal"
-            tabindex="-1"
-            aria-labelledby="videoPlayerModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div
-                    class="modal-content modal-content-glass"
-                    v-if="activeHardwareProject"
-                >
-                    <div class="modal-header border-0 pb-0">
-                        <h5
-                            class="modal-title fw-bold text-white d-flex align-items-center gap-2"
-                            id="videoPlayerModalLabel"
-                        >
-                            <span>🎬</span> Video Dokumentasi Alat
-                        </h5>
-                        <button
-                            type="button"
-                            class="btn-close btn-close-white"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-                    <div class="modal-body py-4">
-                        <h4 class="text-white fw-bold mb-1">
-                            {{ activeHardwareProject.name }}
-                        </h4>
-                        <p class="text-secondary small mb-4">
-                            {{ activeHardwareProject.tagline }}
-                        </p>
-
-                        <div
-                            class="video-container mb-4"
-                            v-if="activeHardwareProject.video_url"
-                        >
-                            <iframe
-                                :src="activeHardwareProject.video_url"
-                                frameborder="0"
-                                allow="
-                                    accelerometer;
-                                    autoplay;
-                                    clipboard-write;
-                                    encrypted-media;
-                                    gyroscope;
-                                    picture-in-picture;
-                                "
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-
-                        <div
-                            class="p-3 bg-dark bg-opacity-25 rounded border border-secondary mb-4"
-                            style="
-                                border-color: rgba(
-                                    255,
-                                    255,
-                                    255,
-                                    0.08
-                                ) !important;
-                            "
-                        >
-                            <h6
-                                class="fw-bold text-white mb-2"
-                                style="font-family: Outfit"
-                            >
-                                Integrasi &amp; Komponen Hardware:
-                            </h6>
-                            <ul
-                                class="list-unstyled mb-0 text-secondary small"
-                                style="line-height: 1.6"
-                            >
-                                <li
-                                    v-for="(
-                                        feat, i
-                                    ) in activeHardwareProject.features"
-                                    :key="i"
-                                    class="mb-1"
-                                >
-                                    ⚡ {{ feat }}
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div
-                            class="alert alert-secondary border border-secondary bg-dark bg-opacity-50 text-light mb-0"
-                            style="
-                                border-color: rgba(
-                                    255,
-                                    255,
-                                    255,
-                                    0.1
-                                ) !important;
-                            "
-                        >
-                            <h6
-                                class="alert-heading fw-bold mb-1"
-                                style="
-                                    font-size: 0.88rem;
-                                    color: var(--accent-silver) !important;
-                                "
-                            >
-                                🛠 Coba Prototipe di Stand Pameran!
-                            </h6>
-                            <p
-                                class="small mb-0"
-                                style="
-                                    line-height: 1.4;
-                                    font-size: 0.8rem;
-                                    color: var(--text-secondary) !important;
-                                "
-                            >
-                                Alat fisik ini telah dipasang dan dikonfigurasi
-                                di stand pembimbing
-                                <strong>{{
-                                    activeHardwareProject.supervisor
-                                }}</strong
-                                >. Silakan kunjungi stand kami untuk mencoba
-                                mengoperasikan prototipe secara langsung.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="modal-footer border-0">
-                        <button
-                            type="button"
-                            class="btn btn-secondary py-2.5 px-4"
-                            data-bs-dismiss="modal"
-                            style="
-                                background: rgba(255, 255, 255, 0.08);
-                                border-color: rgba(255, 255, 255, 0.1);
-                                color: white;
-                                border-radius: 12px;
-                            "
-                        >
-                            Tutup
-                        </button>
                     </div>
                 </div>
             </div>
@@ -681,7 +1252,26 @@ export default {
             detailModalInstance: null,
             mobileModalInstance: null,
             videoModalInstance: null,
+            currentView: "grid",
         };
+    },
+    mounted() {
+        if (window.history.state && window.history.state.view === "detail") {
+            const projectId = window.history.state.projectId;
+            const project = this.projects.find((p) => p.id === projectId);
+            if (project) {
+                this.selectedProject = project;
+                this.currentView = "detail";
+            } else {
+                window.history.replaceState({ view: "grid" }, "");
+            }
+        } else if (window.history.state === null) {
+            window.history.replaceState({ view: "grid" }, "");
+        }
+        window.addEventListener("popstate", this.handlePopState);
+    },
+    beforeUnmount() {
+        window.removeEventListener("popstate", this.handlePopState);
     },
     computed: {
         filteredProjects() {
@@ -736,6 +1326,82 @@ export default {
             if (type === "hardware") return "Hardware-Based";
             return type;
         },
+        handleShowcase(project) {
+            if (project.type === "web") {
+                if (project.external_url) {
+                    window.open(project.external_url, "_blank");
+                } else {
+                    this.viewProjectDetail(project);
+                }
+            } else {
+                this.viewProjectDetail(project);
+            }
+        },
+        viewProjectDetail(project) {
+            this.selectedProject = project;
+            this.currentView = "detail";
+            window.history.pushState(
+                { view: "detail", projectId: project.id },
+                "",
+            );
+            this.$nextTick(() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        },
+        backToGrid() {
+            if (
+                window.history.state &&
+                window.history.state.view === "detail"
+            ) {
+                window.history.back();
+            } else {
+                this.currentView = "grid";
+                this.selectedProject = null;
+                this.$nextTick(() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            }
+        },
+        handlePopState(event) {
+            if (event.state && event.state.view === "detail") {
+                const projectId = event.state.projectId;
+                const project = this.projects.find((p) => p.id === projectId);
+                if (project) {
+                    this.selectedProject = project;
+                    this.currentView = "detail";
+                } else {
+                    this.currentView = "grid";
+                    this.selectedProject = null;
+                }
+            } else {
+                this.currentView = "grid";
+                this.selectedProject = null;
+            }
+        },
+        getSupervisorFullName(code) {
+            const supervisors = {
+                MDB: "Muhammad Adib Kamali, S.T., M.Eng",
+                FZK: "Dr. Farah Zakiyah Rahmanti, S.ST., M.T",
+                MUN: "Mastuty Ayu Ningtyas, S.Kom., M.MT.",
+                YOH: "Yohanes Setiawan. S.Si., M.Kom.",
+                CAP: "Dr. Helmy Widyantara, S.Kom., M.Eng.",
+            };
+            return supervisors[code] || code;
+        },
+        getTktExplanation(tkt) {
+            const tktExplanations = {
+                1: "Prinsip dasar diteliti dan dilaporkan",
+                2: "Formulasi konsep teknologi / aplikasi",
+                3: "Pembuktian konsep fungsi secara analitis & eksperimental",
+                4: "Validasi komponen dalam lingkungan laboratorium",
+                5: "Validasi komponen dalam lingkungan relevan",
+                6: "Demonstrasi model/prototipe dalam lingkungan relevan",
+                7: "Demonstrasi prototipe sistem dalam lingkungan operasional",
+                8: "Sistem telah lengkap dan memenuhi kualifikasi",
+                9: "Sistem terbukti sukses dalam lingkungan operasional aktual",
+            };
+            return tktExplanations[tkt] || `Level ${tkt}`;
+        },
         showDetail(project) {
             this.selectedProject = project;
             this.$nextTick(() => {
@@ -777,3 +1443,15 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.project-card-tagline {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: rgba(248, 250, 252, 0.92) !important;
+    min-height: 3.15rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+</style>

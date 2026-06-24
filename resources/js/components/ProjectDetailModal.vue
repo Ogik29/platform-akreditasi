@@ -82,7 +82,7 @@
                   </div>
                   <h6 class="text-white fw-bold mb-0 text-truncate w-100">{{ member.nickname }}</h6>
                   <small class="text-secondary mb-2 text-truncate w-100" style="font-size: 11px;">{{ member.fullname }}</small>
-                  <span class="badge bg-dark border border-secondary text-secondary mb-3 w-100 text-truncate" style="font-size: 10px;">
+                  <span v-if="member.role" class="badge bg-dark border border-secondary text-secondary mb-3 w-100 text-truncate" style="font-size: 10px;">
                     {{ member.role }}
                   </span>
                   

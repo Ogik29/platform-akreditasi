@@ -205,38 +205,41 @@ class ProjectSeeder extends Seeder
                 'name' => 'VROOM',
                 'supervisor' => 'MDB',
                 'type' => 'hardware',
-                'tkt' => 5,
+                'tkt' => 6,
                 'logo' => 'vroom.svg',
-                'tagline' => 'Virtual Reality Driving Simulator dengan Force Feedback',
-                'description' => 'VROOM adalah simulator mengemudi interaktif berbasis Virtual Reality untuk edukasi keselamatan berkendara (Safety Driving) dengan setir force-feedback fisik untuk sensasi nyata berkendara.',
+                'tagline' => 'Media Pembelajaran Membaca Berbasis VR untuk Anak Disleksia',
+                'description' => 'Media pembelajaran berbasis Virtual Reality (VR) yang dirancang untuk membantu anak penyandang disleksia meningkatkan kemampuan membaca melalui pengalaman belajar yang interaktif dan menyenangkan. Dengan menggabungkan teknologi VR dan gamifikasi, VROOM menghadirkan aktivitas belajar yang lebih menarik, meningkatkan fokus, motivasi, serta membantu anak mengenali huruf dan kata dengan lebih efektif.',
                 'features' => [
-                    'Lingkungan Simulator 3D Berbasis Unity dengan Fisika Kendaraan Nyata',
-                    'Integrasi Hardware Setir Fisik Logitech G29 Force-Feedback',
-                    'Skenario Pelatihan Cuaca Ekstrim, Malam Hari, dan Mengemudi Defensif',
-                    'Sistem Penilaian Otomatis Terhadap Pelanggaran Lalu Lintas'
+                    'Simulasi Virtual Reality (VR) Interaktif untuk Belajar Membaca',
+                    'Metode Gamifikasi untuk Meningkatkan Motivasi dan Fokus Belajar',
+                    'Aktivitas Pengenalan Huruf dan Kata yang Dirancang Khusus untuk Anak Disleksia',
+                    'Visualisasi 3D yang Menarik untuk Mempermudah Pemahaman'
                 ],
                 'funding_awards' => [
-                    'Pendanaan Terpilih Program Mahasiswa Wirausaha (PMW) 2025',
-                    'Gold Medal Award Pameran Rekayasa Teknologi Vokasi 2025'
+                    'Pendanaan Innovillage 2024 sebesar Rp 14.127.223'
                 ],
-                'demo_level' => 'lokal',
+                'demo_level' => 'nasional',
                 'partners' => [
-                    'Direktorat Lalu Lintas POLDA Jawa Timur',
-                    'Lembaga Pelatihan Mengemudi (LPK) Lancar Jaya Surabaya'
+                    'INNOVILLAGE 2024'
                 ],
                 'team_members' => [
                     [
-                        'nickname' => 'Genta',
-                        'fullname' => 'Genta Wisesa',
-                        'role' => 'Lead VR Developer',
-                        'photo' => 'avatar4.png',
+                        'nickname' => 'Ary',
+                        'fullname' => 'I Made Ary Widnyana',
+                        'photo' => 'avatar1.png',
                         'social_media' => ['instagram' => 'https://instagram.com/'],
                         'linkedin' => 'https://linkedin.com/in/'
                     ],
                     [
-                        'nickname' => 'Hendra',
-                        'fullname' => 'Hendra Gunawan',
-                        'role' => 'Embedded & Hardware Integrator',
+                        'nickname' => 'Elsa',
+                        'fullname' => 'Elsa Ajeng Pratiwi',
+                        'photo' => 'avatar3.png',
+                        'social_media' => ['instagram' => 'https://instagram.com/'],
+                        'linkedin' => 'https://linkedin.com/in/'
+                    ],
+                    [
+                        'nickname' => 'Ogik',
+                        'fullname' => 'Dimas Ogi Putra P.',
                         'photo' => 'avatar2.png',
                         'social_media' => ['instagram' => 'https://instagram.com/'],
                         'linkedin' => 'https://linkedin.com/in/'
