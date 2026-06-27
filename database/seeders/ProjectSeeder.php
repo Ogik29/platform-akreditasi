@@ -206,7 +206,7 @@ class ProjectSeeder extends Seeder
                 'supervisor' => 'MDB',
                 'type' => 'hardware',
                 'tkt' => 6,
-                'logo' => 'vroom.svg',
+                'logo' => '/img/vroom/logo_vroom.jpeg',
                 'tagline' => 'Media Pembelajaran Membaca Berbasis VR untuk Anak Disleksia',
                 'description' => 'Media pembelajaran berbasis Virtual Reality (VR) yang dirancang untuk membantu anak penyandang disleksia meningkatkan kemampuan membaca melalui pengalaman belajar yang interaktif dan menyenangkan. Dengan menggabungkan teknologi VR dan gamifikasi, VROOM menghadirkan aktivitas belajar yang lebih menarik, meningkatkan fokus, motivasi, serta membantu anak mengenali huruf dan kata dengan lebih efektif.',
                 'features' => [
@@ -246,8 +246,12 @@ class ProjectSeeder extends Seeder
                     ]
                 ],
                 'external_url' => null,
-                'video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                'screenshots' => null
+                'video_url' => 'https://youtu.be/6Fzz_Gu5S3I?si=Sr2b1ZftxNO6934T',
+                'screenshots' => [
+                    '/img/vroom/dokumentasi_vroom1.jpg',
+                    '/img/vroom/dokumentasi_vroom2.jpg',
+                    '/img/vroom/dokumentasi_vroom3.jpeg'
+                ]
             ],
             [
                 'name' => 'TA Rafli',
@@ -295,7 +299,9 @@ class ProjectSeeder extends Seeder
                 'screenshots' => [
                     'https://placehold.co/360x640/1a1a2e/ffffff?text=Rafli+UI+1',
                     'https://placehold.co/360x640/162447/ffffff?text=Rafli+UI+2',
-                    'https://placehold.co/360x640/1f4068/ffffff?text=Rafli+UI+3'
+                    'https://placehold.co/360x640/1f4068/ffffff?text=Rafli+UI+3',
+                    'https://placehold.co/360x640/0f3460/ffffff?text=Rafli+UI+4',
+                    'https://placehold.co/360x640/1b263b/ffffff?text=Rafli+UI+5'
                 ]
             ],
             [

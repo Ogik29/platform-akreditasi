@@ -7,6 +7,21 @@
             <div class="glow-bg glow-center"></div>
         </div>
 
+        <!-- Custom transition loader matching initial loading screen -->
+        <transition name="loader-fade">
+            <div class="vue-transition-loader" v-if="isTransitioning">
+                <div class="text-center">
+                    <div class="spinner-glow mb-3 mx-auto"></div>
+                    <p
+                        class="text-white fw-bold mb-0"
+                        style="letter-spacing: 1px"
+                    >
+                        Loading Om...
+                    </p>
+                </div>
+            </div>
+        </transition>
+
         <div class="container py-5">
             <transition name="fade" mode="out-in">
                 <!-- Grid View -->
@@ -260,6 +275,20 @@
                             <div
                                 class="glass-card h-100 p-3 p-sm-4 d-flex flex-column justify-content-between"
                             >
+                                <!-- Dynamic background logo watermark -->
+                                <div
+                                    class="card-bg-logo"
+                                    v-if="
+                                        project.logo &&
+                                        hasRealLogo(project.logo)
+                                    "
+                                >
+                                    <img
+                                        :src="project.logo"
+                                        alt="Background Logo"
+                                    />
+                                </div>
+
                                 <div>
                                     <!-- Card Header -->
                                     <div
@@ -269,9 +298,9 @@
                                             class="d-flex align-items-center"
                                             style="min-width: 0; flex: 1"
                                         >
-                                            <!-- Initials logo frame -->
+                                            <!-- Initials or logo image frame -->
                                             <div
-                                                class="logo-frame bg-dark bg-opacity-50 border border-secondary rounded-3 d-flex justify-content-center align-items-center me-3 flex-shrink-0"
+                                                class="logo-frame bg-dark bg-opacity-50 border border-secondary rounded-3 d-flex justify-content-center align-items-center me-3 flex-shrink-0 overflow-hidden"
                                                 style="
                                                     width: 50px;
                                                     height: 50px;
@@ -283,7 +312,23 @@
                                                     ) !important;
                                                 "
                                             >
+                                                <img
+                                                    v-if="
+                                                        project.logo &&
+                                                        hasRealLogo(
+                                                            project.logo,
+                                                        )
+                                                    "
+                                                    :src="project.logo"
+                                                    alt="Logo"
+                                                    style="
+                                                        width: 100%;
+                                                        height: 100%;
+                                                        object-fit: cover;
+                                                    "
+                                                />
                                                 <span
+                                                    v-else
                                                     class="fs-4 fw-extrabold text-info"
                                                     >{{
                                                         project.name
@@ -408,9 +453,9 @@
                             <div
                                 class="col-md-8 d-flex align-items-center flex-column flex-sm-row text-center text-sm-start gap-4"
                             >
-                                <!-- Initials logo frame -->
+                                <!-- Initials or logo image frame -->
                                 <div
-                                    class="logo-frame bg-dark bg-opacity-50 border border-secondary rounded-4 d-flex justify-content-center align-items-center flex-shrink-0"
+                                    class="logo-frame bg-dark bg-opacity-50 border border-secondary rounded-4 d-flex justify-content-center align-items-center flex-shrink-0 overflow-hidden"
                                     style="
                                         width: 80px;
                                         height: 80px;
@@ -422,11 +467,28 @@
                                         ) !important;
                                     "
                                 >
-                                    <span class="fs-2 fw-extrabold text-info">{{
-                                        selectedProject.name
-                                            .substring(0, 2)
-                                            .toUpperCase()
-                                    }}</span>
+                                    <img
+                                        v-if="
+                                            selectedProject.logo &&
+                                            hasRealLogo(selectedProject.logo)
+                                        "
+                                        :src="selectedProject.logo"
+                                        alt="Logo"
+                                        style="
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                        "
+                                    />
+                                    <span
+                                        v-else
+                                        class="fs-2 fw-extrabold text-info"
+                                        >{{
+                                            selectedProject.name
+                                                .substring(0, 2)
+                                                .toUpperCase()
+                                        }}</span
+                                    >
                                 </div>
                                 <div>
                                     <h1
@@ -474,9 +536,79 @@
                     <div class="row g-4">
                         <!-- Left: Interactive Sandbox & Description -->
                         <div class="col-lg-8">
+                            <!-- Web Application Preview (Web-based) -->
+                            <div
+                                v-if="selectedProject.type === 'web'"
+                                class="glass-card p-4 mb-4"
+                            >
+                                <h4
+                                    class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
+                                >
+                                    <span>🌐 Platform Web</span>
+                                </h4>
+                                <div
+                                    class="web-redirect-container text-center py-5 animate-pulse-subtle"
+                                    style="
+                                        background: rgba(15, 23, 42, 0.3);
+                                        border: 1px dashed
+                                            rgba(255, 255, 255, 0.15);
+                                        border-radius: 16px;
+                                    "
+                                >
+                                    <span class="fs-1 d-block mb-3">💻</span>
+                                    <h5 class="text-white fw-bold mb-2">
+                                        Platform Web Siap Diakses
+                                    </h5>
+                                    <p
+                                        class="text-secondary small mx-auto mb-4"
+                                        style="max-width: 480px"
+                                    >
+                                        Proyek ini merupakan aplikasi berbasis
+                                        web yang dihosting secara live. Klik
+                                        tombol di bawah ini untuk membuka dan
+                                        mencoba platform secara langsung pada
+                                        tab baru.
+                                    </p>
+                                    <a
+                                        v-if="selectedProject.external_url"
+                                        :href="selectedProject.external_url"
+                                        target="_blank"
+                                        class="btn btn-silver btn-web-launch py-2.5 px-4 d-inline-flex align-items-center gap-2"
+                                        style="
+                                            font-size: 0.95rem;
+                                            font-weight: 600;
+                                        "
+                                    >
+                                        <span>Buka Aplikasi Web</span>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            fill="currentColor"
+                                            class="bi bi-box-arrow-up-right"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                                            />
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                                            />
+                                        </svg>
+                                    </a>
+                                    <span
+                                        v-else
+                                        class="text-muted text-italic small"
+                                        >URL Website tidak tersedia</span
+                                    >
+                                </div>
+                            </div>
+
                             <!-- Screenshots Grid (Mobile-based) -->
                             <div
-                                v-if="selectedProject.type === 'mobile'"
+                                v-else-if="selectedProject.type === 'mobile'"
                                 class="glass-card p-4 mb-4"
                             >
                                 <h4
@@ -489,15 +621,54 @@
                                         selectedProject.screenshots &&
                                         selectedProject.screenshots.length > 0
                                     "
-                                    class="screenshots-grid-container"
+                                    class="screenshots-slider-wrapper"
                                 >
-                                    <div class="row g-3 justify-content-center">
+                                    <!-- Left scroll button -->
+                                    <button
+                                        v-if="
+                                            selectedProject.screenshots.length >
+                                            3
+                                        "
+                                        @click="
+                                            scrollCarousel(
+                                                'left',
+                                                'mobileCarousel',
+                                            )
+                                        "
+                                        class="btn-carousel-nav btn-carousel-nav-left"
+                                        aria-label="Scroll Left"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-chevron-left"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                            />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Scroller container -->
+                                    <div
+                                        ref="mobileCarousel"
+                                        class="screenshots-carousel-container"
+                                        :class="{
+                                            'justify-content-center':
+                                                selectedProject.screenshots
+                                                    .length <= 3,
+                                        }"
+                                    >
                                         <div
                                             v-for="(
                                                 scr, idx
                                             ) in selectedProject.screenshots"
                                             :key="idx"
-                                            class="col-6 col-sm-4 text-center"
+                                            class="screenshot-carousel-item mobile-item text-center"
                                         >
                                             <div
                                                 class="screenshot-wrapper p-2 bg-dark bg-opacity-25 rounded border border-secondary border-opacity-30"
@@ -510,6 +681,36 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- Right scroll button -->
+                                    <button
+                                        v-if="
+                                            selectedProject.screenshots.length >
+                                            3
+                                        "
+                                        @click="
+                                            scrollCarousel(
+                                                'right',
+                                                'mobileCarousel',
+                                            )
+                                        "
+                                        class="btn-carousel-nav btn-carousel-nav-right"
+                                        aria-label="Scroll Right"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                            />
+                                        </svg>
+                                    </button>
                                 </div>
                                 <div v-else class="text-center py-5">
                                     <span class="fs-1 d-block mb-2">📱</span>
@@ -534,7 +735,11 @@
                                     v-if="selectedProject.video_url"
                                 >
                                     <iframe
-                                        :src="selectedProject.video_url"
+                                        :src="
+                                            getEmbedUrl(
+                                                selectedProject.video_url,
+                                            )
+                                        "
                                         frameborder="0"
                                         allow="
                                             accelerometer;
@@ -562,6 +767,112 @@
                                         membantu Anda mengoperasikan modul
                                         fisik.
                                     </p>
+                                </div>
+                            </div>
+
+                            <!-- Documentation Photos (Hardware-based) -->
+                            <div
+                                v-if="
+                                    selectedProject.type === 'hardware' &&
+                                    selectedProject.screenshots &&
+                                    selectedProject.screenshots.length > 0
+                                "
+                                class="glass-card p-4 mb-4"
+                            >
+                                <h4
+                                    class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
+                                >
+                                    <span>📸 Foto Dokumentasi Proyek</span>
+                                </h4>
+                                <div class="screenshots-slider-wrapper">
+                                    <!-- Left scroll button -->
+                                    <button
+                                        v-if="
+                                            selectedProject.screenshots.length >
+                                            3
+                                        "
+                                        @click="
+                                            scrollCarousel(
+                                                'left',
+                                                'hardwareCarousel',
+                                            )
+                                        "
+                                        class="btn-carousel-nav btn-carousel-nav-left"
+                                        aria-label="Scroll Left"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-chevron-left"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                            />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Scroller container -->
+                                    <div
+                                        ref="hardwareCarousel"
+                                        class="screenshots-carousel-container"
+                                        :class="{
+                                            'justify-content-center':
+                                                selectedProject.screenshots
+                                                    .length <= 3,
+                                        }"
+                                    >
+                                        <div
+                                            v-for="(
+                                                scr, idx
+                                            ) in selectedProject.screenshots"
+                                            :key="idx"
+                                            class="screenshot-carousel-item hardware-item text-center"
+                                        >
+                                            <div
+                                                class="screenshot-wrapper p-2 bg-dark bg-opacity-25 rounded border border-secondary border-opacity-30"
+                                            >
+                                                <img
+                                                    :src="scr"
+                                                    class="img-fluid rounded shadow-sm screenshot-static-img"
+                                                    alt="Dokumentasi"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right scroll button -->
+                                    <button
+                                        v-if="
+                                            selectedProject.screenshots.length >
+                                            3
+                                        "
+                                        @click="
+                                            scrollCarousel(
+                                                'right',
+                                                'hardwareCarousel',
+                                            )
+                                        "
+                                        class="btn-carousel-nav btn-carousel-nav-right"
+                                        aria-label="Scroll Right"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                            />
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
 
@@ -771,7 +1082,7 @@
                             style="max-width: 600px"
                         >
                             Mahasiswa di balik rancangan, implementasi, dan
-                            pengujian sistem inovatif ini.
+                            pengujian sistem.
                         </p>
 
                         <div
@@ -1119,7 +1430,11 @@
                                 v-if="activeHardwareProject.video_url"
                             >
                                 <iframe
-                                    :src="activeHardwareProject.video_url"
+                                    :src="
+                                        getEmbedUrl(
+                                            activeHardwareProject.video_url,
+                                        )
+                                    "
                                     frameborder="0"
                                     allow="
                                         accelerometer;
@@ -1177,15 +1492,6 @@
                                     ) !important;
                                 "
                             >
-                                <h6
-                                    class="alert-heading fw-bold mb-1"
-                                    style="
-                                        font-size: 0.88rem;
-                                        color: var(--accent-silver) !important;
-                                    "
-                                >
-                                    🛠 Coba Prototipe di Stand Pameran!
-                                </h6>
                                 <p
                                     class="small mb-0"
                                     style="
@@ -1253,6 +1559,7 @@ export default {
             mobileModalInstance: null,
             videoModalInstance: null,
             currentView: "grid",
+            isTransitioning: false,
         };
     },
     mounted() {
@@ -1327,26 +1634,24 @@ export default {
             return type;
         },
         handleShowcase(project) {
-            if (project.type === "web") {
-                if (project.external_url) {
-                    window.open(project.external_url, "_blank");
-                } else {
-                    this.viewProjectDetail(project);
-                }
-            } else {
-                this.viewProjectDetail(project);
-            }
+            this.viewProjectDetail(project);
         },
         viewProjectDetail(project) {
-            this.selectedProject = project;
-            this.currentView = "detail";
-            window.history.pushState(
-                { view: "detail", projectId: project.id },
-                "",
-            );
-            this.$nextTick(() => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
+            this.isTransitioning = true;
+            setTimeout(() => {
+                this.selectedProject = project;
+                this.currentView = "detail";
+                window.history.pushState(
+                    { view: "detail", projectId: project.id },
+                    "",
+                );
+                this.$nextTick(() => {
+                    window.scrollTo({ top: 0, behavior: "instant" });
+                    setTimeout(() => {
+                        this.isTransitioning = false;
+                    }, 350);
+                });
+            }, 300);
         },
         backToGrid() {
             if (
@@ -1355,28 +1660,45 @@ export default {
             ) {
                 window.history.back();
             } else {
-                this.currentView = "grid";
-                this.selectedProject = null;
-                this.$nextTick(() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                });
+                this.isTransitioning = true;
+                setTimeout(() => {
+                    this.currentView = "grid";
+                    this.selectedProject = null;
+                    this.$nextTick(() => {
+                        window.scrollTo({ top: 0, behavior: "instant" });
+                        setTimeout(() => {
+                            this.isTransitioning = false;
+                        }, 350);
+                    });
+                }, 300);
             }
         },
         handlePopState(event) {
-            if (event.state && event.state.view === "detail") {
-                const projectId = event.state.projectId;
-                const project = this.projects.find((p) => p.id === projectId);
-                if (project) {
-                    this.selectedProject = project;
-                    this.currentView = "detail";
+            this.isTransitioning = true;
+            setTimeout(() => {
+                if (event.state && event.state.view === "detail") {
+                    const projectId = event.state.projectId;
+                    const project = this.projects.find(
+                        (p) => p.id === projectId,
+                    );
+                    if (project) {
+                        this.selectedProject = project;
+                        this.currentView = "detail";
+                    } else {
+                        this.currentView = "grid";
+                        this.selectedProject = null;
+                    }
                 } else {
                     this.currentView = "grid";
                     this.selectedProject = null;
                 }
-            } else {
-                this.currentView = "grid";
-                this.selectedProject = null;
-            }
+                this.$nextTick(() => {
+                    window.scrollTo({ top: 0, behavior: "instant" });
+                    setTimeout(() => {
+                        this.isTransitioning = false;
+                    }, 350);
+                });
+            }, 300);
         },
         getSupervisorFullName(code) {
             const supervisors = {
@@ -1401,6 +1723,32 @@ export default {
                 9: "Sistem terbukti sukses dalam lingkungan operasional aktual",
             };
             return tktExplanations[tkt] || `Level ${tkt}`;
+        },
+        getEmbedUrl(url) {
+            if (!url) return "";
+
+            // Regexp to extract video ID from YouTube share, watch, or embed URLs
+            const regExp =
+                /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+
+            if (match && match[2].length === 11) {
+                const videoId = match[2];
+                return `https://www.youtube.com/embed/${videoId}`;
+            }
+
+            return url;
+        },
+        scrollCarousel(direction, refName) {
+            const container = this.$refs[refName];
+            if (container) {
+                const scrollAmount = direction === "left" ? -320 : 320;
+                container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            }
+        },
+        hasRealLogo(logo) {
+            if (!logo) return false;
+            return logo.startsWith("/") || logo.includes("/");
         },
         showDetail(project) {
             this.selectedProject = project;
