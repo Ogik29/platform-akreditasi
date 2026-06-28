@@ -9,3 +9,73 @@
 
 // Custom Exhibition Styles
 @import '../css/app.css';
+
+// Modern Medium-Grey Gradient Theme Overrides
+body {
+    background:
+        radial-gradient(ellipse at 50% -10%, rgba(148, 163, 184, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 0% 100%, rgba(100, 116, 139, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 100% 80%, rgba(71, 85, 105, 0.15) 0%, transparent 50%),
+        linear-gradient(180deg, #dde3ea 0%, #d0d8e2 30%, #c8d2de 65%, #bfcbd9 100%) !important;
+    background-attachment: fixed !important;
+    color: #1e293b !important;
+}
+
+body h1.display-3 {
+    color: #0f172a !important;
+}
+
+body .text-gradient-silver {
+    background: linear-gradient(135deg, #0f172a 10%, #1e293b 50%, #334155 90%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+body .text-gradient-titanium {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+body header p.lead.text-secondary,
+body .text-secondary {
+    color: #374151 !important;
+}
+
+body .glass-card .text-secondary,
+body .glass-card small.text-secondary,
+body .glass-card span.text-secondary {
+    color: #cbd5e1 !important;
+}
+
+body .glass-card .badge-supervisor {
+    color: #cbd5e1 !important;
+}
+
+.project-detail-view .team-member-card h5.text-white {
+    color: #0f172a !important;
+}
+
+.project-detail-view .team-member-card p.text-secondary {
+    color: #374151 !important;
+}
+
+.project-detail-view .team-member-card .badge {
+    background: rgba(15, 23, 42, 0.06) !important;
+    border-color: rgba(15, 23, 42, 0.15) !important;
+    color: #374151 !important;
+}
+
+body .btn-back {
+    background: rgba(15, 23, 42, 0.06) !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    color: #1e293b !important;
+}
+
+body .btn-back:hover {
+    background: rgba(15, 23, 42, 0.12) !important;
+    border-color: rgba(15, 23, 42, 0.25) !important;
+    color: #0f172a !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+}
