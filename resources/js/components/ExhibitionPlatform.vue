@@ -394,10 +394,10 @@
                                             {{ formatType(project.type) }}
                                         </span>
                                         <span class="text-secondary small">
-                                            Demo:
+                                            Prestasi:
                                             <span
                                                 class="text-capitalize fw-bold text-white"
-                                                >{{ project.demo_level }}</span
+                                                >{{ project.prestasi_level }}</span
                                             >
                                         </span>
                                     </div>
@@ -525,8 +525,8 @@
                                 <span
                                     class="badge bg-secondary bg-opacity-20 border border-secondary border-opacity-35 text-white py-2 px-3 text-capitalize"
                                     style="font-size: 0.75rem"
-                                    >Demo:
-                                    {{ selectedProject.demo_level }}</span
+                                    >Prestasi:
+                                    {{ selectedProject.prestasi_level }}</span
                                 >
                             </div>
                         </div>
@@ -950,12 +950,12 @@
                                     <div>
                                         <span
                                             class="text-secondary d-block small mb-1"
-                                            >Cakupan Demonstrasi</span
+                                            >Prestasi</span
                                         >
                                         <span
                                             class="text-white fw-bold text-capitalize"
                                             >{{
-                                                selectedProject.demo_level
+                                                selectedProject.prestasi_level
                                             }}</span
                                         >
                                     </div>

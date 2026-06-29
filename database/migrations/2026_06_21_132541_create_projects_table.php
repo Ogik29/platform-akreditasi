@@ -22,7 +22,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->json('features')->nullable(); // array of features
             $table->json('funding_awards')->nullable(); // array of awards/funding
-            $table->string('demo_level')->default('lokal'); // lokal, nasional, internasional
+            $table->string('prestasi_level')->default('lokal'); // lokal, nasional, internasional
             $table->json('partners')->nullable(); // array of partners
             $table->json('team_members')->nullable(); // array of members
             $table->string('external_url')->nullable(); // for web

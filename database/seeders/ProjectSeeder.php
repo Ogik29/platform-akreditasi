@@ -31,7 +31,7 @@ class ProjectSeeder extends Seeder
                     'Pendanaan Hibah Program Kreativitas Mahasiswa (PKM-GF) Kemendikbudristek 2025',
                     'Peringkat 3 Inovasi Teknologi Penanggulangan Bencana Provinsi Jawa Timur'
                 ],
-                'demo_level' => 'nasional',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'BPBD Provinsi Jawa Timur',
                     'Badan SAR Nasional (BASARNAS) Surabaya'
@@ -84,7 +84,7 @@ class ProjectSeeder extends Seeder
                     'Pendanaan Skema Tugas Akhir Unggulan Universitas 2025',
                     'Sertifikasi Hak Cipta Program Komputer Kementerian Hukum & HAM'
                 ],
-                'demo_level' => 'lokal',
+                'prestasi_level' => 'lokal',
                 'partners' => [
                     'Koperasi Simpan Pinjam Mitra Mandiri Sidoarjo',
                     'Bank Pembangunan Daerah Jawa Timur (Bank Jatim)'
@@ -129,7 +129,7 @@ class ProjectSeeder extends Seeder
                     'Juara 2 Kompetisi Inovasi Teknologi Tepat Guna Tingkat Regional',
                     'Pendanaan Hibah Inovasi Tugas Akhir Vokasi'
                 ],
-                'demo_level' => 'lokal',
+                'prestasi_level' => 'lokal',
                 'partners' => [
                     'Kelompok Petani Tambak Udang Windu Sidoarjo',
                     'Dinas Perikanan dan Kelautan Kabupaten Sidoarjo'
@@ -174,7 +174,7 @@ class ProjectSeeder extends Seeder
                     'Pendanaan Riset Tugas Akhir Mandiri Unggulan 2025',
                     'Publikasi Jurnal Nasional Terakreditasi SINTA 3'
                 ],
-                'demo_level' => 'lokal',
+                'prestasi_level' => 'lokal',
                 'partners' => [
                     'PT Logistik Trans Nusantara Express',
                     'Asosiasi Pengusaha Logistik Daerah Surabaya'
@@ -218,7 +218,7 @@ class ProjectSeeder extends Seeder
                 'funding_awards' => [
                     'Pendanaan Innovillage 2024 sebesar Rp 14.127.223'
                 ],
-                'demo_level' => 'nasional',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'INNOVILLAGE 2024'
                 ],
@@ -271,7 +271,7 @@ class ProjectSeeder extends Seeder
                     'Pendanaan Program Holistik Pembinaan dan Pemberdayaan Desa (PHP2D) 2025',
                     'Juara Harapan 1 Lomba Inovasi Tani Muda Nasional'
                 ],
-                'demo_level' => 'nasional',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'Dinas Pertanian Kabupaten Sidoarjo',
                     'Gabungan Kelompok Tani (Gapoktan) Makmur Sejahtera'
@@ -322,7 +322,7 @@ class ProjectSeeder extends Seeder
                     'Medali Perunggu Pekan Ilmiah Mahasiswa Nasional (PIMNAS) 2025 Bidang Karsa Cipta',
                     'Pendanaan Prototipe Tugas Akhir Vokasi'
                 ],
-                'demo_level' => 'nasional',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'Yayasan Disabilitas Fisik Mandiri Surabaya',
                     'Laboratorium Sensor & Instrumentasi Universitas'
@@ -367,7 +367,7 @@ class ProjectSeeder extends Seeder
                     'Pendanaan PKM Karya Cipta (PKM-KC) Kemendikbudristek 2025',
                     'Sertifikat Paten Sederhana Metode Analisis Warna Buah'
                 ],
-                'demo_level' => 'lokal',
+                'prestasi_level' => 'lokal',
                 'partners' => [
                     'Perkebunan Buah Naga Subur Makmur Pasuruan',
                     'Asosiasi Hortikultura Jawa Timur'
@@ -415,7 +415,7 @@ class ProjectSeeder extends Seeder
                     'Juara 3 Lomba Karya Tulis Ilmiah Nasional (LKTIN) Inovasi Teknologi 2025',
                     'Pendanaan Akselerasi Inkubasi Bisnis Mahasiswa Universitas'
                 ],
-                'demo_level' => 'nasional',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'Puskesmas Kecamatan Sukolilo Surabaya',
                     'Yayasan Griya Lansia Wreda Surabaya'
@@ -464,7 +464,7 @@ class ProjectSeeder extends Seeder
                     'Hibah Penelitian Kolaborasi Dosen-Mahasiswa Fakultas Ilmu Komputer 2025',
                     'Juara Harapan 2 Lomba Aplikasi Edukasi Kreatif Nasional'
                 ],
-                'demo_level' => 'lokal',
+                'prestasi_level' => 'lokal',
                 'partners' => [
                     'Komunitas Ibu Cerdas Karsa Wanita Sidoarjo',
                     'Pedagang Rempah Tradisional Pasar Wonokromo'
@@ -512,7 +512,7 @@ class ProjectSeeder extends Seeder
                     'Pendanaan Hibah PKM Penerapan Iptek (PKM-PI) 2025',
                     'Peringkat 5 Nasional Mahasiswa Berprestasi Bidang Inovasi Infrastruktur'
                 ],
-                'demo_level' => 'nasional',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'Dinas Pekerjaan Umum, Bina Marga, dan Pengairan Kabupaten Sidoarjo',
                     'Balai Besar Pelaksanaan Jalan Nasional (BBPJN) Jawa Timur'
@@ -560,7 +560,7 @@ class ProjectSeeder extends Seeder
                     'Pendanaan Terpilih Social Project Nasional Innovilage Telkom 2025 (Kategori Top 10)',
                     'Juara 1 Lomba Cipta Teknologi Nasional untuk Disabilitas 2025'
                 ],
-                'demo_level' => 'internasional',
+                'prestasi_level' => 'internasional',
                 'partners' => [
                     'PT Telkom Indonesia (Persero) Tbk',
                     'DPC Persatuan Tunanetra Indonesia (PERTUNI) Surabaya'
@@ -605,7 +605,7 @@ class ProjectSeeder extends Seeder
                     'Penghargaan AWS Student Builder Award Nasional 2025',
                     'Publikasi Penelitian Jurnal Internasional Bereputasi Scopus Q4'
                 ],
-                'demo_level' => 'nasional',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'Amazon Web Services (AWS) Indonesia',
                     'Laboratorium Jaringan & Komputasi Awan'

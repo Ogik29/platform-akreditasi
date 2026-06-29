@@ -25,7 +25,7 @@
               {{ formatType(project.type) }}
             </span>
             <span class="badge badge-tkt">TKT Level: {{ project.tkt }}</span>
-            <span class="badge bg-secondary text-light text-capitalize">Demo: {{ project.demo_level }}</span>
+            <span class="badge bg-secondary text-light text-capitalize">Prestasi: {{ project.prestasi_level }}</span>
           </div>
 
           <!-- Description -->

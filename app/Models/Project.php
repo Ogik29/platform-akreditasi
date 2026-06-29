@@ -19,7 +19,7 @@ class Project extends Model
         'description',
         'features',
         'funding_awards',
-        'demo_level',
+        'prestasi_level',
         'partners',
         'team_members',
         'external_url',
