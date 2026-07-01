@@ -64,24 +64,26 @@
                                 Selamat datang di Platform Showcase Tugas Akhir
                                 dan Proyek Inovatif Mahasiswa Teknologi
                                 Informasi Telkom University Surabaya. Kami
-                                menampilkan hasil karya mahasiswa dengan Tingkat
-                                Kesiapan Teknologi (TKT) minimal Level 5 dari 3
-                                platform berbeda.
+                                menampilkan hasil karya terbaik mahasiswa dari 3
+                                platform berbeda dengan raihan prestasi nasional
+                                dan internasional.
                             </p>
 
                             <!-- Stats Counters -->
                             <div
                                 class="row justify-content-center g-2 g-sm-3 mt-4"
-                                style="max-width: 800px; margin: 0 auto"
+                                style="max-width: 960px; margin: 0 auto"
                             >
-                                <div class="col-4 fade-in-up anim-delay-400">
+                                <div
+                                    class="col-6 col-sm-4 col-lg fade-in-up anim-delay-400"
+                                >
                                     <div
                                         class="glass-card p-2 p-sm-3 text-center"
                                     >
                                         <h3
                                             class="fw-bold text-info mb-1 stats-number"
                                         >
-                                            13
+                                            {{ projects.length }}
                                         </h3>
                                         <small
                                             class="text-secondary d-block stats-label"
@@ -89,22 +91,62 @@
                                         >
                                     </div>
                                 </div>
-                                <div class="col-4 fade-in-up anim-delay-500">
+                                <div
+                                    class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
+                                >
+                                    <div
+                                        class="glass-card p-2 p-sm-3 text-center"
+                                    >
+                                        <h3
+                                            class="fw-bold mb-1 stats-number"
+                                            style="color: #60a5fa"
+                                        >
+                                            {{ totalNasional }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Prestasi Nasional</small
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
+                                >
+                                    <div
+                                        class="glass-card p-2 p-sm-3 text-center"
+                                    >
+                                        <h3
+                                            class="fw-bold mb-1 stats-number"
+                                            style="color: #a78bfa"
+                                        >
+                                            {{ totalInternasional }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Prestasi Internasional</small
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
+                                >
                                     <div
                                         class="glass-card p-2 p-sm-3 text-center"
                                     >
                                         <h3
                                             class="fw-bold text-warning mb-1 stats-number"
                                         >
-                                            Min 5
+                                            {{ totalMitra }}
                                         </h3>
                                         <small
                                             class="text-secondary d-block stats-label"
-                                            >TKT Level</small
+                                            >Total Mitra</small
                                         >
                                     </div>
                                 </div>
-                                <div class="col-4 fade-in-up anim-delay-500">
+                                <div
+                                    class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
+                                >
                                     <div
                                         class="glass-card p-2 p-sm-3 text-center"
                                     >
@@ -179,7 +221,101 @@
                                 </div>
                             </div>
 
-                            <!-- Category Buttons Row -->
+                            <!-- Bidang Teknologi Filter -->
+                            <div
+                                class="mt-4 pt-3 border-top border-secondary border-opacity-10"
+                            >
+                                <label
+                                    class="text-secondary small fw-bold mb-3 d-block uppercase-tracking"
+                                    >Bidang Teknologi</label
+                                >
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button
+                                        type="button"
+                                        @click="selectedTechField = 'all'"
+                                        :class="[
+                                            'btn-filter',
+                                            selectedTechField === 'all'
+                                                ? 'active'
+                                                : '',
+                                        ]"
+                                    >
+                                        <span class="btn-filter-icon">✨</span>
+                                        Semua Bidang
+                                    </button>
+                                    <button
+                                        type="button"
+                                        @click="selectedTechField = 'AI'"
+                                        :class="[
+                                            'btn-filter btn-filter-ai',
+                                            selectedTechField === 'AI'
+                                                ? 'active'
+                                                : '',
+                                        ]"
+                                    >
+                                        <span class="btn-filter-icon">🤖</span>
+                                        AI
+                                    </button>
+                                    <button
+                                        type="button"
+                                        @click="selectedTechField = 'IoT'"
+                                        :class="[
+                                            'btn-filter btn-filter-iot',
+                                            selectedTechField === 'IoT'
+                                                ? 'active'
+                                                : '',
+                                        ]"
+                                    >
+                                        <span class="btn-filter-icon">📡</span>
+                                        IoT
+                                    </button>
+                                    <button
+                                        type="button"
+                                        @click="selectedTechField = 'VR/AR'"
+                                        :class="[
+                                            'btn-filter btn-filter-vrar',
+                                            selectedTechField === 'VR/AR'
+                                                ? 'active'
+                                                : '',
+                                        ]"
+                                    >
+                                        <span class="btn-filter-icon">🥽</span>
+                                        VR/AR
+                                    </button>
+                                    <button
+                                        type="button"
+                                        @click="
+                                            selectedTechField =
+                                                'Networking & Cyber Security'
+                                        "
+                                        :class="[
+                                            'btn-filter btn-filter-ncs',
+                                            selectedTechField ===
+                                            'Networking & Cyber Security'
+                                                ? 'active'
+                                                : '',
+                                        ]"
+                                    >
+                                        <span class="btn-filter-icon">🔐</span>
+                                        Networking &amp; Cyber Security
+                                    </button>
+                                    <button
+                                        type="button"
+                                        @click="selectedTechField = 'Others'"
+                                        :class="[
+                                            'btn-filter btn-filter-others',
+                                            selectedTechField === 'Others'
+                                                ? 'active'
+                                                : '',
+                                        ]"
+                                    >
+                                        <span class="btn-filter-icon">🔬</span>
+                                        Others
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Jenis Platform Filter -->
                             <div
                                 class="mt-4 pt-3 border-top border-secondary border-opacity-10"
                             >
@@ -354,10 +490,6 @@
                                                 >
                                             </div>
                                         </div>
-                                        <span
-                                            class="badge badge-premium badge-tkt flex-shrink-0"
-                                            >TKT {{ project.tkt }}</span
-                                        >
                                     </div>
 
                                     <!-- Tagline -->
@@ -382,6 +514,31 @@
 
                                 <!-- Card Footer Buttons -->
                                 <div>
+                                    <!-- Tech field badge -->
+                                    <div class="mb-2">
+                                        <span
+                                            :class="[
+                                                'badge badge-tech-field',
+                                                'badge-tech-' +
+                                                    (
+                                                        project.tech_field ||
+                                                        'others'
+                                                    )
+                                                        .toLowerCase()
+                                                        .replace(
+                                                            /[^a-z]/g,
+                                                            '-',
+                                                        ),
+                                            ]"
+                                        >
+                                            {{
+                                                getTechFieldIcon(
+                                                    project.tech_field,
+                                                )
+                                            }}
+                                            {{ project.tech_field || "Others" }}
+                                        </span>
+                                    </div>
                                     <div
                                         class="d-flex justify-content-between align-items-center border-top border-secondary border-opacity-20 pt-3 mb-3"
                                     >
@@ -397,7 +554,9 @@
                                             Prestasi:
                                             <span
                                                 class="text-capitalize fw-bold text-white"
-                                                >{{ project.prestasi_level }}</span
+                                                >{{
+                                                    project.prestasi_level
+                                                }}</span
                                             >
                                         </span>
                                     </div>
@@ -519,10 +678,6 @@
                                     {{ formatType(selectedProject.type) }}
                                 </span>
                                 <span
-                                    class="badge badge-premium badge-tkt py-2 px-3"
-                                    >TKT Level {{ selectedProject.tkt }}</span
-                                >
-                                <span
                                     class="badge bg-secondary bg-opacity-20 border border-secondary border-opacity-35 text-white py-2 px-3 text-capitalize"
                                     style="font-size: 0.75rem"
                                     >Prestasi:
@@ -608,7 +763,7 @@
 
                             <!-- Screenshots Grid (Mobile-based) -->
                             <div
-                                v-else-if="selectedProject.type === 'mobile'"
+                                v-if="selectedProject.type === 'mobile'"
                                 class="glass-card p-4 mb-4"
                             >
                                 <h4
@@ -675,8 +830,9 @@
                                             >
                                                 <img
                                                     :src="scr"
-                                                    class="img-fluid rounded shadow-sm screenshot-static-img"
+                                                    class="img-fluid rounded shadow-sm screenshot-static-img lightbox-trigger"
                                                     alt="Screenshot"
+                                                    @click="openLightbox(scr)"
                                                 />
                                             </div>
                                         </div>
@@ -720,20 +876,17 @@
                                 </div>
                             </div>
 
-                            <!-- Video / Hardware Demo (Hardware-based) -->
+                            <!-- Video / Demonstration (Show if video_url is present, regardless of type) -->
                             <div
-                                v-else-if="selectedProject.type === 'hardware'"
+                                v-if="selectedProject.video_url"
                                 class="glass-card p-4 mb-4"
                             >
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span>🎬 Video Dokumentasi Alat</span>
+                                    <span>🎬 Video Dokumentasi &amp; Demo</span>
                                 </h4>
-                                <div
-                                    class="video-container"
-                                    v-if="selectedProject.video_url"
-                                >
+                                <div class="video-container">
                                     <iframe
                                         :src="
                                             getEmbedUrl(
@@ -752,7 +905,18 @@
                                         allowfullscreen
                                     ></iframe>
                                 </div>
-                                <div v-else class="text-center py-5">
+                            </div>
+                            <!-- Fallback for Hardware-based projects without video_url -->
+                            <div
+                                v-else-if="selectedProject.type === 'hardware'"
+                                class="glass-card p-4 mb-4"
+                            >
+                                <h4
+                                    class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
+                                >
+                                    <span>🎬 Video Dokumentasi Alat</span>
+                                </h4>
+                                <div class="text-center py-5">
                                     <span class="fs-1 d-block mb-3">🛠️</span>
                                     <h5 class="text-white fw-bold">
                                         Prototipe Fisik &amp; Integrasi
@@ -770,12 +934,11 @@
                                 </div>
                             </div>
 
-                            <!-- Documentation Photos (Hardware-based) -->
+                            <!-- Documentation Photos (Any project type with documentations) -->
                             <div
                                 v-if="
-                                    selectedProject.type === 'hardware' &&
-                                    selectedProject.screenshots &&
-                                    selectedProject.screenshots.length > 0
+                                    selectedProject.documentations &&
+                                    selectedProject.documentations.length > 0
                                 "
                                 class="glass-card p-4 mb-4"
                             >
@@ -788,13 +951,13 @@
                                     <!-- Left scroll button -->
                                     <button
                                         v-if="
-                                            selectedProject.screenshots.length >
+                                            selectedProject.documentations.length >
                                             3
                                         "
                                         @click="
                                             scrollCarousel(
                                                 'left',
-                                                'hardwareCarousel',
+                                                'documentationCarousel',
                                             )
                                         "
                                         class="btn-carousel-nav btn-carousel-nav-left"
@@ -817,7 +980,114 @@
 
                                     <!-- Scroller container -->
                                     <div
-                                        ref="hardwareCarousel"
+                                        ref="documentationCarousel"
+                                        class="screenshots-carousel-container"
+                                        :class="{
+                                            'justify-content-center':
+                                                selectedProject.documentations
+                                                    .length <= 3,
+                                        }"
+                                    >
+                                        <div
+                                            v-for="(
+                                                scr, idx
+                                            ) in selectedProject.documentations"
+                                            :key="idx"
+                                            class="screenshot-carousel-item hardware-item text-center"
+                                        >
+                                            <div
+                                                class="screenshot-wrapper p-2 bg-dark bg-opacity-25 rounded border border-secondary border-opacity-30"
+                                            >
+                                                <img
+                                                    :src="scr"
+                                                    class="img-fluid rounded shadow-sm screenshot-static-img lightbox-trigger"
+                                                    alt="Dokumentasi"
+                                                    @click="openLightbox(scr)"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right scroll button -->
+                                    <button
+                                        v-if="
+                                            selectedProject.documentations.length >
+                                            3
+                                        "
+                                        @click="
+                                            scrollCarousel(
+                                                'right',
+                                                'documentationCarousel',
+                                            )
+                                        "
+                                        class="btn-carousel-nav btn-carousel-nav-right"
+                                        aria-label="Scroll Right"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Landscape Screenshots (Web or Hardware with screenshots) -->
+                            <div
+                                v-if="
+                                    selectedProject.type !== 'mobile' &&
+                                    selectedProject.screenshots &&
+                                    selectedProject.screenshots.length > 0
+                                "
+                                class="glass-card p-4 mb-4"
+                            >
+                                <h4
+                                    class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
+                                >
+                                    <span>📸 Pratinjau Antarmuka Platform</span>
+                                </h4>
+                                <div class="screenshots-slider-wrapper">
+                                    <!-- Left scroll button -->
+                                    <button
+                                        v-if="
+                                            selectedProject.screenshots.length >
+                                            3
+                                        "
+                                        @click="
+                                            scrollCarousel(
+                                                'left',
+                                                'landscapeScreenshotsCarousel',
+                                            )
+                                        "
+                                        class="btn-carousel-nav btn-carousel-nav-left"
+                                        aria-label="Scroll Left"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-chevron-left"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                            />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Scroller container -->
+                                    <div
+                                        ref="landscapeScreenshotsCarousel"
                                         class="screenshots-carousel-container"
                                         :class="{
                                             'justify-content-center':
@@ -837,8 +1107,9 @@
                                             >
                                                 <img
                                                     :src="scr"
-                                                    class="img-fluid rounded shadow-sm screenshot-static-img"
-                                                    alt="Dokumentasi"
+                                                    class="img-fluid rounded shadow-sm screenshot-static-img lightbox-trigger"
+                                                    alt="Pratinjau"
+                                                    @click="openLightbox(scr)"
                                                 />
                                             </div>
                                         </div>
@@ -853,7 +1124,7 @@
                                         @click="
                                             scrollCarousel(
                                                 'right',
-                                                'hardwareCarousel',
+                                                'landscapeScreenshotsCarousel',
                                             )
                                         "
                                         class="btn-carousel-nav btn-carousel-nav-right"
@@ -916,32 +1187,35 @@
                                             }}</span
                                         >
                                     </div>
-                                    <hr
-                                        class="my-2 border-secondary border-opacity-10"
-                                    />
                                     <div>
                                         <span
                                             class="text-secondary d-block small mb-1"
-                                            >Tingkat Kesiapan Teknologi</span
+                                            >Bidang Teknologi</span
                                         >
                                         <span
-                                            class="text-white fw-bold d-flex align-items-center gap-2"
-                                        >
-                                            <span
-                                                class="badge bg-dark border border-secondary text-info"
-                                                >TKT
-                                                {{ selectedProject.tkt }}</span
-                                            >
-                                            <small
-                                                class="text-secondary"
-                                                style="font-size: 0.8rem"
-                                            >
-                                                {{
-                                                    getTktExplanation(
-                                                        selectedProject.tkt,
+                                            :class="[
+                                                'badge badge-tech-field mt-1',
+                                                'badge-tech-' +
+                                                    (
+                                                        selectedProject.tech_field ||
+                                                        'others'
                                                     )
-                                                }}
-                                            </small>
+                                                        .toLowerCase()
+                                                        .replace(
+                                                            /[^a-z]/g,
+                                                            '-',
+                                                        ),
+                                            ]"
+                                        >
+                                            {{
+                                                getTechFieldIcon(
+                                                    selectedProject.tech_field,
+                                                )
+                                            }}
+                                            {{
+                                                selectedProject.tech_field ||
+                                                "Others"
+                                            }}
                                         </span>
                                     </div>
                                     <hr
@@ -1098,15 +1372,26 @@
                                 <div
                                     class="team-member-card h-100 d-flex flex-column align-items-center text-center"
                                 >
-                                    <!-- Custom Initials Avatar -->
-                                    <div
-                                        class="team-avatar d-flex justify-content-center align-items-center text-white fw-bold fs-4 mb-3"
-                                    >
-                                        {{
-                                            member.nickname
-                                                .substring(0, 2)
-                                                .toUpperCase()
-                                        }}
+                                    <!-- Photo/Avatar Container -->
+                                    <div class="team-avatar-container mb-3 position-relative">
+                                        <div class="team-avatar-ring"></div>
+                                        <img
+                                            v-if="member.photo && hasRealPhoto(member.photo)"
+                                            :src="member.photo"
+                                            :alt="member.nickname"
+                                            class="team-avatar-img"
+                                        />
+                                        <!-- Custom Initials Avatar -->
+                                        <div
+                                            v-else
+                                            class="team-avatar d-flex justify-content-center align-items-center text-white fw-bold fs-4"
+                                        >
+                                            {{
+                                                member.nickname
+                                                    .substring(0, 2)
+                                                    .toUpperCase()
+                                            }}
+                                        </div>
                                     </div>
                                     <h5
                                         class="text-white fw-bold mb-1 text-truncate w-100"
@@ -1135,13 +1420,13 @@
                                             v-if="member.linkedin"
                                             :href="member.linkedin"
                                             target="_blank"
-                                            class="text-info hover-scale"
+                                            class="social-icon-btn"
                                             title="LinkedIn"
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                width="18"
-                                                height="18"
+                                                width="16"
+                                                height="16"
                                                 fill="currentColor"
                                                 class="bi bi-linkedin"
                                                 viewBox="0 0 16 16"
@@ -1160,13 +1445,13 @@
                                                 member.social_media.instagram
                                             "
                                             target="_blank"
-                                            class="text-danger hover-scale"
+                                            class="social-icon-btn"
                                             title="Instagram"
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                width="18"
-                                                height="18"
+                                                width="16"
+                                                height="16"
                                                 fill="currentColor"
                                                 class="bi bi-instagram"
                                                 viewBox="0 0 16 16"
@@ -1530,6 +1815,30 @@
             </div>
         </div>
     </div>
+
+    <!-- Lightbox Overlay -->
+    <Transition name="lightbox">
+        <div
+            v-if="isLightboxOpen"
+            class="lightbox-overlay"
+            @click.self="closeLightbox"
+            @keydown.esc="closeLightbox"
+            tabindex="0"
+            ref="lightboxOverlay"
+        >
+            <button class="lightbox-close" @click="closeLightbox" aria-label="Tutup">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+            </button>
+            <img
+                :src="lightboxImage"
+                class="lightbox-img"
+                alt="Preview"
+                @click.stop
+            />
+        </div>
+    </Transition>
 </template>
 
 <script>
@@ -1551,6 +1860,7 @@ export default {
             projects: this.initialProjects,
             searchQuery: "",
             selectedType: "all",
+            selectedTechField: "all",
             selectedSupervisor: "all",
             selectedProject: null,
             activeMobileProject: null,
@@ -1560,6 +1870,8 @@ export default {
             videoModalInstance: null,
             currentView: "grid",
             isTransitioning: false,
+            isLightboxOpen: false,
+            lightboxImage: null,
         };
     },
     mounted() {
@@ -1615,12 +1927,50 @@ export default {
                 const matchesSupervisor =
                     this.selectedSupervisor === "all" ||
                     project.supervisor === this.selectedSupervisor;
+                const matchesTechField =
+                    this.selectedTechField === "all" ||
+                    project.tech_field === this.selectedTechField;
 
-                return matchesSearch && matchesType && matchesSupervisor;
+                return (
+                    matchesSearch &&
+                    matchesType &&
+                    matchesSupervisor &&
+                    matchesTechField
+                );
             });
+        },
+        totalNasional() {
+            return this.projects.filter((p) => p.prestasi_level === "nasional")
+                .length;
+        },
+        totalInternasional() {
+            return this.projects.filter(
+                (p) => p.prestasi_level === "internasional",
+            ).length;
+        },
+        totalMitra() {
+            return this.projects.reduce(
+                (sum, p) => sum + (p.partners ? p.partners.length : 0),
+                0,
+            );
         },
     },
     methods: {
+        openLightbox(imageSrc) {
+            this.lightboxImage = imageSrc;
+            this.isLightboxOpen = true;
+            this.$nextTick(() => {
+                if (this.$refs.lightboxOverlay) {
+                    this.$refs.lightboxOverlay.focus();
+                }
+            });
+            document.body.style.overflow = 'hidden';
+        },
+        closeLightbox() {
+            this.isLightboxOpen = false;
+            this.lightboxImage = null;
+            document.body.style.overflow = '';
+        },
         getTypeBadgeClass(type) {
             if (type === "web") return "badge-web";
             if (type === "mobile") return "badge-mobile";
@@ -1710,20 +2060,6 @@ export default {
             };
             return supervisors[code] || code;
         },
-        getTktExplanation(tkt) {
-            const tktExplanations = {
-                1: "Prinsip dasar diteliti dan dilaporkan",
-                2: "Formulasi konsep teknologi / aplikasi",
-                3: "Pembuktian konsep fungsi secara analitis & eksperimental",
-                4: "Validasi komponen dalam lingkungan laboratorium",
-                5: "Validasi komponen dalam lingkungan relevan",
-                6: "Demonstrasi model/prototipe dalam lingkungan relevan",
-                7: "Demonstrasi prototipe sistem dalam lingkungan operasional",
-                8: "Sistem telah lengkap dan memenuhi kualifikasi",
-                9: "Sistem terbukti sukses dalam lingkungan operasional aktual",
-            };
-            return tktExplanations[tkt] || `Level ${tkt}`;
-        },
         getEmbedUrl(url) {
             if (!url) return "";
 
@@ -1786,7 +2122,22 @@ export default {
         resetFilters() {
             this.searchQuery = "";
             this.selectedType = "all";
+            this.selectedTechField = "all";
             this.selectedSupervisor = "all";
+        },
+        getTechFieldIcon(field) {
+            const icons = {
+                AI: "🤖",
+                IoT: "📡",
+                "VR/AR": "🥽",
+                "Networking & Cyber Security": "🔐",
+                Others: "🔬",
+            };
+            return icons[field] || "🔬";
+        },
+        hasRealPhoto(photo) {
+            if (!photo) return false;
+            return photo.startsWith("/") || photo.includes("/") || photo.includes("\\");
         },
     },
 };

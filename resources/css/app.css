@@ -240,6 +240,89 @@ h6 {
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
+/* ── Tech Field Badges ── */
+.badge-tech-field {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.badge-tech-ai {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(167, 139, 250, 0.12) 100%) !important;
+    color: #a78bfa !important;
+    border: 1px solid rgba(139, 92, 246, 0.35) !important;
+}
+
+.badge-tech-iot {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(34, 211, 238, 0.12) 100%) !important;
+    color: #22d3ee !important;
+    border: 1px solid rgba(6, 182, 212, 0.35) !important;
+}
+
+.badge-tech-networking---cyber-security {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(251, 146, 60, 0.12) 100%) !important;
+    color: #fb923c !important;
+    border: 1px solid rgba(249, 115, 22, 0.35) !important;
+}
+
+.badge-tech-others {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(74, 222, 128, 0.12) 100%) !important;
+    color: #4ade80 !important;
+    border: 1px solid rgba(34, 197, 94, 0.35) !important;
+}
+
+.badge-tech-vr-ar {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.2) 0%, rgba(168, 85, 247, 0.12) 100%) !important;
+    color: #e879f9 !important;
+    border: 1px solid rgba(236, 72, 153, 0.35) !important;
+}
+
+/* Tech field filter button active variants */
+.btn-filter-ai.active,
+.btn-filter-ai:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(167, 139, 250, 0.15) 100%) !important;
+    border-color: rgba(139, 92, 246, 0.5) !important;
+    color: #a78bfa !important;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2) !important;
+}
+
+.btn-filter-iot.active,
+.btn-filter-iot:hover {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, rgba(34, 211, 238, 0.15) 100%) !important;
+    border-color: rgba(6, 182, 212, 0.5) !important;
+    color: #22d3ee !important;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2) !important;
+}
+
+.btn-filter-ncs.active,
+.btn-filter-ncs:hover {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.25) 0%, rgba(251, 146, 60, 0.15) 100%) !important;
+    border-color: rgba(249, 115, 22, 0.5) !important;
+    color: #fb923c !important;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2) !important;
+}
+
+.btn-filter-others.active,
+.btn-filter-others:hover {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.25) 0%, rgba(74, 222, 128, 0.15) 100%) !important;
+    border-color: rgba(34, 197, 94, 0.5) !important;
+    color: #4ade80 !important;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2) !important;
+}
+
+.btn-filter-vrar.active,
+.btn-filter-vrar:hover {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.25) 0%, rgba(168, 85, 247, 0.15) 100%) !important;
+    border-color: rgba(236, 72, 153, 0.5) !important;
+    color: #e879f9 !important;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2) !important;
+}
+
 /* Custom form inputs & filters */
 .form-control-custom,
 .form-select-custom {
@@ -351,29 +434,120 @@ h6 {
     color: var(--text-secondary) !important;
 }
 
+/* ── Modern Team Innovator Card Styling ── */
 .team-member-card {
-    background: rgba(255, 255, 255, 0.02) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    border-radius: 16px;
-    padding: 16px;
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 20px;
+    padding: 24px 20px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.team-member-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .team-member-card:hover {
-    background: rgba(255, 255, 255, 0.04) !important;
-    border-color: rgba(148, 163, 184, 0.2) !important;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+    border-color: rgba(99, 102, 241, 0.3) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 15px rgba(99, 102, 241, 0.1);
+}
+
+.team-avatar-container {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    z-index: 1;
+}
+
+.team-avatar-ring {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.5) 0%, rgba(45, 212, 191, 0.3) 100%);
+    z-index: 0;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.team-member-card:hover .team-avatar-ring {
+    transform: rotate(180deg);
+    opacity: 1;
+    background: linear-gradient(135deg, #6366f1 0%, #2dd4bf 100%);
+}
+
+.team-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #111827;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .team-avatar {
-    width: 48px;
-    height: 48px;
+    width: 100% !important;
+    height: 100% !important;
     border-radius: 50%;
-    background: linear-gradient(135deg, #e2e8f0 0%, #64748b 100%);
-    color: #0f172a !important;
-    font-weight: 700;
-    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: #6366f1 !important;
+    border: 3px solid #111827;
+    position: relative;
+    z-index: 1;
+    font-size: 1.5rem !important;
+}
+
+.team-member-card h5,
+.team-member-card h6 {
+    position: relative;
+    z-index: 1;
+}
+
+.team-member-card p,
+.team-member-card small {
+    position: relative;
+    z-index: 1;
+}
+
+/* Styled social links for innovators */
+.social-icon-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: #e2e8f0 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon-btn:hover {
+    background: rgba(99, 102, 241, 0.25) !important;
+    border-color: rgba(99, 102, 241, 0.6) !important;
+    color: #ffffff !important;
+    transform: translateY(-3px) scale(1.12);
+    box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3), 0 0 12px rgba(99, 102, 241, 0.2) !important;
 }
 
 /* Phone Emulator Frame */
@@ -1033,5 +1207,84 @@ html {
 
 .loader-fade-enter-from,
 .loader-fade-leave-to {
+    opacity: 0;
+}
+
+/* =============================
+   Lightbox Overlay
+   ============================= */
+.lightbox-trigger {
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lightbox-trigger:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(6px);
+    outline: none;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
+    animation: lightboxZoomIn 0.25s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes lightboxZoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f8fafc;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: scale(1.1);
+}
+
+/* Vue <Transition name="lightbox"> animations */
+.lightbox-enter-active,
+.lightbox-leave-active {
+    transition: opacity 0.25s ease;
+}
+
+.lightbox-enter-from,
+.lightbox-leave-to {
     opacity: 0;
 }

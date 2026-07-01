@@ -13,18 +13,19 @@ class Project extends Model
         'name',
         'supervisor',
         'type',
-        'tkt',
         'logo',
         'tagline',
         'description',
         'features',
         'funding_awards',
+        'tech_field',
         'prestasi_level',
         'partners',
         'team_members',
         'external_url',
         'video_url',
         'screenshots',
+        'documentations',
     ];
 
     protected $casts = [
@@ -33,6 +34,6 @@ class Project extends Model
         'partners' => 'array',
         'team_members' => 'array',
         'screenshots' => 'array',
-        'tkt' => 'integer',
+        'documentations' => 'array',
     ];
 }

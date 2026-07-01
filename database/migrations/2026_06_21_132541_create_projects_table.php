@@ -16,18 +16,19 @@ return new class extends Migration
             $table->string('name');
             $table->string('supervisor'); // MDB, FZK, MUN, YOH, CAP
             $table->enum('type', ['web', 'mobile', 'hardware']);
-            $table->integer('tkt')->default(5);
             $table->string('logo')->nullable();
             $table->string('tagline')->nullable();
             $table->text('description')->nullable();
             $table->json('features')->nullable(); // array of features
             $table->json('funding_awards')->nullable(); // array of awards/funding
-            $table->string('prestasi_level')->default('lokal'); // lokal, nasional, internasional
+            $table->enum('tech_field', ['AI', 'Networking & Cyber Security', 'IoT', 'VR/AR', 'Others'])->default('Others');
+            $table->string('prestasi_level')->default('nasional'); // nasional, internasional
             $table->json('partners')->nullable(); // array of partners
             $table->json('team_members')->nullable(); // array of members
             $table->string('external_url')->nullable(); // for web
             $table->string('video_url')->nullable(); // for hardware
             $table->json('screenshots')->nullable(); // for mobile
+            $table->json('documentations')->nullable(); // for documentation photos
             $table->timestamps();
         });
     }

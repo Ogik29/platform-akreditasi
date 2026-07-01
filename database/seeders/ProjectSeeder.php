@@ -17,52 +17,54 @@ class ProjectSeeder extends Seeder
                 'name' => 'SIGAP',
                 'supervisor' => 'MDB',
                 'type' => 'web',
-                'tkt' => 6,
-                'logo' => 'sigap.svg',
-                'tagline' => 'Sistem Informasi Siaga & Tanggap Bencana Terintegrasi',
-                'description' => 'SIGAP adalah platform koordinasi tanggap darurat yang menghubungkan masyarakat, tim penyelamat, dan pemerintah dalam memantau wilayah bencana serta mengoordinasikan logistik bantuan secara real-time.',
+                'logo' => null,
+                'tagline' => 'Sistem Perlindungan Darurat & Pelaporan Kekerasan Seksual Berbasis AI',
+                'description' => 'SIGAP adalah aplikasi mobile darurat yang dirancang untuk melindungi korban kekerasan seksual. Dilengkapi tombol SOS satu sentuh dengan perekaman audio real-time, pelacak GPS berkala, chatbot AI pendamping, dan portal admin & psikolog untuk manajemen laporan secara menyeluruh.',
                 'features' => [
-                    'Peta Sebaran Bencana Real-Time dengan GIS',
-                    'Manajemen Logistik & Bantuan Berbasis Status Pengiriman',
-                    'Panic Button & Pelaporan Bencana oleh Warga',
-                    'Notifikasi Evakuasi Cepat Berbasis SMS/Push Notification'
+                    'Pelaporan kekerasan seksual dengan kode pelacak unik (tracking code)',
+                    'Fitur Darurat SOS — tombol satu sentuh dengan perekaman audio otomatis real-time & notifikasi instan ke admin',
+                    'Pembaruan lokasi GPS korban secara periodik saat mode darurat aktif',
+                    'Mode Pantau — sesi pemantauan dengan check-in GPS berkala (heartbeat)',
+                    'Portal Admin & Psikolog — manajemen siklus laporan terintegrasi',
+                    'Chatbot AI pendamping untuk dukungan awal korban'
                 ],
                 'funding_awards' => [
-                    'Pendanaan Hibah Program Kreativitas Mahasiswa (PKM-GF) Kemendikbudristek 2025',
-                    'Peringkat 3 Inovasi Teknologi Penanggulangan Bencana Provinsi Jawa Timur'
+                    'Juara 2 — Essay and Business Plan Competition in Edutalk Fair Competition 2026, Universitas Diponegoro',
+                    'Gold Medal — Essay and Business Plan Competition in Edutalk Fair Competition 2026, Universitas Diponegoro',
+                    'Best Idea — Essay and Business Plan Competition in Edutalk Fair Competition 2026, Universitas Diponegoro',
+                    'Juara 1 — National Essay Competition (NEC) 2026, Paguyuban Karya Salemba Empat Universitas Hasanuddin',
+                    'Juara 2 — Hackathon ExplorAItion Batch 5 Jagoanhosting Garudaspark'
                 ],
+                'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
-                'partners' => [
-                    'BPBD Provinsi Jawa Timur',
-                    'Badan SAR Nasional (BASARNAS) Surabaya'
-                ],
+                'partners' => [],
                 'team_members' => [
                     [
-                        'nickname' => 'Ahmad',
-                        'fullname' => 'Ahmad Ramadhan',
-                        'role' => 'Project Lead & Backend Developer',
-                        'photo' => 'avatar1.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/', 'twitter' => 'https://twitter.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'nickname' => 'Sulthonika',
+                        'fullname' => 'Sulthonika Mahfudz Al Mujahidin',
+                        'role' => 'Team Lead & Mobile Developer',
+                        'photo' => '/img/sigap/sulthon.jpg',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/sulthonika_/'],
+                        'linkedin' => null
                     ],
                     [
-                        'nickname' => 'Budi',
-                        'fullname' => 'Budi Santoso',
-                        'role' => 'Frontend Developer',
-                        'photo' => 'avatar2.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'nickname' => 'Alifia',
+                        'fullname' => 'Nur Alifia Rustan',
+                        'role' => 'UI/UX Designer & Frontend Developer',
+                        'photo' => '/img/sigap/alifia.jpg',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/nralifial/'],
+                        'linkedin' => null
                     ],
                     [
-                        'nickname' => 'Cici',
-                        'fullname' => 'Cici Paramida',
-                        'role' => 'UI/UX Designer',
-                        'photo' => 'avatar3.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'nickname' => 'Michael',
+                        'fullname' => 'Michael Angello Qadosy Riyadi',
+                        'role' => 'Backend Developer & AI Integration',
+                        'photo' => '/img/sigap/michael.jpg',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/nnichael.angello/'],
+                        'linkedin' => 'https://www.linkedin.com/in/michaelangelloqr?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn8BjhOy-gZMw4fxRy3TE-vSXRN6n1XywWWlhfk2MNC_h4YUow9K0ZPmqowNw_aem_ul7gB8QS9dWqQ8-bBmmtuA'
                     ]
                 ],
-                'external_url' => 'https://sigap-emergency.netlify.app',
+                'external_url' => 'http://sigap.it-showcase.tusbind.ac.id',
                 'video_url' => null,
                 'screenshots' => null
             ],
@@ -70,7 +72,6 @@ class ProjectSeeder extends Seeder
                 'name' => 'TA Peres',
                 'supervisor' => 'MDB',
                 'type' => 'web',
-                'tkt' => 5,
                 'logo' => 'peres.svg',
                 'tagline' => 'Platform Analisis & Prediksi Kelayakan Kredit Mikro',
                 'description' => 'Platform cerdas berbasis web untuk membantu Koperasi dan Lembaga Keuangan Mikro menilai kelayakan kredit calon debitur menggunakan algoritma Machine Learning XGBoost secara akurat.',
@@ -84,7 +85,8 @@ class ProjectSeeder extends Seeder
                     'Pendanaan Skema Tugas Akhir Unggulan Universitas 2025',
                     'Sertifikasi Hak Cipta Program Komputer Kementerian Hukum & HAM'
                 ],
-                'prestasi_level' => 'lokal',
+                'tech_field' => 'AI',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'Koperasi Simpan Pinjam Mitra Mandiri Sidoarjo',
                     'Bank Pembangunan Daerah Jawa Timur (Bank Jatim)'
@@ -115,7 +117,6 @@ class ProjectSeeder extends Seeder
                 'name' => 'TA Rizal',
                 'supervisor' => 'MDB',
                 'type' => 'web',
-                'tkt' => 5,
                 'logo' => 'rizal.svg',
                 'tagline' => 'Web Dashboard Monitoring Kualitas Air Tambak Pintar Berbasis IoT',
                 'description' => 'Dashboard web interaktif untuk memonitor parameter kualitas air tambak udang (pH, salinitas, suhu, dan kadar oksigen terlarut) secara real-time yang terhubung dengan sensor IoT di lapangan.',
@@ -129,7 +130,8 @@ class ProjectSeeder extends Seeder
                     'Juara 2 Kompetisi Inovasi Teknologi Tepat Guna Tingkat Regional',
                     'Pendanaan Hibah Inovasi Tugas Akhir Vokasi'
                 ],
-                'prestasi_level' => 'lokal',
+                'tech_field' => 'IoT',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'Kelompok Petani Tambak Udang Windu Sidoarjo',
                     'Dinas Perikanan dan Kelautan Kabupaten Sidoarjo'
@@ -157,55 +159,56 @@ class ProjectSeeder extends Seeder
                 'screenshots' => null
             ],
             [
-                'name' => 'TA Steven',
+                'name' => 'Wongponik',
                 'supervisor' => 'MDB',
-                'type' => 'web',
-                'tkt' => 6,
-                'logo' => 'steven.svg',
-                'tagline' => 'Optimasi Rute Distribusi Logistik Menggunakan Genetic Algorithm',
-                'description' => 'Sistem Informasi Geografis (SIG) berbasis web untuk merencanakan dan mengoptimalkan rute perjalanan armada logistik multi-kendaraan guna menghemat biaya operasional dan konsumsi bahan bakar.',
+                'type' => 'mobile',
+                'logo' => '/img/ta-steven/logo_wongponik.png',
+                'tagline' => 'Sistem Monitoring & Deteksi Anomali Sensor Hidroponik',
+                'description' => 'Wongponik adalah platform monitoring budidaya tanaman hidroponik berbasis mobile terintegrasi IoT untuk melakukan deteksi anomali pada sensor secara real-time. Dengan pendeteksian dini terhadap ketidakwajaran data sensor (suhu, pH, nutrisi), petani dapat mencegah kegagalan panen dan menjaga kualitas tanaman secara optimal.',
                 'features' => [
-                    'Penghitungan Rute Tercepat Menggunakan Algoritma Genetika & Google Maps API',
-                    'Manajemen Kapasitas Muatan Kendaraan (Capacitated Vehicle Routing Problem)',
-                    'Visualisasi Rute Terbaik Langsung Pada Peta Interaktif',
-                    'Estimasi Biaya Bahan Bakar dan Estimasi Waktu Tiba (ETA)'
+                    'Anomaly Detection pada data sensor secara real-time berbasis IoT',
+                    'Monitoring parameter penting hidroponik (suhu air, pH, dan kepekatan nutrisi/TDS)',
+                    'Notifikasi peringatan dini otomatis ketika mendeteksi pembacaan sensor yang tidak wajar'
                 ],
-                'funding_awards' => [
-                    'Pendanaan Riset Tugas Akhir Mandiri Unggulan 2025',
-                    'Publikasi Jurnal Nasional Terakreditasi SINTA 3'
-                ],
-                'prestasi_level' => 'lokal',
-                'partners' => [
-                    'PT Logistik Trans Nusantara Express',
-                    'Asosiasi Pengusaha Logistik Daerah Surabaya'
-                ],
+                'funding_awards' => [],
+                'tech_field' => 'IoT',
+                'prestasi_level' => 'nasional',
+                'partners' => [],
                 'team_members' => [
                     [
                         'nickname' => 'Steven',
-                        'fullname' => 'Steven Wijaya',
-                        'role' => 'Algorithm & Optimization Specialist',
-                        'photo' => 'avatar1.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'fullname' => 'Steven Andre Gonassis',
+                        'role' => 'Mobile App & Backend Developer',
+                        'photo' => '/img/ta-steven/anggota/Steven.jpeg',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/stevenandre._/'],
+                        'linkedin' => 'https://linkedin.com/in/stevenandregonassis/'
                     ],
                     [
-                        'nickname' => 'Fani',
-                        'fullname' => 'Fani Rahmawati',
-                        'role' => 'Web App Developer',
-                        'photo' => 'avatar3.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'nickname' => 'Aldi',
+                        'fullname' => 'Reinaldi Battung',
+                        'role' => 'IoT Engineer',
+                        'photo' => '/img/ta-steven/anggota/Aldi.jpeg',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/reinaldibattung49_/'],
+                        'linkedin' => null
                     ]
                 ],
-                'external_url' => 'https://logisticsroute-steven.test',
-                'video_url' => null,
-                'screenshots' => null
+                'external_url' => null,
+                'video_url' => 'https://youtu.be/oPESmDoLzIM',
+                'screenshots' => [
+                    '/img/ta-steven/ui-app/iPhone 16 Pro Max - 1.png',
+                    '/img/ta-steven/ui-app/iPhone 16 Pro Max - 2.png',
+                    '/img/ta-steven/ui-app/iPhone 16 Pro Max - 3.png',
+                    '/img/ta-steven/ui-app/iPhone 16 Pro Max - 4.png',
+                    '/img/ta-steven/ui-app/Aplikasi WongPonik.png'
+                ],
+                'documentations' => [
+                    '/img/ta-steven/dokumentasi/arsitektur final.jpeg'
+                ]
             ],
             [
                 'name' => 'VROOM',
                 'supervisor' => 'MDB',
                 'type' => 'hardware',
-                'tkt' => 6,
                 'logo' => '/img/vroom/logo_vroom.jpeg',
                 'tagline' => 'Media Pembelajaran Membaca Berbasis VR untuk Anak Disleksia',
                 'description' => 'Media pembelajaran berbasis Virtual Reality (VR) yang dirancang untuk membantu anak penyandang disleksia meningkatkan kemampuan membaca melalui pengalaman belajar yang interaktif dan menyenangkan. Dengan menggabungkan teknologi VR dan gamifikasi, VROOM menghadirkan aktivitas belajar yang lebih menarik, meningkatkan fokus, motivasi, serta membantu anak mengenali huruf dan kata dengan lebih efektif.',
@@ -218,6 +221,7 @@ class ProjectSeeder extends Seeder
                 'funding_awards' => [
                     'Pendanaan Innovillage 2024 sebesar Rp 14.127.223'
                 ],
+                'tech_field' => 'VR/AR',
                 'prestasi_level' => 'nasional',
                 'partners' => [
                     'INNOVILLAGE 2024'
@@ -226,89 +230,70 @@ class ProjectSeeder extends Seeder
                     [
                         'nickname' => 'Ary',
                         'fullname' => 'I Made Ary Widnyana',
-                        'photo' => 'avatar1.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'photo' => '/img/vroom/ary.png',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/arywidn/'],
+                        'linkedin' => null
                     ],
                     [
                         'nickname' => 'Elsa',
                         'fullname' => 'Elsa Ajeng Pratiwi',
-                        'photo' => 'avatar3.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'photo' => '/img/vroom/elsa.png',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/elsajengg/'],
+                        'linkedin' => null
                     ],
                     [
                         'nickname' => 'Ogik',
                         'fullname' => 'Dimas Ogi Putra P.',
-                        'photo' => 'avatar2.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'photo' => '/img/vroom/ogik.jpeg',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/ogikbfyre/'],
+                        'linkedin' => null
                     ]
                 ],
                 'external_url' => null,
                 'video_url' => 'https://youtu.be/6Fzz_Gu5S3I?si=Sr2b1ZftxNO6934T',
-                'screenshots' => [
+                'screenshots' => null,
+                'documentations' => [
                     '/img/vroom/dokumentasi_vroom1.jpg',
                     '/img/vroom/dokumentasi_vroom2.jpg',
                     '/img/vroom/dokumentasi_vroom3.jpeg'
                 ]
             ],
             [
-                'name' => 'TA Rafli',
+                'name' => 'Jejak Tanahku',
                 'supervisor' => 'MDB',
-                'type' => 'mobile',
-                'tkt' => 5,
-                'logo' => 'rafli.svg',
-                'tagline' => 'Aplikasi Mobile Deteksi Penyakit Tanaman Padi Berbasis Computer Vision',
-                'description' => 'Aplikasi Android portabel yang memungkinkan petani mengambil foto daun padi yang sakit dan langsung mendeteksi jenis penyakit (Hawar Daun, Blas, Tunro) secara offline menggunakan model Deep Learning.',
+                'type' => 'web',
+                'logo' => '/img/ta-rafli/logo_jejak_tanahku.png',
+                'tagline' => 'Sistem Pencatatan dan Validasi Riwayat Sertifikat Tanah Terintegrasi Blockchain',
+                'description' => 'Jejak Tanahku adalah platform inovatif berbasis web terintegrasi blockchain yang dirancang untuk meningkatkan keamanan, transparansi, dan efisiensi dalam pencatatan hak atas tanah. Platform ini mengurangi ketergantungan pada pihak ketiga dan bekerjasama langsung dengan Kantor Pertanahan Kota Surabaya II.',
                 'features' => [
-                    'Pemindaian Daun Padi Instan Menggunakan Kamera Handphone',
-                    'Klasifikasi Penyakit Daun Padi Offline dengan TensorFlow Lite',
-                    'Rekomendasi Penanganan & Penggunaan Pestisida yang Sesuai',
-                    'Forum Komunitas Petani & Berbagi Info Hama Regional'
+                    'Integrasi Blockchain untuk validasi dan pencatatan riwayat tanah secara terdesentralisasi',
+                    'Mengurangi Ketergantungan pada Pihak Ketiga dengan proses verifikasi mandiri yang aman',
+                    'Keamanan Lebih Baik dengan enkripsi tingkat tinggi untuk perlindungan data kepemilikan'
                 ],
-                'funding_awards' => [
-                    'Pendanaan Program Holistik Pembinaan dan Pemberdayaan Desa (PHP2D) 2025',
-                    'Juara Harapan 1 Lomba Inovasi Tani Muda Nasional'
-                ],
+                'funding_awards' => [],
+                'tech_field' => 'Networking & Cyber Security',
                 'prestasi_level' => 'nasional',
                 'partners' => [
-                    'Dinas Pertanian Kabupaten Sidoarjo',
-                    'Gabungan Kelompok Tani (Gapoktan) Makmur Sejahtera'
+                    'Kantor Pertanahan Kota Surabaya II'
                 ],
                 'team_members' => [
                     [
                         'nickname' => 'Rafli',
-                        'fullname' => 'Rafli Pratama',
-                        'role' => 'Android Developer & CV Specialist',
-                        'photo' => 'avatar1.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
-                    ],
-                    [
-                        'nickname' => 'Irma',
-                        'fullname' => 'Irma Novita',
-                        'role' => 'UI/UX Designer',
-                        'photo' => 'avatar3.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'fullname' => 'Rafli Haidar Nashif',
+                        'role' => 'Lead Developer & Blockchain Engineer',
+                        'photo' => null,
+                        'social_media' => ['instagram' => 'https://www.instagram.com/rafli_haidarn/'],
+                        'linkedin' => 'https://www.linkedin.com/in/rafli-haidar-nashif/'
                     ]
                 ],
-                'external_url' => null,
+                'external_url' => 'http://ta-rafli.it-showcase.tusbind.ac.id',
                 'video_url' => null,
-                'screenshots' => [
-                    'https://placehold.co/360x640/1a1a2e/ffffff?text=Rafli+UI+1',
-                    'https://placehold.co/360x640/162447/ffffff?text=Rafli+UI+2',
-                    'https://placehold.co/360x640/1f4068/ffffff?text=Rafli+UI+3',
-                    'https://placehold.co/360x640/0f3460/ffffff?text=Rafli+UI+4',
-                    'https://placehold.co/360x640/1b263b/ffffff?text=Rafli+UI+5'
-                ]
+                'screenshots' => null
             ],
             [
                 'name' => 'TA Cisa',
                 'supervisor' => 'MDB',
                 'type' => 'hardware',
-                'tkt' => 5,
                 'logo' => 'cisa.svg',
                 'tagline' => 'Smart Wheelchair: Kursi Roda Elektrik dengan Kontrol Head-Gesture',
                 'description' => 'Kursi roda elektrik modular yang dikendalikan melalui sensor kemiringan kepala (IMU) yang ditempatkan di kepala pengguna, dirancang khusus untuk penderita kelumpuhan motorik seluruh tubuh.',
@@ -322,6 +307,7 @@ class ProjectSeeder extends Seeder
                     'Medali Perunggu Pekan Ilmiah Mahasiswa Nasional (PIMNAS) 2025 Bidang Karsa Cipta',
                     'Pendanaan Prototipe Tugas Akhir Vokasi'
                 ],
+                'tech_field' => 'IoT',
                 'prestasi_level' => 'nasional',
                 'partners' => [
                     'Yayasan Disabilitas Fisik Mandiri Surabaya',
@@ -353,7 +339,6 @@ class ProjectSeeder extends Seeder
                 'name' => 'PCD Adis',
                 'supervisor' => 'FZK',
                 'type' => 'mobile',
-                'tkt' => 5,
                 'logo' => 'adis.svg',
                 'tagline' => 'Deteksi Kematangan Buah Naga Merah Melalui Analisis Warna HSL',
                 'description' => 'Aplikasi berbasis Android untuk membantu petani menentukan waktu panen buah naga merah secara presisi dengan memproses spektrum warna kulit buah menggunakan algoritma pengolahan citra HSL.',
@@ -367,7 +352,8 @@ class ProjectSeeder extends Seeder
                     'Pendanaan PKM Karya Cipta (PKM-KC) Kemendikbudristek 2025',
                     'Sertifikat Paten Sederhana Metode Analisis Warna Buah'
                 ],
-                'prestasi_level' => 'lokal',
+                'tech_field' => 'AI',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'Perkebunan Buah Naga Subur Makmur Pasuruan',
                     'Asosiasi Hortikultura Jawa Timur'
@@ -401,7 +387,6 @@ class ProjectSeeder extends Seeder
                 'name' => 'Mobile Dwiki',
                 'supervisor' => 'MUN',
                 'type' => 'mobile',
-                'tkt' => 5,
                 'logo' => 'dwiki.svg',
                 'tagline' => 'Aplikasi Monitoring Kesehatan Lansia & Deteksi Jatuh Berbasis IoT Smartband',
                 'description' => 'Aplikasi monitoring kesehatan terintegrasi yang terhubung dengan smartband untuk memantau detak jantung, pola tidur, dan secara instan mendeteksi jika terjadi jatuh (fall detection) pada lansia.',
@@ -415,6 +400,7 @@ class ProjectSeeder extends Seeder
                     'Juara 3 Lomba Karya Tulis Ilmiah Nasional (LKTIN) Inovasi Teknologi 2025',
                     'Pendanaan Akselerasi Inkubasi Bisnis Mahasiswa Universitas'
                 ],
+                'tech_field' => 'IoT',
                 'prestasi_level' => 'nasional',
                 'partners' => [
                     'Puskesmas Kecamatan Sukolilo Surabaya',
@@ -450,7 +436,6 @@ class ProjectSeeder extends Seeder
                 'name' => 'PCD Yuliana',
                 'supervisor' => 'FZK',
                 'type' => 'mobile',
-                'tkt' => 5,
                 'logo' => 'yuliana.svg',
                 'tagline' => 'Aplikasi Klasifikasi Jenis Rempah Dapur Menggunakan Deep Learning MobileNetV2',
                 'description' => 'Aplikasi edukasi yang memanfaatkan kamera smartphone untuk mendeteksi, mengenali, dan menjelaskan berbagai jenis rempah-rempah dapur khas Indonesia (seperti lengkuas, jahe, kunyit, kencur) secara real-time.',
@@ -464,7 +449,8 @@ class ProjectSeeder extends Seeder
                     'Hibah Penelitian Kolaborasi Dosen-Mahasiswa Fakultas Ilmu Komputer 2025',
                     'Juara Harapan 2 Lomba Aplikasi Edukasi Kreatif Nasional'
                 ],
-                'prestasi_level' => 'lokal',
+                'tech_field' => 'AI',
+                'prestasi_level' => 'nasional',
                 'partners' => [
                     'Komunitas Ibu Cerdas Karsa Wanita Sidoarjo',
                     'Pedagang Rempah Tradisional Pasar Wonokromo'
@@ -498,7 +484,6 @@ class ProjectSeeder extends Seeder
                 'name' => 'PCD Gandi',
                 'supervisor' => 'FZK',
                 'type' => 'mobile',
-                'tkt' => 5,
                 'logo' => 'gandi.svg',
                 'tagline' => 'Deteksi Dini Kerusakan Aspal Jalan Menggunakan Pemrosesan Citra Digital',
                 'description' => 'Aplikasi Android untuk mendeteksi retakan dan lubang pada jalan raya saat berkendara. Berfungsi membantu pemetaan jalan rusak bagi instansi pekerjaan umum daerah secara otomatis.',
@@ -512,6 +497,7 @@ class ProjectSeeder extends Seeder
                     'Pendanaan Hibah PKM Penerapan Iptek (PKM-PI) 2025',
                     'Peringkat 5 Nasional Mahasiswa Berprestasi Bidang Inovasi Infrastruktur'
                 ],
+                'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => [
                     'Dinas Pekerjaan Umum, Bina Marga, dan Pengairan Kabupaten Sidoarjo',
@@ -546,7 +532,6 @@ class ProjectSeeder extends Seeder
                 'name' => 'Kacamata Innovilage',
                 'supervisor' => 'YOH',
                 'type' => 'hardware',
-                'tkt' => 6,
                 'logo' => 'kacamata.svg',
                 'tagline' => 'Smart Glass: Kacamata Pintar Pemandu Tunanetra Berbasis IoT',
                 'description' => 'Alat bantu mobilitas berupa kacamata pintar yang dilengkapi sensor jarak LiDAR, Text-to-Speech OCR, dan asisten suara cerdas untuk membantu kemandirian berjalan penyandang disabilitas netra.',
@@ -560,6 +545,7 @@ class ProjectSeeder extends Seeder
                     'Pendanaan Terpilih Social Project Nasional Innovilage Telkom 2025 (Kategori Top 10)',
                     'Juara 1 Lomba Cipta Teknologi Nasional untuk Disabilitas 2025'
                 ],
+                'tech_field' => 'IoT',
                 'prestasi_level' => 'internasional',
                 'partners' => [
                     'PT Telkom Indonesia (Persero) Tbk',
@@ -591,7 +577,6 @@ class ProjectSeeder extends Seeder
                 'name' => 'AWS Reynanda',
                 'supervisor' => 'CAP',
                 'type' => 'mobile',
-                'tkt' => 5,
                 'logo' => 'reynanda.svg',
                 'tagline' => 'Smart Home Control System Berbasis Serverless Cloud AWS',
                 'description' => 'Aplikasi mobile untuk mengontrol dan menjadwalkan peralatan rumah pintar secara dinamis, menggunakan arsitektur serverless AWS IoT Core dan AWS Lambda untuk efisiensi latensi rendah.',
@@ -605,6 +590,7 @@ class ProjectSeeder extends Seeder
                     'Penghargaan AWS Student Builder Award Nasional 2025',
                     'Publikasi Penelitian Jurnal Internasional Bereputasi Scopus Q4'
                 ],
+                'tech_field' => 'Networking & Cyber Security',
                 'prestasi_level' => 'nasional',
                 'partners' => [
                     'Amazon Web Services (AWS) Indonesia',
