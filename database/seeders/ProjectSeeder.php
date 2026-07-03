@@ -433,51 +433,66 @@ class ProjectSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'PCD Yuliana',
+                'name' => 'FreshNet',
                 'supervisor' => 'FZK',
                 'type' => 'mobile',
-                'logo' => 'yuliana.svg',
-                'tagline' => 'Aplikasi Klasifikasi Jenis Rempah Dapur Menggunakan Deep Learning MobileNetV2',
-                'description' => 'Aplikasi edukasi yang memanfaatkan kamera smartphone untuk mendeteksi, mengenali, dan menjelaskan berbagai jenis rempah-rempah dapur khas Indonesia (seperti lengkuas, jahe, kunyit, kencur) secara real-time.',
+                'logo' => '/img/pcd-yuliana/logo/Logo_FreshNet.png',
+                'tagline' => 'Aplikasi Deteksi Kesegaran Ikan Praktis & Objektif Berbasis AI CNN',
+                'description' => 'FreshNet menghadirkan solusi praktis untuk mendeteksi kesegaran ikan secara cepat, objektif, dan mudah. Dengan dukungan teknologi AI berbasis Convolutional Neural Network (CNN), aplikasi ini menganalisis citra mata atau insang ikan untuk memberikan hasil berupa tingkat kesegaran, nilai confidence, serta rekomendasi kelayakan konsumsi.',
                 'features' => [
-                    'Klasifikasi Rempah Real-Time dari Kamera dengan convolutional Neural Network (CNN)',
-                    'Informasi Profil Lengkap Rempah (Khasiat, Takaran, Resep Masakan)',
-                    'Model AI Terkompresi Ringan Berjalan 100% Offline Tanpa Kuota Internet',
-                    'Kuis Interaktif Tebak Rempah untuk Edukasi Anak Sekolah'
+                    'Deteksi kesegaran ikan berbasis AI (CNN) melalui analisis citra mata atau insang',
+                    'Pengambilan foto ikan secara langsung dengan kamera smartphone atau unggah dari galeri',
+                    'Hasil deteksi instan berupa tingkat kesegaran, nilai confidence, dan rekomendasi konsumsi',
+                    'Riwayat pemeriksaan kesegaran ikan terintegrasi',
+                    'Panduan edukatif interaktif mengenai ciri-ciri ikan segar dan tips pemilihan'
                 ],
-                'funding_awards' => [
-                    'Hibah Penelitian Kolaborasi Dosen-Mahasiswa Fakultas Ilmu Komputer 2025',
-                    'Juara Harapan 2 Lomba Aplikasi Edukasi Kreatif Nasional'
-                ],
+                'funding_awards' => [],
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
-                'partners' => [
-                    'Komunitas Ibu Cerdas Karsa Wanita Sidoarjo',
-                    'Pedagang Rempah Tradisional Pasar Wonokromo'
-                ],
+                'partners' => [],
                 'team_members' => [
                     [
-                        'nickname' => 'Yuliana',
-                        'fullname' => 'Yuliana Sari',
-                        'role' => 'AI model Training & Data Scientist',
-                        'photo' => 'avatar3.png',
+                        'nickname' => 'Lia',
+                        'fullname' => 'Yuliana Nur Hanifah',
+                        'role' => 'Team Lead & AI Engineer',
+                        'photo' => '/img/pcd-yuliana/foto_tim/Yuliana Nur Hannifah.jpg',
                         'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'linkedin' => 'https://www.linkedin.com/in/yuliananurhanifah/'
                     ],
                     [
-                        'nickname' => 'Mia',
-                        'fullname' => 'Mia Audina',
-                        'role' => 'Android Frontend & UI Developer',
-                        'photo' => 'avatar3.png',
+                        'nickname' => 'Meisya',
+                        'fullname' => 'Meisya Ma’rifa Nur',
+                        'role' => 'Android Developer',
+                        'photo' => '/img/pcd-yuliana/foto_tim/Meisya Marifa Nur.jpeg',
                         'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'linkedin' => 'https://www.linkedin.com/in/meisyamarifanur/'
+                    ],
+                    [
+                        'nickname' => 'Sita',
+                        'fullname' => 'Masita Nurjanah',
+                        'role' => 'UI/UX Designer',
+                        'photo' => '/img/pcd-yuliana/foto_tim/Masita Nurjanah.jpeg',
+                        'social_media' => ['instagram' => 'https://instagram.com/'],
+                        'linkedin' => 'https://www.linkedin.com/in/masitanurjanah/'
+                    ],
+                    [
+                        'nickname' => 'Lely',
+                        'fullname' => 'Lely Sylva Jemima Tarigan',
+                        'role' => 'Quality Assurance & Data Collector',
+                        'photo' => '/img/pcd-yuliana/foto_tim/Lely Sylva Jemima Tarigan.jpeg',
+                        'social_media' => ['instagram' => 'https://instagram.com/'],
+                        'linkedin' => 'https://www.linkedin.com/in/lely-sylva-jemima-tarigan-b63020296/'
                     ]
                 ],
                 'external_url' => null,
                 'video_url' => null,
                 'screenshots' => [
-                    'https://placehold.co/360x640/31108f/ffffff?text=Yuliana+UI+1',
-                    'https://placehold.co/360x640/250d6c/ffffff?text=Yuliana+UI+2'
+                    '/img/pcd-yuliana/uiux/Dashboard.png',
+                    '/img/pcd-yuliana/uiux/Hasil Deteksi.png',
+                    '/img/pcd-yuliana/uiux/History.png',
+                    '/img/pcd-yuliana/uiux/Panduan.png',
+                    '/img/pcd-yuliana/uiux/Profil.png',
+                    '/img/pcd-yuliana/uiux/Scan.png'
                 ]
             ],
             [
