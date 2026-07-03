@@ -173,7 +173,7 @@ class ProjectSeeder extends Seeder
                 'funding_awards' => [],
                 'tech_field' => 'IoT',
                 'prestasi_level' => 'nasional',
-                'partners' => [],
+                'partners' => ['Penelitian Mandiri'],
                 'team_members' => [
                     [
                         'nickname' => 'Steven',
@@ -336,100 +336,130 @@ class ProjectSeeder extends Seeder
                 'screenshots' => null
             ],
             [
-                'name' => 'PCD Adis',
+                'name' => 'ECOSORTIX',
                 'supervisor' => 'FZK',
                 'type' => 'mobile',
-                'logo' => 'adis.svg',
-                'tagline' => 'Deteksi Kematangan Buah Naga Merah Melalui Analisis Warna HSL',
-                'description' => 'Aplikasi berbasis Android untuk membantu petani menentukan waktu panen buah naga merah secara presisi dengan memproses spektrum warna kulit buah menggunakan algoritma pengolahan citra HSL.',
+                'logo' => '/img/pcd-adis/logo ecosortix bg.png',
+                'tagline' => 'EcoSortix: Aplikasi Pemilah Sampah Cerdas Berbasis AI Klasifikasi Citra',
+                'description' => 'EcoSortix adalah aplikasi mobile cerdas berbasis klasifikasi citra AI untuk mengidentifikasi dan memilah sampah organik serta anorganik secara instan. Terintegrasi dengan fitur peta TPS/TPA, pelaporan sampah, edukasi lingkungan, serta gamifikasi tantangan berhadiah reward menarik.',
                 'features' => [
-                    'Analisis Nilai HSL (Hue, Saturation, Lightness) Kulit Buah Naga',
-                    'Klasifikasi Kematangan Menjadi 3 Fase: Belum Matang, Matang, Terlalu Matang',
-                    'Rekomendasi Waktu Penyimpanan & Daya Tahan Buah Pasca Panen',
-                    'Pencatatan Sejarah Pemindaian Berbasis Lokasi GPS'
+                    'AI Waste Classification sebagai Deteksi sampah organik dan anorganik berbasis citra secara presisi dengan preprocessing citra',
+                    'Smart Waste Management Ecosystem meliputi Edukasi pemilahan sampah, pelaporan tumpukan sampah, dan peta lokasi TPS/TPA/Bank Sampah',
+                    'Reward & Eco Challenge yaitu Gamifikasi tantangan kelestarian lingkungan dan sistem penukaran poin reward'
                 ],
-                'funding_awards' => [
-                    'Pendanaan PKM Karya Cipta (PKM-KC) Kemendikbudristek 2025',
-                    'Sertifikat Paten Sederhana Metode Analisis Warna Buah'
-                ],
+                'funding_awards' => [],
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
-                'partners' => [
-                    'Perkebunan Buah Naga Subur Makmur Pasuruan',
-                    'Asosiasi Hortikultura Jawa Timur'
-                ],
+                'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'team_members' => [
                     [
                         'nickname' => 'Adis',
-                        'fullname' => 'Adis Setyawan',
-                        'role' => 'Lead Image Processing Developer',
-                        'photo' => 'avatar4.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'fullname' => 'Adistya Rahayu',
+                        'role' => null,
+                        'photo' => '/img/pcd-adis/foto_tim/adistya.jpg',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/adistyarh/'],
+                        'linkedin' => 'https://www.linkedin.com/in/adistyarahayu/'
                     ],
                     [
-                        'nickname' => 'Kezia',
-                        'fullname' => 'Kezia Amanda',
-                        'role' => 'Android Developer',
-                        'photo' => 'avatar3.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'nickname' => 'Zahra',
+                        'fullname' => 'Ahadiyah Dyna Azzahra',
+                        'role' => null,
+                        'photo' => '/img/pcd-adis/foto_tim/zahra.jpg',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/dynaazahra/'],
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => 'Nayo',
+                        'fullname' => 'Nayodya Fairuz Sadina A.',
+                        'role' => null,
+                        'photo' => '/img/pcd-adis/foto_tim/nayyo.png',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/nayodyaviera/'],
+                        'linkedin' => 'https://www.linkedin.com/in/nayodya-fairuz-819904295/'
+                    ],
+                    [
+                        'nickname' => 'Firman',
+                        'fullname' => 'Reza Eka Firmansyah',
+                        'role' => null,
+                        'photo' => '/img/pcd-adis/foto_tim/firman.JPG',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/refirmnnn/'],
+                        'linkedin' => null
                     ]
                 ],
                 'external_url' => null,
                 'video_url' => null,
                 'screenshots' => [
-                    'https://placehold.co/360x640/0f3460/ffffff?text=Adis+UI+1',
-                    'https://placehold.co/360x640/16213e/ffffff?text=Adis+UI+2'
+                    '/img/pcd-adis/UI_UX/Beranda.jpg',
+                    '/img/pcd-adis/UI_UX/Edukasi Lingkungan_.jpg',
+                    '/img/pcd-adis/UI_UX/Fitur Deteksi Sampah.jpg',
+                    '/img/pcd-adis/UI_UX/Hasil Klasifikasi_.jpg',
+                    '/img/pcd-adis/UI_UX/Laporan Lingkungan_.jpg',
+                    '/img/pcd-adis/UI_UX/Menu Utama.jpg',
+                    '/img/pcd-adis/UI_UX/Panduan Pemilahan Sampah.jpg',
+                    '/img/pcd-adis/UI_UX/Peta Lokasi TPA_TPS_Bank Sampah.jpg',
+                    '/img/pcd-adis/UI_UX/Reward & Poin.jpg',
+                    '/img/pcd-adis/UI_UX/Riwayat.jpg',
+                    '/img/pcd-adis/UI_UX/Tahapan Preprocessing.jpg',
+                    '/img/pcd-adis/UI_UX/Tantangan Eco.jpg'
                 ]
             ],
             [
-                'name' => 'Mobile Dwiki',
+                'name' => 'Kora',
                 'supervisor' => 'MUN',
                 'type' => 'mobile',
-                'logo' => 'dwiki.svg',
-                'tagline' => 'Aplikasi Monitoring Kesehatan Lansia & Deteksi Jatuh Berbasis IoT Smartband',
-                'description' => 'Aplikasi monitoring kesehatan terintegrasi yang terhubung dengan smartband untuk memantau detak jantung, pola tidur, dan secara instan mendeteksi jika terjadi jatuh (fall detection) pada lansia.',
+                'logo' => '/img/mobile-reza/logo mobile dwiki.PNG',
+                'tagline' => 'Aplikasi Workout Tracker & Monitoring Kesehatan Kebugaran Terintegrasi',
+                'description' => 'Kora adalah aplikasi kebugaran berbasis mobile terintegrasi yang dirancang untuk membantu melacak dan memantau aktivitas olahraga pengguna secara mandiri, lengkap dengan Running Tracker berbasis GPS, pencatatan nutrisi harian, hingga pengukuran berkala tubuh.',
                 'features' => [
-                    'sinkronisasi Detak Jantung dan Langkah Kaki via Bluetooth Smartband',
-                    'Algoritma Deteksi Jatuh Berbasis Akselerometer di Smartphone/Smartband',
-                    'Pengiriman SMS Darurat & Koordinat GPS Langsung ke Keluarga',
-                    'Laporan Kebugaran Mingguan Lansia dalam Grafik Interaktif'
+                    'Workout Tracker untuk melacak dan merekam rutinitas latihan fisik harian',
+                    'Running GPS Tracker untuk memantau rute dan jarak lari secara real-time berbasis koordinat GPS',
+                    'Nutrition Tracker untuk mencatat dan menganalisis asupan nutrisi harian',
+                    'Body Measurement Tracker untuk mencatat progres ukuran dan metrik tubuh berkala',
+                    'Workout Schedule untuk menjadwalkan latihan fisik harian secara personal'
                 ],
-                'funding_awards' => [
-                    'Juara 3 Lomba Karya Tulis Ilmiah Nasional (LKTIN) Inovasi Teknologi 2025',
-                    'Pendanaan Akselerasi Inkubasi Bisnis Mahasiswa Universitas'
-                ],
-                'tech_field' => 'IoT',
+                'funding_awards' => [],
+                'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
-                'partners' => [
-                    'Puskesmas Kecamatan Sukolilo Surabaya',
-                    'Yayasan Griya Lansia Wreda Surabaya'
-                ],
+                'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'team_members' => [
                     [
-                        'nickname' => 'Dwiki',
-                        'fullname' => 'Dwiki Saputra',
-                        'role' => 'Mobile App Lead & Bluetooth Architect',
-                        'photo' => 'avatar1.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'nickname' => 'Reza',
+                        'fullname' => 'Muhammad Dwiky Yanuarezza',
+                        'role' => null,
+                        'photo' => '/img/mobile-reza/foto_tim/reza.png',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/Mrezza18/'],
+                        'linkedin' => 'https://www.linkedin.com/in/muhammad-dwiky-yanuarezza-825993292/'
                     ],
                     [
-                        'nickname' => 'Lutfi',
-                        'fullname' => 'Lutfi Hakim',
-                        'role' => 'Backend & Cloud Integration Dev',
-                        'photo' => 'avatar2.png',
+                        'nickname' => 'Davin',
+                        'fullname' => 'Davin Syah Putra Antoro',
+                        'role' => null,
+                        'photo' => '/img/mobile-reza/foto_tim/davin.png',
                         'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => 'Mael',
+                        'fullname' => 'Teuku Ismail Syuhada',
+                        'role' => null,
+                        'photo' => '/img/mobile-reza/foto_tim/mael.png',
+                        'social_media' => ['instagram' => 'https://instagram.com/'],
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => 'Fajar',
+                        'fullname' => 'Muhammad Fajar shodiq',
+                        'role' => null,
+                        'photo' => '/img/mobile-reza/foto_tim/fajar.png',
+                        'social_media' => ['instagram' => 'https://instagram.com/'],
+                        'linkedin' => null
                     ]
                 ],
                 'external_url' => null,
                 'video_url' => null,
                 'screenshots' => [
-                    'https://placehold.co/360x640/111827/ffffff?text=Dwiki+UI+1',
-                    'https://placehold.co/360x640/1f2937/ffffff?text=Dwiki+UI+2',
-                    'https://placehold.co/360x640/374151/ffffff?text=Dwiki+UI+3'
+                    'https://placehold.co/360x640/111827/ffffff?text=Kora+UI+1',
+                    'https://placehold.co/360x640/1f2937/ffffff?text=Kora+UI+2',
+                    'https://placehold.co/360x640/374151/ffffff?text=Kora+UI+3'
                 ]
             ],
             [
@@ -449,7 +479,7 @@ class ProjectSeeder extends Seeder
                 'funding_awards' => [],
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
-                'partners' => [],
+                'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'team_members' => [
                     [
                         'nickname' => 'Lia',
@@ -514,10 +544,7 @@ class ProjectSeeder extends Seeder
                 ],
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
-                'partners' => [
-                    'Dinas Pekerjaan Umum, Bina Marga, dan Pengairan Kabupaten Sidoarjo',
-                    'Balai Besar Pelaksanaan Jalan Nasional (BBPJN) Jawa Timur'
-                ],
+                'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'team_members' => [
                     [
                         'nickname' => 'Gandi',
@@ -544,49 +571,76 @@ class ProjectSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'Kacamata Innovilage',
+                'name' => 'VoxSight AI',
                 'supervisor' => 'YOH',
                 'type' => 'hardware',
-                'logo' => 'kacamata.svg',
-                'tagline' => 'Smart Glass: Kacamata Pintar Pemandu Tunanetra Berbasis IoT',
-                'description' => 'Alat bantu mobilitas berupa kacamata pintar yang dilengkapi sensor jarak LiDAR, Text-to-Speech OCR, dan asisten suara cerdas untuk membantu kemandirian berjalan penyandang disabilitas netra.',
+                'logo' => '/img/VoxSight AI/logo_voxsightAI.png',
+                'tagline' => 'VoxSight AI: Kacamata Pintar Pemandu Tunanetra Berbasis AI',
+                'description' => 'VoxSight AI adalah alat bantu mobilitas berupa kacamata pintar berbasis Artificial Intelligence (AI) untuk penyandang disabilitas netra. Dilengkapi dengan analisis lingkungan visual, identifikasi mata uang, identifikasi literatur melalui OCR, serta sistem umpan balik audio untuk mendukung kemandirian aktivitas sehari-hari.',
                 'features' => [
-                    'Pengukuran Jarak Halangan Depan dengan Sensor LiDAR presisi tinggi',
-                    'Konversi Teks Gambar Menjadi Suara (OCR Text Reader) untuk Membaca Buku/Papan Nama',
-                    'Konektivitas Bluetooth ke Earphone Bone-Conduction Pengguna',
-                    'Pengiriman Notifikasi Posisi Darurat GPS via WhatsApp ke Wali'
+                    'Analisis lingkungan visual untuk mendeteksi halangan',
+                    'Identifikasi mata uang secara cepat',
+                    'Identifikasi literatur dengan Text-to-Speech',
+                    'Sistem umpan balik audio yang intuitif'
                 ],
                 'funding_awards' => [
-                    'Pendanaan Terpilih Social Project Nasional Innovilage Telkom 2025 (Kategori Top 10)',
-                    'Juara 1 Lomba Cipta Teknologi Nasional untuk Disabilitas 2025'
+                    'Pendanaan Innovilage sebesar Rp. 21.440.000'
                 ],
-                'tech_field' => 'IoT',
-                'prestasi_level' => 'internasional',
+                'tech_field' => 'AI',
+                'prestasi_level' => 'nasional',
                 'partners' => [
-                    'PT Telkom Indonesia (Persero) Tbk',
-                    'DPC Persatuan Tunanetra Indonesia (PERTUNI) Surabaya'
+                    'SLB A Yayasan Pendidikan Anak Buta Surabaya'
                 ],
                 'team_members' => [
                     [
-                        'nickname' => 'Yohanes',
-                        'fullname' => 'Yohanes Christian',
-                        'role' => 'Project Lead & Firmware Programmer',
-                        'photo' => 'avatar2.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'nickname' => 'Fikri',
+                        'fullname' => 'Muhammad Fikri Al Fathoni',
+                        'role' => null,
+                        'photo' => '/img/VoxSight AI/foto_tim/Muhammad Fikri Al Fathoni.jpg',
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/muhammad-fikri-al-fathoni-6ab0b529a/'
                     ],
                     [
-                        'nickname' => 'Olivia',
-                        'fullname' => 'Olivia Putri',
-                        'role' => 'Product Designer & IoT Engineer',
-                        'photo' => 'avatar3.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'nickname' => 'Floren',
+                        'fullname' => 'Floren Fransiska Elisabet Sihite',
+                        'role' => null,
+                        'photo' => '/img/VoxSight AI/foto_tim/Floren Fransiska Elisabet Sihite.jpg',
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/floren-fransiska-elisabet-sihite-9576a0278/'
+                    ],
+                    [
+                        'nickname' => 'Laura',
+                        'fullname' => 'Laura Djasmine Putri Tandiawan',
+                        'role' => null,
+                        'photo' => '/img/VoxSight AI/foto_tim/Laura Djasmine Putri Tandiawan.jpeg',
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/laura-djasmine-putri-tandiawan-625bb1328/'
+                    ],
+                    [
+                        'nickname' => 'Hans',
+                        'fullname' => 'Hans Harold Barus',
+                        'role' => null,
+                        'photo' => '/img/VoxSight AI/foto_tim/Hans Harold Barus.jpg',
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/hans-gg/'
+                    ],
+                    [
+                        'nickname' => 'Krisna',
+                        'fullname' => 'Krisna Maulana Rahman',
+                        'role' => null,
+                        'photo' => '/img/VoxSight AI/foto_tim/Krisna_Maulana_Rahman.jpeg',
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/krsnmlna/'
                     ]
                 ],
                 'external_url' => null,
-                'video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                'screenshots' => null
+                'video_url' => 'https://youtu.be/xcR5Ts6rcRo',
+                'screenshots' => null,
+                'documentations' => [
+                    '/img/VoxSight AI/dokumentasi/dokumentasi_1.jpg',
+                    '/img/VoxSight AI/dokumentasi/dokumentasi_2.jpg',
+                    '/img/VoxSight AI/dokumentasi/dokumentasi_3.jpeg'
+                ]
             ],
             [
                 'name' => 'AWS Reynanda',
