@@ -1901,10 +1901,20 @@ export default {
             ).length;
         },
         totalMitra() {
-            return this.projects.reduce(
-                (sum, p) => sum + (p.partners ? p.partners.length : 0),
-                0,
-            );
+            const uniquePartners = new Set();
+            this.projects.forEach((p) => {
+                if (p.partners && Array.isArray(p.partners)) {
+                    p.partners.forEach((partner) => {
+                        if (partner && typeof partner === "string") {
+                            const trimmed = partner.trim();
+                            if (trimmed) {
+                                uniquePartners.add(trimmed.toLowerCase());
+                            }
+                        }
+                    });
+                }
+            });
+            return uniquePartners.size;
         },
     },
     methods: {

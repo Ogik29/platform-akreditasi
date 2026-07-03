@@ -37,7 +37,7 @@ class ProjectSeeder extends Seeder
                 ],
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
-                'partners' => [],
+                'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'team_members' => [
                     [
                         'nickname' => 'Sulthonika',
