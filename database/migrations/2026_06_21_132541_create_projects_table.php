@@ -22,7 +22,7 @@ return new class extends Migration
             $table->json('features')->nullable(); // array of features
             $table->json('funding_awards')->nullable(); // array of awards/funding
             $table->enum('tech_field', ['AI', 'Networking & Cyber Security', 'IoT', 'VR/AR', 'Others'])->default('Others');
-            $table->string('prestasi_level')->default('nasional'); // nasional, internasional
+            $table->enum('prestasi_level', ['nasional', 'internasional'])->default('nasional'); // nasional, internasional
             $table->json('partners')->nullable(); // array of partners
             $table->json('team_members')->nullable(); // array of members
             $table->string('external_url')->nullable(); // for web
