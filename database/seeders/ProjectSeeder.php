@@ -17,7 +17,7 @@ class ProjectSeeder extends Seeder
                 'name' => 'SIGAP',
                 'supervisor' => 'MDB',
                 'type' => 'web',
-                'logo' => null,
+                'logo' => '/img/sigap/icon_sigap.png',
                 'tagline' => 'Sistem Perlindungan Darurat & Pelaporan Kekerasan Seksual Berbasis AI',
                 'description' => 'SIGAP adalah aplikasi mobile darurat yang dirancang untuk melindungi korban kekerasan seksual. Dilengkapi tombol SOS satu sentuh dengan perekaman audio real-time, pelacak GPS berkala, chatbot AI pendamping, dan portal admin & psikolog untuk manajemen laporan secara menyeluruh.',
                 'features' => [
@@ -224,7 +224,8 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'VR/AR',
                 'prestasi_level' => 'nasional',
                 'partners' => [
-                    'INNOVILLAGE 2024'
+                    'WAROENG INKLUSI MALANG',
+                    'Lembaga Pendidikan Inklusi Al-Fasyah Kepanjen'
                 ],
                 'team_members' => [
                     [
@@ -496,51 +497,71 @@ class ProjectSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'PCD Gandi',
-                'supervisor' => 'FZK',
+                'name' => 'FrutoSense',
+                'supervisor' => 'MDB',
                 'type' => 'mobile',
-                'logo' => 'gandi.svg',
-                'tagline' => 'Deteksi Dini Kerusakan Aspal Jalan Menggunakan Pemrosesan Citra Digital',
-                'description' => 'Aplikasi Android untuk mendeteksi retakan dan lubang pada jalan raya saat berkendara. Berfungsi membantu pemetaan jalan rusak bagi instansi pekerjaan umum daerah secara otomatis.',
+                'logo' => '/img/pcd-gandi/Logo FrutoSense.png',
+                'tagline' => 'Deteksi Jenis, Kematangan, dan Kesegaran Buah Real-Time Berbasis AI Multi-Model MobileNetV2',
+                'description' => 'FrutoSense adalah aplikasi mobile inovatif yang dikembangkan untuk membantu pengguna mengidentifikasi jenis, tingkat kematangan, dan tingkat kesegaran buah secara real-time langsung melalui kamera smartphone. Aplikasi ini mengintegrasikan 3 model AI MobileNetV2 yang berjalan secara paralel di backend FastAPI, terhubung dengan REST API Laravel 11 dan database PostgreSQL.',
                 'features' => [
-                    'Pemindaian Retakan Jalan menggunakan Edge Detection & Sobel Filter',
-                    'Log Koordinat GPS Lokasi Lubang Jalan Secara Otomatis',
-                    'Unggah Data Kerusakan Jalan ke Cloud Server BPJN',
-                    'Peta Distribusi Kerusakan Jalan Raya dalam Wilayah Kota'
+                    'Klasifikasi 3 Jenis Buah (Variety Model) — Apple, Banana, Orange (Akurasi 97.48%)',
+                    'Deteksi Tingkat Kematangan (Ripeness Model) — Unripe, Ripe, Overripe (Akurasi 92.67%)',
+                    'Penilaian Tingkat Kesegaran (Freshness Model) — Fresh, Unfresh (Akurasi 97.92%)',
+                    'Inferensi AI Real-Time Paralel dengan FastAPI & TensorFlow 2.18 Engine',
+                    'Sistem REST API Backend Menggunakan Laravel 11 dengan Autentikasi Sanctum',
+                    'Antarmuka Pengguna Mobile yang Responsif & Interaktif Berbasis Flutter 3.11+ & Dart 3'
                 ],
-                'funding_awards' => [
-                    'Pendanaan Hibah PKM Penerapan Iptek (PKM-PI) 2025',
-                    'Peringkat 5 Nasional Mahasiswa Berprestasi Bidang Inovasi Infrastruktur'
-                ],
+                'funding_awards' => null,
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => [
-                    'Dinas Pekerjaan Umum, Bina Marga, dan Pengairan Kabupaten Sidoarjo',
-                    'Balai Besar Pelaksanaan Jalan Nasional (BBPJN) Jawa Timur'
+                    'Teknologi Informasi Telkom University Surabaya',
                 ],
                 'team_members' => [
                     [
                         'nickname' => 'Gandi',
-                        'fullname' => 'Gandi Prakoso',
-                        'role' => 'Digital Image Processing Engineer',
-                        'photo' => 'avatar4.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'fullname' => 'Gandhi Suastika',
+                        'role' => null,
+                        'photo' => '/img/pcd-gandi/foto_tim/gandi.png',
+                        'social_media' => ['instagram' => 'https://instagram.com/gandiwahyuu'],
+                        'linkedin' => 'https://www.linkedin.com/in/gandhi-suastika-418218280/'
                     ],
                     [
-                        'nickname' => 'Naufal',
-                        'fullname' => 'Naufal Rizqi',
-                        'role' => 'Android Systems Developer',
-                        'photo' => 'avatar1.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'nickname' => 'Risky',
+                        'fullname' => 'Rahmadinata Rizki Setiawan',
+                        'role' => null,
+                        'photo' => '/img/pcd-gandi/foto_tim/risky.png',
+                        'social_media' => ['instagram' => 'https://instagram.com/rrzks_'],
+                        'linkedin' => 'https://www.linkedin.com/in/rahmadinata-rizki-setiawan-57a661190'
+                    ],
+                    [
+                        'nickname' => 'Celia',
+                        'fullname' => 'Celia Jovita Carmel',
+                        'role' => null,
+                        'photo' => '/img/pcd-gandi/foto_tim/celia.png',
+                        'social_media' => ['instagram' => 'https://instagram.com/celiaacarmel'],
+                        'linkedin' => 'https://www.linkedin.com/in/celia-jovita-carmel-599112296'
+                    ],
+                    [
+                        'nickname' => 'Aura',
+                        'fullname' => 'Aura Salsabilla Hestyastuti',
+                        'role' => null,
+                        'photo' => '/img/pcd-gandi/foto_tim/aura.png',
+                        'social_media' => ['instagram' => 'https://instagram.com/aurahestyy_'],
+                        'linkedin' => 'https://www.linkedin.com/in/aura-salsabilla-hestyastuti-a62439295/'
                     ]
                 ],
                 'external_url' => null,
                 'video_url' => null,
                 'screenshots' => [
-                    'https://placehold.co/360x640/1f4068/ffffff?text=Gandi+UI+1',
-                    'https://placehold.co/360x640/162447/ffffff?text=Gandi+UI+2'
+                    '/img/pcd-gandi/uiux/upload.png',
+                    '/img/pcd-gandi/uiux/Screenshot 2026-06-09 at 10.09.28.png',
+                    '/img/pcd-gandi/uiux/Screenshot 2026-06-09 at 10.09.36.png',
+                    '/img/pcd-gandi/uiux/Screenshot 2026-06-09 at 10.12.07.png',
+                    '/img/pcd-gandi/uiux/Screenshot 2026-06-09 at 10.12.30.png',
+                    '/img/pcd-gandi/uiux/Screenshot 2026-06-09 at 10.12.57.png',
+                    '/img/pcd-gandi/uiux/Screenshot 2026-06-24 at 20.44.39.png',
+                    '/img/pcd-gandi/uiux/Screenshot 2026-06-24 at 20.52.50.png'
                 ]
             ],
             [
@@ -635,7 +656,8 @@ class ProjectSeeder extends Seeder
                     'https://placehold.co/360x640/0d1b2a/ffffff?text=AWS+Reynanda+1',
                     'https://placehold.co/360x640/1b263b/ffffff?text=AWS+Reynanda+2'
                 ]
-            ]
+            ],
+
         ];
 
         foreach ($projects as $proj) {
