@@ -114,47 +114,35 @@ class ProjectSeeder extends Seeder
                 'screenshots' => null
             ],
             [
-                'name' => 'TA Rizal',
+                'name' => 'NYAWANG',
                 'supervisor' => 'MDB',
                 'type' => 'web',
-                'logo' => 'rizal.svg',
-                'tagline' => 'Web Dashboard Monitoring Kualitas Air Tambak Pintar Berbasis IoT',
-                'description' => 'Dashboard web interaktif untuk memonitor parameter kualitas air tambak udang (pH, salinitas, suhu, dan kadar oksigen terlarut) secara real-time yang terhubung dengan sensor IoT di lapangan.',
+                'logo' => 'img/ta-rizal/logo_ta-rizal.jpg',
+                'tagline' => 'Implementasi Algoritma YOLOv8 dan FaceNet Berdasarkan Cosine Similarity untuk Sistem Monitoring Alat Pelindung Diri (APD) berbasis IoT',
+                'description' => 'APD Violation Monitoring System adalah sistem berbasis Artificial Intelligence yang dirancang untuk memantau kepatuhan penggunaan Alat Pelindung Diri (APD) secara otomatis melalui kamera pengawas (CCTV). Sistem memanfaatkan model YOLOv8 untuk mendeteksi keberadaan dan kelengkapan APD yang digunakan oleh pekerja atau pelanggan, kemudian menggunakan FaceNet untuk mengenali identitas individu yang melakukan pelanggaran.
+ Ketika sistem mendeteksi seseorang yang tidak menggunakan APD sesuai ketentuan, wajah individu tersebut akan dikenali dan informasi pelanggaran akan dicatat secara otomatis. Sistem ini membantu perusahaan melakukan pengawasan keselamatan kerja secara real-time, mengurangi proses monitoring manual, serta meningkatkan kepatuhan terhadap standar K3 (Keselamatan dan Kesehatan Kerja).',
                 'features' => [
-                    'Grafik Live Chart Sensor Air Interaktif',
-                    'Kontrol Saklar Aerator Jarak Jauh (Remote Aeration Control)',
-                    'Sistem Notifikasi Bahaya Kualitas Air via WhatsApp API',
-                    'Penyimpanan Riwayat Sensor & Ekspor Laporan Excel'
+                    'Mendeteksi penggunaan APD secara otomatis menggunakan model YOLOv8',
+                    'Mencocokkan wajah yang terdeteksi dengan database karyawan atau pelanggan',
+                    'Menandai individu sebagai pelanggar secara otomatis'
                 ],
-                'funding_awards' => [
-                    'Juara 2 Kompetisi Inovasi Teknologi Tepat Guna Tingkat Regional',
-                    'Pendanaan Hibah Inovasi Tugas Akhir Vokasi'
-                ],
-                'tech_field' => 'IoT',
+                'funding_awards' => [],
+                'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => [
-                    'Kelompok Petani Tambak Udang Windu Sidoarjo',
-                    'Dinas Perikanan dan Kelautan Kabupaten Sidoarjo'
+                    'Badan Usaha Milik Negara (BUMN)'
                 ],
                 'team_members' => [
                     [
                         'nickname' => 'Rizal',
-                        'fullname' => 'Rizal Hidayat',
-                        'role' => 'IoT Hardware & Embed Programmer',
-                        'photo' => 'avatar2.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
-                    ],
-                    [
-                        'nickname' => 'Eko',
-                        'fullname' => 'Eko Prasetya',
-                        'role' => 'Web App Developer',
-                        'photo' => 'avatar1.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'fullname' => 'Rizal Zidan',
+                        'role' => null,
+                        'photo' => '/img/ta-rizal/foto_tim/foto rizal.png',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/rizalzidans_/'],
+                        'linkedin' => 'https://www.linkedin.com/in/rizal-zidan-2729a1329/'
                     ]
                 ],
-                'external_url' => 'https://tambakmonitoring-rizal.test',
+                'external_url' => null,
                 'video_url' => null,
                 'screenshots' => null
             ],
@@ -292,49 +280,41 @@ class ProjectSeeder extends Seeder
                 'screenshots' => null
             ],
             [
-                'name' => 'TA Cisa',
+                'name' => 'EdgeTani',
                 'supervisor' => 'MDB',
                 'type' => 'hardware',
-                'logo' => 'cisa.svg',
-                'tagline' => 'Smart Wheelchair: Kursi Roda Elektrik dengan Kontrol Head-Gesture',
-                'description' => 'Kursi roda elektrik modular yang dikendalikan melalui sensor kemiringan kepala (IMU) yang ditempatkan di kepala pengguna, dirancang khusus untuk penderita kelumpuhan motorik seluruh tubuh.',
+                'logo' => '/img/ta-cisa/logo_edgetani.png',
+                'tagline' => 'Fertigasi Presisi Berbasis IoT untuk Pertanian yang Lebih Efisien dan Berkelanjutan',
+                'description' => 'Sistem fertigasi modular berbasis edge computing untuk hortikultura dengan mikrodosing nutrisi otomatis dan pengelolaan sisa nutrisi untuk efisiensi sumber daya dan optimalisasi hasil panen.',
                 'features' => [
-                    'Kontrol Gerak Maju, Mundur, Belok Berbasis Akselerometer Kepala',
-                    'Sistem Deteksi Halangan Otomatis Menggunakan Sensor Ultrasonik',
-                    'Sistem Pengereman Darurat Ketika Mendeteksi Turunan Tajam',
-                    'Indikator Kapasitas Baterai & Status Kursi Roda Melalui Buzzer & LCD'
+                    'Mikrodosing Nutrisi NPK berdasarkan HST',
+                    'Pengelolaan sisa fertigasi',
+                    'Edge-based control menggunakan Raspberry Pi',
+                    'Integrasi Industrial IoT'
                 ],
-                'funding_awards' => [
-                    'Medali Perunggu Pekan Ilmiah Mahasiswa Nasional (PIMNAS) 2025 Bidang Karsa Cipta',
-                    'Pendanaan Prototipe Tugas Akhir Vokasi'
-                ],
+                'funding_awards' => [],
                 'tech_field' => 'IoT',
                 'prestasi_level' => 'nasional',
                 'partners' => [
-                    'Yayasan Disabilitas Fisik Mandiri Surabaya',
-                    'Laboratorium Sensor & Instrumentasi Universitas'
+                    'Rooftop Telkom University Surabaya'
                 ],
                 'team_members' => [
                     [
                         'nickname' => 'Cisa',
-                        'fullname' => 'Cisa Lestari',
+                        'fullname' => 'Cisa Valentino Cahya Ramadhani',
                         'role' => 'Hardware Design & Mechanical Engineer',
-                        'photo' => 'avatar3.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
-                    ],
-                    [
-                        'nickname' => 'Jono',
-                        'fullname' => 'Jono Suharjo',
-                        'role' => 'Firmware & Embedded Systems Dev',
-                        'photo' => 'avatar2.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'photo' => '/img/ta-cisa/Cisa Foto Anggota Edge Tani.jpg',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/vaallencisa/'],
+                        'linkedin' => 'https://www.linkedin.com/in/cisavalentino/'
                     ]
                 ],
                 'external_url' => null,
                 'video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                'screenshots' => null
+                'screenshots' => [
+                    '/img/ta-cisa/dokumentasi_alat/foto_alat.png',
+                    '/img/ta-cisa/dokumentasi_alat/foto_alat_2.png',
+                    '/img/ta-cisa/dokumentasi_alat/foto_alat_3.jpeg'
+                ]
             ],
             [
                 'name' => 'ECOSORTIX',
@@ -458,9 +438,19 @@ class ProjectSeeder extends Seeder
                 'external_url' => null,
                 'video_url' => null,
                 'screenshots' => [
-                    'https://placehold.co/360x640/111827/ffffff?text=Kora+UI+1',
-                    'https://placehold.co/360x640/1f2937/ffffff?text=Kora+UI+2',
-                    'https://placehold.co/360x640/374151/ffffff?text=Kora+UI+3'
+                    '/img/mobile-reza/uiux/1.jpg',
+                    '/img/mobile-reza/uiux/2.jpg',
+                    '/img/mobile-reza/uiux/3.jpg',
+                    '/img/mobile-reza/uiux/4.jpg',
+                    '/img/mobile-reza/uiux/5.jpg',
+                    '/img/mobile-reza/uiux/6.jpg',
+                    '/img/mobile-reza/uiux/7.jpg',
+                    '/img/mobile-reza/uiux/8.jpg',
+                    '/img/mobile-reza/uiux/9.jpg',
+                    '/img/mobile-reza/uiux/10.jpg',
+                    '/img/mobile-reza/uiux/11.jpg',
+                    '/img/mobile-reza/uiux/12.jpg',
+                    '/img/mobile-reza/uiux/13.jpg'
                 ]
             ],
             [
