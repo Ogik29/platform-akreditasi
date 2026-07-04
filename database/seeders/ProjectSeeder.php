@@ -270,7 +270,7 @@ class ProjectSeeder extends Seeder
                         'nickname' => 'Rafli',
                         'fullname' => 'Rafli Haidar Nashif',
                         'role' => 'Lead Developer & Blockchain Engineer',
-                        'photo' => null,
+                        'photo' => 'img/ta-rafli/foto_rafli.png',
                         'social_media' => ['instagram' => 'https://www.instagram.com/rafli_haidarn/'],
                         'linkedin' => 'https://www.linkedin.com/in/rafli-haidar-nashif/'
                     ]
@@ -653,6 +653,47 @@ class ProjectSeeder extends Seeder
                     '/img/VoxSight AI/dokumentasi/dokumentasi_2.jpg',
                     '/img/VoxSight AI/dokumentasi/dokumentasi_3.jpeg'
                 ]
+            ],
+            [
+                'name' => 'LOGINT',
+                'supervisor' => '-',
+                'type' => 'web',
+                'logo' => 'aksd.svg',
+                'tagline' => 'Platform Smart Coding Lab & Logic Intelligence yang mendukung pembelajaran pemrograman',
+                'description' => 'LOGINT adalah platform Smart Coding Lab & Logic Intelligence yang membantu kampus menjalankan praktikum pemrograman secara lebih sederhana, terukur, dan berbasis data. Platform ini menyediakan environment coding berbasis browser, modul praktikum terstruktur, bantuan belajar kontekstual, serta dashboard untuk dosen dan program studi. LOGINT ditujukan sebagai solusi awal untuk mata kuliah Algoritma Pemrograman dan praktikum coding dasar di Telkom University Surabaya. Setelah tervalidasi, LOGINT dapat diperluas ke mata kuliah Struktur Data, Basis Data, Web Programming, Machine Learning, Data Analytics, serta kampus lain yang membutuhkan platform praktikum digital dan learning analytics.',
+                'features' => [
+                    'Web-based Coding Environment',
+                    'Modul praktikum yang terorganisir sesuai materi dan capaian pembelajaran.',
+                    'Dashboard untuk memantau progres, performa, dan aktivitas mahasiswa',
+                    'Melacak perkembangan belajar mahasiswa secara real-time selama praktikum',
+                    'Memudahkan dosen mengelola praktikum, memonitor mahasiswa, dan mengevaluasi pembelajaran'
+                ],
+                'funding_awards' => [],
+                'tech_field' => 'AI',
+                'prestasi_level' => 'internasional',
+                'partners' => [],
+                'team_members' => [
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Muhammad Adib Kamali, S.T., M.Eng',
+                        'role' => null,
+                        'photo' => '/img/LOGINT/foto_tim/pak adib kamali.png',
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/adib-kamali-001357192/'
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Daud Muhajir, S.Kom., M.Kom. ',
+                        'role' => null,
+                        'photo' => '/img/LOGINT/foto_tim/pak daud muhajir.png',
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/hans-gg/'
+                    ]
+                ],
+                'external_url' => null,
+                'video_url' => null,
+                'screenshots' => null,
+                'documentations' => []
             ],
             [
                 'name' => 'AWS Reynanda',
