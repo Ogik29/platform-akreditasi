@@ -24,6 +24,7 @@ return new class extends Migration
             $table->enum('tech_field', ['AI', 'Networking & Cyber Security', 'IoT', 'VR/AR', 'Others'])->default('Others');
             $table->enum('prestasi_level', ['nasional', 'internasional'])->default('nasional'); // nasional, internasional
             $table->json('partners')->nullable(); // array of partners
+            $table->json('logo_mitra')->nullable(); // array of partner logos/photos
             $table->json('team_members')->nullable(); // array of members
             $table->string('external_url')->nullable(); // for web
             $table->string('video_url')->nullable(); // for hardware

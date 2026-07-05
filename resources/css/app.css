@@ -1288,3 +1288,139 @@ html {
 .lightbox-leave-to {
     opacity: 0;
 }
+
+/* Partner Logo & Placeholder Frame Styles */
+.partner-logo-frame {
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.partner-logo-frame:hover {
+    transform: translateY(-2px);
+    border-color: rgba(245, 158, 11, 0.5) !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.partner-placeholder-frame {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%) !important;
+}
+
+/* Detail Tab Navigation Styles */
+.detail-tab-bar {
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 16px;
+    z-index: 10;
+}
+
+.btn-detail-tab {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #94a3b8;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.15rem;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-detail-tab:hover {
+    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+.btn-detail-tab.active {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.35) 0%, rgba(139, 92, 246, 0.35) 100%) !important;
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+
+.btn-detail-tab .tab-icon {
+    font-size: 1.05rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-detail-tab:hover .tab-icon {
+    transform: scale(1.18);
+}
+
+/* Stats counter card micro glow */
+.stats-card-glow {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-card-glow:hover {
+    transform: translateY(-3px);
+    border-color: rgba(99, 102, 241, 0.4) !important;
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.15);
+}
+
+/* High-Contrast Detail View Typography & Readability */
+.project-detail-view {
+    color: #f1f5f9 !important;
+}
+
+.project-detail-view .text-secondary {
+    color: #cbd5e1 !important; /* Brighter slate-silver for clear readability against dark glassmorphism */
+}
+
+.project-detail-view .text-muted {
+    color: #a0aec0 !important;
+}
+
+.project-detail-view h1,
+.project-detail-view h2,
+.project-detail-view h3,
+.project-detail-view h4,
+.project-detail-view h5,
+.project-detail-view h6 {
+    color: #ffffff !important;
+}
+
+.project-detail-view p {
+    color: #e2e8f0 !important;
+    line-height: 1.7;
+}
+
+.btn-detail-tab {
+    color: #cbd5e1 !important;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Ambient Cybernetic Floating Particle Canvas Overlay */
+.ambient-particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.95;
+    transition: opacity 0.5s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* GPU Acceleration & Layout Containment Optimizations */
+.glass-card,
+.project-card,
+.detail-tab-bar,
+.glow-bg {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.project-card,
+.glass-card {
+    contain: layout style paint;
+}

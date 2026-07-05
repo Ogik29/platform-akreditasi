@@ -38,6 +38,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Sulthonika',
@@ -91,6 +92,7 @@ class ProjectSeeder extends Seeder
                     'Koperasi Simpan Pinjam Mitra Mandiri Sidoarjo',
                     'Bank Pembangunan Daerah Jawa Timur (Bank Jatim)'
                 ],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Peres',
@@ -132,6 +134,7 @@ class ProjectSeeder extends Seeder
                 'partners' => [
                     'Badan Usaha Milik Negara (BUMN)'
                 ],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Rizal',
@@ -142,7 +145,7 @@ class ProjectSeeder extends Seeder
                         'linkedin' => 'https://www.linkedin.com/in/rizal-zidan-2729a1329/'
                     ]
                 ],
-                'external_url' => null,
+                'external_url' => 'http://ta-rizal.it-showcase.tusbind.ac.id/',
                 'video_url' => null,
                 'screenshots' => null
             ],
@@ -162,6 +165,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'IoT',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Penelitian Mandiri'],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Steven',
@@ -215,6 +219,10 @@ class ProjectSeeder extends Seeder
                     'WAROENG INKLUSI MALANG',
                     'Lembaga Pendidikan Inklusi Al-Fasyah Kepanjen'
                 ],
+                'logo_mitra' => [
+                    '/img/vroom/WAROENG INKLUSI.png',
+                    '/img/vroom/alfasyah.png'
+                ],
                 'team_members' => [
                     [
                         'nickname' => 'Ary',
@@ -265,6 +273,7 @@ class ProjectSeeder extends Seeder
                 'partners' => [
                     'Kantor Pertanahan Kota Surabaya II'
                 ],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Rafli',
@@ -298,6 +307,7 @@ class ProjectSeeder extends Seeder
                 'partners' => [
                     'Rooftop Telkom University Surabaya'
                 ],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Cisa',
@@ -332,6 +342,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Adis',
@@ -401,6 +412,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Reza',
@@ -471,6 +483,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Lia',
@@ -535,6 +548,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Gandi',
@@ -603,6 +617,7 @@ class ProjectSeeder extends Seeder
                 'partners' => [
                     'SLB A Yayasan Pendidikan Anak Buta Surabaya'
                 ],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Fikri',
@@ -718,6 +733,7 @@ class ProjectSeeder extends Seeder
                     'Amazon Web Services (AWS) Indonesia',
                     'Laboratorium Jaringan & Komputasi Awan'
                 ],
+                'logo_mitra' => null,
                 'team_members' => [
                     [
                         'nickname' => 'Reynanda',
