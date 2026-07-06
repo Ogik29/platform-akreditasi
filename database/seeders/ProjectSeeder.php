@@ -65,7 +65,7 @@ class ProjectSeeder extends Seeder
                         'linkedin' => 'https://www.linkedin.com/in/michaelangelloqr?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn8BjhOy-gZMw4fxRy3TE-vSXRN6n1XywWWlhfk2MNC_h4YUow9K0ZPmqowNw_aem_ul7gB8QS9dWqQ8-bBmmtuA'
                     ]
                 ],
-                'external_url' => 'http://sigap.it-showcase.tusbind.ac.id',
+                'external_url' => 'https://sigap.it-showcase.tusbind.ac.id',
                 'video_url' => null,
                 'screenshots' => null
             ],
@@ -99,7 +99,7 @@ class ProjectSeeder extends Seeder
                         'linkedin' => 'https://www.linkedin.com/in/peresshendrii'
                     ]
                 ],
-                'external_url' => 'https://creditscore-peres.test',
+                'external_url' => 'https://ta-peres.it-showcase.tusbind.ac.id',
                 'video_url' => null,
                 'screenshots' => ['img/ta-peres/dokumentasi/IMG_20260520_121128.jpg']
             ],
@@ -133,7 +133,7 @@ class ProjectSeeder extends Seeder
                         'linkedin' => 'https://www.linkedin.com/in/rizal-zidan-2729a1329/'
                     ]
                 ],
-                'external_url' => null,
+                'external_url' => 'https://ta-rizal.it-showcase.tusbind.ac.id',
                 'video_url' => null,
                 'screenshots' => null
             ],
@@ -269,7 +269,7 @@ class ProjectSeeder extends Seeder
                         'linkedin' => 'https://www.linkedin.com/in/rafli-haidar-nashif/'
                     ]
                 ],
-                'external_url' => 'http://ta-rafli.it-showcase.tusbind.ac.id',
+                'external_url' => 'https://ta-rafli.it-showcase.tusbind.ac.id',
                 'video_url' => null,
                 'screenshots' => null
             ],
@@ -693,7 +693,10 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                         'linkedin' => 'https://www.linkedin.com/in/hans-gg/'
                     ]
                 ],
-                'external_url' => null,
+                'external_url' => [
+                    'https://logint.it-showcase.tusbind.ac.id',
+                    'https://logint-ai.it-showcase.tusbind.ac.id'
+                ],
                 'video_url' => null,
                 'screenshots' => null,
                 'documentations' => []
@@ -726,10 +729,11 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                         'linkedin' => 'https://www.linkedin.com/in/adib-kamali-001357192/'
                     ],
                 ],
-                'external_url' => null,
+                'external_url' => 'https://kmeans-riska.it-showcase.tusbind.ac.id',
                 'video_url' => null,
                 'screenshots' => null
-            ], [
+            ],
+            [
                 'name' => 'Automatic Weather Station',
                 'supervisor' => 'CAP',
                 'type' => 'mobile',

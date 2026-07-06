@@ -931,38 +931,45 @@
                                         mencoba platform secara langsung pada
                                         tab baru.
                                     </p>
-                                    <a
-                                        v-if="selectedProject.external_url"
-                                        :href="selectedProject.external_url"
-                                        target="_blank"
-                                        class="btn btn-silver btn-web-launch py-2.5 px-4 d-inline-flex align-items-center gap-2"
-                                        style="
-                                            font-size: 0.95rem;
-                                            font-weight: 600;
-                                        "
+                                    <div
+                                        v-if="getExternalUrls(selectedProject).length > 0"
+                                        class="d-flex flex-wrap justify-content-center align-items-center gap-3"
                                     >
-                                        <span>Buka Aplikasi Web</span>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-box-arrow-up-right"
-                                            viewBox="0 0 16 16"
+                                        <a
+                                            v-for="(urlItem, uIdx) in getExternalUrls(selectedProject)"
+                                            :key="uIdx"
+                                            :href="formatUrl(urlItem)"
+                                            target="_blank"
+                                            class="btn btn-silver btn-web-launch py-2.5 px-4 d-inline-flex align-items-center gap-2"
+                                            style="
+                                                font-size: 0.95rem;
+                                                font-weight: 600;
+                                            "
                                         >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                                            />
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                                            />
-                                        </svg>
-                                    </a>
+                                            <span>{{ getUrlLabel(urlItem, uIdx, getExternalUrls(selectedProject).length) }}</span>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-box-arrow-up-right"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
                                     <span
                                         v-else
-                                        class="text-muted text-italic small"
+                                        class="text-muted text-italic small d-block"
+                                        style="color: #cbd5e1 !important"
                                         >URL Website tidak tersedia</span
                                     >
                                 </div>
@@ -2818,6 +2825,58 @@ export default {
                     this._particleVisibilityHandler,
                 );
             }
+        },
+        getExternalUrls(project) {
+            if (!project || !project.external_url) return [];
+
+            let urls = project.external_url;
+
+            if (typeof urls === "string") {
+                try {
+                    const parsed = JSON.parse(urls);
+                    if (Array.isArray(parsed)) {
+                        urls = parsed;
+                    } else {
+                        urls = [urls];
+                    }
+                } catch (e) {
+                    urls = [urls];
+                }
+            }
+
+            if (!Array.isArray(urls)) {
+                urls = [urls];
+            }
+
+            return urls.filter(
+                (u) =>
+                    u && (typeof u === "string" || typeof u === "object"),
+            );
+        },
+        formatUrl(urlItem) {
+            if (!urlItem) return "#";
+            let raw =
+                typeof urlItem === "object" && urlItem.url
+                    ? urlItem.url
+                    : urlItem;
+            if (typeof raw !== "string") return "#";
+            const trimmed = raw.trim();
+            if (
+                !trimmed.startsWith("http://") &&
+                !trimmed.startsWith("https://")
+            ) {
+                return "https://" + trimmed;
+            }
+            return trimmed;
+        },
+        getUrlLabel(urlItem, index, total) {
+            if (typeof urlItem === "object" && urlItem.name) {
+                return urlItem.name;
+            }
+            if (total === 1) {
+                return "Buka Aplikasi Web";
+            }
+            return `Buka Web App #${index + 1}`;
         },
     },
     beforeUnmount() {
