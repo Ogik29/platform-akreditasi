@@ -1728,7 +1728,7 @@
                         <h3
                             class="fw-extrabold text-white text-center mb-2 text-gradient-silver"
                         >
-                            Tim Inovator
+                            Anggota Inovator
                         </h3>
                         <p
                             class="text-secondary text-center mx-auto mb-5"
