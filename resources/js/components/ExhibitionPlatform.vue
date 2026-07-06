@@ -32,148 +32,355 @@
             <!-- Grid View -->
             <div v-if="currentView === 'grid'" key="grid">
                 <!-- Header / Hero Section -->
-                <header class="text-center mb-5 mt-4 fade-in-up">
-                    <div class="float-animation">
+                <header
+                    class="mb-5 mt-0 fade-in-up"
+                    style="
+                        margin-left: calc(-1 * var(--bs-gutter-x, 12px));
+                        margin-right: calc(-1 * var(--bs-gutter-x, 12px));
+                        margin-top: calc(-3rem) !important;
+                    "
+                >
+                    <!-- Single Master Hero Showcase Card -->
+                    <div
+                        class="position-relative overflow-hidden hero-master-card text-start p-4 p-md-5"
+                        style="
+                            border-radius: 0 0 24px 24px;
+                            border-top: none;
+                            background: transparent !important;
+                            box-shadow: none;
+                            border-left: none;
+                            border-right: none;
+                            border-bottom: none;
+                            overflow: visible !important;
+                        "
+                    >
+                        <!-- Ambient Radial Background Glow -->
                         <div
-                            class="d-inline-block px-3 py-1 mb-3 rounded-pill bg-dark bg-opacity-50 border border-secondary text-secondary fw-bold fade-in-up anim-delay-100"
-                            style="
-                                font-size: 0.85rem;
-                                letter-spacing: 1px;
-                                border-color: rgba(
-                                    255,
-                                    255,
-                                    255,
-                                    0.2
-                                ) !important;
-                                color: #cbd5e1 !important;
-                            "
-                        >
-                            ★ PAMERAN PRODI TEKNOLOGI INFORMASI ★
-                        </div>
-                        <h1
-                            class="display-3 fw-extrabold text-white mb-3 fade-in-up anim-delay-200"
-                        >
-                            Pameran
-                            <span class="text-gradient-silver">Teknologi</span>
-                            &amp;
-                            <span class="text-gradient-titanium">Inovasi</span>
-                        </h1>
-                        <p
-                            class="lead text-secondary mx-auto mb-4 fade-in-up anim-delay-300"
-                            style="max-width: 720px"
-                        >
-                            Selamat datang di Platform Showcase Tugas Akhir dan
-                            Proyek Inovatif Mahasiswa Teknologi Informasi Telkom
-                            University Surabaya. Kami menampilkan hasil karya
-                            terbaik mahasiswa dari 3 platform berbeda dengan
-                            raihan prestasi nasional dan internasional.
-                        </p>
+                            class="poster-ambient-glow"
+                            :style="{
+                                background:
+                                    activePosterIndex === 0
+                                        ? 'radial-gradient(circle, rgba(56,189,248,0.22) 0%, rgba(15,23,42,0) 70%)'
+                                        : 'radial-gradient(circle, rgba(167,139,250,0.22) 0%, rgba(15,23,42,0) 70%)',
+                            }"
+                        ></div>
 
-                        <!-- Animated Stats Counters Banner -->
-                        <div
-                            class="row justify-content-center g-2 g-sm-3 mt-4"
-                            style="max-width: 980px; margin: 0 auto"
-                        >
-                            <div
-                                class="col-6 col-sm-4 col-lg fade-in-up anim-delay-400"
-                            >
+                        <div class="position-relative z-2">
+                            <!-- 1. Hero Header Inside Card -->
+                            <div class="text-center mb-4 pb-2">
                                 <div
-                                    class="glass-card stats-card-glow p-2 p-sm-3 text-center"
+                                    class="d-inline-block px-3 py-1 mb-2 rounded-pill fw-bold"
+                                    style="
+                                        font-size: 0.82rem;
+                                        letter-spacing: 1px;
+                                        background: rgba(30, 41, 59, 0.12);
+                                        border: 1px solid rgba(30, 41, 59, 0.25);
+                                        color: #334155;
+                                    "
                                 >
-                                    <div class="fs-4 mb-1">🚀</div>
-                                    <h3
-                                        class="fw-bold text-info mb-1 stats-number"
+                                    ★ PAMERAN PRODI TEKNOLOGI INFORMASI ★
+                                </div>
+                                <h1
+                                    class="display-4 fw-extrabold mb-0"
+                                    style="color: #1e293b"
+                                >
+                                    Pameran
+                                    <span
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #0f172a 0%,
+                                                #475569 100%
+                                            );
+                                            -webkit-background-clip: text;
+                                            -webkit-text-fill-color: transparent;
+                                            background-clip: text;
+                                        "
+                                        >Teknologi</span
                                     >
-                                        {{
-                                            animatedStats.projects ||
-                                            projects.length
-                                        }}
-                                    </h3>
-                                    <small
-                                        class="text-secondary d-block stats-label"
-                                        >Total Proyek</small
+                                    &amp;
+                                    <span
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #334155 0%,
+                                                #64748b 100%
+                                            );
+                                            -webkit-background-clip: text;
+                                            -webkit-text-fill-color: transparent;
+                                            background-clip: text;
+                                        "
+                                        >Inovasi</span
                                     >
+                                </h1>
+                            </div>
+
+                            <!-- 2. Middle Showcase Grid: Left Poster Viewport + Right Info & Selector -->
+                            <div
+                                class="row g-4 align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-20"
+                            >
+                                <!-- Left Column: Poster Viewport Stage -->
+                                <div class="col-lg-7">
+                                    <div
+                                        class="position-relative rounded-4"
+                                        style="height: 420px"
+                                    >
+                                        <!-- Poster Viewport fills entire wrapper (behind arrows) -->
+                                        <div
+                                            class="poster-viewport position-absolute w-100 h-100 overflow-hidden top-0 start-0 rounded-4"
+                                            style="z-index: 1"
+                                        >
+                                            <Transition
+                                                :name="posterSlideDirection"
+                                            >
+                                                <div
+                                                    :key="activePosterIndex"
+                                                    class="poster-slide-item w-100 h-100 text-center"
+                                                >
+                                                    <img
+                                                        :src="
+                                                            posters[
+                                                                activePosterIndex
+                                                            ].image
+                                                        "
+                                                        :alt="
+                                                            posters[
+                                                                activePosterIndex
+                                                            ].title
+                                                        "
+                                                        class="rounded-4 poster-stage-img lightbox-trigger shadow-lg"
+                                                        @click="
+                                                            openLightbox(
+                                                                posters[
+                                                                    activePosterIndex
+                                                                ].image,
+                                                            )
+                                                        "
+                                                        style="
+                                                            width: 100%;
+                                                            height: 420px;
+                                                            object-fit: cover;
+                                                            object-position: top;
+                                                            cursor: pointer;
+                                                            display: block;
+                                                        "
+                                                    />
+                                                </div>
+                                            </Transition>
+                                        </div>
+
+                                        <!-- Left Arrow Button (floats over viewport) -->
+                                        <button
+                                            type="button"
+                                            @click="prevPoster"
+                                            class="btn-poster-nav btn-poster-prev"
+                                            aria-label="Poster Sebelumnya"
+                                            style="z-index: 40"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            >
+                                                <polyline points="15 18 9 12 15 6"></polyline>
+                                            </svg>
+                                        </button>
+
+                                        <!-- Right Arrow Button (floats over viewport) -->
+                                        <button
+                                            type="button"
+                                            @click="nextPoster"
+                                            class="btn-poster-nav btn-poster-next"
+                                            aria-label="Poster Selanjutnya"
+                                            style="z-index: 40"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            >
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column: Welcome Intro Paragraph & Poster Switcher Buttons -->
+                                <div class="col-lg-5">
+                                    <div
+                                        class="d-flex flex-column h-100 justify-content-center pe-lg-2"
+                                    >
+                                        <!-- Header Badge -->
+                                        <span
+                                            class="poster-stage-badge d-inline-flex align-items-center gap-2 mb-3 align-self-start"
+                                        >
+                                            <span class="pulse-dot"></span>
+                                            <span
+                                                >SHOWCASE PAMERAN
+                                                AKREDITASI</span
+                                            >
+                                        </span>
+
+                                        <!-- Welcome Paragraph -->
+                                        <p
+                                            class="mb-4"
+                                            style="
+                                                color: #334155;
+                                                line-height: 1.7;
+                                                font-size: 0.94rem;
+                                            "
+                                        >
+                                            Selamat datang di Platform Showcase
+                                            Tugas Akhir dan Proyek Inovatif
+                                            Mahasiswa Teknologi Informasi Telkom
+                                            University Surabaya. Kami
+                                            menampilkan hasil karya terbaik
+                                            mahasiswa dan sivitas akademik Prodi
+                                            Teknologi Informasi dari 3 platform
+                                            berbeda dengan raihan prestasi
+                                            nasional dan internasional.
+                                        </p>
+
+                                        <!-- Poster Switcher Buttons -->
+                                        <div class="d-flex flex-column gap-2">
+                                            <button
+                                                v-for="(
+                                                    poster, pIdx
+                                                ) in posters"
+                                                :key="pIdx"
+                                                type="button"
+                                                @click="goToPoster(pIdx)"
+                                                :class="[
+                                                    'poster-select-tab-btn text-start d-flex align-items-center justify-content-between w-100',
+                                                    activePosterIndex === pIdx
+                                                        ? 'active'
+                                                        : '',
+                                                ]"
+                                            >
+                                                <span
+                                                    class="d-flex align-items-center gap-2"
+                                                >
+                                                    <span>📄</span>
+                                                    <span>{{
+                                                        poster.title
+                                                    }}</span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- 3. Bottom Integrated Stats Counters Row -->
                             <div
-                                class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
+                                class="row justify-content-center g-2 g-sm-3 text-center"
                             >
-                                <div
-                                    class="glass-card stats-card-glow p-2 p-sm-3 text-center"
-                                >
-                                    <div class="fs-4 mb-1">🏆</div>
-                                    <h3
-                                        class="fw-bold mb-1 stats-number"
-                                        style="color: #60a5fa"
+                                <div class="col-6 col-sm-4 col-lg">
+                                    <div
+                                        class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        {{
-                                            animatedStats.nasional ||
-                                            totalNasional
-                                        }}
-                                    </h3>
-                                    <small
-                                        class="text-secondary d-block stats-label"
-                                        >Prestasi Nasional</small
-                                    >
+                                        <div class="fs-4 mb-1">🚀</div>
+                                        <h3
+                                            class="fw-bold text-info mb-1 stats-number"
+                                        >
+                                            {{
+                                                animatedStats.projects ||
+                                                projects.length
+                                            }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Total Proyek</small
+                                        >
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
-                            >
-                                <div
-                                    class="glass-card stats-card-glow p-2 p-sm-3 text-center"
-                                >
-                                    <div class="fs-4 mb-1">🌐</div>
-                                    <h3
-                                        class="fw-bold mb-1 stats-number"
-                                        style="color: #a78bfa"
+                                <div class="col-6 col-sm-4 col-lg">
+                                    <div
+                                        class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        {{
-                                            animatedStats.internasional ||
-                                            totalInternasional
-                                        }}
-                                    </h3>
-                                    <small
-                                        class="text-secondary d-block stats-label"
-                                        >Prestasi Internasional</small
-                                    >
+                                        <div class="fs-4 mb-1">🏆</div>
+                                        <h3
+                                            class="fw-bold mb-1 stats-number"
+                                            style="color: #60a5fa"
+                                        >
+                                            {{
+                                                animatedStats.nasional ||
+                                                totalNasional
+                                            }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Prestasi Nasional</small
+                                        >
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
-                            >
-                                <div
-                                    class="glass-card stats-card-glow p-2 p-sm-3 text-center"
-                                >
-                                    <div class="fs-4 mb-1">🤝</div>
-                                    <h3
-                                        class="fw-bold text-warning mb-1 stats-number"
+                                <div class="col-6 col-sm-4 col-lg">
+                                    <div
+                                        class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        {{ animatedStats.mitra || totalMitra }}
-                                    </h3>
-                                    <small
-                                        class="text-secondary d-block stats-label"
-                                        >Mitra Strategis</small
-                                    >
+                                        <div class="fs-4 mb-1">🌐</div>
+                                        <h3
+                                            class="fw-bold mb-1 stats-number"
+                                            style="color: #a78bfa"
+                                        >
+                                            {{
+                                                animatedStats.internasional ||
+                                                totalInternasional
+                                            }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Prestasi Internasional</small
+                                        >
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
-                            >
-                                <div
-                                    class="glass-card stats-card-glow p-2 p-sm-3 text-center"
-                                >
-                                    <div class="fs-4 mb-1">👨‍🏫</div>
-                                    <h3
-                                        class="fw-bold text-secondary mb-1 stats-number"
-                                        style="color: #cbd5e1 !important"
+                                <div class="col-6 col-sm-4 col-lg">
+                                    <div
+                                        class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        {{ animatedStats.dosen || 5 }}
-                                    </h3>
-                                    <small
-                                        class="text-secondary d-block stats-label"
-                                        >Dosen Pembimbing</small
+                                        <div class="fs-4 mb-1">🤝</div>
+                                        <h3
+                                            class="fw-bold text-warning mb-1 stats-number"
+                                        >
+                                            {{
+                                                animatedStats.mitra ||
+                                                totalMitra
+                                            }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Mitra Strategis</small
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4 col-lg">
+                                    <div
+                                        class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
+                                        <div class="fs-4 mb-1">👨‍🏫</div>
+                                        <h3
+                                            class="fw-bold text-secondary mb-1 stats-number"
+                                            style="color: #cbd5e1 !important"
+                                        >
+                                            {{ animatedStats.dosen || 5 }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Dosen Pembimbing</small
+                                        >
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -417,8 +624,12 @@
                         class="col-12 col-md-6 col-lg-4"
                     >
                         <div
-                            class="glass-card h-100 p-3 p-sm-4 d-flex flex-column justify-content-between"
+                            class="glass-card project-card h-100 p-3 p-sm-4 d-flex flex-column justify-content-between position-relative"
+                            @mousemove="handleCardTilt($event)"
+                            @mouseleave="resetCardTilt($event)"
                         >
+                            <!-- Card Sheen Gloss Reflection Overlay -->
+                            <div class="card-sheen"></div>
                             <!-- Dynamic background logo watermark -->
                             <div
                                 class="card-bg-logo"
@@ -932,11 +1143,18 @@
                                         tab baru.
                                     </p>
                                     <div
-                                        v-if="getExternalUrls(selectedProject).length > 0"
+                                        v-if="
+                                            getExternalUrls(selectedProject)
+                                                .length > 0
+                                        "
                                         class="d-flex flex-wrap justify-content-center align-items-center gap-3"
                                     >
                                         <a
-                                            v-for="(urlItem, uIdx) in getExternalUrls(selectedProject)"
+                                            v-for="(
+                                                urlItem, uIdx
+                                            ) in getExternalUrls(
+                                                selectedProject,
+                                            )"
                                             :key="uIdx"
                                             :href="formatUrl(urlItem)"
                                             target="_blank"
@@ -946,7 +1164,15 @@
                                                 font-weight: 600;
                                             "
                                         >
-                                            <span>{{ getUrlLabel(urlItem, uIdx, getExternalUrls(selectedProject).length) }}</span>
+                                            <span>{{
+                                                getUrlLabel(
+                                                    urlItem,
+                                                    uIdx,
+                                                    getExternalUrls(
+                                                        selectedProject,
+                                                    ).length,
+                                                )
+                                            }}</span>
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="16"
@@ -972,6 +1198,93 @@
                                         style="color: #cbd5e1 !important"
                                         >URL Website tidak tersedia</span
                                     >
+                                </div>
+                            </div>
+
+                            <!-- Mobile Application External Link Preview (Mobile-based with external_url) -->
+                            <div
+                                v-if="
+                                    selectedProject.type !== 'web' &&
+                                    getExternalUrls(selectedProject).length > 0
+                                "
+                                class="glass-card p-4 mb-4"
+                            >
+                                <h4
+                                    class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
+                                >
+                                    <span>📱 Tautan Demo / Web Portal</span>
+                                </h4>
+                                <div
+                                    class="web-redirect-container text-center py-4 animate-pulse-subtle"
+                                    style="
+                                        background: rgba(15, 23, 42, 0.3);
+                                        border: 1px dashed
+                                            rgba(255, 255, 255, 0.15);
+                                        border-radius: 16px;
+                                    "
+                                >
+                                    <span class="fs-1 d-block mb-3">🔗</span>
+                                    <h5 class="text-white fw-bold mb-2">
+                                        Tautan Eksternal Siap Diakses
+                                    </h5>
+                                    <p
+                                        class="text-light small mx-auto mb-4"
+                                        style="
+                                            max-width: 480px;
+                                            color: #cbd5e1 !important;
+                                        "
+                                    >
+                                        Proyek ini menyediakan tautan eksternal
+                                        / web portal yang dapat diakses secara
+                                        live. Klik tombol di bawah untuk membuka
+                                        tautan pada tab baru.
+                                    </p>
+                                    <div
+                                        class="d-flex flex-wrap justify-content-center align-items-center gap-3"
+                                    >
+                                        <a
+                                            v-for="(
+                                                urlItem, uIdx
+                                            ) in getExternalUrls(
+                                                selectedProject,
+                                            )"
+                                            :key="uIdx"
+                                            :href="formatUrl(urlItem)"
+                                            target="_blank"
+                                            class="btn btn-silver btn-web-launch py-2.5 px-4 d-inline-flex align-items-center gap-2"
+                                            style="
+                                                font-size: 0.95rem;
+                                                font-weight: 600;
+                                            "
+                                        >
+                                            <span>{{
+                                                getUrlLabel(
+                                                    urlItem,
+                                                    uIdx,
+                                                    getExternalUrls(
+                                                        selectedProject,
+                                                    ).length,
+                                                )
+                                            }}</span>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-box-arrow-up-right"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -1733,13 +2046,14 @@
                     <!-- Team Members Cards -->
                     <div class="glass-card p-4 p-md-5">
                         <h3
-                            class="fw-extrabold text-white text-center mb-2 text-gradient-silver"
+                            class="fw-extrabold text-center mb-2"
+                            style="color: #1e293b;"
                         >
                             Anggota Inovator
                         </h3>
                         <p
-                            class="text-secondary text-center mx-auto mb-5"
-                            style="max-width: 600px"
+                            class="text-center mx-auto mb-5"
+                            style="color: #475569; max-width: 600px;"
                         >
                             Sivitas di balik rancangan, implementasi, dan
                             pengujian sistem.
@@ -1756,10 +2070,13 @@
                                 :key="idx"
                             >
                                 <div
-                                    class="team-member-card h-100 d-flex flex-column align-items-center text-center"
+                                    class="team-member-card h-100 d-flex flex-column align-items-center text-center position-relative"
                                 >
                                     <div
                                         class="team-avatar-container mb-3 position-relative"
+                                        :style="member.photo && hasRealPhoto(member.photo) ? 'cursor: pointer;' : ''"
+                                        :title="member.photo && hasRealPhoto(member.photo) ? 'Klik untuk memperbesar foto ' + member.nickname : ''"
+                                        @click="member.photo && hasRealPhoto(member.photo) && openLightbox(member.photo)"
                                     >
                                         <div class="team-avatar-ring"></div>
                                         <img
@@ -1769,7 +2086,7 @@
                                             "
                                             :src="member.photo"
                                             :alt="member.nickname"
-                                            class="team-avatar-img"
+                                            class="team-avatar-img lightbox-trigger"
                                         />
                                         <div
                                             v-else
@@ -1783,43 +2100,53 @@
                                                     : "TM"
                                             }}
                                         </div>
+                                        <span
+                                            v-if="member.photo && hasRealPhoto(member.photo)"
+                                            class="avatar-zoom-hint"
+                                        >
+                                            🔍
+                                        </span>
                                     </div>
                                     <h5
-                                        class="text-white fw-bold mb-1 text-truncate w-100"
+                                        class="fw-bold mb-1 text-truncate w-100"
+                                        style="color: #ffffff !important;"
                                     >
                                         {{ member.nickname }}
                                     </h5>
                                     <p
-                                        class="text-white mb-2 small text-truncate w-100"
-                                        style="color: #cbd5e1 !important"
+                                        class="mb-2 small text-truncate w-100"
+                                        style="color: #cbd5e1 !important;"
                                     >
                                         {{ member.fullname }}
                                     </p>
                                     <span
                                         v-if="member.role"
-                                        class="badge bg-dark border border-secondary text-light mb-4 w-100 text-truncate"
-                                        style="
-                                            font-size: 11px;
-                                            padding: 6px 10px;
-                                            color: #e2e8f0 !important;
-                                        "
+                                        class="badge team-role-badge mb-4 w-100 text-truncate"
+                                        style="background: rgba(56, 189, 248, 0.15) !important; border: 1px solid rgba(56, 189, 248, 0.4) !important; color: #38bdf8 !important; font-weight: 600;"
                                     >
                                         {{ member.role }}
                                     </span>
 
-                                    <!-- Social Media Buttons -->
-                                    <div class="d-flex gap-3 mt-auto">
+                                    <!-- Floating Social Media Pill -->
+                                    <div
+                                        v-if="
+                                            member.linkedin ||
+                                            (member.social_media &&
+                                                member.social_media.instagram)
+                                        "
+                                        class="social-pill-container d-inline-flex align-items-center gap-2 mt-auto"
+                                    >
                                         <a
                                             v-if="member.linkedin"
                                             :href="member.linkedin"
                                             target="_blank"
-                                            class="social-icon-btn"
+                                            class="social-icon-btn-floating"
                                             title="LinkedIn"
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                width="16"
-                                                height="16"
+                                                width="15"
+                                                height="15"
                                                 fill="currentColor"
                                                 class="bi bi-linkedin"
                                                 viewBox="0 0 16 16"
@@ -1838,13 +2165,13 @@
                                                 member.social_media.instagram
                                             "
                                             target="_blank"
-                                            class="social-icon-btn"
+                                            class="social-icon-btn-floating instagram-btn"
                                             title="Instagram"
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                width="16"
-                                                height="16"
+                                                width="15"
+                                                height="15"
                                                 fill="currentColor"
                                                 class="bi bi-instagram"
                                                 viewBox="0 0 16 16"
@@ -2287,6 +2614,21 @@ export default {
                 mitra: 0,
                 dosen: 0,
             },
+            posters: [
+                {
+                    id: 1,
+                    title: "Poster Pameran Akreditasi & Inovasi Riset #1",
+                    image: "/img/poster1.jpeg",
+                },
+                {
+                    id: 2,
+                    title: "Poster Pameran Akreditasi & Inovasi Riset #2",
+                    image: "/img/poster2.jpeg",
+                },
+            ],
+            activePosterIndex: 0,
+            posterSlideDirection: "slide-next",
+            posterAutoSlideTimer: null,
         };
     },
     computed: {
@@ -2380,6 +2722,7 @@ export default {
         }
         window.addEventListener("popstate", this.handlePopState);
         this.animateCounters();
+        this.startPosterAutoSlide();
         this.$nextTick(() => {
             this.initParticleCanvas();
         });
@@ -2849,8 +3192,7 @@ export default {
             }
 
             return urls.filter(
-                (u) =>
-                    u && (typeof u === "string" || typeof u === "object"),
+                (u) => u && (typeof u === "string" || typeof u === "object"),
             );
         },
         formatUrl(urlItem) {
@@ -2878,10 +3220,68 @@ export default {
             }
             return `Buka Web App #${index + 1}`;
         },
+        handleCardTilt(e) {
+            const card = e.currentTarget;
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * -7;
+            const rotateY = ((x - centerX) / centerX) * 7;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.025, 1.025, 1.025)`;
+
+            const sheen = card.querySelector(".card-sheen");
+            if (sheen) {
+                sheen.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%)`;
+            }
+        },
+        resetCardTilt(e) {
+            const card = e.currentTarget;
+            card.style.transform =
+                "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+            const sheen = card.querySelector(".card-sheen");
+            if (sheen) {
+                sheen.style.background = "none";
+            }
+        },
+        nextPoster() {
+            this.posterSlideDirection = "slide-next";
+            this.activePosterIndex =
+                (this.activePosterIndex + 1) % this.posters.length;
+        },
+        prevPoster() {
+            this.posterSlideDirection = "slide-prev";
+            this.activePosterIndex =
+                (this.activePosterIndex - 1 + this.posters.length) %
+                this.posters.length;
+        },
+        goToPoster(index) {
+            if (index === this.activePosterIndex) return;
+            this.posterSlideDirection =
+                index > this.activePosterIndex ? "slide-next" : "slide-prev";
+            this.activePosterIndex = index;
+        },
+        startPosterAutoSlide() {
+            this.stopPosterAutoSlide();
+            this.posterAutoSlideTimer = setInterval(() => {
+                this.nextPoster();
+            }, 6000);
+        },
+        stopPosterAutoSlide() {
+            if (this.posterAutoSlideTimer) {
+                clearInterval(this.posterAutoSlideTimer);
+                this.posterAutoSlideTimer = null;
+            }
+        },
     },
     beforeUnmount() {
         window.removeEventListener("popstate", this.handlePopState);
         this.destroyParticleCanvas();
+        this.stopPosterAutoSlide();
     },
 };
 </script>

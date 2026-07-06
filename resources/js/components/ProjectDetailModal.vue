@@ -148,13 +148,18 @@
                                     class="team-member-card h-100 d-flex flex-column align-items-center text-center"
                                 >
                                     <!-- Photo/Avatar Container -->
-                                    <div class="team-avatar-container mb-3 position-relative">
+                                    <div
+                                        class="team-avatar-container mb-3 position-relative"
+                                        :style="member.photo && hasRealPhoto(member.photo) ? 'cursor: pointer;' : ''"
+                                        :title="member.photo && hasRealPhoto(member.photo) ? 'Klik untuk memperbesar foto ' + member.nickname : ''"
+                                        @click="member.photo && hasRealPhoto(member.photo) && $emit('open-lightbox', member.photo)"
+                                    >
                                         <div class="team-avatar-ring"></div>
                                         <img
                                             v-if="member.photo && hasRealPhoto(member.photo)"
                                             :src="member.photo"
                                             :alt="member.nickname"
-                                            class="team-avatar-img"
+                                            class="team-avatar-img lightbox-trigger"
                                         />
                                         <!-- Custom Initials Avatar -->
                                         <div
@@ -167,15 +172,22 @@
                                                     .toUpperCase()
                                             }}
                                         </div>
+                                        <span
+                                            v-if="member.photo && hasRealPhoto(member.photo)"
+                                            class="avatar-zoom-hint"
+                                        >
+                                            🔍
+                                        </span>
                                     </div>
                                     <h6
-                                        class="text-white fw-bold mb-1 text-truncate w-100"
+                                        class="fw-bold mb-1 text-truncate w-100"
+                                        style="color: #ffffff !important;"
                                     >
                                         {{ member.nickname }}
                                     </h6>
                                     <small
-                                        class="text-secondary mb-2 text-truncate w-100"
-                                        style="font-size: 11px"
+                                        class="mb-2 text-truncate w-100"
+                                        style="font-size: 11px; color: #cbd5e1 !important;"
                                         >{{ member.fullname }}</small
                                     >
                                     <span

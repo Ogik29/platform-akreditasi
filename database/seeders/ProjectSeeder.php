@@ -364,7 +364,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                         'linkedin' => null
                     ]
                 ],
-                'external_url' => null,
+                'external_url' => 'sampahdetector.my.id',
                 'video_url' => null,
                 'screenshots' => [
                     '/img/pcd-adis/UI_UX/Beranda.jpg',
@@ -672,7 +672,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                 ],
                 'funding_awards' => [],
                 'tech_field' => 'AI',
-                'prestasi_level' => 'internasional',
+                'prestasi_level' => 'nasional',
                 'partners' => ['Lab Core Programming Telkom'],
                 'logo_mitra' => ['img/logo tel-u.jpeg'],
                 'team_members' => [
