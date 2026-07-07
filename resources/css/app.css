@@ -167,8 +167,8 @@ h6 {
 /* Glassmorphism CSS */
 .glass-card {
     background: var(--bg-dark-card) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--card-border) !important;
     border-radius: 18px;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -411,8 +411,8 @@ h6 {
 /* Modal styles */
 .modal-content-glass {
     background: rgba(22, 25, 33, 0.95) !important;
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-radius: 24px;
     color: var(--text-primary) !important;
@@ -1314,7 +1314,7 @@ html {
 /* Detail Tab Navigation Styles */
 .detail-tab-bar {
     background: rgba(15, 23, 42, 0.85) !important;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
     border-radius: 16px;
     z-index: 10;
@@ -1707,7 +1707,7 @@ html {
     border: 1.5px solid rgba(56, 189, 248, 0.35);
     box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.15);
     border-radius: 0 0 28px 28px !important;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     background: var(--bg-dark-card) !important;
 }
 
@@ -1726,7 +1726,7 @@ html {
     box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.2);
     border-radius: 24px !important;
     background: rgba(15, 23, 42, 0.65) !important;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(10px);
 }
 
 .poster-ambient-glow {
