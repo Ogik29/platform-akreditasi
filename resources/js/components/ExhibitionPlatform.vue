@@ -188,7 +188,9 @@
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                             >
-                                                <polyline points="15 18 9 12 15 6"></polyline>
+                                                <polyline
+                                                    points="15 18 9 12 15 6"
+                                                ></polyline>
                                             </svg>
                                         </button>
 
@@ -211,7 +213,9 @@
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                             >
-                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                                <polyline
+                                                    points="9 18 15 12 9 6"
+                                                ></polyline>
                                             </svg>
                                         </button>
                                     </div>
@@ -272,7 +276,9 @@
                                                 <span
                                                     class="d-flex align-items-center gap-2"
                                                 >
-                                                    <i class="bi bi-file-earmark-text"></i>
+                                                    <i
+                                                        class="bi bi-file-earmark-text"
+                                                    ></i>
                                                     <span>{{
                                                         poster.title
                                                     }}</span>
@@ -291,7 +297,9 @@
                                     <div
                                         class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        <div class="fs-4 mb-1 text-info"><i class="bi bi-rocket-takeoff"></i></div>
+                                        <div class="fs-4 mb-1 text-info">
+                                            <i class="bi bi-rocket-takeoff"></i>
+                                        </div>
                                         <h3
                                             class="fw-bold text-info mb-1 stats-number"
                                         >
@@ -310,7 +318,9 @@
                                     <div
                                         class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        <div class="fs-4 mb-1 text-primary"><i class="bi bi-trophy"></i></div>
+                                        <div class="fs-4 mb-1 text-primary">
+                                            <i class="bi bi-trophy"></i>
+                                        </div>
                                         <h3
                                             class="fw-bold mb-1 stats-number"
                                             style="color: #60a5fa"
@@ -330,7 +340,12 @@
                                     <div
                                         class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        <div class="fs-4 mb-1 text-purple" style="color: #c084fc;"><i class="bi bi-globe-americas"></i></div>
+                                        <div
+                                            class="fs-4 mb-1 text-purple"
+                                            style="color: #c084fc"
+                                        >
+                                            <i class="bi bi-globe-americas"></i>
+                                        </div>
                                         <h3
                                             class="fw-bold mb-1 stats-number"
                                             style="color: #a78bfa"
@@ -351,8 +366,17 @@
                                         class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
                                         <div class="fs-4 mb-1 text-warning">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-handshake" viewBox="0 0 16 16">
-                                                <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="22"
+                                                height="22"
+                                                fill="currentColor"
+                                                class="bi bi-handshake"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"
+                                                />
                                             </svg>
                                         </div>
                                         <h3
@@ -373,7 +397,12 @@
                                     <div
                                         class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        <div class="fs-4 mb-1 text-secondary" style="color: #94a3b8 !important;"><i class="bi bi-mortarboard"></i></div>
+                                        <div
+                                            class="fs-4 mb-1 text-secondary"
+                                            style="color: #94a3b8 !important"
+                                        >
+                                            <i class="bi bi-mortarboard"></i>
+                                        </div>
                                         <h3
                                             class="fw-bold text-secondary mb-1 stats-number"
                                             style="color: #cbd5e1 !important"
@@ -463,7 +492,9 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-stars"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-stars"></i
+                                    ></span>
                                     Semua Bidang
                                 </button>
                                 <button
@@ -476,7 +507,9 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-cpu"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-cpu"></i
+                                    ></span>
                                     AI
                                 </button>
                                 <button
@@ -489,7 +522,9 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-broadcast"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-broadcast"></i
+                                    ></span>
                                     IoT
                                 </button>
                                 <button
@@ -502,7 +537,9 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-headset-vr"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-headset-vr"></i
+                                    ></span>
                                     VR/AR
                                 </button>
                                 <button
@@ -519,7 +556,9 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-shield-lock"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-shield-lock"></i
+                                    ></span>
                                     Networking &amp; Cyber Security
                                 </button>
                                 <button
@@ -532,7 +571,9 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-microscope"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-microscope"></i
+                                    ></span>
                                     Others
                                 </button>
                             </div>
@@ -555,7 +596,9 @@
                                         selectedType === 'all' ? 'active' : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-grid-fill"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-grid-fill"></i
+                                    ></span>
                                     Semua Kategori
                                 </button>
                                 <button
@@ -566,7 +609,9 @@
                                         selectedType === 'web' ? 'active' : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-desktop"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-desktop"></i
+                                    ></span>
                                     Web-Based
                                 </button>
                                 <button
@@ -579,7 +624,9 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-phone"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-phone"></i
+                                    ></span>
                                     Mobile-Based
                                 </button>
                                 <button
@@ -592,7 +639,9 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-cpu-fill"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-cpu-fill"></i
+                                    ></span>
                                     Hardware-Based
                                 </button>
                             </div>
@@ -612,10 +661,14 @@
                                     @click="selectedPrestasi = 'all'"
                                     :class="[
                                         'btn-filter',
-                                        selectedPrestasi === 'all' ? 'active' : '',
+                                        selectedPrestasi === 'all'
+                                            ? 'active'
+                                            : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-award"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-award"></i
+                                    ></span>
                                     Semua Tingkat
                                 </button>
                                 <button
@@ -623,10 +676,14 @@
                                     @click="selectedPrestasi = 'nasional'"
                                     :class="[
                                         'btn-filter',
-                                        selectedPrestasi === 'nasional' ? 'active' : '',
+                                        selectedPrestasi === 'nasional'
+                                            ? 'active'
+                                            : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-trophy"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-trophy"></i
+                                    ></span>
                                     Nasional
                                 </button>
                                 <button
@@ -639,7 +696,9 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"><i class="bi bi-globe-americas"></i></span>
+                                    <span class="btn-filter-icon"
+                                        ><i class="bi bi-globe-americas"></i
+                                    ></span>
                                     Internasional
                                 </button>
                             </div>
@@ -652,7 +711,9 @@
                     v-if="filteredProjects.length === 0"
                     class="text-center py-5 glass-card fade-in-up"
                 >
-                    <div class="fs-1 mb-2 text-secondary"><i class="bi bi-folder-x"></i></div>
+                    <div class="fs-1 mb-2 text-secondary">
+                        <i class="bi bi-folder-x"></i>
+                    </div>
                     <h5 class="text-secondary mb-3">
                         Tidak ditemukan proyek yang cocok dengan kriteria filter
                         Anda
@@ -807,8 +868,18 @@
                                                     project.partners.join(', ')
                                                 "
                                             >
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handshake text-warning" style="margin-top: 1px;" viewBox="0 0 16 16">
-                                                    <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="16"
+                                                    fill="currentColor"
+                                                    class="bi bi-handshake text-warning"
+                                                    style="margin-top: 1px"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path
+                                                        d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"
+                                                    />
                                                 </svg>
                                                 <span
                                                     class="text-warning fw-extrabold"
@@ -856,7 +927,14 @@
                                                     .replace(/[^a-z]/g, '-'),
                                         ]"
                                     >
-                                        <i :class="[getTechFieldIcon(project.tech_field), 'me-1']"></i>
+                                        <i
+                                            :class="[
+                                                getTechFieldIcon(
+                                                    project.tech_field,
+                                                ),
+                                                'me-1',
+                                            ]"
+                                        ></i>
                                         {{ project.tech_field || "Others" }}
                                     </span>
                                 </div>
@@ -1055,8 +1133,17 @@
                                         class="partner-logo-frame partner-placeholder-frame bg-dark bg-opacity-40 border border-warning border-opacity-30 rounded-2 py-1 px-2 d-flex align-items-center justify-content-center gap-1"
                                         style="height: 36px"
                                     >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handshake text-warning me-1" viewBox="0 0 16 16">
-                                            <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            fill="currentColor"
+                                            class="bi bi-handshake text-warning me-1"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"
+                                            />
                                         </svg>
                                         <span class="text-warning fw-bold small"
                                             >Mitra</span
@@ -1080,7 +1167,9 @@
                             activeDetailTab === 'overview' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon"><i class="bi bi-info-circle me-1"></i></span>
+                        <span class="tab-icon"
+                            ><i class="bi bi-info-circle me-1"></i
+                        ></span>
                         <span>Overview &amp; Pratinjau</span>
                     </button>
 
@@ -1092,7 +1181,9 @@
                             activeDetailTab === 'gallery' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon"><i class="bi bi-images me-1"></i></span>
+                        <span class="tab-icon"
+                            ><i class="bi bi-images me-1"></i
+                        ></span>
                         <span>Dokumentasi</span>
                         <span
                             v-if="getMediaCount(selectedProject) > 0"
@@ -1111,7 +1202,9 @@
                             activeDetailTab === 'prestasi' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon"><i class="bi bi-trophy me-1"></i></span>
+                        <span class="tab-icon"
+                            ><i class="bi bi-trophy me-1"></i
+                        ></span>
                         <span>Raihan Prestasi</span>
                         <span
                             v-if="
@@ -1133,7 +1226,9 @@
                             activeDetailTab === 'team' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon"><i class="bi bi-people me-1"></i></span>
+                        <span class="tab-icon"
+                            ><i class="bi bi-people me-1"></i
+                        ></span>
                         <span>Tim &amp; Pembimbing</span>
                         <span
                             v-if="
@@ -1161,7 +1256,10 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span><i class="bi bi-globe me-2"></i>Platform Web Live</span>
+                                    <span
+                                        ><i class="bi bi-globe me-2"></i
+                                        >Platform Web Live</span
+                                    >
                                 </h4>
                                 <div
                                     class="web-redirect-container text-center py-5 animate-pulse-subtle"
@@ -1172,7 +1270,9 @@
                                         border-radius: 16px;
                                     "
                                 >
-                                    <span class="fs-1 d-block mb-3 text-info"><i class="bi bi-desktop"></i></span>
+                                    <span class="fs-1 d-block mb-3 text-info"
+                                        ><i class="bi bi-desktop"></i
+                                    ></span>
                                     <h5 class="text-white fw-bold mb-2">
                                         Platform Web Siap Diakses
                                     </h5>
@@ -1259,7 +1359,10 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span><i class="bi bi-link-45deg me-2"></i>Tautan Demo / Web Portal</span>
+                                    <span
+                                        ><i class="bi bi-link-45deg me-2"></i
+                                        >Tautan Demo / Web Portal</span
+                                    >
                                 </h4>
                                 <div
                                     class="web-redirect-container text-center py-4 animate-pulse-subtle"
@@ -1270,7 +1373,9 @@
                                         border-radius: 16px;
                                     "
                                 >
-                                    <span class="fs-1 d-block mb-3 text-info"><i class="bi bi-link-45deg"></i></span>
+                                    <span class="fs-1 d-block mb-3 text-info"
+                                        ><i class="bi bi-link-45deg"></i
+                                    ></span>
                                     <h5 class="text-white fw-bold mb-2">
                                         Tautan Eksternal Siap Diakses
                                     </h5>
@@ -1343,7 +1448,10 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span><i class="bi bi-phone me-2"></i>Pratinjau Antarmuka Aplikasi</span>
+                                    <span
+                                        ><i class="bi bi-phone me-2"></i
+                                        >Pratinjau Antarmuka Aplikasi</span
+                                    >
                                 </h4>
                                 <div
                                     v-if="
@@ -1481,7 +1589,9 @@
                                     "
                                 ></div>
                                 <div v-else class="text-center py-5">
-                                    <span class="fs-1 d-block mb-2 text-muted"><i class="bi bi-phone-mute"></i></span>
+                                    <span class="fs-1 d-block mb-2 text-muted"
+                                        ><i class="bi bi-phone-mute"></i
+                                    ></span>
                                     <p class="text-secondary small mb-0">
                                         Screenshot Tidak Tersedia
                                     </p>
@@ -1496,7 +1606,10 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span><i class="bi bi-play-btn me-2"></i>Video Dokumentasi &amp; Demo</span>
+                                    <span
+                                        ><i class="bi bi-play-btn me-2"></i
+                                        >Video Dokumentasi &amp; Demo</span
+                                    >
                                 </h4>
                                 <div class="video-container">
                                     <iframe
@@ -1573,25 +1686,42 @@
                                 <div
                                     class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center border-bottom border-secondary border-opacity-20 pb-3 mb-4 gap-3"
                                 >
-                                    <h4 class="fw-bold text-white mb-0 d-flex align-items-center gap-2">
-                                        <i class="bi bi-file-earmark-pdf text-danger"></i>
-                                        <span>Laporan Tugas Akhir / Riset</span>
+                                    <h4
+                                        class="fw-bold text-white mb-0 d-flex align-items-center gap-2"
+                                    >
+                                        <i
+                                            class="bi bi-file-earmark-pdf text-danger"
+                                        ></i>
+                                        <span>Report Project</span>
                                     </h4>
                                     <div class="d-flex gap-2">
                                         <a
                                             :href="selectedProject.pdf_report"
                                             target="_blank"
                                             class="btn btn-sm btn-outline-light d-inline-flex align-items-center gap-1.5 px-3 py-2"
-                                            style="font-size: 0.82rem; border-color: rgba(255, 255, 255, 0.15);"
+                                            style="
+                                                font-size: 0.82rem;
+                                                border-color: rgba(
+                                                    255,
+                                                    255,
+                                                    255,
+                                                    0.15
+                                                );
+                                            "
                                         >
-                                            <i class="bi bi-box-arrow-up-right"></i>
+                                            <i
+                                                class="bi bi-box-arrow-up-right"
+                                            ></i>
                                             <span>Buka di Tab Baru</span>
                                         </a>
                                         <a
                                             :href="selectedProject.pdf_report"
                                             download
                                             class="btn btn-sm btn-info text-dark d-inline-flex align-items-center gap-1.5 px-3 py-2"
-                                            style="font-size: 0.82rem; font-weight: 600;"
+                                            style="
+                                                font-size: 0.82rem;
+                                                font-weight: 600;
+                                            "
                                         >
                                             <i class="bi bi-download"></i>
                                             <span>Unduh PDF</span>
@@ -1600,37 +1730,49 @@
                                 </div>
                                 <div
                                     class="pdf-preview-frame-container position-relative overflow-hidden rounded-3 border border-secondary border-opacity-20"
-                                    style="height: 580px; background: rgba(15, 23, 42, 0.3);"
+                                    style="
+                                        height: 580px;
+                                        background: rgba(15, 23, 42, 0.3);
+                                    "
                                 >
                                     <iframe
-                                        v-if="showPdfPreview"
                                         :src="selectedProject.pdf_report"
                                         width="100%"
                                         height="100%"
-                                        style="border: none; background: #ffffff;"
+                                        style="
+                                            border: none;
+                                            background: #ffffff;
+                                        "
                                     >
-                                        <div class="p-5 text-center d-flex flex-column align-items-center justify-content-center h-100">
-                                            <i class="bi bi-filetype-pdf text-danger display-1 mb-3"></i>
-                                            <h5 class="text-white fw-bold">Pratinjau PDF tidak didukung oleh browser Anda</h5>
-                                            <p class="text-secondary small mb-4" style="max-width: 320px;">
-                                                Silakan unduh atau buka laporan PDF secara langsung melalui tombol di bawah ini.
+                                        <div
+                                            class="p-5 text-center d-flex flex-column align-items-center justify-content-center h-100"
+                                        >
+                                            <i
+                                                class="bi bi-filetype-pdf text-danger display-1 mb-3"
+                                            ></i>
+                                            <h5 class="text-white fw-bold">
+                                                Pratinjau PDF tidak didukung
+                                                oleh browser Anda
+                                            </h5>
+                                            <p
+                                                class="text-secondary small mb-4"
+                                                style="max-width: 320px"
+                                            >
+                                                Silakan unduh atau buka laporan
+                                                PDF secara langsung melalui
+                                                tombol di bawah ini.
                                             </p>
-                                            <a :href="selectedProject.pdf_report" target="_blank" class="btn btn-info text-dark">
+                                            <a
+                                                :href="
+                                                    selectedProject.pdf_report
+                                                "
+                                                target="_blank"
+                                                class="btn btn-info text-dark"
+                                            >
                                                 Buka Laporan PDF
                                             </a>
                                         </div>
                                     </iframe>
-                                    <div
-                                        v-else
-                                        class="p-5 text-center d-flex flex-column align-items-center justify-content-center h-100"
-                                        style="background: rgba(15, 23, 42, 0.4);"
-                                    >
-                                        <div class="spinner-border text-info mb-3" role="status" style="width: 2.5rem; height: 2.5rem;">
-                                            <span class="visually-hidden">Loading...</span>
-                                        </div>
-                                        <h5 class="text-white fw-bold mb-1">Menyiapkan Pratinjau Dokumen</h5>
-                                        <p class="text-secondary small mb-0">Harap tunggu, memuat berkas PDF...</p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1681,7 +1823,14 @@
                                                         ),
                                             ]"
                                         >
-                                            <i :class="[getTechFieldIcon(selectedProject.tech_field), 'me-1']"></i>
+                                            <i
+                                                :class="[
+                                                    getTechFieldIcon(
+                                                        selectedProject.tech_field,
+                                                    ),
+                                                    'me-1',
+                                                ]"
+                                            ></i>
                                             {{
                                                 selectedProject.tech_field ||
                                                 "Others"
@@ -1775,8 +1924,17 @@
                                                         v-else
                                                         style="font-size: 1rem"
                                                     >
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handshake text-warning" viewBox="0 0 16 16">
-                                                            <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="16"
+                                                            height="16"
+                                                            fill="currentColor"
+                                                            class="bi bi-handshake text-warning"
+                                                            viewBox="0 0 16 16"
+                                                        >
+                                                            <path
+                                                                d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"
+                                                            />
                                                         </svg>
                                                     </span>
                                                 </div>
@@ -1847,7 +2005,10 @@
                         <h4
                             class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                         >
-                            <span><i class="bi bi-images me-2"></i>Galeri Dokumentasi</span>
+                            <span
+                                ><i class="bi bi-images me-2"></i>Galeri
+                                Dokumentasi</span
+                            >
                         </h4>
 
                         <!-- Documentation Photos Grid -->
@@ -1936,7 +2097,9 @@
                             v-if="getMediaCount(selectedProject) === 0"
                             class="text-center py-5"
                         >
-                            <span class="fs-1 d-block mb-3 text-muted"><i class="bi bi-image"></i></span>
+                            <span class="fs-1 d-block mb-3 text-muted"
+                                ><i class="bi bi-image"></i
+                            ></span>
                             <h5 class="text-white fw-bold mb-2">N/A</h5>
                         </div>
                     </div>
@@ -1951,7 +2114,9 @@
                         <h4
                             class="fw-bold text-white mb-4 d-flex align-items-center gap-2 border-bottom border-secondary border-opacity-20 pb-3"
                         >
-                            <span style="color: #fbbf24" class="me-2"><i class="bi bi-trophy"></i></span>
+                            <span style="color: #fbbf24" class="me-2"
+                                ><i class="bi bi-trophy"></i
+                            ></span>
                             <span>Prestasi &amp; Raihan Proyek</span>
                         </h4>
 
@@ -2034,7 +2199,9 @@
                                     :key="aIdx"
                                     class="d-flex align-items-start gap-3 p-3 bg-dark bg-opacity-50 border border-secondary border-opacity-30 rounded-3"
                                 >
-                                    <span class="fs-4 text-warning me-2"><i class="bi bi-award-fill"></i></span>
+                                    <span class="fs-4 text-warning me-2"
+                                        ><i class="bi bi-award-fill"></i
+                                    ></span>
                                     <div>
                                         <h6 class="text-white fw-bold mb-1">
                                             {{ award }}
@@ -2048,7 +2215,9 @@
                             </div>
                         </div>
                         <div v-else class="text-center py-5">
-                            <span class="fs-1 d-block mb-2 text-muted"><i class="bi bi-file-earmark-lock"></i></span>
+                            <span class="fs-1 d-block mb-2 text-muted"
+                                ><i class="bi bi-file-earmark-lock"></i
+                            ></span>
                             <h5 class="text-white fw-bold mb-2">N/A</h5>
                             <p class="text-secondary small mb-0">
                                 Proyek ini dikembangkan secara mandiri di bawah
@@ -2140,7 +2309,9 @@
                                             font-size: 0.88rem;
                                         "
                                     >
-                                        <i class="bi bi-handshake text-warning"></i>
+                                        <i
+                                            class="bi bi-handshake text-warning"
+                                        ></i>
                                         <span
                                             class="text-white fw-semibold"
                                             style="color: #ffffff !important"
@@ -2162,13 +2333,13 @@
                     <div class="glass-card p-4 p-md-5">
                         <h3
                             class="fw-extrabold text-center mb-2"
-                            style="color: #1e293b;"
+                            style="color: #1e293b"
                         >
                             Anggota Inovator
                         </h3>
                         <p
                             class="text-center mx-auto mb-5"
-                            style="color: #475569; max-width: 600px;"
+                            style="color: #475569; max-width: 600px"
                         >
                             Sivitas di balik rancangan, implementasi, dan
                             pengujian sistem.
@@ -2189,9 +2360,24 @@
                                 >
                                     <div
                                         class="team-avatar-container mb-3 position-relative"
-                                        :style="member.photo && hasRealPhoto(member.photo) ? 'cursor: pointer;' : ''"
-                                        :title="member.photo && hasRealPhoto(member.photo) ? 'Klik untuk memperbesar foto ' + member.nickname : ''"
-                                        @click="member.photo && hasRealPhoto(member.photo) && openLightbox(member.photo)"
+                                        :style="
+                                            member.photo &&
+                                            hasRealPhoto(member.photo)
+                                                ? 'cursor: pointer;'
+                                                : ''
+                                        "
+                                        :title="
+                                            member.photo &&
+                                            hasRealPhoto(member.photo)
+                                                ? 'Klik untuk memperbesar foto ' +
+                                                  member.nickname
+                                                : ''
+                                        "
+                                        @click="
+                                            member.photo &&
+                                            hasRealPhoto(member.photo) &&
+                                            openLightbox(member.photo)
+                                        "
                                     >
                                         <div class="team-avatar-ring"></div>
                                         <img
@@ -2216,28 +2402,45 @@
                                             }}
                                         </div>
                                         <span
-                                            v-if="member.photo && hasRealPhoto(member.photo)"
+                                            v-if="
+                                                member.photo &&
+                                                hasRealPhoto(member.photo)
+                                            "
                                             class="avatar-zoom-hint"
                                         >
-                                            <i class="bi bi-zoom-in" style="font-size: 0.75rem;"></i>
+                                            <i
+                                                class="bi bi-zoom-in"
+                                                style="font-size: 0.75rem"
+                                            ></i>
                                         </span>
                                     </div>
                                     <h5
                                         class="fw-bold mb-1 text-truncate w-100"
-                                        style="color: #ffffff !important;"
+                                        style="color: #ffffff !important"
                                     >
                                         {{ member.nickname }}
                                     </h5>
                                     <p
                                         class="mb-2 small text-truncate w-100"
-                                        style="color: #cbd5e1 !important;"
+                                        style="color: #cbd5e1 !important"
                                     >
                                         {{ member.fullname }}
                                     </p>
                                     <span
                                         v-if="member.role"
                                         class="badge team-role-badge mb-4 w-100 text-truncate"
-                                        style="background: rgba(56, 189, 248, 0.15) !important; border: 1px solid rgba(56, 189, 248, 0.4) !important; color: #38bdf8 !important; font-weight: 600;"
+                                        style="
+                                            background: rgba(
+                                                56,
+                                                189,
+                                                248,
+                                                0.15
+                                            ) !important;
+                                            border: 1px solid
+                                                rgba(56, 189, 248, 0.4) !important;
+                                            color: #38bdf8 !important;
+                                            font-weight: 600;
+                                        "
                                     >
                                         {{ member.role }}
                                     </span>
@@ -2711,7 +2914,6 @@ export default {
             selectedSupervisor: "all",
             selectedPrestasi: "all",
             selectedProject: null,
-            showPdfPreview: false,
             activeMobileProject: null,
             activeHardwareProject: null,
             detailModalInstance: null,
@@ -2835,9 +3037,6 @@ export default {
             if (project) {
                 this.selectedProject = project;
                 this.currentView = "detail";
-                setTimeout(() => {
-                    this.showPdfPreview = true;
-                }, 400);
             } else {
                 window.history.replaceState({ view: "grid" }, "");
             }
@@ -2890,12 +3089,11 @@ export default {
             this.selectedProject = project;
             this.activeDetailTab = "overview";
             this.currentView = "detail";
-            this.showPdfPreview = false;
 
             window.history.pushState(
                 { view: "detail", projectId: project.id },
                 "",
-                null
+                null,
             );
 
             window.scrollTo({ top: 0, behavior: "instant" });
@@ -2905,16 +3103,12 @@ export default {
             this.$nextTick(() => {
                 setTimeout(() => {
                     this.isTransitioning = false;
-                    setTimeout(() => {
-                        this.showPdfPreview = true;
-                    }, 200);
                 }, 80);
             });
         },
         backToGrid() {
             this.currentView = "grid";
             this.selectedProject = null;
-            this.showPdfPreview = false;
 
             if (
                 window.history.state &&
@@ -2935,26 +3129,20 @@ export default {
             });
         },
         handlePopState(event) {
-            this.showPdfPreview = false;
             this.transitionText = "Loading Om...";
             this.isTransitioning = true;
 
             if (event.state && event.state.view === "detail") {
                 const projectId = event.state.projectId;
-                const project = this.projects.find(
-                    (p) => p.id === projectId,
-                );
+                const project = this.projects.find((p) => p.id === projectId);
                 if (project) {
                     this.selectedProject = project;
                     this.currentView = "detail";
                     window.scrollTo({ top: 0, behavior: "instant" });
-                    
+
                     this.$nextTick(() => {
                         setTimeout(() => {
                             this.isTransitioning = false;
-                            setTimeout(() => {
-                                this.showPdfPreview = true;
-                            }, 200);
                         }, 80);
                     });
                 } else {
@@ -3180,7 +3368,9 @@ export default {
 
             const particles = [];
             const isMobile = window.innerWidth < 768;
-            const particleCount = isMobile ? 18 : Math.min(Math.floor(window.innerWidth / 38), 32);
+            const particleCount = isMobile
+                ? 18
+                : Math.min(Math.floor(window.innerWidth / 38), 32);
 
             const colors = [
                 "rgba(56, 189, 248, ", // vibrant cyan
