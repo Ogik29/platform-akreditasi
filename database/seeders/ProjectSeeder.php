@@ -125,7 +125,7 @@ class ProjectSeeder extends Seeder
                 'video_url' => null,
                 'screenshots' => null,
                 'documentations' => [],
-                'pdf_report' => 'docs/IoT-based Hydroponic Farming and Solar Energy Integration for Sustainable Agriculture/IOT-BASED HYDROPONIC FARMING AND SOLAR ENERGY INTEGRATION FOR SUSTAINABLE AGRICULTURE (25-COMT4G-51).pdf'
+                'pdf_report' => '/docs/IoT-based Hydroponic Farming and Solar Energy Integration for Sustainable Agriculture/IOT-BASED HYDROPONIC FARMING AND SOLAR ENERGY INTEGRATION FOR SUSTAINABLE AGRICULTURE (25-COMT4G-51).pdf'
             ],
             [
                 'name' => 'Smart Mobile Inclusive Learning (SMILE)',
