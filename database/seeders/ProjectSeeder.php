@@ -14,6 +14,266 @@ class ProjectSeeder extends Seeder
     {
         $projects = [
             [
+                'name' => 'LOGINT',
+                'supervisor' => '-',
+                'type' => 'web',
+                'logo' => 'aksd.svg',
+                'tagline' => 'Platform Smart Coding Lab & Logic Intelligence yang mendukung pembelajaran pemrograman',
+                'description' => 'LOGINT adalah platform Smart Coding Lab & Logic Intelligence yang membantu kampus menjalankan praktikum pemrograman secara lebih sederhana, terukur, dan berbasis data. Platform ini menyediakan environment coding berbasis browser, modul praktikum terstruktur, bantuan belajar kontekstual, serta dashboard untuk dosen dan program studi. LOGINT ditujukan sebagai solusi awal untuk mata kuliah Algoritma Pemrograman dan praktikum coding dasar di Telkom University Surabaya. Setelah tervalidasi, LOGINT dapat diperluas ke mata kuliah Struktur Data, Basis Data, Web Programming, Machine Learning, Data Analytics, serta kampus lain yang membutuhkan platform praktikum digital dan learning analytics.',
+                'features' => [
+                    'Web-based Coding Environment',
+                    'Modul praktikum yang terorganisir sesuai materi dan capaian pembelajaran.',
+                    'Dashboard untuk memantau progres, performa, dan aktivitas mahasiswa',
+                    'Melacak perkembangan belajar mahasiswa secara real-time selama praktikum',
+                    'Memudahkan dosen mengelola praktikum, memonitor mahasiswa, dan mengevaluasi pembelajaran'
+                ],
+                'funding_awards' => [],
+                'tech_field' => 'AI',
+                'prestasi_level' => 'internasional',
+                'partners' => ['Lab Core Programming Telkom'],
+                'logo_mitra' => ['img/logo tel-u.jpeg'],
+                'team_members' => [
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Muhammad Adib Kamali, S.T., M.Eng',
+                        'role' => null,
+                        'photo' => '/img/LOGINT/foto_tim/pak adib kamali.png',
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/adib-kamali-001357192/'
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Daud Muhajir, S.Kom., M.Kom.',
+                        'role' => null,
+                        'photo' => '/img/LOGINT/foto_tim/pak daud muhajir.png',
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/hans-gg/'
+                    ]
+                ],
+                'external_url' => [
+                    'https://logint.it-showcase.tusbind.ac.id',
+                    'https://logint-ai.it-showcase.tusbind.ac.id'
+                ],
+                'video_url' => null,
+                'screenshots' => null
+            ],
+            [
+                'name' => 'IoT-based Hydroponic Farming and Solar Energy Integration for Sustainable Agriculture',
+                'supervisor' => '-',
+                'type' => 'hardware',
+                'logo' => 'reynanda.svg',
+                'tagline' => ' ',
+                'description' => 'IoT-based Hydroponic Farming and Solar Energy Integration for Sustainable Agriculture merupakan proyek pengembangan sistem pertanian hidroponik pintar yang mengintegrasikan teknologi Internet of Things (IoT) dengan energi surya untuk meningkatkan efisiensi produksi pertanian secara berkelanjutan. Sistem ini memungkinkan pemantauan kondisi tanaman secara real-time melalui sensor pH, TDS, suhu, serta otomatisasi pompa dan nutrisi, sekaligus memanfaatkan panel surya sebagai sumber energi utama untuk mengurangi biaya operasional. Selain meningkatkan produktivitas pertanian, proyek ini juga berfokus pada pemberdayaan masyarakat melalui pelatihan teknologi, peningkatan kapasitas petani, dan model bisnis yang berkelanjutan',
+                'features' => [
+                    'Monitoring pH, TDS, suhu, dan kondisi lingkungan secara real-time',
+                    'Solar Energy Integration Panel surya sebagai sumber energi untuk seluruh sistem hidroponik',
+                    'Dashboard mobile untuk memantau kondisi tanaman dari mana saja',
+                    'Otomatisasi pompa air dan pemberian nutrisi berdasarkan data sensor. ',
+                    'Monitoring Penyimpanan data pada cloud untuk monitoring dan analisis',
+                    'Smart Alert System Notifikasi ketika parameter tanaman berada di luar batas normal',
+                    ' Pelatihan masyarakat mengenai IoT, hidroponik, dan pemanfaatan energi terbarukan. ',
+                    'Sistem dirancang agar mampu membiayai operasional secara mandiri melalui hasil penjualan sayuran'
+                ],
+                'funding_awards' => ['IEEE Tech4Good 2025 (Proposal untuk program pendanaan IEEE Tech4Good)'],
+                'tech_field' => 'IoT',
+                'prestasi_level' => 'internasional',
+                'partners' => ['GR Farm', 'Yayasan Pendidikan Gowa Raya'],
+                'logo_mitra' => ['img/salikneta/logo gr farm.png', 'img/salikneta/logo yayasan pendidikan gowa rayaa.png'],
+                'team_members' => [
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Hilal Hudan Nuha, Ph.D.',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Hassan Rizky Putra Sailellah',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Muhammad Irsan, Ph.D.',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Muhammad Faris Fathoni, Ph.D',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Dr. Aji Gautama Putrada',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ]
+                ],
+                'external_url' => null,
+                'video_url' => null,
+                'screenshots' => null,
+                'documentations' => [],
+                'pdf_report' => 'docs/IoT-based Hydroponic Farming and Solar Energy Integration for Sustainable Agriculture/IOT-BASED HYDROPONIC FARMING AND SOLAR ENERGY INTEGRATION FOR SUSTAINABLE AGRICULTURE (25-COMT4G-51).pdf'
+            ],
+            [
+                'name' => 'Smart Mobile Inclusive Learning (SMILE)',
+                'supervisor' => '-',
+                'type' => 'hardware',
+                'logo' => 'reynanda.svg',
+                'tagline' => '',
+                'description' => 'Smart Mobile Inclusive Learning (SMILE) merupakan platform terapi berbasis Artificial Intelligence (AI) yang dirancang untuk membantu anak berkebutuhan khusus, khususnya anak dengan gangguan psikomotor dan kognitif, menjalani proses terapi secara lebih interaktif dan menyenangkan. Sistem ini menggabungkan teknologi computer vision, hand pose detection, gamifikasi, dan animasi 3D untuk mendukung terapi fisik sekaligus pembelajaran kognitif. Selama sesi terapi, gerakan tangan anak dideteksi secara real-time menggunakan kamera dan teknologi MediaPipe untuk mengendalikan permainan terapi. Hasil terapi kemudian tersimpan pada cloud sehingga dapat dipantau oleh terapis dan orang tua melalui dashboard web. Proyek ini berhasil diimplementasikan di YPAC Surabaya dan memberikan alternatif terapi yang lebih menarik sehingga meningkatkan motivasi anak dalam mengikuti sesi terapi secara rutin.',
+                'features' => [
+                    'Menggunakan MediaPipe untuk mendeteksi gerakan tangan secara real-time sebagai media terapi psikmotor.',
+                    'Terapi dikemas dalam bentuk permainan interaktif sehingga anak lebih termotivasi mengikuti terapi.'
+                ],
+                'funding_awards' => ['EPICS in IEEE Grant 2024'],
+                'tech_field' => 'AI',
+                'prestasi_level' => 'internasional',
+                'partners' => ['YPAC Surabaya'],
+                'logo_mitra' => ['img/ismart/ypac.png'],
+                'team_members' => [
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Endah Suryawati Ningrum',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Gede Aditra Pradnyana',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Fayruz Rahma',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Moch. Iskandar Riansyah',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Farah Zakiyah Rahmanti',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ]
+                ],
+                'external_url' => null,
+                'video_url' => null,
+                'screenshots' => null,
+                'documentations' => null,
+                'pdf_report' => '/docs/smilee/Smart Mobile Inclusive Learning (SMILE) - final report.pdf'
+            ],
+            [
+                'name' => 'IMPLEMENTATION OF IOT-BASED FRUIT FLY TRAP DEVICES AT SALIKNETA FARM PHILIPPINES',
+                'supervisor' => '-',
+                'type' => 'hardware',
+                'logo' => 'reynanda.svg',
+                'tagline' => ' ',
+                'description' => 'Implementation of IoT-Based Fruit Fly Trap Devices at Salikneta Farm, Philippines merupakan program Pengabdian kepada Masyarakat (PkM) Kolaborasi Luar Negeri Telkom University 2025 yang bertujuan membantu Salikneta Farm, Filipina, mengatasi permasalahan serangan lalat buah menggunakan teknologi Internet of Things (IoT). Solusi yang dikembangkan berupa smart fruit fly trap yang mampu memonitor populasi lalat buah secara otomatis melalui sensor, kamera inframerah, dan komunikasi nirkabel. Data hasil tangkapan dikirim ke server cloud untuk dianalisis dan divisualisasikan melalui dashboard sehingga petani dapat mengetahui pola aktivitas hama secara real-time serta menentukan waktu pengendalian yang lebih tepat. Selain implementasi teknologi, program ini juga mencakup pelatihan kepada petani agar mampu mengoperasikan sistem secara mandiri serta mendukung transformasi',
+                'features' => [
+                    'Smart Fruit Fly Trap',
+                    'Infrared Camera Monitoring',
+                    'Cloud-based Dashboard'
+                ],
+                'funding_awards' => ['Pendanaan Rp 32.000.000'],
+                'tech_field' => 'IoT',
+                'prestasi_level' => 'internasional',
+                'partners' => ['De La Salle Araneta University', 'Salikneta Farm'],
+                'logo_mitra' => ['img/salikneta/universitas de laa.png', 'img/salikneta/logo salikneta farm.png'],
+                'team_members' => [
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Dr. Bayu Rima Aditya, S.T., M.T.',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'HRD. Rohmat Saedudin, S.T., M.T., Ph.D.',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ],
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Dr. Helmy Widyantara, S.Kom., M.Eng.',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => null
+                    ]
+                ],
+                'external_url' => null,
+                'video_url' => null,
+                'screenshots' => null,
+                'documentations' => [],
+                'pdf_report' => '/docs/salikneta/IMPLEMENTATION OF IOT-BASED FRUIT FLY TRAP DEVICES AT SALIKNETA FARM PHILIPPINES.pdf'
+            ],
+            [
+                'name' => 'K-Means Project',
+                'supervisor' => '-',
+                'type' => 'web',
+                'logo' => 'reynanda.svg',
+                'tagline' => 'Predict Smarter, Discover Better Insights',
+                'description' => 'Machine Learning Prediction & Recommendation System adalah aplikasi berbasis web yang mengimplementasikan model Machine Learning hasil pelatihan dari Google Colab ke dalam framework Flask. Sistem ini memungkinkan pengguna melakukan prediksi terhadap data yang dimasukkan, mengelompokkan hasil prediksi ke dalam cluster tertentu, serta memberikan rekomendasi yang sesuai berdasarkan karakteristik setiap cluster. Dengan antarmuka yang sederhana, proses analisis data menjadi lebih mudah diakses tanpa perlu menjalankan model secara langsung melalui notebook Machine Learning.',
+                'features' => [
+                    'Input Data Produksi Multi-Komoditas',
+                    'K-Means Clustering untuk Klasifikasi Data',
+                    'Rekomendasi Otomatis Berdasarkan Hasil Cluster',
+                    'Deployment Model Machine Learning Berbasis Web'
+                ],
+                'funding_awards' => [],
+                'tech_field' => 'AI',
+                'prestasi_level' => 'nasional',
+                'partners' => ['Telkom University'],
+                'logo_mitra' => ['img/logo tel-u.jpeg'],
+                'team_members' => [
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Muhammad Adib Kamali, S.T., M.Eng',
+                        'role' => null,
+                        'photo' => null,
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/adib-kamali-001357192/'
+                    ],
+                ],
+                'external_url' => 'https://kmeans-riska.it-showcase.tusbind.ac.id',
+                'video_url' => null,
+                'screenshots' => null,
+                'pdf_report' => null
+            ],
+            [
                 'name' => 'SIGAP',
                 'supervisor' => 'MDB',
                 'type' => 'web',
@@ -659,86 +919,9 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                 ]
             ],
             [
-                'name' => 'LOGINT',
-                'supervisor' => '-',
-                'type' => 'web',
-                'logo' => 'aksd.svg',
-                'tagline' => 'Platform Smart Coding Lab & Logic Intelligence yang mendukung pembelajaran pemrograman',
-                'description' => 'LOGINT adalah platform Smart Coding Lab & Logic Intelligence yang membantu kampus menjalankan praktikum pemrograman secara lebih sederhana, terukur, dan berbasis data. Platform ini menyediakan environment coding berbasis browser, modul praktikum terstruktur, bantuan belajar kontekstual, serta dashboard untuk dosen dan program studi. LOGINT ditujukan sebagai solusi awal untuk mata kuliah Algoritma Pemrograman dan praktikum coding dasar di Telkom University Surabaya. Setelah tervalidasi, LOGINT dapat diperluas ke mata kuliah Struktur Data, Basis Data, Web Programming, Machine Learning, Data Analytics, serta kampus lain yang membutuhkan platform praktikum digital dan learning analytics.',
-                'features' => [
-                    'Web-based Coding Environment',
-                    'Modul praktikum yang terorganisir sesuai materi dan capaian pembelajaran.',
-                    'Dashboard untuk memantau progres, performa, dan aktivitas mahasiswa',
-                    'Melacak perkembangan belajar mahasiswa secara real-time selama praktikum',
-                    'Memudahkan dosen mengelola praktikum, memonitor mahasiswa, dan mengevaluasi pembelajaran'
-                ],
-                'funding_awards' => [],
-                'tech_field' => 'AI',
-                'prestasi_level' => 'nasional',
-                'partners' => ['Lab Core Programming Telkom'],
-                'logo_mitra' => ['img/logo tel-u.jpeg'],
-                'team_members' => [
-                    [
-                        'nickname' => null,
-                        'fullname' => 'Muhammad Adib Kamali, S.T., M.Eng',
-                        'role' => null,
-                        'photo' => '/img/LOGINT/foto_tim/pak adib kamali.png',
-                        'social_media' => null,
-                        'linkedin' => 'https://www.linkedin.com/in/adib-kamali-001357192/'
-                    ],
-                    [
-                        'nickname' => null,
-                        'fullname' => 'Daud Muhajir, S.Kom., M.Kom.',
-                        'role' => null,
-                        'photo' => '/img/LOGINT/foto_tim/pak daud muhajir.png',
-                        'social_media' => null,
-                        'linkedin' => 'https://www.linkedin.com/in/hans-gg/'
-                    ]
-                ],
-                'external_url' => [
-                    'https://logint.it-showcase.tusbind.ac.id',
-                    'https://logint-ai.it-showcase.tusbind.ac.id'
-                ],
-                'video_url' => null,
-                'screenshots' => null,
-                'documentations' => []
-            ],
-            [
-                'name' => 'K-Means Project',
-                'supervisor' => '-',
-                'type' => 'web',
-                'logo' => 'reynanda.svg',
-                'tagline' => 'Predict Smarter, Discover Better Insights',
-                'description' => 'Machine Learning Prediction & Recommendation System adalah aplikasi berbasis web yang mengimplementasikan model Machine Learning hasil pelatihan dari Google Colab ke dalam framework Flask. Sistem ini memungkinkan pengguna melakukan prediksi terhadap data yang dimasukkan, mengelompokkan hasil prediksi ke dalam cluster tertentu, serta memberikan rekomendasi yang sesuai berdasarkan karakteristik setiap cluster. Dengan antarmuka yang sederhana, proses analisis data menjadi lebih mudah diakses tanpa perlu menjalankan model secara langsung melalui notebook Machine Learning.',
-                'features' => [
-                    'Input Data Produksi Multi-Komoditas',
-                    'K-Means Clustering untuk Klasifikasi Data',
-                    'Rekomendasi Otomatis Berdasarkan Hasil Cluster',
-                    'Deployment Model Machine Learning Berbasis Web'
-                ],
-                'funding_awards' => [],
-                'tech_field' => 'AI',
-                'prestasi_level' => 'internasional',
-                'partners' => ['Telkom University'],
-                'logo_mitra' => ['img/logo tel-u.jpeg'],
-                'team_members' => [
-                    [
-                        'nickname' => null,
-                        'fullname' => 'Muhammad Adib Kamali, S.T., M.Eng',
-                        'role' => null,
-                        'photo' => '/img/LOGINT/foto_tim/pak adib kamali.png',
-                        'social_media' => null,
-                        'linkedin' => 'https://www.linkedin.com/in/adib-kamali-001357192/'
-                    ],
-                ],
-                'external_url' => 'https://kmeans-riska.it-showcase.tusbind.ac.id',
-                'video_url' => null,
-                'screenshots' => null
-            ],
-            [
                 'name' => 'Automatic Weather Station',
                 'supervisor' => 'CAP',
-                'type' => 'mobile',
+                'type' => 'hardware',
                 'logo' => 'reynanda.svg',
                 'tagline' => 'Smart Irrigation for Sustainable Urban Farming',
                 'description' => 'Smart Longan Irrigation System adalah aplikasi monitoring dan kontrol irigasi berbasis Internet of Things (IoT) dan Machine Learning yang dirancang untuk mendukung budidaya kelengkeng di lingkungan urban seperti rooftop farming. Sistem ini mampu memantau kondisi lingkungan secara real-time menggunakan berbagai sensor, kemudian memanfaatkan model Artificial Intelligence berbasis Random Forest untuk memprediksi kondisi cuaca serta menentukan durasi penyiraman yang paling optimal.
