@@ -66,19 +66,22 @@ body .glass-card .badge-supervisor {
     color: #cbd5e1 !important;
 }
 
-/* Project detail view specific fixes for team members on light background */
-.project-detail-view .team-member-card h5.text-white {
-    color: #0f172a !important;
+/* Project detail view specific fixes for team members on dark card background */
+.project-detail-view .team-member-card h5 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
 }
 
-.project-detail-view .team-member-card p.text-secondary {
-    color: #475569 !important;
+.project-detail-view .team-member-card p {
+    color: #cbd5e1 !important;
 }
 
-.project-detail-view .team-member-card .badge {
-    background: rgba(15, 23, 42, 0.05) !important;
-    border-color: rgba(15, 23, 42, 0.15) !important;
-    color: #475569 !important;
+.project-detail-view .team-member-card .badge,
+.project-detail-view .team-member-card .team-role-badge {
+    background: rgba(56, 189, 248, 0.15) !important;
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    color: #38bdf8 !important;
+    font-weight: 600 !important;
 }
 
 body .btn-back {
@@ -173,6 +176,9 @@ h6 {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .glass-card:hover {
@@ -1421,6 +1427,433 @@ html {
 }
 
 .project-card,
-.glass-card {
+.project-card {
     contain: layout style paint;
+    transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-sheen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 2;
+    transition: background 0.1s ease;
+}
+
+/* Idea 5: Spotlight Team Member Cards & Floating Social Media Pills */
+.team-member-card {
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 1.5rem 1rem;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.team-member-card:hover {
+    transform: translateY(-8px);
+    background: rgba(30, 41, 59, 0.75);
+    border-color: rgba(56, 189, 248, 0.45);
+    box-shadow: 0 16px 36px -10px rgba(14, 165, 233, 0.3), 0 0 20px rgba(167, 139, 250, 0.2);
+}
+
+.team-avatar-container {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 50%;
+}
+
+.team-avatar-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #38bdf8, #a78bfa, #f59e0b);
+    opacity: 0.7;
+    transition: all 0.35s ease;
+    z-index: 0;
+    filter: blur(2px);
+}
+
+.team-member-card:hover .team-avatar-ring {
+    opacity: 1;
+    filter: blur(4px);
+    transform: scale(1.06) rotate(180deg);
+}
+
+.team-avatar-img,
+.team-avatar {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0f172a;
+    transition: transform 0.35s ease;
+}
+
+.team-member-card:hover .team-avatar-img,
+.team-member-card:hover .team-avatar {
+    transform: scale(1.04);
+}
+
+.avatar-zoom-hint {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    z-index: 10;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #0f172a;
+    border: 1.5px solid #38bdf8;
+    color: #38bdf8;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.team-avatar-container:hover .avatar-zoom-hint {
+    transform: scale(1.2);
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+.team-role-badge {
+    background: rgba(14, 165, 233, 0.15) !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+    color: #38bdf8 !important;
+    font-weight: 600;
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    border-radius: 50rem;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+}
+
+.team-member-card:hover .team-role-badge {
+    background: rgba(56, 189, 248, 0.25) !important;
+    border-color: rgba(56, 189, 248, 0.6) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+.social-pill-container {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50rem;
+    padding: 6px 14px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.team-member-card:hover .social-pill-container {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon-btn-floating {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease;
+}
+
+.social-icon-btn-floating:hover {
+    color: #ffffff;
+    background: #0ea5e9;
+    transform: translateY(-2px) scale(1.15);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.5);
+}
+
+.social-icon-btn-floating.instagram-btn:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 4px 12px rgba(220, 39, 67, 0.5);
+}
+
+/* Poster Slide Banner Styles */
+.poster-card-glow {
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.3), 0 0 20px rgba(167, 139, 250, 0.2);
+}
+
+.btn-poster-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #0f172a;
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 14px rgba(56, 189, 248, 0.35);
+}
+
+.btn-poster-nav:hover {
+    background: #38bdf8;
+    border-color: #7dd3fc;
+    color: #0f172a;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.85);
+    transform: translateY(-50%) scale(1.12);
+}
+
+.btn-poster-prev {
+    left: 12px;
+    z-index: 40;
+}
+
+.btn-poster-next {
+    right: 12px;
+    z-index: 40;
+}
+
+.poster-dot-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.poster-dot-btn.active {
+    width: 32px;
+    border-radius: 20px;
+    background: #38bdf8;
+    border-color: #7dd3fc;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
+}
+
+.poster-img {
+    transition: transform 0.35s ease;
+}
+
+.poster-img:hover {
+    transform: scale(1.015);
+}
+
+/* Poster Slide Directional Vue Transitions */
+.slide-next-enter-active,
+.slide-next-leave-active,
+.slide-prev-enter-active,
+.slide-prev-leave-active {
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.45s ease;
+    width: 100%;
+}
+
+.slide-next-leave-active,
+.slide-prev-leave-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Slide Next (Arrow Right: Enter from right +100%, Leave to left -100%) */
+.slide-next-enter-from {
+    transform: translateX(100%);
+    opacity: 0.7;
+}
+
+.slide-next-leave-to {
+    transform: translateX(-100%);
+    opacity: 0.7;
+}
+
+/* Slide Prev (Arrow Left: Enter from left -100%, Leave to right +100%) */
+.slide-prev-enter-from {
+    transform: translateX(-100%);
+    opacity: 0.7;
+}
+
+.slide-prev-leave-to {
+    transform: translateX(100%);
+    opacity: 0.7;
+}
+
+/* Poster Stage & Kiosk Styles */
+/* Master Hero Showcase Card */
+.hero-master-card {
+    border: 1.5px solid rgba(56, 189, 248, 0.35);
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.15);
+    border-radius: 0 0 28px 28px !important;
+    backdrop-filter: blur(20px);
+    background: var(--bg-dark-card) !important;
+}
+
+.hero-master-card:hover {
+    transform: none !important;
+}
+
+.poster-viewport {
+    position: relative;
+    overflow: hidden !important;
+    border-radius: 20px;
+}
+
+.poster-stage-card {
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.2);
+    border-radius: 24px !important;
+    background: rgba(15, 23, 42, 0.65) !important;
+    backdrop-filter: blur(16px);
+}
+
+.poster-ambient-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    transition: background 0.8s ease;
+    filter: blur(60px);
+    opacity: 0.5;
+    overflow: hidden;
+}
+
+.poster-stage-badge {
+    background: rgba(30, 58, 138, 0.18);
+    border: 1px solid rgba(59, 130, 246, 0.55);
+    color: #1d4ed8;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 50rem;
+    letter-spacing: 0.05em;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #38bdf8;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #38bdf8;
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+}
+
+.poster-frame-container {
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s ease;
+}
+
+.poster-frame-container:hover {
+    border-color: rgba(56, 189, 248, 0.5);
+}
+
+.poster-stage-img {
+    max-height: 440px;
+    width: 100%;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.poster-stage-img:hover {
+    transform: scale(1.02);
+}
+
+.poster-thumb-card {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.poster-thumb-card:hover {
+    background: rgba(30, 41, 59, 0.75);
+    border-color: rgba(56, 189, 248, 0.4);
+    transform: translateX(4px);
+}
+
+.poster-thumb-card.active {
+    background: rgba(14, 165, 233, 0.18);
+    border: 1px solid rgba(56, 189, 248, 0.6);
+    box-shadow: 0 8px 20px -5px rgba(14, 165, 233, 0.3);
+    transform: translateX(6px);
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Poster Kiosk Text Panel Styles */
+.poster-info-panel {
+    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 1.5rem;
+    backdrop-filter: blur(12px);
+}
+
+.poster-select-tab-btn {
+    background: rgba(30, 58, 138, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    color: #1e3a8a;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.poster-select-tab-btn:hover {
+    background: rgba(30, 58, 138, 0.18);
+    border-color: rgba(59, 130, 246, 0.6);
+    color: #1e3a8a;
+}
+
+.poster-select-tab-btn.active {
+    background: rgba(30, 58, 138, 0.22);
+    border-color: #3b82f6;
+    color: #1d4ed8;
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.25);
+}
+
+.poster-highlight-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e2e8f0;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 50rem;
 }

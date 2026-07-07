@@ -26,10 +26,11 @@ return new class extends Migration
             $table->json('partners')->nullable(); // array of partners
             $table->json('logo_mitra')->nullable(); // array of partner logos/photos
             $table->json('team_members')->nullable(); // array of members
-            $table->string('external_url')->nullable(); // for web
+            $table->text('external_url')->nullable(); // for web
             $table->string('video_url')->nullable(); // for hardware
             $table->json('screenshots')->nullable(); // for mobile
             $table->json('documentations')->nullable(); // for documentation photos
+            $table->string('pdf_report')->nullable(); // for PDF reports
             $table->timestamps();
         });
     }

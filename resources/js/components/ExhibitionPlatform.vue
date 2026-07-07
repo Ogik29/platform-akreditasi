@@ -8,7 +8,10 @@
         </div>
 
         <!-- Ambient Cybernetic Floating Particle Canvas -->
-        <canvas id="ambientParticleCanvas" class="ambient-particle-canvas"></canvas>
+        <canvas
+            id="ambientParticleCanvas"
+            class="ambient-particle-canvas"
+        ></canvas>
 
         <!-- Custom transition loader matching initial loading screen -->
         <transition name="loader-fade">
@@ -29,148 +32,359 @@
             <!-- Grid View -->
             <div v-if="currentView === 'grid'" key="grid">
                 <!-- Header / Hero Section -->
-                <header class="text-center mb-5 mt-4 fade-in-up">
-                    <div class="float-animation">
+                <header
+                    class="mb-5 mt-0 fade-in-up"
+                    style="
+                        margin-left: calc(-1 * var(--bs-gutter-x, 12px));
+                        margin-right: calc(-1 * var(--bs-gutter-x, 12px));
+                        margin-top: calc(-3rem) !important;
+                    "
+                >
+                    <!-- Single Master Hero Showcase Card -->
+                    <div
+                        class="position-relative overflow-hidden hero-master-card text-start p-4 p-md-5"
+                        style="
+                            border-radius: 0 0 24px 24px;
+                            border-top: none;
+                            background: transparent !important;
+                            box-shadow: none;
+                            border-left: none;
+                            border-right: none;
+                            border-bottom: none;
+                            overflow: visible !important;
+                        "
+                    >
+                        <!-- Ambient Radial Background Glow -->
                         <div
-                            class="d-inline-block px-3 py-1 mb-3 rounded-pill bg-dark bg-opacity-50 border border-secondary text-secondary fw-bold fade-in-up anim-delay-100"
-                            style="
-                                font-size: 0.85rem;
-                                letter-spacing: 1px;
-                                border-color: rgba(
-                                    255,
-                                    255,
-                                    255,
-                                    0.2
-                                ) !important;
-                                color: #cbd5e1 !important;
-                            "
-                        >
-                            ★ PAMERAN PRODI TEKNOLOGI INFORMASI ★
-                        </div>
-                        <h1
-                            class="display-3 fw-extrabold text-white mb-3 fade-in-up anim-delay-200"
-                        >
-                            Pameran
-                            <span class="text-gradient-silver">Teknologi</span>
-                            &amp;
-                            <span class="text-gradient-titanium">Inovasi</span>
-                        </h1>
-                        <p
-                            class="lead text-secondary mx-auto mb-4 fade-in-up anim-delay-300"
-                            style="max-width: 720px"
-                        >
-                            Selamat datang di Platform Showcase Tugas Akhir dan
-                            Proyek Inovatif Mahasiswa Teknologi Informasi Telkom
-                            University Surabaya. Kami menampilkan hasil karya
-                            terbaik mahasiswa dari 3 platform berbeda dengan
-                            raihan prestasi nasional dan internasional.
-                        </p>
+                            class="poster-ambient-glow"
+                            :style="{
+                                background:
+                                    activePosterIndex === 0
+                                        ? 'radial-gradient(circle, rgba(56,189,248,0.22) 0%, rgba(15,23,42,0) 70%)'
+                                        : 'radial-gradient(circle, rgba(167,139,250,0.22) 0%, rgba(15,23,42,0) 70%)',
+                            }"
+                        ></div>
 
-                        <!-- Animated Stats Counters Banner -->
-                        <div
-                            class="row justify-content-center g-2 g-sm-3 mt-4"
-                            style="max-width: 980px; margin: 0 auto"
-                        >
-                            <div
-                                class="col-6 col-sm-4 col-lg fade-in-up anim-delay-400"
-                            >
+                        <div class="position-relative z-2">
+                            <!-- 1. Hero Header Inside Card -->
+                            <div class="text-center mb-4 pb-2">
                                 <div
-                                    class="glass-card stats-card-glow p-2 p-sm-3 text-center"
+                                    class="d-inline-block px-3 py-1 mb-2 rounded-pill fw-bold"
+                                    style="
+                                        font-size: 0.82rem;
+                                        letter-spacing: 1px;
+                                        background: rgba(30, 41, 59, 0.12);
+                                        border: 1px solid rgba(30, 41, 59, 0.25);
+                                        color: #334155;
+                                    "
                                 >
-                                    <div class="fs-4 mb-1">🚀</div>
-                                    <h3
-                                        class="fw-bold text-info mb-1 stats-number"
+                                    ★ PAMERAN PRODI TEKNOLOGI INFORMASI ★
+                                </div>
+                                <h1
+                                    class="display-4 fw-extrabold mb-0"
+                                    style="color: #1e293b"
+                                >
+                                    Pameran
+                                    <span
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #0f172a 0%,
+                                                #475569 100%
+                                            );
+                                            -webkit-background-clip: text;
+                                            -webkit-text-fill-color: transparent;
+                                            background-clip: text;
+                                        "
+                                        >Teknologi</span
                                     >
-                                        {{
-                                            animatedStats.projects ||
-                                            projects.length
-                                        }}
-                                    </h3>
-                                    <small
-                                        class="text-secondary d-block stats-label"
-                                        >Total Proyek</small
+                                    &amp;
+                                    <span
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #334155 0%,
+                                                #64748b 100%
+                                            );
+                                            -webkit-background-clip: text;
+                                            -webkit-text-fill-color: transparent;
+                                            background-clip: text;
+                                        "
+                                        >Inovasi</span
                                     >
+                                </h1>
+                            </div>
+
+                            <!-- 2. Middle Showcase Grid: Left Poster Viewport + Right Info & Selector -->
+                            <div
+                                class="row g-4 align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-20"
+                            >
+                                <!-- Left Column: Poster Viewport Stage -->
+                                <div class="col-lg-7">
+                                    <div
+                                        class="position-relative rounded-4"
+                                        style="height: 420px"
+                                    >
+                                        <!-- Poster Viewport fills entire wrapper (behind arrows) -->
+                                        <div
+                                            class="poster-viewport position-absolute w-100 h-100 overflow-hidden top-0 start-0 rounded-4"
+                                            style="z-index: 1"
+                                        >
+                                            <Transition
+                                                :name="posterSlideDirection"
+                                            >
+                                                <div
+                                                    :key="activePosterIndex"
+                                                    class="poster-slide-item w-100 h-100 text-center"
+                                                >
+                                                    <img
+                                                        :src="
+                                                            posters[
+                                                                activePosterIndex
+                                                            ].image
+                                                        "
+                                                        :alt="
+                                                            posters[
+                                                                activePosterIndex
+                                                            ].title
+                                                        "
+                                                        class="rounded-4 poster-stage-img lightbox-trigger shadow-lg"
+                                                        @click="
+                                                            openLightbox(
+                                                                posters[
+                                                                    activePosterIndex
+                                                                ].image,
+                                                            )
+                                                        "
+                                                        style="
+                                                            width: 100%;
+                                                            height: 420px;
+                                                            object-fit: cover;
+                                                            object-position: top;
+                                                            cursor: pointer;
+                                                            display: block;
+                                                        "
+                                                    />
+                                                </div>
+                                            </Transition>
+                                        </div>
+
+                                        <!-- Left Arrow Button (floats over viewport) -->
+                                        <button
+                                            type="button"
+                                            @click="prevPoster"
+                                            class="btn-poster-nav btn-poster-prev"
+                                            aria-label="Poster Sebelumnya"
+                                            style="z-index: 40"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            >
+                                                <polyline points="15 18 9 12 15 6"></polyline>
+                                            </svg>
+                                        </button>
+
+                                        <!-- Right Arrow Button (floats over viewport) -->
+                                        <button
+                                            type="button"
+                                            @click="nextPoster"
+                                            class="btn-poster-nav btn-poster-next"
+                                            aria-label="Poster Selanjutnya"
+                                            style="z-index: 40"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            >
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column: Welcome Intro Paragraph & Poster Switcher Buttons -->
+                                <div class="col-lg-5">
+                                    <div
+                                        class="d-flex flex-column h-100 justify-content-center pe-lg-2"
+                                    >
+                                        <!-- Header Badge -->
+                                        <span
+                                            class="poster-stage-badge d-inline-flex align-items-center gap-2 mb-3 align-self-start"
+                                        >
+                                            <span class="pulse-dot"></span>
+                                            <span
+                                                >SHOWCASE PAMERAN
+                                                AKREDITASI</span
+                                            >
+                                        </span>
+
+                                        <!-- Welcome Paragraph -->
+                                        <p
+                                            class="mb-4"
+                                            style="
+                                                color: #334155;
+                                                line-height: 1.7;
+                                                font-size: 0.94rem;
+                                            "
+                                        >
+                                            Selamat datang di Platform Showcase
+                                            Tugas Akhir dan Proyek Inovatif
+                                            Mahasiswa Teknologi Informasi Telkom
+                                            University Surabaya. Kami
+                                            menampilkan hasil karya terbaik
+                                            mahasiswa dan sivitas akademik Prodi
+                                            Teknologi Informasi dari 3 platform
+                                            berbeda dengan raihan prestasi
+                                            nasional dan internasional.
+                                        </p>
+
+                                        <!-- Poster Switcher Buttons -->
+                                        <div class="d-flex flex-column gap-2">
+                                            <button
+                                                v-for="(
+                                                    poster, pIdx
+                                                ) in posters"
+                                                :key="pIdx"
+                                                type="button"
+                                                @click="goToPoster(pIdx)"
+                                                :class="[
+                                                    'poster-select-tab-btn text-start d-flex align-items-center justify-content-between w-100',
+                                                    activePosterIndex === pIdx
+                                                        ? 'active'
+                                                        : '',
+                                                ]"
+                                            >
+                                                <span
+                                                    class="d-flex align-items-center gap-2"
+                                                >
+                                                    <i class="bi bi-file-earmark-text"></i>
+                                                    <span>{{
+                                                        poster.title
+                                                    }}</span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- 3. Bottom Integrated Stats Counters Row -->
                             <div
-                                class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
+                                class="row justify-content-center g-2 g-sm-3 text-center"
                             >
-                                <div
-                                    class="glass-card stats-card-glow p-2 p-sm-3 text-center"
-                                >
-                                    <div class="fs-4 mb-1">🏆</div>
-                                    <h3
-                                        class="fw-bold mb-1 stats-number"
-                                        style="color: #60a5fa"
+                                <div class="col-6 col-sm-4 col-lg">
+                                    <div
+                                        class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        {{
-                                            animatedStats.nasional ||
-                                            totalNasional
-                                        }}
-                                    </h3>
-                                    <small
-                                        class="text-secondary d-block stats-label"
-                                        >Prestasi Nasional</small
-                                    >
+                                        <div class="fs-4 mb-1 text-info"><i class="bi bi-rocket-takeoff"></i></div>
+                                        <h3
+                                            class="fw-bold text-info mb-1 stats-number"
+                                        >
+                                            {{
+                                                animatedStats.projects ||
+                                                projects.length
+                                            }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Total Proyek</small
+                                        >
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
-                            >
-                                <div
-                                    class="glass-card stats-card-glow p-2 p-sm-3 text-center"
-                                >
-                                    <div class="fs-4 mb-1">🌐</div>
-                                    <h3
-                                        class="fw-bold mb-1 stats-number"
-                                        style="color: #a78bfa"
+                                <div class="col-6 col-sm-4 col-lg">
+                                    <div
+                                        class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        {{
-                                            animatedStats.internasional ||
-                                            totalInternasional
-                                        }}
-                                    </h3>
-                                    <small
-                                        class="text-secondary d-block stats-label"
-                                        >Prestasi Internasional</small
-                                    >
+                                        <div class="fs-4 mb-1 text-primary"><i class="bi bi-trophy"></i></div>
+                                        <h3
+                                            class="fw-bold mb-1 stats-number"
+                                            style="color: #60a5fa"
+                                        >
+                                            {{
+                                                animatedStats.nasional ||
+                                                totalNasional
+                                            }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Prestasi Nasional</small
+                                        >
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
-                            >
-                                <div
-                                    class="glass-card stats-card-glow p-2 p-sm-3 text-center"
-                                >
-                                    <div class="fs-4 mb-1">🤝</div>
-                                    <h3
-                                        class="fw-bold text-warning mb-1 stats-number"
+                                <div class="col-6 col-sm-4 col-lg">
+                                    <div
+                                        class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        {{ animatedStats.mitra || totalMitra }}
-                                    </h3>
-                                    <small
-                                        class="text-secondary d-block stats-label"
-                                        >Mitra Strategis</small
-                                    >
+                                        <div class="fs-4 mb-1 text-purple" style="color: #c084fc;"><i class="bi bi-globe-americas"></i></div>
+                                        <h3
+                                            class="fw-bold mb-1 stats-number"
+                                            style="color: #a78bfa"
+                                        >
+                                            {{
+                                                animatedStats.internasional ||
+                                                totalInternasional
+                                            }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Prestasi Internasional</small
+                                        >
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="col-6 col-sm-4 col-lg fade-in-up anim-delay-500"
-                            >
-                                <div
-                                    class="glass-card stats-card-glow p-2 p-sm-3 text-center"
-                                >
-                                    <div class="fs-4 mb-1">👨‍🏫</div>
-                                    <h3
-                                        class="fw-bold text-secondary mb-1 stats-number"
-                                        style="color: #cbd5e1 !important"
+                                <div class="col-6 col-sm-4 col-lg">
+                                    <div
+                                        class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        {{ animatedStats.dosen || 5 }}
-                                    </h3>
-                                    <small
-                                        class="text-secondary d-block stats-label"
-                                        >Dosen Pembimbing</small
+                                        <div class="fs-4 mb-1 text-warning">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-handshake" viewBox="0 0 16 16">
+                                                <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                            </svg>
+                                        </div>
+                                        <h3
+                                            class="fw-bold text-warning mb-1 stats-number"
+                                        >
+                                            {{
+                                                animatedStats.mitra ||
+                                                totalMitra
+                                            }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Mitra Strategis</small
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4 col-lg">
+                                    <div
+                                        class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
+                                        <div class="fs-4 mb-1 text-secondary" style="color: #94a3b8 !important;"><i class="bi bi-mortarboard"></i></div>
+                                        <h3
+                                            class="fw-bold text-secondary mb-1 stats-number"
+                                            style="color: #cbd5e1 !important"
+                                        >
+                                            {{ animatedStats.dosen || 5 }}
+                                        </h3>
+                                        <small
+                                            class="text-secondary d-block stats-label"
+                                            >Dosen Pembimbing</small
+                                        >
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -249,7 +463,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">✨</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-stars"></i></span>
                                     Semua Bidang
                                 </button>
                                 <button
@@ -262,7 +476,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">🤖</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-cpu"></i></span>
                                     AI
                                 </button>
                                 <button
@@ -275,7 +489,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">📡</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-broadcast"></i></span>
                                     IoT
                                 </button>
                                 <button
@@ -288,7 +502,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">🥽</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-headset-vr"></i></span>
                                     VR/AR
                                 </button>
                                 <button
@@ -305,7 +519,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">🔐</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-shield-lock"></i></span>
                                     Networking &amp; Cyber Security
                                 </button>
                                 <button
@@ -318,7 +532,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">🔬</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-microscope"></i></span>
                                     Others
                                 </button>
                             </div>
@@ -341,7 +555,7 @@
                                         selectedType === 'all' ? 'active' : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">🌐</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-grid-fill"></i></span>
                                     Semua Kategori
                                 </button>
                                 <button
@@ -352,7 +566,7 @@
                                         selectedType === 'web' ? 'active' : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">💻</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-desktop"></i></span>
                                     Web-Based
                                 </button>
                                 <button
@@ -365,7 +579,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">📱</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-phone"></i></span>
                                     Mobile-Based
                                 </button>
                                 <button
@@ -378,8 +592,55 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">⚡</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-cpu-fill"></i></span>
                                     Hardware-Based
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Tingkat Prestasi Filter -->
+                        <div
+                            class="mt-4 pt-3 border-top border-secondary border-opacity-10"
+                        >
+                            <label
+                                class="text-secondary small fw-bold mb-3 d-block uppercase-tracking"
+                                >Tingkat Prestasi</label
+                            >
+                            <div class="d-flex flex-wrap gap-2">
+                                <button
+                                    type="button"
+                                    @click="selectedPrestasi = 'all'"
+                                    :class="[
+                                        'btn-filter',
+                                        selectedPrestasi === 'all' ? 'active' : '',
+                                    ]"
+                                >
+                                    <span class="btn-filter-icon"><i class="bi bi-award"></i></span>
+                                    Semua Tingkat
+                                </button>
+                                <button
+                                    type="button"
+                                    @click="selectedPrestasi = 'nasional'"
+                                    :class="[
+                                        'btn-filter',
+                                        selectedPrestasi === 'nasional' ? 'active' : '',
+                                    ]"
+                                >
+                                    <span class="btn-filter-icon"><i class="bi bi-trophy"></i></span>
+                                    Nasional
+                                </button>
+                                <button
+                                    type="button"
+                                    @click="selectedPrestasi = 'internasional'"
+                                    :class="[
+                                        'btn-filter',
+                                        selectedPrestasi === 'internasional'
+                                            ? 'active'
+                                            : '',
+                                    ]"
+                                >
+                                    <span class="btn-filter-icon"><i class="bi bi-globe-americas"></i></span>
+                                    Internasional
                                 </button>
                             </div>
                         </div>
@@ -391,7 +652,7 @@
                     v-if="filteredProjects.length === 0"
                     class="text-center py-5 glass-card fade-in-up"
                 >
-                    <div class="fs-1 mb-2">📂</div>
+                    <div class="fs-1 mb-2 text-secondary"><i class="bi bi-folder-x"></i></div>
                     <h5 class="text-secondary mb-3">
                         Tidak ditemukan proyek yang cocok dengan kriteria filter
                         Anda
@@ -414,8 +675,12 @@
                         class="col-12 col-md-6 col-lg-4"
                     >
                         <div
-                            class="glass-card h-100 p-3 p-sm-4 d-flex flex-column justify-content-between"
+                            class="glass-card project-card h-100 p-3 p-sm-4 d-flex flex-column justify-content-between position-relative"
+                            @mousemove="handleCardTilt($event)"
+                            @mouseleave="resetCardTilt($event)"
                         >
+                            <!-- Card Sheen Gloss Reflection Overlay -->
+                            <div class="card-sheen"></div>
                             <!-- Dynamic background logo watermark -->
                             <div
                                 class="card-bg-logo"
@@ -542,13 +807,9 @@
                                                     project.partners.join(', ')
                                                 "
                                             >
-                                                <span
-                                                    style="
-                                                        font-size: 0.85rem;
-                                                        line-height: 1;
-                                                    "
-                                                    >🤝</span
-                                                >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handshake text-warning" style="margin-top: 1px;" viewBox="0 0 16 16">
+                                                    <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                                </svg>
                                                 <span
                                                     class="text-warning fw-extrabold"
                                                     style="
@@ -595,9 +856,7 @@
                                                     .replace(/[^a-z]/g, '-'),
                                         ]"
                                     >
-                                        {{
-                                            getTechFieldIcon(project.tech_field)
-                                        }}
+                                        <i :class="[getTechFieldIcon(project.tech_field), 'me-1']"></i>
                                         {{ project.tech_field || "Others" }}
                                     </span>
                                 </div>
@@ -796,7 +1055,9 @@
                                         class="partner-logo-frame partner-placeholder-frame bg-dark bg-opacity-40 border border-warning border-opacity-30 rounded-2 py-1 px-2 d-flex align-items-center justify-content-center gap-1"
                                         style="height: 36px"
                                     >
-                                        <span>🤝</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handshake text-warning me-1" viewBox="0 0 16 16">
+                                            <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                        </svg>
                                         <span class="text-warning fw-bold small"
                                             >Mitra</span
                                         >
@@ -819,7 +1080,7 @@
                             activeDetailTab === 'overview' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon">📌</span>
+                        <span class="tab-icon"><i class="bi bi-info-circle me-1"></i></span>
                         <span>Overview &amp; Pratinjau</span>
                     </button>
 
@@ -831,7 +1092,7 @@
                             activeDetailTab === 'gallery' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon">📸</span>
+                        <span class="tab-icon"><i class="bi bi-images me-1"></i></span>
                         <span>Dokumentasi</span>
                         <span
                             v-if="getMediaCount(selectedProject) > 0"
@@ -850,7 +1111,7 @@
                             activeDetailTab === 'prestasi' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon">🏆</span>
+                        <span class="tab-icon"><i class="bi bi-trophy me-1"></i></span>
                         <span>Raihan Prestasi</span>
                         <span
                             v-if="
@@ -872,7 +1133,7 @@
                             activeDetailTab === 'team' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon">👥</span>
+                        <span class="tab-icon"><i class="bi bi-people me-1"></i></span>
                         <span>Tim &amp; Pembimbing</span>
                         <span
                             v-if="
@@ -900,7 +1161,7 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span>🌐 Platform Web Live</span>
+                                    <span><i class="bi bi-globe me-2"></i>Platform Web Live</span>
                                 </h4>
                                 <div
                                     class="web-redirect-container text-center py-5 animate-pulse-subtle"
@@ -911,7 +1172,7 @@
                                         border-radius: 16px;
                                     "
                                 >
-                                    <span class="fs-1 d-block mb-3">💻</span>
+                                    <span class="fs-1 d-block mb-3 text-info"><i class="bi bi-desktop"></i></span>
                                     <h5 class="text-white fw-bold mb-2">
                                         Platform Web Siap Diakses
                                     </h5>
@@ -928,40 +1189,149 @@
                                         mencoba platform secara langsung pada
                                         tab baru.
                                     </p>
-                                    <a
-                                        v-if="selectedProject.external_url"
-                                        :href="selectedProject.external_url"
-                                        target="_blank"
-                                        class="btn btn-silver btn-web-launch py-2.5 px-4 d-inline-flex align-items-center gap-2"
-                                        style="
-                                            font-size: 0.95rem;
-                                            font-weight: 600;
+                                    <div
+                                        v-if="
+                                            getExternalUrls(selectedProject)
+                                                .length > 0
                                         "
+                                        class="d-flex flex-wrap justify-content-center align-items-center gap-3"
                                     >
-                                        <span>Buka Aplikasi Web</span>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-box-arrow-up-right"
-                                            viewBox="0 0 16 16"
+                                        <a
+                                            v-for="(
+                                                urlItem, uIdx
+                                            ) in getExternalUrls(
+                                                selectedProject,
+                                            )"
+                                            :key="uIdx"
+                                            :href="formatUrl(urlItem)"
+                                            target="_blank"
+                                            class="btn btn-silver btn-web-launch py-2.5 px-4 d-inline-flex align-items-center gap-2"
+                                            style="
+                                                font-size: 0.95rem;
+                                                font-weight: 600;
+                                            "
                                         >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                                            />
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                                            />
-                                        </svg>
-                                    </a>
+                                            <span>{{
+                                                getUrlLabel(
+                                                    urlItem,
+                                                    uIdx,
+                                                    getExternalUrls(
+                                                        selectedProject,
+                                                    ).length,
+                                                )
+                                            }}</span>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-box-arrow-up-right"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
                                     <span
                                         v-else
-                                        class="text-muted text-italic small"
+                                        class="text-muted text-italic small d-block"
+                                        style="color: #cbd5e1 !important"
                                         >URL Website tidak tersedia</span
                                     >
+                                </div>
+                            </div>
+
+                            <!-- Mobile Application External Link Preview (Mobile-based with external_url) -->
+                            <div
+                                v-if="
+                                    selectedProject.type !== 'web' &&
+                                    getExternalUrls(selectedProject).length > 0
+                                "
+                                class="glass-card p-4 mb-4"
+                            >
+                                <h4
+                                    class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
+                                >
+                                    <span><i class="bi bi-link-45deg me-2"></i>Tautan Demo / Web Portal</span>
+                                </h4>
+                                <div
+                                    class="web-redirect-container text-center py-4 animate-pulse-subtle"
+                                    style="
+                                        background: rgba(15, 23, 42, 0.3);
+                                        border: 1px dashed
+                                            rgba(255, 255, 255, 0.15);
+                                        border-radius: 16px;
+                                    "
+                                >
+                                    <span class="fs-1 d-block mb-3 text-info"><i class="bi bi-link-45deg"></i></span>
+                                    <h5 class="text-white fw-bold mb-2">
+                                        Tautan Eksternal Siap Diakses
+                                    </h5>
+                                    <p
+                                        class="text-light small mx-auto mb-4"
+                                        style="
+                                            max-width: 480px;
+                                            color: #cbd5e1 !important;
+                                        "
+                                    >
+                                        Proyek ini menyediakan tautan eksternal
+                                        / web portal yang dapat diakses secara
+                                        live. Klik tombol di bawah untuk membuka
+                                        tautan pada tab baru.
+                                    </p>
+                                    <div
+                                        class="d-flex flex-wrap justify-content-center align-items-center gap-3"
+                                    >
+                                        <a
+                                            v-for="(
+                                                urlItem, uIdx
+                                            ) in getExternalUrls(
+                                                selectedProject,
+                                            )"
+                                            :key="uIdx"
+                                            :href="formatUrl(urlItem)"
+                                            target="_blank"
+                                            class="btn btn-silver btn-web-launch py-2.5 px-4 d-inline-flex align-items-center gap-2"
+                                            style="
+                                                font-size: 0.95rem;
+                                                font-weight: 600;
+                                            "
+                                        >
+                                            <span>{{
+                                                getUrlLabel(
+                                                    urlItem,
+                                                    uIdx,
+                                                    getExternalUrls(
+                                                        selectedProject,
+                                                    ).length,
+                                                )
+                                            }}</span>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-box-arrow-up-right"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -973,7 +1343,7 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span>📱 Pratinjau Antarmuka Aplikasi</span>
+                                    <span><i class="bi bi-phone me-2"></i>Pratinjau Antarmuka Aplikasi</span>
                                 </h4>
                                 <div
                                     v-if="
@@ -1023,7 +1393,10 @@
                                         <div
                                             v-for="(
                                                 scr, idx
-                                            ) in selectedProject.screenshots.slice(0, 4)"
+                                            ) in selectedProject.screenshots.slice(
+                                                0,
+                                                4,
+                                            )"
                                             :key="idx"
                                             class="screenshot-carousel-item mobile-item text-center"
                                         >
@@ -1080,13 +1453,35 @@
                                         type="button"
                                         @click="activeDetailTab = 'gallery'"
                                         class="btn btn-sm btn-outline-info rounded-pill px-3 py-1.5"
-                                        style="font-size: 0.82rem; border-color: rgba(56, 189, 248, 0.4);"
+                                        style="
+                                            font-size: 0.82rem;
+                                            border-color: rgba(
+                                                56,
+                                                189,
+                                                248,
+                                                0.4
+                                            );
+                                        "
                                     >
-                                        <span>Lihat {{ selectedProject.screenshots.length - 4 }} screenshot lainnya di tab Dokumentasi ➔</span>
+                                        <span
+                                            >Lihat
+                                            {{
+                                                selectedProject.screenshots
+                                                    .length - 4
+                                            }}
+                                            screenshot lainnya di tab
+                                            Dokumentasi ➔</span
+                                        >
                                     </button>
                                 </div>
+                                <div
+                                    v-else-if="
+                                        selectedProject.screenshots &&
+                                        selectedProject.screenshots.length <= 4
+                                    "
+                                ></div>
                                 <div v-else class="text-center py-5">
-                                    <span class="fs-1 d-block mb-2">📱</span>
+                                    <span class="fs-1 d-block mb-2 text-muted"><i class="bi bi-phone-mute"></i></span>
                                     <p class="text-secondary small mb-0">
                                         Screenshot Tidak Tersedia
                                     </p>
@@ -1101,7 +1496,7 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span>🎬 Video Dokumentasi &amp; Demo</span>
+                                    <span><i class="bi bi-play-btn me-2"></i>Video Dokumentasi &amp; Demo</span>
                                 </h4>
                                 <div class="video-container">
                                     <iframe
@@ -1123,7 +1518,8 @@
                                     ></iframe>
                                 </div>
                             </div>
-                            <div
+                            <!--  
+                           <div
                                 v-else-if="selectedProject.type === 'hardware'"
                                 class="glass-card p-4 mb-4"
                             >
@@ -1148,7 +1544,7 @@
                                         fisik.
                                     </p>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- Description Card -->
                             <div class="glass-card p-4 p-md-5 mb-4">
@@ -1167,6 +1563,63 @@
                                 >
                                     {{ selectedProject.description }}
                                 </p>
+                            </div>
+
+                            <!-- PDF Report Preview Card -->
+                            <div
+                                v-if="selectedProject.pdf_report"
+                                class="glass-card p-4 p-md-5 mb-4"
+                            >
+                                <div
+                                    class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center border-bottom border-secondary border-opacity-20 pb-3 mb-4 gap-3"
+                                >
+                                    <h4 class="fw-bold text-white mb-0 d-flex align-items-center gap-2">
+                                        <i class="bi bi-file-earmark-pdf text-danger"></i>
+                                        <span>Laporan Tugas Akhir / Riset</span>
+                                    </h4>
+                                    <div class="d-flex gap-2">
+                                        <a
+                                            :href="selectedProject.pdf_report"
+                                            target="_blank"
+                                            class="btn btn-sm btn-outline-light d-inline-flex align-items-center gap-1.5 px-3 py-2"
+                                            style="font-size: 0.82rem; border-color: rgba(255, 255, 255, 0.15);"
+                                        >
+                                            <i class="bi bi-box-arrow-up-right"></i>
+                                            <span>Buka di Tab Baru</span>
+                                        </a>
+                                        <a
+                                            :href="selectedProject.pdf_report"
+                                            download
+                                            class="btn btn-sm btn-info text-dark d-inline-flex align-items-center gap-1.5 px-3 py-2"
+                                            style="font-size: 0.82rem; font-weight: 600;"
+                                        >
+                                            <i class="bi bi-download"></i>
+                                            <span>Unduh PDF</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="pdf-preview-frame-container position-relative overflow-hidden rounded-3 border border-secondary border-opacity-20"
+                                    style="height: 580px; background: rgba(15, 23, 42, 0.3);"
+                                >
+                                    <iframe
+                                        :src="selectedProject.pdf_report"
+                                        width="100%"
+                                        height="100%"
+                                        style="border: none; background: #ffffff;"
+                                    >
+                                        <div class="p-5 text-center d-flex flex-column align-items-center justify-content-center h-100">
+                                            <i class="bi bi-filetype-pdf text-danger display-1 mb-3"></i>
+                                            <h5 class="text-white fw-bold">Pratinjau PDF tidak didukung oleh browser Anda</h5>
+                                            <p class="text-secondary small mb-4" style="max-width: 320px;">
+                                                Silakan unduh atau buka laporan PDF secara langsung melalui tombol di bawah ini.
+                                            </p>
+                                            <a :href="selectedProject.pdf_report" target="_blank" class="btn btn-info text-dark">
+                                                Buka Laporan PDF
+                                            </a>
+                                        </div>
+                                    </iframe>
+                                </div>
                             </div>
                         </div>
 
@@ -1216,11 +1669,7 @@
                                                         ),
                                             ]"
                                         >
-                                            {{
-                                                getTechFieldIcon(
-                                                    selectedProject.tech_field,
-                                                )
-                                            }}
+                                            <i :class="[getTechFieldIcon(selectedProject.tech_field), 'me-1']"></i>
                                             {{
                                                 selectedProject.tech_field ||
                                                 "Others"
@@ -1313,8 +1762,11 @@
                                                     <span
                                                         v-else
                                                         style="font-size: 1rem"
-                                                        >🤝</span
                                                     >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handshake text-warning" viewBox="0 0 16 16">
+                                                            <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                                        </svg>
+                                                    </span>
                                                 </div>
                                                 <span
                                                     class="text-white small fw-semibold flex-grow-1 ms-1"
@@ -1383,7 +1835,7 @@
                         <h4
                             class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                         >
-                            <span>📸 Galeri Dokumentasi</span>
+                            <span><i class="bi bi-images me-2"></i>Galeri Dokumentasi</span>
                         </h4>
 
                         <!-- Documentation Photos Grid -->
@@ -1472,7 +1924,7 @@
                             v-if="getMediaCount(selectedProject) === 0"
                             class="text-center py-5"
                         >
-                            <span class="fs-1 d-block mb-3">🖼️</span>
+                            <span class="fs-1 d-block mb-3 text-muted"><i class="bi bi-image"></i></span>
                             <h5 class="text-white fw-bold mb-2">N/A</h5>
                         </div>
                     </div>
@@ -1487,7 +1939,7 @@
                         <h4
                             class="fw-bold text-white mb-4 d-flex align-items-center gap-2 border-bottom border-secondary border-opacity-20 pb-3"
                         >
-                            <span style="color: #fbbf24">🏆</span>
+                            <span style="color: #fbbf24" class="me-2"><i class="bi bi-trophy"></i></span>
                             <span>Prestasi &amp; Raihan Proyek</span>
                         </h4>
 
@@ -1570,7 +2022,7 @@
                                     :key="aIdx"
                                     class="d-flex align-items-start gap-3 p-3 bg-dark bg-opacity-50 border border-secondary border-opacity-30 rounded-3"
                                 >
-                                    <span class="fs-4 text-warning">🥇</span>
+                                    <span class="fs-4 text-warning me-2"><i class="bi bi-award-fill"></i></span>
                                     <div>
                                         <h6 class="text-white fw-bold mb-1">
                                             {{ award }}
@@ -1584,7 +2036,7 @@
                             </div>
                         </div>
                         <div v-else class="text-center py-5">
-                            <span class="fs-1 d-block mb-2">📜</span>
+                            <span class="fs-1 d-block mb-2 text-muted"><i class="bi bi-file-earmark-lock"></i></span>
                             <h5 class="text-white fw-bold mb-2">N/A</h5>
                             <p class="text-secondary small mb-0">
                                 Proyek ini dikembangkan secara mandiri di bawah
@@ -1676,7 +2128,7 @@
                                             font-size: 0.88rem;
                                         "
                                     >
-                                        <span>🤝</span>
+                                        <i class="bi bi-handshake text-warning"></i>
                                         <span
                                             class="text-white fw-semibold"
                                             style="color: #ffffff !important"
@@ -1697,15 +2149,16 @@
                     <!-- Team Members Cards -->
                     <div class="glass-card p-4 p-md-5">
                         <h3
-                            class="fw-extrabold text-white text-center mb-2 text-gradient-silver"
+                            class="fw-extrabold text-center mb-2"
+                            style="color: #1e293b;"
                         >
-                            Tim Inovator Mahasiswa
+                            Anggota Inovator
                         </h3>
                         <p
-                            class="text-secondary text-center mx-auto mb-5"
-                            style="max-width: 600px"
+                            class="text-center mx-auto mb-5"
+                            style="color: #475569; max-width: 600px;"
                         >
-                            Mahasiswa di balik rancangan, implementasi, dan
+                            Sivitas di balik rancangan, implementasi, dan
                             pengujian sistem.
                         </p>
 
@@ -1720,10 +2173,13 @@
                                 :key="idx"
                             >
                                 <div
-                                    class="team-member-card h-100 d-flex flex-column align-items-center text-center"
+                                    class="team-member-card h-100 d-flex flex-column align-items-center text-center position-relative"
                                 >
                                     <div
                                         class="team-avatar-container mb-3 position-relative"
+                                        :style="member.photo && hasRealPhoto(member.photo) ? 'cursor: pointer;' : ''"
+                                        :title="member.photo && hasRealPhoto(member.photo) ? 'Klik untuk memperbesar foto ' + member.nickname : ''"
+                                        @click="member.photo && hasRealPhoto(member.photo) && openLightbox(member.photo)"
                                     >
                                         <div class="team-avatar-ring"></div>
                                         <img
@@ -1733,7 +2189,7 @@
                                             "
                                             :src="member.photo"
                                             :alt="member.nickname"
-                                            class="team-avatar-img"
+                                            class="team-avatar-img lightbox-trigger"
                                         />
                                         <div
                                             v-else
@@ -1747,43 +2203,53 @@
                                                     : "TM"
                                             }}
                                         </div>
+                                        <span
+                                            v-if="member.photo && hasRealPhoto(member.photo)"
+                                            class="avatar-zoom-hint"
+                                        >
+                                            <i class="bi bi-zoom-in" style="font-size: 0.75rem;"></i>
+                                        </span>
                                     </div>
                                     <h5
-                                        class="text-white fw-bold mb-1 text-truncate w-100"
+                                        class="fw-bold mb-1 text-truncate w-100"
+                                        style="color: #ffffff !important;"
                                     >
                                         {{ member.nickname }}
                                     </h5>
                                     <p
-                                        class="text-white mb-2 small text-truncate w-100"
-                                        style="color: #cbd5e1 !important"
+                                        class="mb-2 small text-truncate w-100"
+                                        style="color: #cbd5e1 !important;"
                                     >
                                         {{ member.fullname }}
                                     </p>
                                     <span
                                         v-if="member.role"
-                                        class="badge bg-dark border border-secondary text-light mb-4 w-100 text-truncate"
-                                        style="
-                                            font-size: 11px;
-                                            padding: 6px 10px;
-                                            color: #e2e8f0 !important;
-                                        "
+                                        class="badge team-role-badge mb-4 w-100 text-truncate"
+                                        style="background: rgba(56, 189, 248, 0.15) !important; border: 1px solid rgba(56, 189, 248, 0.4) !important; color: #38bdf8 !important; font-weight: 600;"
                                     >
                                         {{ member.role }}
                                     </span>
 
-                                    <!-- Social Media Buttons -->
-                                    <div class="d-flex gap-3 mt-auto">
+                                    <!-- Floating Social Media Pill -->
+                                    <div
+                                        v-if="
+                                            member.linkedin ||
+                                            (member.social_media &&
+                                                member.social_media.instagram)
+                                        "
+                                        class="social-pill-container d-inline-flex align-items-center gap-2 mt-auto"
+                                    >
                                         <a
                                             v-if="member.linkedin"
                                             :href="member.linkedin"
                                             target="_blank"
-                                            class="social-icon-btn"
+                                            class="social-icon-btn-floating"
                                             title="LinkedIn"
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                width="16"
-                                                height="16"
+                                                width="15"
+                                                height="15"
                                                 fill="currentColor"
                                                 class="bi bi-linkedin"
                                                 viewBox="0 0 16 16"
@@ -1802,13 +2268,13 @@
                                                 member.social_media.instagram
                                             "
                                             target="_blank"
-                                            class="social-icon-btn"
+                                            class="social-icon-btn-floating instagram-btn"
                                             title="Instagram"
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                width="16"
-                                                height="16"
+                                                width="15"
+                                                height="15"
                                                 fill="currentColor"
                                                 class="bi bi-instagram"
                                                 viewBox="0 0 16 16"
@@ -2231,6 +2697,7 @@ export default {
             selectedType: "all",
             selectedTechField: "all",
             selectedSupervisor: "all",
+            selectedPrestasi: "all",
             selectedProject: null,
             activeMobileProject: null,
             activeHardwareProject: null,
@@ -2251,33 +2718,22 @@ export default {
                 mitra: 0,
                 dosen: 0,
             },
+            posters: [
+                {
+                    id: 1,
+                    title: "Poster Pameran Akreditasi & Inovasi Riset #1",
+                    image: "/img/poster1.jpeg",
+                },
+                {
+                    id: 2,
+                    title: "Poster Pameran Akreditasi & Inovasi Riset #2",
+                    image: "/img/poster2.jpeg",
+                },
+            ],
+            activePosterIndex: 0,
+            posterSlideDirection: "slide-next",
+            posterAutoSlideTimer: null,
         };
-    },
-    mounted() {
-        if ("scrollRestoration" in window.history) {
-            window.history.scrollRestoration = "manual";
-        }
-        if (window.history.state && window.history.state.view === "detail") {
-            const projectId = window.history.state.projectId;
-            const project = this.projects.find((p) => p.id === projectId);
-            if (project) {
-                this.selectedProject = project;
-                this.currentView = "detail";
-            } else {
-                window.history.replaceState({ view: "grid" }, "");
-            }
-        } else if (window.history.state === null) {
-            window.history.replaceState({ view: "grid" }, "");
-        }
-        window.addEventListener("popstate", this.handlePopState);
-        this.animateCounters();
-        this.$nextTick(() => {
-            this.initParticleCanvas();
-        });
-    },
-    beforeUnmount() {
-        window.removeEventListener("popstate", this.handlePopState);
-        this.destroyParticleCanvas();
     },
     computed: {
         filteredProjects() {
@@ -2317,12 +2773,16 @@ export default {
                 const matchesTechField =
                     this.selectedTechField === "all" ||
                     project.tech_field === this.selectedTechField;
+                const matchesPrestasi =
+                    this.selectedPrestasi === "all" ||
+                    project.prestasi_level === this.selectedPrestasi;
 
                 return (
                     matchesSearch &&
                     matchesType &&
                     matchesSupervisor &&
-                    matchesTechField
+                    matchesTechField &&
+                    matchesPrestasi
                 );
             });
         },
@@ -2351,6 +2811,29 @@ export default {
             });
             return uniquePartners.size;
         },
+    },
+    mounted() {
+        if ("scrollRestoration" in window.history) {
+            window.history.scrollRestoration = "manual";
+        }
+        if (window.history.state && window.history.state.view === "detail") {
+            const projectId = window.history.state.projectId;
+            const project = this.projects.find((p) => p.id === projectId);
+            if (project) {
+                this.selectedProject = project;
+                this.currentView = "detail";
+            } else {
+                window.history.replaceState({ view: "grid" }, "");
+            }
+        } else if (window.history.state === null) {
+            window.history.replaceState({ view: "grid" }, "");
+        }
+        window.addEventListener("popstate", this.handlePopState);
+        this.animateCounters();
+        this.startPosterAutoSlide();
+        this.$nextTick(() => {
+            this.initParticleCanvas();
+        });
     },
     methods: {
         openLightbox(imageSrc) {
@@ -2549,16 +3032,17 @@ export default {
             this.selectedType = "all";
             this.selectedTechField = "all";
             this.selectedSupervisor = "all";
+            this.selectedPrestasi = "all";
         },
         getTechFieldIcon(field) {
             const icons = {
-                AI: "🤖",
-                IoT: "📡",
-                "VR/AR": "🥽",
-                "Networking & Cyber Security": "🔐",
-                Others: "🔬",
+                AI: "bi bi-cpu",
+                IoT: "bi bi-broadcast",
+                "VR/AR": "bi bi-headset-vr",
+                "Networking & Cyber Security": "bi bi-shield-lock",
+                Others: "bi bi-microscope",
             };
-            return icons[field] || "🔬";
+            return icons[field] || "bi bi-microscope";
         },
         hasRealPhoto(photo) {
             if (!photo) return false;
@@ -2667,30 +3151,28 @@ export default {
             let height = (canvas.height = window.innerHeight);
 
             const particles = [];
-            const particleCount = Math.min(
-                Math.floor(window.innerWidth / 22),
-                55,
-            );
+            const isMobile = window.innerWidth < 768;
+            const particleCount = isMobile ? 18 : Math.min(Math.floor(window.innerWidth / 38), 32);
 
             const colors = [
-                "rgba(56, 189, 248, ",   // vibrant cyan
-                "rgba(192, 132, 252, ",  // bright purple
-                "rgba(251, 191, 36, ",   // glowing gold
-                "rgba(129, 140, 248, ",  // electric indigo
-                "rgba(45, 212, 191, ",   // bright emerald cyan
+                "rgba(56, 189, 248, ", // vibrant cyan
+                "rgba(192, 132, 252, ", // bright purple
+                "rgba(251, 191, 36, ", // glowing gold
+                "rgba(129, 140, 248, ", // electric indigo
+                "rgba(45, 212, 191, ", // bright emerald cyan
             ];
 
             for (let i = 0; i < particleCount; i++) {
                 particles.push({
                     x: Math.random() * width,
                     y: Math.random() * height,
-                    radius: Math.random() * 2.5 + 2.0,
+                    radius: Math.random() * 2.2 + 1.8,
                     colorPrefix:
                         colors[Math.floor(Math.random() * colors.length)],
-                    vx: (Math.random() - 0.5) * 0.45,
-                    vy: (Math.random() - 0.5) * 0.45,
-                    alpha: Math.random() * 0.45 + 0.45,
-                    alphaSpeed: Math.random() * 0.006 + 0.002,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    alpha: Math.random() * 0.4 + 0.4,
+                    alphaSpeed: Math.random() * 0.005 + 0.002,
                     alphaDirection: Math.random() > 0.5 ? 1 : -1,
                 });
             }
@@ -2703,7 +3185,7 @@ export default {
             window.addEventListener("resize", onResize, { passive: true });
             this._particleResizeHandler = onResize;
 
-            const maxDistSq = 135 * 135;
+            const maxDistSq = 130 * 130;
             let isTabActive = true;
 
             const onVisibilityChange = () => {
@@ -2720,7 +3202,10 @@ export default {
 
                 ctx.clearRect(0, 0, width, height);
 
-                // Squared distance check to skip expensive Math.sqrt operations
+                // Draw all lines in a single stroke path to eliminate expensive canvas state updates
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(148, 163, 184, 0.12)";
+                ctx.lineWidth = 0.75;
                 for (let i = 0; i < particles.length; i++) {
                     const pi = particles[i];
                     for (let j = i + 1; j < particles.length; j++) {
@@ -2730,19 +3215,14 @@ export default {
                         const distSq = dx * dx + dy * dy;
 
                         if (distSq < maxDistSq) {
-                            const dist = Math.sqrt(distSq);
-                            const lineAlpha = (1 - dist / 135) * 0.28;
-                            ctx.beginPath();
                             ctx.moveTo(pi.x, pi.y);
                             ctx.lineTo(pj.x, pj.y);
-                            ctx.strokeStyle = `rgba(148, 163, 184, ${lineAlpha})`;
-                            ctx.lineWidth = 0.8;
-                            ctx.stroke();
                         }
                     }
                 }
+                ctx.stroke();
 
-                // Render floating particles with dual-arc radial glow (hardware accelerated)
+                // Render floating particles
                 particles.forEach((p) => {
                     p.x += p.vx;
                     p.y += p.vy;
@@ -2751,18 +3231,18 @@ export default {
                     if (p.y < 0 || p.y > height) p.vy *= -1;
 
                     p.alpha += p.alphaSpeed * p.alphaDirection;
-                    if (p.alpha > 0.92) {
-                        p.alpha = 0.92;
+                    if (p.alpha > 0.9) {
+                        p.alpha = 0.9;
                         p.alphaDirection = -1;
-                    } else if (p.alpha < 0.35) {
-                        p.alpha = 0.35;
+                    } else if (p.alpha < 0.3) {
+                        p.alpha = 0.3;
                         p.alphaDirection = 1;
                     }
 
                     // Outer soft glow halo
                     ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius * 2.2, 0, Math.PI * 2);
-                    ctx.fillStyle = `${p.colorPrefix}${p.alpha * 0.28})`;
+                    ctx.arc(p.x, p.y, p.radius * 2.0, 0, Math.PI * 2);
+                    ctx.fillStyle = `${p.colorPrefix}${p.alpha * 0.25})`;
                     ctx.fill();
 
                     // Inner bright core
@@ -2782,12 +3262,131 @@ export default {
                 cancelAnimationFrame(this._particleAnimId);
             }
             if (this._particleResizeHandler) {
-                window.removeEventListener("resize", this._particleResizeHandler);
+                window.removeEventListener(
+                    "resize",
+                    this._particleResizeHandler,
+                );
             }
             if (this._particleVisibilityHandler) {
-                document.removeEventListener("visibilitychange", this._particleVisibilityHandler);
+                document.removeEventListener(
+                    "visibilitychange",
+                    this._particleVisibilityHandler,
+                );
             }
         },
+        getExternalUrls(project) {
+            if (!project || !project.external_url) return [];
+
+            let urls = project.external_url;
+
+            if (typeof urls === "string") {
+                try {
+                    const parsed = JSON.parse(urls);
+                    if (Array.isArray(parsed)) {
+                        urls = parsed;
+                    } else {
+                        urls = [urls];
+                    }
+                } catch (e) {
+                    urls = [urls];
+                }
+            }
+
+            if (!Array.isArray(urls)) {
+                urls = [urls];
+            }
+
+            return urls.filter(
+                (u) => u && (typeof u === "string" || typeof u === "object"),
+            );
+        },
+        formatUrl(urlItem) {
+            if (!urlItem) return "#";
+            let raw =
+                typeof urlItem === "object" && urlItem.url
+                    ? urlItem.url
+                    : urlItem;
+            if (typeof raw !== "string") return "#";
+            const trimmed = raw.trim();
+            if (
+                !trimmed.startsWith("http://") &&
+                !trimmed.startsWith("https://")
+            ) {
+                return "https://" + trimmed;
+            }
+            return trimmed;
+        },
+        getUrlLabel(urlItem, index, total) {
+            if (typeof urlItem === "object" && urlItem.name) {
+                return urlItem.name;
+            }
+            if (total === 1) {
+                return "Buka Aplikasi Web";
+            }
+            return `Buka Web App #${index + 1}`;
+        },
+        handleCardTilt(e) {
+            const card = e.currentTarget;
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * -7;
+            const rotateY = ((x - centerX) / centerX) * 7;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.025, 1.025, 1.025)`;
+
+            const sheen = card.querySelector(".card-sheen");
+            if (sheen) {
+                sheen.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%)`;
+            }
+        },
+        resetCardTilt(e) {
+            const card = e.currentTarget;
+            card.style.transform =
+                "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+            const sheen = card.querySelector(".card-sheen");
+            if (sheen) {
+                sheen.style.background = "none";
+            }
+        },
+        nextPoster() {
+            this.posterSlideDirection = "slide-next";
+            this.activePosterIndex =
+                (this.activePosterIndex + 1) % this.posters.length;
+        },
+        prevPoster() {
+            this.posterSlideDirection = "slide-prev";
+            this.activePosterIndex =
+                (this.activePosterIndex - 1 + this.posters.length) %
+                this.posters.length;
+        },
+        goToPoster(index) {
+            if (index === this.activePosterIndex) return;
+            this.posterSlideDirection =
+                index > this.activePosterIndex ? "slide-next" : "slide-prev";
+            this.activePosterIndex = index;
+        },
+        startPosterAutoSlide() {
+            this.stopPosterAutoSlide();
+            this.posterAutoSlideTimer = setInterval(() => {
+                this.nextPoster();
+            }, 6000);
+        },
+        stopPosterAutoSlide() {
+            if (this.posterAutoSlideTimer) {
+                clearInterval(this.posterAutoSlideTimer);
+                this.posterAutoSlideTimer = null;
+            }
+        },
+    },
+    beforeUnmount() {
+        window.removeEventListener("popstate", this.handlePopState);
+        this.destroyParticleCanvas();
+        this.stopPosterAutoSlide();
     },
 };
 </script>

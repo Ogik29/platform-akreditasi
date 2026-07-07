@@ -38,7 +38,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
-                'logo_mitra' => null,
+                'logo_mitra' => ['img/logo.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Sulthonika',
@@ -65,55 +65,45 @@ class ProjectSeeder extends Seeder
                         'linkedin' => 'https://www.linkedin.com/in/michaelangelloqr?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn8BjhOy-gZMw4fxRy3TE-vSXRN6n1XywWWlhfk2MNC_h4YUow9K0ZPmqowNw_aem_ul7gB8QS9dWqQ8-bBmmtuA'
                     ]
                 ],
-                'external_url' => 'http://sigap.it-showcase.tusbind.ac.id',
+                'external_url' => 'https://sigap.it-showcase.tusbind.ac.id',
                 'video_url' => null,
-                'screenshots' => null
+                'screenshots' => null,
+                'pdf_report' => null
             ],
             [
-                'name' => 'TA Peres',
+                'name' => 'Smart CCTV Monitoring & Face Recognition System',
                 'supervisor' => 'MDB',
                 'type' => 'web',
                 'logo' => 'peres.svg',
-                'tagline' => 'Platform Analisis & Prediksi Kelayakan Kredit Mikro',
-                'description' => 'Platform cerdas berbasis web untuk membantu Koperasi dan Lembaga Keuangan Mikro menilai kelayakan kredit calon debitur menggunakan algoritma Machine Learning XGBoost secara akurat.',
+                'tagline' => 'Secure Every Moment with Intelligent Monitoring',
+                'description' => 'Smart CCTV Monitoring & Face Recognition System adalah platform berbasis web yang dirancang untuk membantu pengelolaan dan pengawasan area secara real-time. Sistem ini mengintegrasikan live monitoring CCTV, teknologi Face Recognition, serta pencatatan aktivitas otomatis dalam satu dashboard yang mudah digunakan. Dengan tampilan yang intuitif, administrator dapat memantau kondisi lokasi, mengelola kamera, melihat riwayat aktivitas, serta mengenali identitas individu yang terdeteksi oleh sistem secara cepat dan efisien.',
                 'features' => [
-                    'Prediksi Credit Scoring Instan dengan Input Parameter Keuangan',
-                    'Visualisasi Grafik Risiko & Rasio Rasio Keuangan Debitur',
-                    'Generator Laporan Kelayakan Kredit PDF Otomatis',
-                    'Sistem Manajemen Data Debitur Terpusat'
+                    'Dashboard Monitoring CCTV Real-Time Berbasis Web',
+                    'AI Face Recognition untuk Deteksi & Identifikasi Wajah',
+                    'Sistem Manajemen Kamera dan Pengguna Terintegrasi',
+                    'Pencatatan Aktivitas Otomatis dengan Monitoring Terpusat'
                 ],
-                'funding_awards' => [
-                    'Pendanaan Skema Tugas Akhir Unggulan Universitas 2025',
-                    'Sertifikasi Hak Cipta Program Komputer Kementerian Hukum & HAM'
-                ],
+                'funding_awards' => [],
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => [
-                    'Koperasi Simpan Pinjam Mitra Mandiri Sidoarjo',
-                    'Bank Pembangunan Daerah Jawa Timur (Bank Jatim)'
+                    'Panti Asuhan Agape Surabaya'
                 ],
-                'logo_mitra' => null,
+                'logo_mitra' => ['img/ta-peres/logoagape.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Peres',
-                        'fullname' => 'Peres Prasetyo',
-                        'role' => 'Lead AI Engineer',
-                        'photo' => 'avatar4.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
-                    ],
-                    [
-                        'nickname' => 'Danu',
-                        'fullname' => 'Danu Wijaya',
-                        'role' => 'Fullstack Developer',
-                        'photo' => 'avatar1.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'fullname' => 'Peres Hendri Setyawan',
+                        'role' => null,
+                        'photo' => 'img/ta-peres/fotoperes.png',
+                        'social_media' => ['instagram' => 'https://www.instagram.com/peresshendri'],
+                        'linkedin' => 'https://www.linkedin.com/in/peresshendrii'
                     ]
                 ],
-                'external_url' => 'https://creditscore-peres.test',
+                'external_url' => 'https://ta-peres.it-showcase.tusbind.ac.id',
                 'video_url' => null,
-                'screenshots' => null
+                'screenshots' => ['img/ta-peres/dokumentasi/IMG_20260520_121128.jpg'],
+                'pdf_report' => '/docs/ta-peres/Proposal Magang Telkomsel area Jawa Bali.pdf'
             ],
             [
                 'name' => 'NYAWANG',
@@ -134,7 +124,7 @@ class ProjectSeeder extends Seeder
                 'partners' => [
                     'Badan Usaha Milik Negara (BUMN)'
                 ],
-                'logo_mitra' => null,
+                'logo_mitra' => ['img/ta-rizal/logo-mitra/logo bumn.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Rizal',
@@ -145,7 +135,7 @@ class ProjectSeeder extends Seeder
                         'linkedin' => 'https://www.linkedin.com/in/rizal-zidan-2729a1329/'
                     ]
                 ],
-                'external_url' => 'http://ta-rizal.it-showcase.tusbind.ac.id/',
+                'external_url' => 'https://ta-rizal.it-showcase.tusbind.ac.id',
                 'video_url' => null,
                 'screenshots' => null
             ],
@@ -164,8 +154,8 @@ class ProjectSeeder extends Seeder
                 'funding_awards' => [],
                 'tech_field' => 'IoT',
                 'prestasi_level' => 'nasional',
-                'partners' => ['Penelitian Mandiri'],
-                'logo_mitra' => null,
+                'partners' => ['Teknologi Informasi Telkom University Surabaya'],
+                'logo_mitra' => ['img/logo.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Steven',
@@ -219,10 +209,7 @@ class ProjectSeeder extends Seeder
                     'WAROENG INKLUSI MALANG',
                     'Lembaga Pendidikan Inklusi Al-Fasyah Kepanjen'
                 ],
-                'logo_mitra' => [
-                    '/img/vroom/WAROENG INKLUSI.png',
-                    '/img/vroom/alfasyah.png'
-                ],
+                'logo_mitra' => ['img/vroom/WAROENG INKLUSI.png', 'img/vroom/alfasyah.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Ary',
@@ -234,7 +221,7 @@ class ProjectSeeder extends Seeder
                     [
                         'nickname' => 'Elsa',
                         'fullname' => 'Elsa Ajeng Pratiwi',
-                        'photo' => '/img/vroom/elsa.png',
+                        'photo' => '/img/vroom/elsaak.png',
                         'social_media' => ['instagram' => 'https://www.instagram.com/elsajengg/'],
                         'linkedin' => null
                     ],
@@ -273,7 +260,7 @@ class ProjectSeeder extends Seeder
                 'partners' => [
                     'Kantor Pertanahan Kota Surabaya II'
                 ],
-                'logo_mitra' => null,
+                'logo_mitra' => ['img/ta-rafli/logo mitra.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Rafli',
@@ -284,7 +271,7 @@ class ProjectSeeder extends Seeder
                         'linkedin' => 'https://www.linkedin.com/in/rafli-haidar-nashif/'
                     ]
                 ],
-                'external_url' => 'http://ta-rafli.it-showcase.tusbind.ac.id',
+                'external_url' => 'https://ta-rafli.it-showcase.tusbind.ac.id',
                 'video_url' => null,
                 'screenshots' => null
             ],
@@ -293,13 +280,15 @@ class ProjectSeeder extends Seeder
                 'supervisor' => 'MDB',
                 'type' => 'hardware',
                 'logo' => '/img/ta-cisa/logo_edgetani.png',
-                'tagline' => 'Fertigasi Presisi Berbasis IoT untuk Pertanian yang Lebih Efisien dan Berkelanjutan',
-                'description' => 'Sistem fertigasi modular berbasis edge computing untuk hortikultura dengan mikrodosing nutrisi otomatis dan pengelolaan sisa nutrisi untuk efisiensi sumber daya dan optimalisasi hasil panen.',
+                'tagline' => 'Smart Fertigation System for Melon Cultivation',
+                'description' => 'Edge Tani adalah sistem fertigasi presisi berbasis Industrial IoT yang membantu proses penyiraman, pencampuran nutrisi, monitoring sensor, dan kontrol aktuator secara otomatis melalui satu perangkat edge berbasis Raspberry Pi.
+Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan konsep: Measure. Mix. Water. Grow.',
                 'features' => [
                     'Mikrodosing Nutrisi NPK berdasarkan HST',
+                    'Smart Watering berdasarkan kelembapan media tanam',
                     'Pengelolaan sisa fertigasi',
                     'Edge-based control menggunakan Raspberry Pi',
-                    'Integrasi Industrial IoT'
+                    'Integrasi Industrial'
                 ],
                 'funding_awards' => [],
                 'tech_field' => 'IoT',
@@ -307,27 +296,27 @@ class ProjectSeeder extends Seeder
                 'partners' => [
                     'Rooftop Telkom University Surabaya'
                 ],
-                'logo_mitra' => null,
+                'logo_mitra' => ['img/ta-cisa/logo rooftop.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Cisa',
                         'fullname' => 'Cisa Valentino Cahya Ramadhani',
-                        'role' => 'Hardware Design & Mechanical Engineer',
+                        'role' => null,
                         'photo' => '/img/ta-cisa/Cisa Foto Anggota Edge Tani.jpg',
                         'social_media' => ['instagram' => 'https://www.instagram.com/vaallencisa/'],
                         'linkedin' => 'https://www.linkedin.com/in/cisavalentino/'
                     ]
                 ],
                 'external_url' => null,
-                'video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                'screenshots' => [
+                'video_url' => null,
+                'documentations' => [
                     '/img/ta-cisa/dokumentasi_alat/foto_alat.png',
                     '/img/ta-cisa/dokumentasi_alat/foto_alat_2.png',
                     '/img/ta-cisa/dokumentasi_alat/foto_alat_3.jpeg'
                 ]
             ],
             [
-                'name' => 'ECOSORTIX',
+                'name' => 'EcoSortix',
                 'supervisor' => 'FZK',
                 'type' => 'mobile',
                 'logo' => '/img/pcd-adis/logo ecosortix bg.png',
@@ -342,7 +331,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
-                'logo_mitra' => null,
+                'logo_mitra' => ['img/logo.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Adis',
@@ -377,7 +366,7 @@ class ProjectSeeder extends Seeder
                         'linkedin' => null
                     ]
                 ],
-                'external_url' => null,
+                'external_url' => 'sampahdetector.my.id',
                 'video_url' => null,
                 'screenshots' => [
                     '/img/pcd-adis/UI_UX/Beranda.jpg',
@@ -412,7 +401,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
-                'logo_mitra' => null,
+                'logo_mitra' => ['img/logo.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Reza',
@@ -483,7 +472,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
-                'logo_mitra' => null,
+                'logo_mitra' => ['img/logo.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Lia',
@@ -531,7 +520,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'name' => 'FrutoSense',
-                'supervisor' => 'MDB',
+                'supervisor' => 'FZK',
                 'type' => 'mobile',
                 'logo' => '/img/pcd-gandi/Logo FrutoSense.png',
                 'tagline' => 'Deteksi Jenis, Kematangan, dan Kesegaran Buah Real-Time Berbasis AI Multi-Model MobileNetV2',
@@ -548,7 +537,7 @@ class ProjectSeeder extends Seeder
                 'tech_field' => 'AI',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
-                'logo_mitra' => null,
+                'logo_mitra' => ['img/logo.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Gandi',
@@ -617,7 +606,7 @@ class ProjectSeeder extends Seeder
                 'partners' => [
                     'SLB A Yayasan Pendidikan Anak Buta Surabaya'
                 ],
-                'logo_mitra' => null,
+                'logo_mitra' => ['img/VoxSight AI/logo mitra voxsight.png'],
                 'team_members' => [
                     [
                         'nickname' => 'Fikri',
@@ -685,8 +674,9 @@ class ProjectSeeder extends Seeder
                 ],
                 'funding_awards' => [],
                 'tech_field' => 'AI',
-                'prestasi_level' => 'internasional',
-                'partners' => [],
+                'prestasi_level' => 'nasional',
+                'partners' => ['Lab Core Programming Telkom'],
+                'logo_mitra' => ['img/logo tel-u.jpeg'],
                 'team_members' => [
                     [
                         'nickname' => null,
@@ -698,67 +688,92 @@ class ProjectSeeder extends Seeder
                     ],
                     [
                         'nickname' => null,
-                        'fullname' => 'Daud Muhajir, S.Kom., M.Kom. ',
+                        'fullname' => 'Daud Muhajir, S.Kom., M.Kom.',
                         'role' => null,
                         'photo' => '/img/LOGINT/foto_tim/pak daud muhajir.png',
                         'social_media' => null,
                         'linkedin' => 'https://www.linkedin.com/in/hans-gg/'
                     ]
                 ],
-                'external_url' => null,
+                'external_url' => [
+                    'https://logint.it-showcase.tusbind.ac.id',
+                    'https://logint-ai.it-showcase.tusbind.ac.id'
+                ],
                 'video_url' => null,
                 'screenshots' => null,
                 'documentations' => []
             ],
             [
-                'name' => 'AWS Reynanda',
+                'name' => 'K-Means Project',
+                'supervisor' => '-',
+                'type' => 'web',
+                'logo' => 'reynanda.svg',
+                'tagline' => 'Predict Smarter, Discover Better Insights',
+                'description' => 'Machine Learning Prediction & Recommendation System adalah aplikasi berbasis web yang mengimplementasikan model Machine Learning hasil pelatihan dari Google Colab ke dalam framework Flask. Sistem ini memungkinkan pengguna melakukan prediksi terhadap data yang dimasukkan, mengelompokkan hasil prediksi ke dalam cluster tertentu, serta memberikan rekomendasi yang sesuai berdasarkan karakteristik setiap cluster. Dengan antarmuka yang sederhana, proses analisis data menjadi lebih mudah diakses tanpa perlu menjalankan model secara langsung melalui notebook Machine Learning.',
+                'features' => [
+                    'Input Data Produksi Multi-Komoditas',
+                    'K-Means Clustering untuk Klasifikasi Data',
+                    'Rekomendasi Otomatis Berdasarkan Hasil Cluster',
+                    'Deployment Model Machine Learning Berbasis Web'
+                ],
+                'funding_awards' => [],
+                'tech_field' => 'AI',
+                'prestasi_level' => 'internasional',
+                'partners' => ['Telkom University'],
+                'logo_mitra' => ['img/logo tel-u.jpeg'],
+                'team_members' => [
+                    [
+                        'nickname' => null,
+                        'fullname' => 'Muhammad Adib Kamali, S.T., M.Eng',
+                        'role' => null,
+                        'photo' => '/img/LOGINT/foto_tim/pak adib kamali.png',
+                        'social_media' => null,
+                        'linkedin' => 'https://www.linkedin.com/in/adib-kamali-001357192/'
+                    ],
+                ],
+                'external_url' => 'https://kmeans-riska.it-showcase.tusbind.ac.id',
+                'video_url' => null,
+                'screenshots' => null
+            ],
+            [
+                'name' => 'Automatic Weather Station',
                 'supervisor' => 'CAP',
                 'type' => 'mobile',
                 'logo' => 'reynanda.svg',
-                'tagline' => 'Smart Home Control System Berbasis Serverless Cloud AWS',
-                'description' => 'Aplikasi mobile untuk mengontrol dan menjadwalkan peralatan rumah pintar secara dinamis, menggunakan arsitektur serverless AWS IoT Core dan AWS Lambda untuk efisiensi latensi rendah.',
+                'tagline' => 'Smart Irrigation for Sustainable Urban Farming',
+                'description' => 'Smart Longan Irrigation System adalah aplikasi monitoring dan kontrol irigasi berbasis Internet of Things (IoT) dan Machine Learning yang dirancang untuk mendukung budidaya kelengkeng di lingkungan urban seperti rooftop farming. Sistem ini mampu memantau kondisi lingkungan secara real-time menggunakan berbagai sensor, kemudian memanfaatkan model Artificial Intelligence berbasis Random Forest untuk memprediksi kondisi cuaca serta menentukan durasi penyiraman yang paling optimal.
+Melalui dashboard monitoring, pengguna dapat melihat data kelembaban tanah, suhu, kelembaban udara, curah hujan, hingga kecepatan angin secara langsung. Seluruh data tersebut diproses secara otomatis sehingga sistem dapat mengaktifkan pompa air dengan durasi yang sesuai tanpa intervensi manual. Pendekatan ini membantu mengurangi pemborosan air, meningkatkan efisiensi irigasi, serta menjaga kondisi tanaman tetap optimal.',
                 'features' => [
-                    'Komunikasi IoT Broker Latensi Rendah dengan AWS IoT Core',
-                    'Fungsi Serverless Pendukung (AWS Lambda) Berbiaya Rendah',
-                    'Autentikasi Aman User & Perangkat Menggunakan AWS Cognito',
-                    'Analisis Konsumsi Daya Listrik Rumah Berbasis AWS DynamoDB'
+                    'Real-Time Environmental Monitoring Berbasis IoT',
+                    'AI Weather Prediction Menggunakan Random Forest',
+                    'Machine Learning-Based Smart Irrigation Control',
+                    'Remote Dashboard untuk Monitoring & Kontrol Pompa'
                 ],
-                'funding_awards' => [
-                    'Penghargaan AWS Student Builder Award Nasional 2025',
-                    'Publikasi Penelitian Jurnal Internasional Bereputasi Scopus Q4'
-                ],
-                'tech_field' => 'Networking & Cyber Security',
+                'funding_awards' => [],
+                'tech_field' => 'IoT',
                 'prestasi_level' => 'nasional',
-                'partners' => [
-                    'Amazon Web Services (AWS) Indonesia',
-                    'Laboratorium Jaringan & Komputasi Awan'
-                ],
-                'logo_mitra' => null,
+                'partners' => ['Telkom University'],
+                'logo_mitra' => ['img/logo tel-u.jpeg'],
                 'team_members' => [
                     [
                         'nickname' => 'Reynanda',
-                        'fullname' => 'Reynanda Putra',
-                        'role' => 'Lead Cloud Infrastructure Architect',
+                        'fullname' => 'Reynanda Shaquille Purwanto',
+                        'role' => null,
                         'photo' => 'avatar1.png',
                         'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
-                    ],
-                    [
-                        'nickname' => 'Qori',
-                        'fullname' => 'Qori Aulia',
-                        'role' => 'Android App developer',
-                        'photo' => 'avatar2.png',
-                        'social_media' => ['instagram' => 'https://instagram.com/'],
-                        'linkedin' => 'https://linkedin.com/in/'
+                        'linkedin' => ['https://linkedin.com/in/']
                     ]
                 ],
                 'external_url' => null,
                 'video_url' => null,
                 'screenshots' => [
-                    'https://placehold.co/360x640/0d1b2a/ffffff?text=AWS+Reynanda+1',
-                    'https://placehold.co/360x640/1b263b/ffffff?text=AWS+Reynanda+2'
+                    '/img/aws/tampilan mobile 1.png',
+                    '/img/aws/tampilan mobile 2.png'
+                ],
+                'documentations' => [
+                    '/img/aws/alat aws.png'
                 ]
-            ],
+            ]
         ];
 
         foreach ($projects as $proj) {

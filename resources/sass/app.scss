@@ -52,18 +52,21 @@ body .glass-card .badge-supervisor {
     color: #cbd5e1 !important;
 }
 
-.project-detail-view .team-member-card h5.text-white {
-    color: #0f172a !important;
+.project-detail-view .team-member-card h5 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
 }
 
-.project-detail-view .team-member-card p.text-secondary {
-    color: #374151 !important;
+.project-detail-view .team-member-card p {
+    color: #cbd5e1 !important;
 }
 
-.project-detail-view .team-member-card .badge {
-    background: rgba(15, 23, 42, 0.06) !important;
-    border-color: rgba(15, 23, 42, 0.15) !important;
-    color: #374151 !important;
+.project-detail-view .team-member-card .badge,
+.project-detail-view .team-member-card .team-role-badge {
+    background: rgba(56, 189, 248, 0.15) !important;
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    color: #38bdf8 !important;
+    font-weight: 600 !important;
 }
 
 body .btn-back {
