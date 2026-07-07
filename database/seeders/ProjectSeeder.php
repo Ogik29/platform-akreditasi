@@ -362,8 +362,11 @@ class ProjectSeeder extends Seeder
                 ],
                 'external_url' => 'https://ta-peres.it-showcase.tusbind.ac.id',
                 'video_url' => null,
-                'screenshots' => ['img/ta-peres/dokumentasi/IMG_20260520_121128.jpg'],
-                'pdf_report' => '/docs/ta-peres/Proposal Magang Telkomsel area Jawa Bali.pdf'
+                'screenshots' => [
+                    'img/ta-peres/dokumentasi/IMG_20260520_121128.jpg',
+                    'img/ta-peres/dokumentasi/Screenshot 2026-05-30 at 15.54.51.png'
+                ],
+                'pdf_report' => null
             ],
             [
                 'name' => 'NYAWANG',

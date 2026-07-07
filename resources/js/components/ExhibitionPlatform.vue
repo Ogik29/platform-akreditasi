@@ -1603,6 +1603,7 @@
                                     style="height: 580px; background: rgba(15, 23, 42, 0.3);"
                                 >
                                     <iframe
+                                        v-if="showPdfPreview"
                                         :src="selectedProject.pdf_report"
                                         width="100%"
                                         height="100%"
@@ -1619,6 +1620,17 @@
                                             </a>
                                         </div>
                                     </iframe>
+                                    <div
+                                        v-else
+                                        class="p-5 text-center d-flex flex-column align-items-center justify-content-center h-100"
+                                        style="background: rgba(15, 23, 42, 0.4);"
+                                    >
+                                        <div class="spinner-border text-info mb-3" role="status" style="width: 2.5rem; height: 2.5rem;">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <h5 class="text-white fw-bold mb-1">Menyiapkan Pratinjau Dokumen</h5>
+                                        <p class="text-secondary small mb-0">Harap tunggu, memuat berkas PDF...</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2699,6 +2711,7 @@ export default {
             selectedSupervisor: "all",
             selectedPrestasi: "all",
             selectedProject: null,
+            showPdfPreview: false,
             activeMobileProject: null,
             activeHardwareProject: null,
             detailModalInstance: null,
@@ -2822,6 +2835,9 @@ export default {
             if (project) {
                 this.selectedProject = project;
                 this.currentView = "detail";
+                setTimeout(() => {
+                    this.showPdfPreview = true;
+                }, 400);
             } else {
                 window.history.replaceState({ view: "grid" }, "");
             }
@@ -2867,96 +2883,108 @@ export default {
             this.viewProjectDetail(project);
         },
         viewProjectDetail(project) {
-            if (this.isTransitioning) return;
             if (this.currentView === "grid") {
                 this.gridScrollPosition =
                     window.scrollY || window.pageYOffset || 0;
             }
+            this.selectedProject = project;
+            this.activeDetailTab = "overview";
+            this.currentView = "detail";
+            this.showPdfPreview = false;
+
+            window.history.pushState(
+                { view: "detail", projectId: project.id },
+                "",
+                null
+            );
+
+            window.scrollTo({ top: 0, behavior: "instant" });
+
             this.transitionText = "Loading Om...";
             this.isTransitioning = true;
-
-            setTimeout(() => {
-                this.selectedProject = project;
-                this.activeDetailTab = "overview";
-                this.currentView = "detail";
-                window.history.pushState(
-                    { view: "detail", projectId: project.id },
-                    "",
-                );
-                this.$nextTick(() => {
-                    window.scrollTo({ top: 0, behavior: "instant" });
+            this.$nextTick(() => {
+                setTimeout(() => {
+                    this.isTransitioning = false;
                     setTimeout(() => {
-                        this.isTransitioning = false;
-                    }, 180);
-                });
-            }, 180);
+                        this.showPdfPreview = true;
+                    }, 200);
+                }, 80);
+            });
         },
         backToGrid() {
-            if (this.isTransitioning) return;
+            this.currentView = "grid";
+            this.selectedProject = null;
+            this.showPdfPreview = false;
+
+            if (
+                window.history.state &&
+                window.history.state.view === "detail"
+            ) {
+                window.history.back();
+            }
+
+            const targetScroll = this.gridScrollPosition || 0;
+            window.scrollTo({ top: targetScroll, behavior: "instant" });
+
             this.transitionText = "Loading Om...";
             this.isTransitioning = true;
-
-            setTimeout(() => {
-                this.currentView = "grid";
-                this.selectedProject = null;
-                if (
-                    window.history.state &&
-                    window.history.state.view === "detail"
-                ) {
-                    window.history.back();
-                }
-                const targetScroll = this.gridScrollPosition || 0;
-                this.$nextTick(() => {
-                    window.scrollTo({ top: targetScroll, behavior: "instant" });
-                    setTimeout(() => {
-                        this.isTransitioning = false;
-                    }, 180);
-                });
-            }, 180);
+            this.$nextTick(() => {
+                setTimeout(() => {
+                    this.isTransitioning = false;
+                }, 80);
+            });
         },
         handlePopState(event) {
-            if (this.isTransitioning) return;
+            this.showPdfPreview = false;
             this.transitionText = "Loading Om...";
             this.isTransitioning = true;
 
-            setTimeout(() => {
-                if (event.state && event.state.view === "detail") {
-                    const projectId = event.state.projectId;
-                    const project = this.projects.find(
-                        (p) => p.id === projectId,
-                    );
-                    if (project) {
-                        this.selectedProject = project;
-                        this.currentView = "detail";
-                        this.$nextTick(() => {
-                            window.scrollTo({ top: 0, behavior: "instant" });
-                        });
-                    } else {
-                        this.currentView = "grid";
-                        this.selectedProject = null;
-                        const targetScroll = this.gridScrollPosition || 0;
-                        this.$nextTick(() => {
-                            window.scrollTo({
-                                top: targetScroll,
-                                behavior: "instant",
-                            });
-                        });
-                    }
+            if (event.state && event.state.view === "detail") {
+                const projectId = event.state.projectId;
+                const project = this.projects.find(
+                    (p) => p.id === projectId,
+                );
+                if (project) {
+                    this.selectedProject = project;
+                    this.currentView = "detail";
+                    window.scrollTo({ top: 0, behavior: "instant" });
+                    
+                    this.$nextTick(() => {
+                        setTimeout(() => {
+                            this.isTransitioning = false;
+                            setTimeout(() => {
+                                this.showPdfPreview = true;
+                            }, 200);
+                        }, 80);
+                    });
                 } else {
                     this.currentView = "grid";
                     this.selectedProject = null;
                     const targetScroll = this.gridScrollPosition || 0;
+                    window.scrollTo({
+                        top: targetScroll,
+                        behavior: "instant",
+                    });
                     this.$nextTick(() => {
-                        window.scrollTo({
-                            top: targetScroll,
-                            behavior: "instant",
-                        });
+                        setTimeout(() => {
+                            this.isTransitioning = false;
+                        }, 80);
                     });
                 }
-                setTimeout(() => {
-                    this.isTransitioning = false;
-                }, 180);
-            }, 180);
+            } else {
+                this.currentView = "grid";
+                this.selectedProject = null;
+                const targetScroll = this.gridScrollPosition || 0;
+                window.scrollTo({
+                    top: targetScroll,
+                    behavior: "instant",
+                });
+                this.$nextTick(() => {
+                    setTimeout(() => {
+                        this.isTransitioning = false;
+                    }, 80);
+                });
+            }
         },
         getSupervisorFullName(code) {
             const supervisors = {
