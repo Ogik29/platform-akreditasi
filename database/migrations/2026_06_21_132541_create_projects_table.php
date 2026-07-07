@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('video_url')->nullable(); // for hardware
             $table->json('screenshots')->nullable(); // for mobile
             $table->json('documentations')->nullable(); // for documentation photos
+            $table->string('pdf_report')->nullable(); // for PDF reports
             $table->timestamps();
         });
     }

@@ -67,10 +67,11 @@ class ProjectSeeder extends Seeder
                 ],
                 'external_url' => 'https://sigap.it-showcase.tusbind.ac.id',
                 'video_url' => null,
-                'screenshots' => null
+                'screenshots' => null,
+                'pdf_report' => null
             ],
             [
-                'name' => 'TA Peres',
+                'name' => 'Smart CCTV Monitoring & Face Recognition System',
                 'supervisor' => 'MDB',
                 'type' => 'web',
                 'logo' => 'peres.svg',
@@ -101,7 +102,8 @@ class ProjectSeeder extends Seeder
                 ],
                 'external_url' => 'https://ta-peres.it-showcase.tusbind.ac.id',
                 'video_url' => null,
-                'screenshots' => ['img/ta-peres/dokumentasi/IMG_20260520_121128.jpg']
+                'screenshots' => ['img/ta-peres/dokumentasi/IMG_20260520_121128.jpg'],
+                'pdf_report' => '/docs/ta-peres/Proposal Magang Telkomsel area Jawa Bali.pdf'
             ],
             [
                 'name' => 'NYAWANG',

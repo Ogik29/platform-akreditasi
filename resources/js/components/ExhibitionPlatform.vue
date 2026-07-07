@@ -272,7 +272,7 @@
                                                 <span
                                                     class="d-flex align-items-center gap-2"
                                                 >
-                                                    <span>📄</span>
+                                                    <i class="bi bi-file-earmark-text"></i>
                                                     <span>{{
                                                         poster.title
                                                     }}</span>
@@ -291,7 +291,7 @@
                                     <div
                                         class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        <div class="fs-4 mb-1">🚀</div>
+                                        <div class="fs-4 mb-1 text-info"><i class="bi bi-rocket-takeoff"></i></div>
                                         <h3
                                             class="fw-bold text-info mb-1 stats-number"
                                         >
@@ -310,7 +310,7 @@
                                     <div
                                         class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        <div class="fs-4 mb-1">🏆</div>
+                                        <div class="fs-4 mb-1 text-primary"><i class="bi bi-trophy"></i></div>
                                         <h3
                                             class="fw-bold mb-1 stats-number"
                                             style="color: #60a5fa"
@@ -330,7 +330,7 @@
                                     <div
                                         class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        <div class="fs-4 mb-1">🌐</div>
+                                        <div class="fs-4 mb-1 text-purple" style="color: #c084fc;"><i class="bi bi-globe-americas"></i></div>
                                         <h3
                                             class="fw-bold mb-1 stats-number"
                                             style="color: #a78bfa"
@@ -350,7 +350,11 @@
                                     <div
                                         class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        <div class="fs-4 mb-1">🤝</div>
+                                        <div class="fs-4 mb-1 text-warning">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-handshake" viewBox="0 0 16 16">
+                                                <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                            </svg>
+                                        </div>
                                         <h3
                                             class="fw-bold text-warning mb-1 stats-number"
                                         >
@@ -369,7 +373,7 @@
                                     <div
                                         class="glass-card stats-card-glow p-2.5 p-sm-3 text-center h-100"
                                     >
-                                        <div class="fs-4 mb-1">👨‍🏫</div>
+                                        <div class="fs-4 mb-1 text-secondary" style="color: #94a3b8 !important;"><i class="bi bi-mortarboard"></i></div>
                                         <h3
                                             class="fw-bold text-secondary mb-1 stats-number"
                                             style="color: #cbd5e1 !important"
@@ -459,7 +463,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">✨</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-stars"></i></span>
                                     Semua Bidang
                                 </button>
                                 <button
@@ -472,7 +476,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">🤖</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-cpu"></i></span>
                                     AI
                                 </button>
                                 <button
@@ -485,7 +489,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">📡</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-broadcast"></i></span>
                                     IoT
                                 </button>
                                 <button
@@ -498,7 +502,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">🥽</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-headset-vr"></i></span>
                                     VR/AR
                                 </button>
                                 <button
@@ -515,7 +519,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">🔐</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-shield-lock"></i></span>
                                     Networking &amp; Cyber Security
                                 </button>
                                 <button
@@ -528,7 +532,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">🔬</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-microscope"></i></span>
                                     Others
                                 </button>
                             </div>
@@ -551,7 +555,7 @@
                                         selectedType === 'all' ? 'active' : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">🌐</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-grid-fill"></i></span>
                                     Semua Kategori
                                 </button>
                                 <button
@@ -562,7 +566,7 @@
                                         selectedType === 'web' ? 'active' : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">💻</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-desktop"></i></span>
                                     Web-Based
                                 </button>
                                 <button
@@ -575,7 +579,7 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">📱</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-phone"></i></span>
                                     Mobile-Based
                                 </button>
                                 <button
@@ -588,8 +592,55 @@
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon">⚡</span>
+                                    <span class="btn-filter-icon"><i class="bi bi-cpu-fill"></i></span>
                                     Hardware-Based
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Tingkat Prestasi Filter -->
+                        <div
+                            class="mt-4 pt-3 border-top border-secondary border-opacity-10"
+                        >
+                            <label
+                                class="text-secondary small fw-bold mb-3 d-block uppercase-tracking"
+                                >Tingkat Prestasi</label
+                            >
+                            <div class="d-flex flex-wrap gap-2">
+                                <button
+                                    type="button"
+                                    @click="selectedPrestasi = 'all'"
+                                    :class="[
+                                        'btn-filter',
+                                        selectedPrestasi === 'all' ? 'active' : '',
+                                    ]"
+                                >
+                                    <span class="btn-filter-icon"><i class="bi bi-award"></i></span>
+                                    Semua Tingkat
+                                </button>
+                                <button
+                                    type="button"
+                                    @click="selectedPrestasi = 'nasional'"
+                                    :class="[
+                                        'btn-filter',
+                                        selectedPrestasi === 'nasional' ? 'active' : '',
+                                    ]"
+                                >
+                                    <span class="btn-filter-icon"><i class="bi bi-trophy"></i></span>
+                                    Nasional
+                                </button>
+                                <button
+                                    type="button"
+                                    @click="selectedPrestasi = 'internasional'"
+                                    :class="[
+                                        'btn-filter',
+                                        selectedPrestasi === 'internasional'
+                                            ? 'active'
+                                            : '',
+                                    ]"
+                                >
+                                    <span class="btn-filter-icon"><i class="bi bi-globe-americas"></i></span>
+                                    Internasional
                                 </button>
                             </div>
                         </div>
@@ -601,7 +652,7 @@
                     v-if="filteredProjects.length === 0"
                     class="text-center py-5 glass-card fade-in-up"
                 >
-                    <div class="fs-1 mb-2">📂</div>
+                    <div class="fs-1 mb-2 text-secondary"><i class="bi bi-folder-x"></i></div>
                     <h5 class="text-secondary mb-3">
                         Tidak ditemukan proyek yang cocok dengan kriteria filter
                         Anda
@@ -756,13 +807,9 @@
                                                     project.partners.join(', ')
                                                 "
                                             >
-                                                <span
-                                                    style="
-                                                        font-size: 0.85rem;
-                                                        line-height: 1;
-                                                    "
-                                                    >🤝</span
-                                                >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handshake text-warning" style="margin-top: 1px;" viewBox="0 0 16 16">
+                                                    <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                                </svg>
                                                 <span
                                                     class="text-warning fw-extrabold"
                                                     style="
@@ -809,9 +856,7 @@
                                                     .replace(/[^a-z]/g, '-'),
                                         ]"
                                     >
-                                        {{
-                                            getTechFieldIcon(project.tech_field)
-                                        }}
+                                        <i :class="[getTechFieldIcon(project.tech_field), 'me-1']"></i>
                                         {{ project.tech_field || "Others" }}
                                     </span>
                                 </div>
@@ -1010,7 +1055,9 @@
                                         class="partner-logo-frame partner-placeholder-frame bg-dark bg-opacity-40 border border-warning border-opacity-30 rounded-2 py-1 px-2 d-flex align-items-center justify-content-center gap-1"
                                         style="height: 36px"
                                     >
-                                        <span>🤝</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handshake text-warning me-1" viewBox="0 0 16 16">
+                                            <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                        </svg>
                                         <span class="text-warning fw-bold small"
                                             >Mitra</span
                                         >
@@ -1033,7 +1080,7 @@
                             activeDetailTab === 'overview' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon">📌</span>
+                        <span class="tab-icon"><i class="bi bi-info-circle me-1"></i></span>
                         <span>Overview &amp; Pratinjau</span>
                     </button>
 
@@ -1045,7 +1092,7 @@
                             activeDetailTab === 'gallery' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon">📸</span>
+                        <span class="tab-icon"><i class="bi bi-images me-1"></i></span>
                         <span>Dokumentasi</span>
                         <span
                             v-if="getMediaCount(selectedProject) > 0"
@@ -1064,7 +1111,7 @@
                             activeDetailTab === 'prestasi' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon">🏆</span>
+                        <span class="tab-icon"><i class="bi bi-trophy me-1"></i></span>
                         <span>Raihan Prestasi</span>
                         <span
                             v-if="
@@ -1086,7 +1133,7 @@
                             activeDetailTab === 'team' ? 'active' : '',
                         ]"
                     >
-                        <span class="tab-icon">👥</span>
+                        <span class="tab-icon"><i class="bi bi-people me-1"></i></span>
                         <span>Tim &amp; Pembimbing</span>
                         <span
                             v-if="
@@ -1114,7 +1161,7 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span>🌐 Platform Web Live</span>
+                                    <span><i class="bi bi-globe me-2"></i>Platform Web Live</span>
                                 </h4>
                                 <div
                                     class="web-redirect-container text-center py-5 animate-pulse-subtle"
@@ -1125,7 +1172,7 @@
                                         border-radius: 16px;
                                     "
                                 >
-                                    <span class="fs-1 d-block mb-3">💻</span>
+                                    <span class="fs-1 d-block mb-3 text-info"><i class="bi bi-desktop"></i></span>
                                     <h5 class="text-white fw-bold mb-2">
                                         Platform Web Siap Diakses
                                     </h5>
@@ -1212,7 +1259,7 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span>📱 Tautan Demo / Web Portal</span>
+                                    <span><i class="bi bi-link-45deg me-2"></i>Tautan Demo / Web Portal</span>
                                 </h4>
                                 <div
                                     class="web-redirect-container text-center py-4 animate-pulse-subtle"
@@ -1223,7 +1270,7 @@
                                         border-radius: 16px;
                                     "
                                 >
-                                    <span class="fs-1 d-block mb-3">🔗</span>
+                                    <span class="fs-1 d-block mb-3 text-info"><i class="bi bi-link-45deg"></i></span>
                                     <h5 class="text-white fw-bold mb-2">
                                         Tautan Eksternal Siap Diakses
                                     </h5>
@@ -1296,7 +1343,7 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span>📱 Pratinjau Antarmuka Aplikasi</span>
+                                    <span><i class="bi bi-phone me-2"></i>Pratinjau Antarmuka Aplikasi</span>
                                 </h4>
                                 <div
                                     v-if="
@@ -1434,7 +1481,7 @@
                                     "
                                 ></div>
                                 <div v-else class="text-center py-5">
-                                    <span class="fs-1 d-block mb-2">📱</span>
+                                    <span class="fs-1 d-block mb-2 text-muted"><i class="bi bi-phone-mute"></i></span>
                                     <p class="text-secondary small mb-0">
                                         Screenshot Tidak Tersedia
                                     </p>
@@ -1449,7 +1496,7 @@
                                 <h4
                                     class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                                 >
-                                    <span>🎬 Video Dokumentasi &amp; Demo</span>
+                                    <span><i class="bi bi-play-btn me-2"></i>Video Dokumentasi &amp; Demo</span>
                                 </h4>
                                 <div class="video-container">
                                     <iframe
@@ -1517,6 +1564,63 @@
                                     {{ selectedProject.description }}
                                 </p>
                             </div>
+
+                            <!-- PDF Report Preview Card -->
+                            <div
+                                v-if="selectedProject.pdf_report"
+                                class="glass-card p-4 p-md-5 mb-4"
+                            >
+                                <div
+                                    class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center border-bottom border-secondary border-opacity-20 pb-3 mb-4 gap-3"
+                                >
+                                    <h4 class="fw-bold text-white mb-0 d-flex align-items-center gap-2">
+                                        <i class="bi bi-file-earmark-pdf text-danger"></i>
+                                        <span>Laporan Tugas Akhir / Riset</span>
+                                    </h4>
+                                    <div class="d-flex gap-2">
+                                        <a
+                                            :href="selectedProject.pdf_report"
+                                            target="_blank"
+                                            class="btn btn-sm btn-outline-light d-inline-flex align-items-center gap-1.5 px-3 py-2"
+                                            style="font-size: 0.82rem; border-color: rgba(255, 255, 255, 0.15);"
+                                        >
+                                            <i class="bi bi-box-arrow-up-right"></i>
+                                            <span>Buka di Tab Baru</span>
+                                        </a>
+                                        <a
+                                            :href="selectedProject.pdf_report"
+                                            download
+                                            class="btn btn-sm btn-info text-dark d-inline-flex align-items-center gap-1.5 px-3 py-2"
+                                            style="font-size: 0.82rem; font-weight: 600;"
+                                        >
+                                            <i class="bi bi-download"></i>
+                                            <span>Unduh PDF</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="pdf-preview-frame-container position-relative overflow-hidden rounded-3 border border-secondary border-opacity-20"
+                                    style="height: 580px; background: rgba(15, 23, 42, 0.3);"
+                                >
+                                    <iframe
+                                        :src="selectedProject.pdf_report"
+                                        width="100%"
+                                        height="100%"
+                                        style="border: none; background: #ffffff;"
+                                    >
+                                        <div class="p-5 text-center d-flex flex-column align-items-center justify-content-center h-100">
+                                            <i class="bi bi-filetype-pdf text-danger display-1 mb-3"></i>
+                                            <h5 class="text-white fw-bold">Pratinjau PDF tidak didukung oleh browser Anda</h5>
+                                            <p class="text-secondary small mb-4" style="max-width: 320px;">
+                                                Silakan unduh atau buka laporan PDF secara langsung melalui tombol di bawah ini.
+                                            </p>
+                                            <a :href="selectedProject.pdf_report" target="_blank" class="btn btn-info text-dark">
+                                                Buka Laporan PDF
+                                            </a>
+                                        </div>
+                                    </iframe>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Right: Specifications Sidebar -->
@@ -1565,11 +1669,7 @@
                                                         ),
                                             ]"
                                         >
-                                            {{
-                                                getTechFieldIcon(
-                                                    selectedProject.tech_field,
-                                                )
-                                            }}
+                                            <i :class="[getTechFieldIcon(selectedProject.tech_field), 'me-1']"></i>
                                             {{
                                                 selectedProject.tech_field ||
                                                 "Others"
@@ -1662,8 +1762,11 @@
                                                     <span
                                                         v-else
                                                         style="font-size: 1rem"
-                                                        >🤝</span
                                                     >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handshake text-warning" viewBox="0 0 16 16">
+                                                            <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                                        </svg>
+                                                    </span>
                                                 </div>
                                                 <span
                                                     class="text-white small fw-semibold flex-grow-1 ms-1"
@@ -1732,7 +1835,7 @@
                         <h4
                             class="fw-bold text-white mb-4 d-flex align-items-center gap-2"
                         >
-                            <span>📸 Galeri Dokumentasi</span>
+                            <span><i class="bi bi-images me-2"></i>Galeri Dokumentasi</span>
                         </h4>
 
                         <!-- Documentation Photos Grid -->
@@ -1821,7 +1924,7 @@
                             v-if="getMediaCount(selectedProject) === 0"
                             class="text-center py-5"
                         >
-                            <span class="fs-1 d-block mb-3">🖼️</span>
+                            <span class="fs-1 d-block mb-3 text-muted"><i class="bi bi-image"></i></span>
                             <h5 class="text-white fw-bold mb-2">N/A</h5>
                         </div>
                     </div>
@@ -1836,7 +1939,7 @@
                         <h4
                             class="fw-bold text-white mb-4 d-flex align-items-center gap-2 border-bottom border-secondary border-opacity-20 pb-3"
                         >
-                            <span style="color: #fbbf24">🏆</span>
+                            <span style="color: #fbbf24" class="me-2"><i class="bi bi-trophy"></i></span>
                             <span>Prestasi &amp; Raihan Proyek</span>
                         </h4>
 
@@ -1919,7 +2022,7 @@
                                     :key="aIdx"
                                     class="d-flex align-items-start gap-3 p-3 bg-dark bg-opacity-50 border border-secondary border-opacity-30 rounded-3"
                                 >
-                                    <span class="fs-4 text-warning">🥇</span>
+                                    <span class="fs-4 text-warning me-2"><i class="bi bi-award-fill"></i></span>
                                     <div>
                                         <h6 class="text-white fw-bold mb-1">
                                             {{ award }}
@@ -1933,7 +2036,7 @@
                             </div>
                         </div>
                         <div v-else class="text-center py-5">
-                            <span class="fs-1 d-block mb-2">📜</span>
+                            <span class="fs-1 d-block mb-2 text-muted"><i class="bi bi-file-earmark-lock"></i></span>
                             <h5 class="text-white fw-bold mb-2">N/A</h5>
                             <p class="text-secondary small mb-0">
                                 Proyek ini dikembangkan secara mandiri di bawah
@@ -2025,7 +2128,7 @@
                                             font-size: 0.88rem;
                                         "
                                     >
-                                        <span>🤝</span>
+                                        <i class="bi bi-handshake text-warning"></i>
                                         <span
                                             class="text-white fw-semibold"
                                             style="color: #ffffff !important"
@@ -2104,7 +2207,7 @@
                                             v-if="member.photo && hasRealPhoto(member.photo)"
                                             class="avatar-zoom-hint"
                                         >
-                                            🔍
+                                            <i class="bi bi-zoom-in" style="font-size: 0.75rem;"></i>
                                         </span>
                                     </div>
                                     <h5
@@ -2594,6 +2697,7 @@ export default {
             selectedType: "all",
             selectedTechField: "all",
             selectedSupervisor: "all",
+            selectedPrestasi: "all",
             selectedProject: null,
             activeMobileProject: null,
             activeHardwareProject: null,
@@ -2669,12 +2773,16 @@ export default {
                 const matchesTechField =
                     this.selectedTechField === "all" ||
                     project.tech_field === this.selectedTechField;
+                const matchesPrestasi =
+                    this.selectedPrestasi === "all" ||
+                    project.prestasi_level === this.selectedPrestasi;
 
                 return (
                     matchesSearch &&
                     matchesType &&
                     matchesSupervisor &&
-                    matchesTechField
+                    matchesTechField &&
+                    matchesPrestasi
                 );
             });
         },
@@ -2924,16 +3032,17 @@ export default {
             this.selectedType = "all";
             this.selectedTechField = "all";
             this.selectedSupervisor = "all";
+            this.selectedPrestasi = "all";
         },
         getTechFieldIcon(field) {
             const icons = {
-                AI: "🤖",
-                IoT: "📡",
-                "VR/AR": "🥽",
-                "Networking & Cyber Security": "🔐",
-                Others: "🔬",
+                AI: "bi bi-cpu",
+                IoT: "bi bi-broadcast",
+                "VR/AR": "bi bi-headset-vr",
+                "Networking & Cyber Security": "bi bi-shield-lock",
+                Others: "bi bi-microscope",
             };
-            return icons[field] || "🔬";
+            return icons[field] || "bi bi-microscope";
         },
         hasRealPhoto(photo) {
             if (!photo) return false;
@@ -3042,10 +3151,8 @@ export default {
             let height = (canvas.height = window.innerHeight);
 
             const particles = [];
-            const particleCount = Math.min(
-                Math.floor(window.innerWidth / 22),
-                55,
-            );
+            const isMobile = window.innerWidth < 768;
+            const particleCount = isMobile ? 18 : Math.min(Math.floor(window.innerWidth / 38), 32);
 
             const colors = [
                 "rgba(56, 189, 248, ", // vibrant cyan
@@ -3059,13 +3166,13 @@ export default {
                 particles.push({
                     x: Math.random() * width,
                     y: Math.random() * height,
-                    radius: Math.random() * 2.5 + 2.0,
+                    radius: Math.random() * 2.2 + 1.8,
                     colorPrefix:
                         colors[Math.floor(Math.random() * colors.length)],
-                    vx: (Math.random() - 0.5) * 0.45,
-                    vy: (Math.random() - 0.5) * 0.45,
-                    alpha: Math.random() * 0.45 + 0.45,
-                    alphaSpeed: Math.random() * 0.006 + 0.002,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    alpha: Math.random() * 0.4 + 0.4,
+                    alphaSpeed: Math.random() * 0.005 + 0.002,
                     alphaDirection: Math.random() > 0.5 ? 1 : -1,
                 });
             }
@@ -3078,7 +3185,7 @@ export default {
             window.addEventListener("resize", onResize, { passive: true });
             this._particleResizeHandler = onResize;
 
-            const maxDistSq = 135 * 135;
+            const maxDistSq = 130 * 130;
             let isTabActive = true;
 
             const onVisibilityChange = () => {
@@ -3095,7 +3202,10 @@ export default {
 
                 ctx.clearRect(0, 0, width, height);
 
-                // Squared distance check to skip expensive Math.sqrt operations
+                // Draw all lines in a single stroke path to eliminate expensive canvas state updates
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(148, 163, 184, 0.12)";
+                ctx.lineWidth = 0.75;
                 for (let i = 0; i < particles.length; i++) {
                     const pi = particles[i];
                     for (let j = i + 1; j < particles.length; j++) {
@@ -3105,19 +3215,14 @@ export default {
                         const distSq = dx * dx + dy * dy;
 
                         if (distSq < maxDistSq) {
-                            const dist = Math.sqrt(distSq);
-                            const lineAlpha = (1 - dist / 135) * 0.28;
-                            ctx.beginPath();
                             ctx.moveTo(pi.x, pi.y);
                             ctx.lineTo(pj.x, pj.y);
-                            ctx.strokeStyle = `rgba(148, 163, 184, ${lineAlpha})`;
-                            ctx.lineWidth = 0.8;
-                            ctx.stroke();
                         }
                     }
                 }
+                ctx.stroke();
 
-                // Render floating particles with dual-arc radial glow (hardware accelerated)
+                // Render floating particles
                 particles.forEach((p) => {
                     p.x += p.vx;
                     p.y += p.vy;
@@ -3126,18 +3231,18 @@ export default {
                     if (p.y < 0 || p.y > height) p.vy *= -1;
 
                     p.alpha += p.alphaSpeed * p.alphaDirection;
-                    if (p.alpha > 0.92) {
-                        p.alpha = 0.92;
+                    if (p.alpha > 0.9) {
+                        p.alpha = 0.9;
                         p.alphaDirection = -1;
-                    } else if (p.alpha < 0.35) {
-                        p.alpha = 0.35;
+                    } else if (p.alpha < 0.3) {
+                        p.alpha = 0.3;
                         p.alphaDirection = 1;
                     }
 
                     // Outer soft glow halo
                     ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius * 2.2, 0, Math.PI * 2);
-                    ctx.fillStyle = `${p.colorPrefix}${p.alpha * 0.28})`;
+                    ctx.arc(p.x, p.y, p.radius * 2.0, 0, Math.PI * 2);
+                    ctx.fillStyle = `${p.colorPrefix}${p.alpha * 0.25})`;
                     ctx.fill();
 
                     // Inner bright core

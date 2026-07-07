@@ -123,9 +123,12 @@
                                 <div
                                     v-for="(partner, idx) in project.partners"
                                     :key="idx"
-                                    class="px-3 py-2 bg-dark rounded border border-secondary text-secondary"
+                                    class="px-3 py-2 bg-dark rounded border border-secondary text-secondary d-flex align-items-center gap-2"
                                 >
-                                    🤝 {{ partner }}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-handshake text-warning" viewBox="0 0 16 16">
+                                        <path d="M12.418 5.21a.75.75 0 0 1 .708.186l1.54 2.31a1.5 1.5 0 0 1-.223 1.956l-3.29 3.29a1 1 0 0 1-.707.293H8.384a1 1 0 0 1-.707-.293l-2.62-2.62a1 1 0 0 1 0-1.414l.029-.03a.75.75 0 0 1 1.06 0l1.717 1.718a.5.5 0 0 0 .707 0l2.76-2.76a.75.75 0 0 1 1.06 1.06l-2.76 2.76a1.5 1.5 0 0 1-2.122 0L5.343 9.387a2.5 2.5 0 0 1 0-3.536l.03-.03a1.5 1.5 0 0 1 2.12 0l1.173 1.173a.5.5 0 0 0 .707 0l1.12-1.12a1.5 1.5 0 0 1 2.063-.092l-.128-.192zm-.86 1.488a.5.5 0 0 0-.687.03l-1.12 1.12a1.5 1.5 0 0 1-2.122 0L6.458 6.675a.5.5 0 0 0-.707 0l-.03.03a1.5 1.5 0 0 0 0 2.122l2.62 2.62a.5.5 0 0 0 .354.146H10.1a.5.5 0 0 0 .354-.146l3.29-3.29a.5.5 0 0 0 .074-.652L12.28 5.3a.5.5 0 0 0-.368-.22l-.354.618z"/>
+                                    </svg>
+                                    <span>{{ partner }}</span>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +179,7 @@
                                             v-if="member.photo && hasRealPhoto(member.photo)"
                                             class="avatar-zoom-hint"
                                         >
-                                            🔍
+                                            <i class="bi bi-zoom-in" style="font-size: 0.75rem;"></i>
                                         </span>
                                     </div>
                                     <h6

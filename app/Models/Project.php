@@ -27,6 +27,7 @@ class Project extends Model
         'video_url',
         'screenshots',
         'documentations',
+        'pdf_report',
     ];
 
     protected $casts = [
