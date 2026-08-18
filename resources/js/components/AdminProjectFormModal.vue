@@ -2,7 +2,7 @@
     <div
         class="modal fade show d-block"
         tabindex="-1"
-        style="background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); z-index: 1070;"
+        style="background: rgba(15, 23, 42, 0.90); z-index: 1070;"
         @click.self="$emit('close')"
     >
         <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
@@ -23,7 +23,7 @@
                             <h5 class="modal-title text-white fw-bold mb-0" style="font-size: 1.15rem;">
                                 {{ isEdit ? 'Edit Data Proyek' : 'Tambah Proyek Baru' }}
                             </h5>
-                            <span class="text-secondary small">
+                            <span class="text-slate-300 small">
                                 {{ isEdit ? 'Perbarui informasi dan dokumen proyek akreditasi' : 'Isi formulir untuk menambahkan proyek inovasi baru' }}
                             </span>
                         </div>

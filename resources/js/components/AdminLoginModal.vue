@@ -2,7 +2,7 @@
     <div
         class="modal fade show d-block"
         tabindex="-1"
-        style="background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); z-index: 1065;"
+        style="background: rgba(15, 23, 42, 0.88); z-index: 1065;"
         @click.self="$emit('close')"
     >
         <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
@@ -21,7 +21,7 @@
                         </div>
                         <div>
                             <h5 class="modal-title text-white fw-bold mb-0" style="font-size: 1.15rem;">Login Administrator</h5>
-                            <span class="text-secondary small">Masuk untuk mengelola data proyek</span>
+                            <span class="text-slate-300 small">Masuk untuk mengelola data proyek</span>
                         </div>
                     </div>
                     <button
@@ -47,11 +47,11 @@
                     <form @submit.prevent="handleLogin">
                         <!-- Email Input -->
                         <div class="mb-3">
-                            <label class="form-label text-slate-300 small fw-semibold text-white mb-1">
+                            <label class="form-label text-slate-200 small fw-semibold text-white mb-1">
                                 Email Administrator
                             </label>
                             <div class="input-group">
-                                <span class="input-group-text bg-dark border-secondary text-secondary">
+                                <span class="input-group-text bg-dark border-secondary text-info">
                                     <i class="bi bi-envelope"></i>
                                 </span>
                                 <input
@@ -67,11 +67,11 @@
 
                         <!-- Password Input -->
                         <div class="mb-4">
-                            <label class="form-label text-slate-300 small fw-semibold text-white mb-1">
+                            <label class="form-label text-slate-200 small fw-semibold text-white mb-1">
                                 Kata Sandi
                             </label>
                             <div class="input-group">
-                                <span class="input-group-text bg-dark border-secondary text-secondary">
+                                <span class="input-group-text bg-dark border-secondary text-info">
                                     <i class="bi bi-key"></i>
                                 </span>
                                 <input

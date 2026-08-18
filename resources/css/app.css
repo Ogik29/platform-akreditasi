@@ -1864,19 +1864,18 @@ html {
 
 /* Admin Trigger Buttons in Header */
 .btn-admin-enter {
-    background: rgba(56, 189, 248, 0.12) !important;
+    background: rgba(56, 189, 248, 0.14) !important;
     border: 1px solid rgba(56, 189, 248, 0.4) !important;
     color: #38bdf8 !important;
     padding: 0.4rem 1.1rem !important;
     font-size: 0.84rem !important;
     letter-spacing: 0.5px;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    backdrop-filter: blur(8px);
 }
 
 .btn-admin-enter:hover,
 .btn-admin-enter:focus {
-    background: rgba(56, 189, 248, 0.25) !important;
+    background: rgba(56, 189, 248, 0.3) !important;
     border-color: #38bdf8 !important;
     color: #ffffff !important;
     box-shadow: 0 0 16px rgba(56, 189, 248, 0.35) !important;
@@ -1884,13 +1883,12 @@ html {
 }
 
 .btn-admin-dashboard {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.3) 100%) !important;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(5, 150, 105, 0.35) 100%) !important;
     border: 1px solid rgba(52, 211, 153, 0.5) !important;
     color: #34d399 !important;
     padding: 0.4rem 1.1rem !important;
     font-size: 0.84rem !important;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    backdrop-filter: blur(8px);
 }
 
 .btn-admin-dashboard:hover,
@@ -1905,35 +1903,74 @@ html {
 /* Modal Dark Inputs & Input Groups */
 .modal-content .form-control,
 .modal-content .form-select {
-    background-color: rgba(15, 23, 42, 0.75) !important;
-    border: 1px solid rgba(255, 255, 255, 0.18) !important;
-    color: #f8fafc !important;
+    background-color: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    color: #ffffff !important;
     transition: all 0.2s ease !important;
 }
 
-.modal-content .form-control::placeholder {
-    color: #94a3b8 !important;
-    opacity: 0.85;
+/* High Contrast Crystal Clear Placeholders */
+.modal-content .form-control::placeholder,
+.modal-content input::placeholder,
+.modal-content textarea::placeholder {
+    color: #cbd5e1 !important;
+    opacity: 0.95 !important;
+    font-weight: 400 !important;
+}
+
+.modal-content .form-control::-webkit-input-placeholder,
+.modal-content input::-webkit-input-placeholder,
+.modal-content textarea::-webkit-input-placeholder {
+    color: #cbd5e1 !important;
+    opacity: 0.95 !important;
+}
+
+.modal-content .form-control::-moz-placeholder,
+.modal-content input::-moz-placeholder,
+.modal-content textarea::-moz-placeholder {
+    color: #cbd5e1 !important;
+    opacity: 0.95 !important;
+}
+
+/* Select Dropdown Option Readability */
+.modal-content select option {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    padding: 10px !important;
 }
 
 .modal-content .form-control:focus,
 .modal-content .form-select:focus {
-    background-color: rgba(15, 23, 42, 0.95) !important;
+    background-color: rgba(15, 23, 42, 0.98) !important;
     border-color: #38bdf8 !important;
     color: #ffffff !important;
     box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25) !important;
 }
 
 .modal-content .input-group-text {
-    background-color: rgba(15, 23, 42, 0.9) !important;
-    border: 1px solid rgba(255, 255, 255, 0.18) !important;
-    color: #94a3b8 !important;
+    background-color: rgba(30, 41, 59, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    color: #cbd5e1 !important;
     transition: all 0.2s ease;
 }
 
 .modal-content .input-group:focus-within .input-group-text {
     border-color: #38bdf8 !important;
     color: #38bdf8 !important;
+}
+
+/* High Contrast Labels & Secondary Text in Modals */
+.modal-content label {
+    color: #e2e8f0 !important;
+    font-weight: 600 !important;
+}
+
+.modal-content .text-secondary {
+    color: #94a3b8 !important;
+}
+
+.modal-content .extra-small {
+    color: #cbd5e1 !important;
 }
 
 /* Admin Dashboard Table Rows & Hover Contrast */
