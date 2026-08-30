@@ -476,23 +476,12 @@
                                     <option value="all">
                                         Semua Dosen Pembimbing
                                     </option>
-                                    <option value="MDB">
-                                        MDB (Muhammad Adib Kamali, S.T., M.Eng)
-                                    </option>
-                                    <option value="FZK">
-                                        FZK (Dr. Farah Zakiyah Rahmanti, S.ST.,
-                                        M.T)
-                                    </option>
-                                    <option value="MUN">
-                                        MUN (Mastuty Ayu Ningtyas, S.Kom.,
-                                        M.MT.)
-                                    </option>
-                                    <option value="YOH">
-                                        YOH (Yohanes Setiawan. S.Si., M.Kom.)
-                                    </option>
-                                    <option value="CAP">
-                                        CAP (Dr. Helmy Widyantara, S.Kom.,
-                                        M.Eng.)
+                                    <option
+                                        v-for="s in supervisorsList"
+                                        :key="s.code"
+                                        :value="s.code"
+                                    >
+                                        {{ s.code }} ({{ s.name }})
                                     </option>
                                 </select>
                             </div>
@@ -523,83 +512,25 @@
                                     Semua Bidang
                                 </button>
                                 <button
+                                    v-for="tf in techFieldsList"
+                                    :key="tf.id"
                                     type="button"
-                                    @click="selectedTechField = 'AI'"
+                                    @click="selectedTechField = tf.name"
                                     :class="[
-                                        'btn-filter btn-filter-ai',
-                                        selectedTechField === 'AI'
+                                        'btn-filter',
+                                        selectedTechField === tf.name
                                             ? 'active'
                                             : '',
                                     ]"
                                 >
-                                    <span class="btn-filter-icon"
-                                        ><i class="bi bi-cpu"></i
+                                    <span
+                                        class="btn-filter-icon tech-filter-marker"
+                                        :style="{
+                                            backgroundColor:
+                                                getTechFieldColor(tf.name),
+                                        }"
                                     ></span>
-                                    AI
-                                </button>
-                                <button
-                                    type="button"
-                                    @click="selectedTechField = 'IoT'"
-                                    :class="[
-                                        'btn-filter btn-filter-iot',
-                                        selectedTechField === 'IoT'
-                                            ? 'active'
-                                            : '',
-                                    ]"
-                                >
-                                    <span class="btn-filter-icon"
-                                        ><i class="bi bi-broadcast"></i
-                                    ></span>
-                                    IoT
-                                </button>
-                                <button
-                                    type="button"
-                                    @click="selectedTechField = 'VR/AR'"
-                                    :class="[
-                                        'btn-filter btn-filter-vrar',
-                                        selectedTechField === 'VR/AR'
-                                            ? 'active'
-                                            : '',
-                                    ]"
-                                >
-                                    <span class="btn-filter-icon"
-                                        ><i class="bi bi-headset-vr"></i
-                                    ></span>
-                                    VR/AR
-                                </button>
-                                <button
-                                    type="button"
-                                    @click="
-                                        selectedTechField =
-                                            'Networking & Cyber Security'
-                                    "
-                                    :class="[
-                                        'btn-filter btn-filter-ncs',
-                                        selectedTechField ===
-                                        'Networking & Cyber Security'
-                                            ? 'active'
-                                            : '',
-                                    ]"
-                                >
-                                    <span class="btn-filter-icon"
-                                        ><i class="bi bi-shield-lock"></i
-                                    ></span>
-                                    Networking &amp; Cyber Security
-                                </button>
-                                <button
-                                    type="button"
-                                    @click="selectedTechField = 'Others'"
-                                    :class="[
-                                        'btn-filter btn-filter-others',
-                                        selectedTechField === 'Others'
-                                            ? 'active'
-                                            : '',
-                                    ]"
-                                >
-                                    <span class="btn-filter-icon"
-                                        ><i class="bi bi-microscope"></i
-                                    ></span>
-                                    Others
+                                    {{ tf.name }}
                                 </button>
                             </div>
                         </div>
@@ -627,47 +558,21 @@
                                     Semua Kategori
                                 </button>
                                 <button
+                                    v-for="pt in projectTypesList"
+                                    :key="pt.id"
                                     type="button"
-                                    @click="selectedType = 'web'"
+                                    @click="selectedType = pt.name"
                                     :class="[
                                         'btn-filter',
-                                        selectedType === 'web' ? 'active' : '',
-                                    ]"
-                                >
-                                    <span class="btn-filter-icon"
-                                        ><i class="bi bi-desktop"></i
-                                    ></span>
-                                    Web-Based
-                                </button>
-                                <button
-                                    type="button"
-                                    @click="selectedType = 'mobile'"
-                                    :class="[
-                                        'btn-filter',
-                                        selectedType === 'mobile'
+                                        selectedType === pt.name
                                             ? 'active'
                                             : '',
                                     ]"
                                 >
                                     <span class="btn-filter-icon"
-                                        ><i class="bi bi-phone"></i
+                                        ><i class="bi bi-layers"></i
                                     ></span>
-                                    Mobile-Based
-                                </button>
-                                <button
-                                    type="button"
-                                    @click="selectedType = 'hardware'"
-                                    :class="[
-                                        'btn-filter',
-                                        selectedType === 'hardware'
-                                            ? 'active'
-                                            : '',
-                                    ]"
-                                >
-                                    <span class="btn-filter-icon"
-                                        ><i class="bi bi-cpu-fill"></i
-                                    ></span>
-                                    Hardware-Based
+                                    {{ pt.name }}
                                 </button>
                             </div>
                         </div>
@@ -756,7 +661,7 @@
                     class="row g-4"
                 >
                     <div
-                        v-for="project in filteredProjects"
+                        v-for="project in paginatedProjects"
                         :key="project.id"
                         class="col-12 col-md-6 col-lg-4"
                     >
@@ -944,22 +849,18 @@
                                 <!-- Tech field badge -->
                                 <div class="mb-2">
                                     <span
-                                        :class="[
-                                            'badge badge-tech-field',
-                                            'badge-tech-' +
-                                                (project.tech_field || 'others')
-                                                    .toLowerCase()
-                                                    .replace(/[^a-z]/g, '-'),
-                                        ]"
+                                        class="tech-field-pill"
+                                        :style="getTechFieldStyle(project.tech_field)"
                                     >
-                                        <i
-                                            :class="[
-                                                getTechFieldIcon(
-                                                    project.tech_field,
-                                                ),
-                                                'me-1',
-                                            ]"
-                                        ></i>
+                                        <span
+                                            class="tech-field-logo"
+                                            :style="{
+                                                backgroundColor:
+                                                    getTechFieldColor(
+                                                        project.tech_field,
+                                                    ),
+                                            }"
+                                        ></span>
                                         {{ project.tech_field || "Others" }}
                                     </span>
                                 </div>
@@ -995,6 +896,57 @@
                         </div>
                     </div>
                 </transition-group>
+
+                <!-- Showcase Pagination Controls (12 Proyek / Halaman) -->
+                <div
+                    v-if="filteredProjects.length > perPage"
+                    class="d-flex flex-column flex-sm-row justify-content-between align-items-center mt-5 pt-3 border-top border-secondary border-opacity-10 gap-3"
+                >
+                    <div class="text-secondary small fw-medium">
+                        {{ paginationInfo }}
+                    </div>
+                    <nav aria-label="Navigasi Proyek">
+                        <ul class="pagination pagination-custom mb-0">
+                            <li
+                                class="page-item"
+                                :class="{ disabled: currentPage === 1 }"
+                            >
+                                <button
+                                    class="page-link"
+                                    @click="goToPage(currentPage - 1)"
+                                    :disabled="currentPage === 1"
+                                >
+                                    <i class="bi bi-chevron-left me-1"></i> Prev
+                                </button>
+                            </li>
+                            <li
+                                v-for="p in totalPages"
+                                :key="p"
+                                class="page-item"
+                                :class="{ active: currentPage === p }"
+                            >
+                                <button class="page-link" @click="goToPage(p)">
+                                    {{ p }}
+                                </button>
+                            </li>
+                            <li
+                                class="page-item"
+                                :class="{
+                                    disabled: currentPage === totalPages,
+                                }"
+                            >
+                                <button
+                                    class="page-link"
+                                    @click="goToPage(currentPage + 1)"
+                                    :disabled="currentPage === totalPages"
+                                >
+                                    Next
+                                    <i class="bi bi-chevron-right ms-1"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
             <!-- Closes currentView === 'grid' -->
 
@@ -1834,35 +1786,26 @@
                                             >Bidang Teknologi</span
                                         >
                                         <span
-                                            :class="[
-                                                'badge badge-tech-field mt-1',
-                                                'badge-tech-' +
-                                                    (
-                                                        selectedProject.tech_field ||
-                                                        'others'
-                                                    )
-                                                        .toLowerCase()
-                                                        .replace(
-                                                            /[^a-z]/g,
-                                                            '-',
-                                                        ),
-                                            ]"
+                                            class="tech-field-pill mt-1"
+                                            :style="getTechFieldStyle(
+                                                selectedProject.tech_field,
+                                            )"
                                         >
-                                            <i
-                                                :class="[
-                                                    getTechFieldIcon(
-                                                        selectedProject.tech_field,
-                                                    ),
-                                                    'me-1',
-                                                ]"
-                                            ></i>
+                                            <span
+                                                class="tech-field-logo"
+                                                :style="{
+                                                    backgroundColor:
+                                                        getTechFieldColor(
+                                                            selectedProject.tech_field,
+                                                        ),
+                                                }"
+                                            ></span>
                                             {{
                                                 selectedProject.tech_field ||
                                                 "Others"
                                             }}
                                         </span>
-                                    </div>
-                                    <hr
+                                    </div>                                    <hr
                                         class="my-2 border-secondary border-opacity-10"
                                     />
                                     <div>
@@ -2996,9 +2939,49 @@ export default {
             showAdminLoginModal: false,
             showAdminDashboardModal: false,
             currentAdminUser: null,
+            supervisorsList: [],
+            projectTypesList: [],
+            techFieldsList: [],
+            currentPage: 1,
+            perPage: 12,
         };
     },
+    watch: {
+        searchQuery() {
+            this.currentPage = 1;
+        },
+        selectedType() {
+            this.currentPage = 1;
+        },
+        selectedTechField() {
+            this.currentPage = 1;
+        },
+        selectedSupervisor() {
+            this.currentPage = 1;
+        },
+        selectedPrestasi() {
+            this.currentPage = 1;
+        },
+    },
     computed: {
+        totalPages() {
+            return Math.ceil(this.filteredProjects.length / this.perPage) || 1;
+        },
+        paginatedProjects() {
+            const start = (this.currentPage - 1) * this.perPage;
+            const end = start + this.perPage;
+            return this.filteredProjects.slice(start, end);
+        },
+        paginationInfo() {
+            if (this.filteredProjects.length === 0)
+                return "Menampilkan 0 proyek";
+            const start = (this.currentPage - 1) * this.perPage + 1;
+            const end = Math.min(
+                this.currentPage * this.perPage,
+                this.filteredProjects.length,
+            );
+            return `Menampilkan ${start} - ${end} dari ${this.filteredProjects.length} proyek`;
+        },
         filteredProjects() {
             return this.projects.filter((project) => {
                 const matchesSearch =
@@ -3029,13 +3012,22 @@ export default {
 
                 const matchesType =
                     this.selectedType === "all" ||
-                    project.type === this.selectedType;
+                    project.type === this.selectedType ||
+                    (project.project_type_relation &&
+                        project.project_type_relation.name ===
+                            this.selectedType);
                 const matchesSupervisor =
                     this.selectedSupervisor === "all" ||
-                    project.supervisor === this.selectedSupervisor;
+                    project.supervisor === this.selectedSupervisor ||
+                    (project.supervisor_relation &&
+                        project.supervisor_relation.code ===
+                            this.selectedSupervisor);
                 const matchesTechField =
                     this.selectedTechField === "all" ||
-                    project.tech_field === this.selectedTechField;
+                    project.tech_field === this.selectedTechField ||
+                    (project.tech_field_relation &&
+                        project.tech_field_relation.name ===
+                            this.selectedTechField);
                 const matchesPrestasi =
                     this.selectedPrestasi === "all" ||
                     project.prestasi_level === this.selectedPrestasi;
@@ -3095,11 +3087,35 @@ export default {
         this.animateCounters();
         this.startPosterAutoSlide();
         this.checkAdminSession();
+        this.fetchSupervisorsOptions();
         this.$nextTick(() => {
             this.initParticleCanvas();
         });
     },
     methods: {
+        goToPage(page) {
+            if (page < 1 || page > this.totalPages) return;
+            this.currentPage = page;
+            const elem = document.getElementById("projectsSection");
+            if (elem) {
+                elem.scrollIntoView({ behavior: "smooth" });
+            }
+        },
+        async fetchSupervisorsOptions() {
+            try {
+                const response = await axios.get("/api/options");
+                if (response.data) {
+                    if (response.data.supervisors)
+                        this.supervisorsList = response.data.supervisors;
+                    if (response.data.project_types)
+                        this.projectTypesList = response.data.project_types;
+                    if (response.data.tech_fields)
+                        this.techFieldsList = response.data.tech_fields;
+                }
+            } catch (error) {
+                console.error("Error fetching lookup options list:", error);
+            }
+        },
         async checkAdminSession() {
             try {
                 const response = await axios.get("/api/admin/me");
@@ -3123,6 +3139,7 @@ export default {
             try {
                 const response = await axios.get("/api/projects");
                 this.projects = response.data;
+                this.fetchSupervisorsOptions();
             } catch (error) {
                 console.error("Error refreshing projects:", error);
             }
@@ -3325,6 +3342,57 @@ export default {
             this.selectedTechField = "all";
             this.selectedSupervisor = "all";
             this.selectedPrestasi = "all";
+        },
+        hexToRgba(hex, alpha = 0.12) {
+            const value = hex.replace('#', '');
+            if (value.length !== 6) return `rgba(148, 163, 184, ${alpha})`;
+            const bigint = parseInt(value, 16);
+            const r = (bigint >> 16) & 255;
+            const g = (bigint >> 8) & 255;
+            const b = bigint & 255;
+            return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        },
+        normalizeTechFieldName(field) {
+            return String(field || "Others")
+                .trim()
+                .toLowerCase();
+        },
+        getTechFieldColor(field) {
+            const normalized = this.normalizeTechFieldName(field);
+            const matchedField = this.techFieldsList.find(
+                (item) =>
+                    this.normalizeTechFieldName(item.name) === normalized,
+            );
+
+            if (matchedField && matchedField.color_code) {
+                return matchedField.color_code;
+            }
+
+            const fallbackColors = {
+                ai: "#38bdf8",
+                "artificial intelligence": "#38bdf8",
+                iot: "#34d399",
+                "internet of things": "#34d399",
+                "networking & cyber security": "#fbbf24",
+                ncs: "#fbbf24",
+                "vr/ar": "#c084fc",
+                vr: "#c084fc",
+                ar: "#c084fc",
+                "virtual & augmented reality": "#c084fc",
+                others: "#cbd5e1",
+                "others / lainnya": "#cbd5e1",
+                lainnya: "#cbd5e1",
+            };
+
+            return fallbackColors[normalized] || "#cbd5e1";
+        },
+        getTechFieldStyle(field) {
+            const color = this.getTechFieldColor(field);
+            return {
+                background: this.hexToRgba(color, 0.12),
+                borderColor: this.hexToRgba(color, 0.4),
+                color,
+            };
         },
         getTechFieldIcon(field) {
             const icons = {

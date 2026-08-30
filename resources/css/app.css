@@ -21,10 +21,28 @@
 
 body {
     background:
-        radial-gradient(ellipse at 50% -10%, rgba(148, 163, 184, 0.35) 0%, transparent 60%),
-        radial-gradient(ellipse at 0% 100%, rgba(100, 116, 139, 0.18) 0%, transparent 55%),
-        radial-gradient(ellipse at 100% 80%, rgba(71, 85, 105, 0.15) 0%, transparent 50%),
-        linear-gradient(180deg, #dde3ea 0%, #d0d8e2 30%, #c8d2de 65%, #bfcbd9 100%) !important;
+        radial-gradient(
+            ellipse at 50% -10%,
+            rgba(148, 163, 184, 0.35) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse at 0% 100%,
+            rgba(100, 116, 139, 0.18) 0%,
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 100% 80%,
+            rgba(71, 85, 105, 0.15) 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            180deg,
+            #dde3ea 0%,
+            #d0d8e2 30%,
+            #c8d2de 65%,
+            #bfcbd9 100%
+        ) !important;
     background-attachment: fixed !important;
     color: #1e293b !important;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -36,13 +54,23 @@ body h1.display-3 {
 }
 
 body .text-gradient-silver {
-    background: linear-gradient(135deg, #1e293b 10%, #334155 50%, #475569 90%) !important;
+    background: linear-gradient(
+        135deg,
+        #1e293b 10%,
+        #334155 50%,
+        #475569 90%
+    ) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
 
 body .text-gradient-titanium {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
+    background: linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #1e293b 50%,
+        #334155 100%
+    ) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
@@ -97,7 +125,6 @@ body .btn-back:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
 }
-
 
 h1,
 h2,
@@ -259,39 +286,88 @@ h6 {
 }
 
 .badge-tech-ai {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(167, 139, 250, 0.12) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.2) 0%,
+        rgba(167, 139, 250, 0.12) 100%
+    ) !important;
     color: #a78bfa !important;
     border: 1px solid rgba(139, 92, 246, 0.35) !important;
 }
 
 .badge-tech-iot {
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(34, 211, 238, 0.12) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(6, 182, 212, 0.2) 0%,
+        rgba(34, 211, 238, 0.12) 100%
+    ) !important;
     color: #22d3ee !important;
     border: 1px solid rgba(6, 182, 212, 0.35) !important;
 }
 
 .badge-tech-networking---cyber-security {
-    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(251, 146, 60, 0.12) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(249, 115, 22, 0.2) 0%,
+        rgba(251, 146, 60, 0.12) 100%
+    ) !important;
     color: #fb923c !important;
     border: 1px solid rgba(249, 115, 22, 0.35) !important;
 }
 
 .badge-tech-others {
-    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(74, 222, 128, 0.12) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(34, 197, 94, 0.2) 0%,
+        rgba(74, 222, 128, 0.12) 100%
+    ) !important;
     color: #4ade80 !important;
     border: 1px solid rgba(34, 197, 94, 0.35) !important;
 }
 
 .badge-tech-vr-ar {
-    background: linear-gradient(135deg, rgba(236, 72, 153, 0.2) 0%, rgba(168, 85, 247, 0.12) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(236, 72, 153, 0.2) 0%,
+        rgba(168, 85, 247, 0.12) 100%
+    ) !important;
     color: #e879f9 !important;
     border: 1px solid rgba(236, 72, 153, 0.35) !important;
+}
+
+.tech-field-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    line-height: 1.2;
+    transition: all 0.2s ease;
+}
+
+.tech-field-pill .tech-field-logo,
+.btn-filter-icon.tech-filter-marker {
+    width: 10px;
+    height: 10px;
+    border-radius: 4px;
+    display: inline-block;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 
 /* Tech field filter button active variants */
 .btn-filter-ai.active,
 .btn-filter-ai:hover {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(167, 139, 250, 0.15) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.25) 0%,
+        rgba(167, 139, 250, 0.15) 100%
+    ) !important;
     border-color: rgba(139, 92, 246, 0.5) !important;
     color: #a78bfa !important;
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2) !important;
@@ -299,7 +375,11 @@ h6 {
 
 .btn-filter-iot.active,
 .btn-filter-iot:hover {
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, rgba(34, 211, 238, 0.15) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(6, 182, 212, 0.25) 0%,
+        rgba(34, 211, 238, 0.15) 100%
+    ) !important;
     border-color: rgba(6, 182, 212, 0.5) !important;
     color: #22d3ee !important;
     box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2) !important;
@@ -307,7 +387,11 @@ h6 {
 
 .btn-filter-ncs.active,
 .btn-filter-ncs:hover {
-    background: linear-gradient(135deg, rgba(249, 115, 22, 0.25) 0%, rgba(251, 146, 60, 0.15) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(249, 115, 22, 0.25) 0%,
+        rgba(251, 146, 60, 0.15) 100%
+    ) !important;
     border-color: rgba(249, 115, 22, 0.5) !important;
     color: #fb923c !important;
     box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2) !important;
@@ -315,7 +399,11 @@ h6 {
 
 .btn-filter-others.active,
 .btn-filter-others:hover {
-    background: linear-gradient(135deg, rgba(34, 197, 94, 0.25) 0%, rgba(74, 222, 128, 0.15) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(34, 197, 94, 0.25) 0%,
+        rgba(74, 222, 128, 0.15) 100%
+    ) !important;
     border-color: rgba(34, 197, 94, 0.5) !important;
     color: #4ade80 !important;
     box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2) !important;
@@ -323,7 +411,11 @@ h6 {
 
 .btn-filter-vrar.active,
 .btn-filter-vrar:hover {
-    background: linear-gradient(135deg, rgba(236, 72, 153, 0.25) 0%, rgba(168, 85, 247, 0.15) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(236, 72, 153, 0.25) 0%,
+        rgba(168, 85, 247, 0.15) 100%
+    ) !important;
     border-color: rgba(236, 72, 153, 0.5) !important;
     color: #e879f9 !important;
     box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2) !important;
@@ -442,7 +534,11 @@ h6 {
 
 /* ── Modern Team Innovator Card Styling ── */
 .team-member-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(255, 255, 255, 0.01) 100%
+    ) !important;
     border: 1px solid rgba(255, 255, 255, 0.06) !important;
     border-radius: 20px;
     padding: 24px 20px;
@@ -453,22 +549,32 @@ h6 {
 }
 
 .team-member-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+    background: radial-gradient(
+        circle at top right,
+        rgba(99, 102, 241, 0.08) 0%,
+        transparent 60%
+    );
     z-index: 0;
     pointer-events: none;
 }
 
 .team-member-card:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.06) 0%,
+        rgba(255, 255, 255, 0.02) 100%
+    ) !important;
     border-color: rgba(99, 102, 241, 0.3) !important;
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 15px rgba(99, 102, 241, 0.1);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(99, 102, 241, 0.1);
 }
 
 .team-avatar-container {
@@ -485,7 +591,11 @@ h6 {
     right: -4px;
     bottom: -4px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.5) 0%, rgba(45, 212, 191, 0.3) 100%);
+    background: linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.5) 0%,
+        rgba(45, 212, 191, 0.3) 100%
+    );
     z-index: 0;
     opacity: 0.7;
     transition: all 0.3s ease;
@@ -553,7 +663,9 @@ h6 {
     border-color: rgba(99, 102, 241, 0.6) !important;
     color: #ffffff !important;
     transform: translateY(-3px) scale(1.12);
-    box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3), 0 0 12px rgba(99, 102, 241, 0.2) !important;
+    box-shadow:
+        0 8px 16px rgba(99, 102, 241, 0.3),
+        0 0 12px rgba(99, 102, 241, 0.2) !important;
 }
 
 /* Phone Emulator Frame */
@@ -1221,7 +1333,9 @@ html {
    ============================= */
 .lightbox-trigger {
     cursor: zoom-in;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .lightbox-trigger:hover {
@@ -1276,7 +1390,9 @@ html {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .lightbox-close:hover {
@@ -1297,7 +1413,10 @@ html {
 
 /* Partner Logo & Placeholder Frame Styles */
 .partner-logo-frame {
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -1308,7 +1427,11 @@ html {
 }
 
 .partner-placeholder-frame {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(30, 41, 59, 0.6) 0%,
+        rgba(15, 23, 42, 0.8) 100%
+    ) !important;
 }
 
 /* Detail Tab Navigation Styles */
@@ -1343,7 +1466,11 @@ html {
 
 .btn-detail-tab.active {
     color: #ffffff !important;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.35) 0%, rgba(139, 92, 246, 0.35) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.35) 0%,
+        rgba(139, 92, 246, 0.35) 100%
+    ) !important;
     border-color: rgba(99, 102, 241, 0.5) !important;
     box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
 }
@@ -1359,7 +1486,10 @@ html {
 
 /* Stats counter card micro glow */
 .stats-card-glow {
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .stats-card-glow:hover {
@@ -1429,7 +1559,10 @@ html {
 .project-card,
 .project-card {
     contain: layout style paint;
-    transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+    transition:
+        transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
     transform-style: preserve-3d;
     position: relative;
     overflow: hidden;
@@ -1465,7 +1598,9 @@ html {
     transform: translateY(-8px);
     background: rgba(30, 41, 59, 0.75);
     border-color: rgba(56, 189, 248, 0.45);
-    box-shadow: 0 16px 36px -10px rgba(14, 165, 233, 0.3), 0 0 20px rgba(167, 139, 250, 0.2);
+    box-shadow:
+        0 16px 36px -10px rgba(14, 165, 233, 0.3),
+        0 0 20px rgba(167, 139, 250, 0.2);
 }
 
 .team-avatar-container {
@@ -1589,14 +1724,23 @@ html {
 }
 
 .social-icon-btn-floating.instagram-btn:hover {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(
+        45deg,
+        #f09433 0%,
+        #e6683c 25%,
+        #dc2743 50%,
+        #cc2366 75%,
+        #bc1888 100%
+    );
     box-shadow: 0 4px 12px rgba(220, 39, 67, 0.5);
 }
 
 /* Poster Slide Banner Styles */
 .poster-card-glow {
     border: 1px solid rgba(56, 189, 248, 0.35);
-    box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.3), 0 0 20px rgba(167, 139, 250, 0.2);
+    box-shadow:
+        0 10px 30px -10px rgba(14, 165, 233, 0.3),
+        0 0 20px rgba(167, 139, 250, 0.2);
 }
 
 .btn-poster-nav {
@@ -1615,7 +1759,9 @@ html {
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 14px rgba(56, 189, 248, 0.35);
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.6),
+        0 0 14px rgba(56, 189, 248, 0.35);
 }
 
 .btn-poster-nav:hover {
@@ -1668,7 +1814,9 @@ html {
 .slide-next-leave-active,
 .slide-prev-enter-active,
 .slide-prev-leave-active {
-    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.45s ease;
+    transition:
+        transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 0.45s ease;
     width: 100%;
 }
 
@@ -1705,7 +1853,9 @@ html {
 /* Master Hero Showcase Card */
 .hero-master-card {
     border: 1.5px solid rgba(56, 189, 248, 0.35);
-    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.15);
+    box-shadow:
+        0 20px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(56, 189, 248, 0.15);
     border-radius: 0 0 28px 28px !important;
     backdrop-filter: blur(10px);
     background: var(--bg-dark-card) !important;
@@ -1723,7 +1873,9 @@ html {
 
 .poster-stage-card {
     border: 1px solid rgba(56, 189, 248, 0.35);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.2);
+    box-shadow:
+        0 20px 40px -15px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(56, 189, 248, 0.2);
     border-radius: 24px !important;
     background: rgba(15, 23, 42, 0.65) !important;
     backdrop-filter: blur(10px);
@@ -1761,14 +1913,25 @@ html {
 }
 
 @keyframes pulse-glow {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
-    70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 8px rgba(56, 189, 248, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+    }
 }
 
 .poster-frame-container {
     border: 2px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
     transition: border-color 0.3s ease;
 }
 
@@ -1781,7 +1944,7 @@ html {
     width: 100%;
     object-fit: contain;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
 
 .poster-stage-img:hover {
@@ -1883,9 +2046,13 @@ html {
 }
 
 .btn-admin-dashboard {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(5, 150, 105, 0.35) 100%) !important;
+    background: linear-gradient(
+        135deg,
+        rgba(16, 185, 129, 0.25) 0%,
+        rgba(5, 150, 105, 0.35) 100%
+    ) !important;
     border: 1px solid rgba(52, 211, 153, 0.5) !important;
-    color: #34d399 !important;
+    color: #138f61 !important;
     padding: 0.4rem 1.1rem !important;
     font-size: 0.84rem !important;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -1975,7 +2142,9 @@ html {
 
 /* Admin Dashboard Table Rows & Hover Contrast */
 .table-dark.table-hover tbody tr {
-    transition: background-color 0.15s ease, color 0.15s ease;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
 }
 
 .table-dark.table-hover tbody tr:hover {
@@ -2098,3 +2267,48 @@ html {
     transform: scale(1.15);
 }
 
+.btn-xs {
+    padding: 0.15rem 0.45rem !important;
+    font-size: 0.72rem !important;
+    line-height: 1.2 !important;
+    border-radius: 0.25rem !important;
+}
+
+/* Custom Dark Neon Pagination Styling */
+.pagination-custom {
+    gap: 6px;
+}
+
+.pagination-custom .page-item .page-link {
+    background: rgba(15, 23, 42, 0.75) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 0.4rem 0.85rem !important;
+    font-size: 0.825rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+}
+
+.pagination-custom .page-item .page-link:hover {
+    background: rgba(56, 189, 248, 0.15) !important;
+    border-color: #38bdf8 !important;
+    color: #38bdf8 !important;
+    transform: translateY(-1px);
+}
+
+.pagination-custom .page-item.active .page-link {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+    border-color: #38bdf8 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.35) !important;
+}
+
+.pagination-custom .page-item.disabled .page-link {
+    background: rgba(15, 23, 42, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+    color: #64748b !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}

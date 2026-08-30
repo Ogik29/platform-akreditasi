@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
+use App\Models\Supervisor;
+use App\Models\ProjectType;
+use App\Models\TechField;
 use Illuminate\Database\Seeder;
 
 class ProjectSeeder extends Seeder
@@ -16,7 +19,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'LOGINT',
                 'supervisor' => '-',
-                'type' => 'web',
+                'type' => 'Web-Based',
                 'logo' => 'aksd.svg',
                 'tagline' => 'Platform Smart Coding Lab & Logic Intelligence yang mendukung pembelajaran pemrograman',
                 'description' => 'LOGINT adalah platform Smart Coding Lab & Logic Intelligence yang membantu kampus menjalankan praktikum pemrograman secara lebih sederhana, terukur, dan berbasis data. Platform ini menyediakan environment coding berbasis browser, modul praktikum terstruktur, bantuan belajar kontekstual, serta dashboard untuk dosen dan program studi. LOGINT ditujukan sebagai solusi awal untuk mata kuliah Algoritma Pemrograman dan praktikum coding dasar di Telkom University Surabaya. Setelah tervalidasi, LOGINT dapat diperluas ke mata kuliah Struktur Data, Basis Data, Web Programming, Machine Learning, Data Analytics, serta kampus lain yang membutuhkan platform praktikum digital dan learning analytics.',
@@ -28,7 +31,7 @@ class ProjectSeeder extends Seeder
                     'Memudahkan dosen mengelola praktikum, memonitor mahasiswa, dan mengevaluasi pembelajaran'
                 ],
                 'funding_awards' => [],
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'internasional',
                 'partners' => ['Lab Core Programming Telkom'],
                 'logo_mitra' => ['img/logo tel-u.jpeg'],
@@ -60,7 +63,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'IoT-based Hydroponic Farming and Solar Energy Integration for Sustainable Agriculture',
                 'supervisor' => '-',
-                'type' => 'hardware',
+                'type' => 'Hardware-Based',
                 'logo' => 'reynanda.svg',
                 'tagline' => ' ',
                 'description' => 'IoT-based Hydroponic Farming and Solar Energy Integration for Sustainable Agriculture merupakan proyek pengembangan sistem pertanian hidroponik pintar yang mengintegrasikan teknologi Internet of Things (IoT) dengan energi surya untuk meningkatkan efisiensi produksi pertanian secara berkelanjutan. Sistem ini memungkinkan pemantauan kondisi tanaman secara real-time melalui sensor pH, TDS, suhu, serta otomatisasi pompa dan nutrisi, sekaligus memanfaatkan panel surya sebagai sumber energi utama untuk mengurangi biaya operasional. Selain meningkatkan produktivitas pertanian, proyek ini juga berfokus pada pemberdayaan masyarakat melalui pelatihan teknologi, peningkatan kapasitas petani, dan model bisnis yang berkelanjutan',
@@ -75,7 +78,7 @@ class ProjectSeeder extends Seeder
                     'Sistem dirancang agar mampu membiayai operasional secara mandiri melalui hasil penjualan sayuran'
                 ],
                 'funding_awards' => ['IEEE Tech4Good 2025 (Proposal untuk program pendanaan IEEE Tech4Good)'],
-                'tech_field' => 'IoT',
+                'tech_field' => 'Internet of Things',
                 'prestasi_level' => 'internasional',
                 'partners' => ['GR Farm', 'Yayasan Pendidikan Gowa Raya'],
                 'logo_mitra' => ['img/salikneta/logo gr farm.png', 'img/salikneta/logo yayasan pendidikan gowa rayaa.png'],
@@ -130,7 +133,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'Smart Mobile Inclusive Learning (SMILE)',
                 'supervisor' => '-',
-                'type' => 'hardware',
+                'type' => 'Hardware-Based',
                 'logo' => 'reynanda.svg',
                 'tagline' => '',
                 'description' => 'Smart Mobile Inclusive Learning (SMILE) merupakan platform terapi berbasis Artificial Intelligence (AI) yang dirancang untuk membantu anak berkebutuhan khusus, khususnya anak dengan gangguan psikomotor dan kognitif, menjalani proses terapi secara lebih interaktif dan menyenangkan. Sistem ini menggabungkan teknologi computer vision, hand pose detection, gamifikasi, dan animasi 3D untuk mendukung terapi fisik sekaligus pembelajaran kognitif. Selama sesi terapi, gerakan tangan anak dideteksi secara real-time menggunakan kamera dan teknologi MediaPipe untuk mengendalikan permainan terapi. Hasil terapi kemudian tersimpan pada cloud sehingga dapat dipantau oleh terapis dan orang tua melalui dashboard web. Proyek ini berhasil diimplementasikan di YPAC Surabaya dan memberikan alternatif terapi yang lebih menarik sehingga meningkatkan motivasi anak dalam mengikuti sesi terapi secara rutin.',
@@ -139,7 +142,7 @@ class ProjectSeeder extends Seeder
                     'Terapi dikemas dalam bentuk permainan interaktif sehingga anak lebih termotivasi mengikuti terapi.'
                 ],
                 'funding_awards' => ['EPICS in IEEE Grant 2024'],
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'internasional',
                 'partners' => ['YPAC Surabaya'],
                 'logo_mitra' => ['img/ismart/ypac.png'],
@@ -194,7 +197,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'IMPLEMENTATION OF IOT-BASED FRUIT FLY TRAP DEVICES AT SALIKNETA FARM PHILIPPINES',
                 'supervisor' => '-',
-                'type' => 'hardware',
+                'type' => 'Hardware-Based',
                 'logo' => 'reynanda.svg',
                 'tagline' => ' ',
                 'description' => 'Implementation of IoT-Based Fruit Fly Trap Devices at Salikneta Farm, Philippines merupakan program Pengabdian kepada Masyarakat (PkM) Kolaborasi Luar Negeri Telkom University 2025 yang bertujuan membantu Salikneta Farm, Filipina, mengatasi permasalahan serangan lalat buah menggunakan teknologi Internet of Things (IoT). Solusi yang dikembangkan berupa smart fruit fly trap yang mampu memonitor populasi lalat buah secara otomatis melalui sensor, kamera inframerah, dan komunikasi nirkabel. Data hasil tangkapan dikirim ke server cloud untuk dianalisis dan divisualisasikan melalui dashboard sehingga petani dapat mengetahui pola aktivitas hama secara real-time serta menentukan waktu pengendalian yang lebih tepat. Selain implementasi teknologi, program ini juga mencakup pelatihan kepada petani agar mampu mengoperasikan sistem secara mandiri serta mendukung transformasi',
@@ -204,7 +207,7 @@ class ProjectSeeder extends Seeder
                     'Cloud-based Dashboard'
                 ],
                 'funding_awards' => ['Pendanaan Rp 32.000.000'],
-                'tech_field' => 'IoT',
+                'tech_field' => 'Internet of Things',
                 'prestasi_level' => 'internasional',
                 'partners' => ['De La Salle Araneta University', 'Salikneta Farm'],
                 'logo_mitra' => ['img/salikneta/universitas de laa.png', 'img/salikneta/logo salikneta farm.png'],
@@ -243,7 +246,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'K-Means Project',
                 'supervisor' => '-',
-                'type' => 'web',
+                'type' => 'Web-Based',
                 'logo' => 'reynanda.svg',
                 'tagline' => 'Predict Smarter, Discover Better Insights',
                 'description' => 'Machine Learning Prediction & Recommendation System adalah aplikasi berbasis web yang mengimplementasikan model Machine Learning hasil pelatihan dari Google Colab ke dalam framework Flask. Sistem ini memungkinkan pengguna melakukan prediksi terhadap data yang dimasukkan, mengelompokkan hasil prediksi ke dalam cluster tertentu, serta memberikan rekomendasi yang sesuai berdasarkan karakteristik setiap cluster. Dengan antarmuka yang sederhana, proses analisis data menjadi lebih mudah diakses tanpa perlu menjalankan model secara langsung melalui notebook Machine Learning.',
@@ -254,7 +257,7 @@ class ProjectSeeder extends Seeder
                     'Deployment Model Machine Learning Berbasis Web'
                 ],
                 'funding_awards' => [],
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Telkom University'],
                 'logo_mitra' => ['img/logo tel-u.jpeg'],
@@ -276,26 +279,26 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'SIGAP',
                 'supervisor' => 'MDB',
-                'type' => 'web',
+                'type' => 'Web-Based',
                 'logo' => '/img/sigap/icon_sigap.png',
                 'tagline' => 'Sistem Perlindungan Darurat & Pelaporan Kekerasan Seksual Berbasis AI',
                 'description' => 'SIGAP adalah aplikasi mobile darurat yang dirancang untuk melindungi korban kekerasan seksual. Dilengkapi tombol SOS satu sentuh dengan perekaman audio real-time, pelacak GPS berkala, chatbot AI pendamping, dan portal admin & psikolog untuk manajemen laporan secara menyeluruh.',
                 'features' => [
                     'Pelaporan kekerasan seksual dengan kode pelacak unik (tracking code)',
-                    'Fitur Darurat SOS — tombol satu sentuh dengan perekaman audio otomatis real-time & notifikasi instan ke admin',
+                    'Fitur Darurat SOS â€” tombol satu sentuh dengan perekaman audio otomatis real-time & notifikasi instan ke admin',
                     'Pembaruan lokasi GPS korban secara periodik saat mode darurat aktif',
-                    'Mode Pantau — sesi pemantauan dengan check-in GPS berkala (heartbeat)',
-                    'Portal Admin & Psikolog — manajemen siklus laporan terintegrasi',
+                    'Mode Pantau â€” sesi pemantauan dengan check-in GPS berkala (heartbeat)',
+                    'Portal Admin & Psikolog â€” manajemen siklus laporan terintegrasi',
                     'Chatbot AI pendamping untuk dukungan awal korban'
                 ],
                 'funding_awards' => [
-                    'Juara 2 — Essay and Business Plan Competition in Edutalk Fair Competition 2026, Universitas Diponegoro',
-                    'Gold Medal — Essay and Business Plan Competition in Edutalk Fair Competition 2026, Universitas Diponegoro',
-                    'Best Idea — Essay and Business Plan Competition in Edutalk Fair Competition 2026, Universitas Diponegoro',
-                    'Juara 1 — National Essay Competition (NEC) 2026, Paguyuban Karya Salemba Empat Universitas Hasanuddin',
-                    'Juara 2 — Hackathon ExplorAItion Batch 5 Jagoanhosting Garudaspark'
+                    'Juara 2 â€” Essay and Business Plan Competition in Edutalk Fair Competition 2026, Universitas Diponegoro',
+                    'Gold Medal â€” Essay and Business Plan Competition in Edutalk Fair Competition 2026, Universitas Diponegoro',
+                    'Best Idea â€” Essay and Business Plan Competition in Edutalk Fair Competition 2026, Universitas Diponegoro',
+                    'Juara 1 â€” National Essay Competition (NEC) 2026, Paguyuban Karya Salemba Empat Universitas Hasanuddin',
+                    'Juara 2 â€” Hackathon ExplorAItion Batch 5 Jagoanhosting Garudaspark'
                 ],
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'logo_mitra' => ['img/logo.png'],
@@ -333,7 +336,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'Smart CCTV Monitoring & Face Recognition System',
                 'supervisor' => 'MDB',
-                'type' => 'web',
+                'type' => 'Web-Based',
                 'logo' => 'peres.svg',
                 'tagline' => 'Secure Every Moment with Intelligent Monitoring',
                 'description' => 'Smart CCTV Monitoring & Face Recognition System adalah platform berbasis web yang dirancang untuk membantu pengelolaan dan pengawasan area secara real-time. Sistem ini mengintegrasikan live monitoring CCTV, teknologi Face Recognition, serta pencatatan aktivitas otomatis dalam satu dashboard yang mudah digunakan. Dengan tampilan yang intuitif, administrator dapat memantau kondisi lokasi, mengelola kamera, melihat riwayat aktivitas, serta mengenali identitas individu yang terdeteksi oleh sistem secara cepat dan efisien.',
@@ -344,7 +347,7 @@ class ProjectSeeder extends Seeder
                     'Pencatatan Aktivitas Otomatis dengan Monitoring Terpusat'
                 ],
                 'funding_awards' => [],
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'nasional',
                 'partners' => [
                     'Panti Asuhan Agape Surabaya'
@@ -371,7 +374,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'NYAWANG',
                 'supervisor' => 'MDB',
-                'type' => 'web',
+                'type' => 'Web-Based',
                 'logo' => 'img/ta-rizal/logo_ta-rizal.jpg',
                 'tagline' => 'Implementasi Algoritma YOLOv8 dan FaceNet Berdasarkan Cosine Similarity untuk Sistem Monitoring Alat Pelindung Diri (APD) berbasis IoT',
                 'description' => 'APD Violation Monitoring System adalah sistem berbasis Artificial Intelligence yang dirancang untuk memantau kepatuhan penggunaan Alat Pelindung Diri (APD) secara otomatis melalui kamera pengawas (CCTV). Sistem memanfaatkan model YOLOv8 untuk mendeteksi keberadaan dan kelengkapan APD yang digunakan oleh pekerja atau pelanggan, kemudian menggunakan FaceNet untuk mengenali identitas individu yang melakukan pelanggaran.
@@ -382,7 +385,7 @@ class ProjectSeeder extends Seeder
                     'Menandai individu sebagai pelanggar secara otomatis'
                 ],
                 'funding_awards' => [],
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'nasional',
                 'partners' => [
                     'Badan Usaha Milik Negara (BUMN)'
@@ -405,7 +408,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'Wongponik',
                 'supervisor' => 'MDB',
-                'type' => 'mobile',
+                'type' => 'Mobile-Based',
                 'logo' => '/img/ta-steven/logo_wongponik.png',
                 'tagline' => 'Sistem Monitoring & Deteksi Anomali Sensor Hidroponik',
                 'description' => 'Wongponik adalah platform monitoring budidaya tanaman hidroponik berbasis mobile terintegrasi IoT untuk melakukan deteksi anomali pada sensor secara real-time. Dengan pendeteksian dini terhadap ketidakwajaran data sensor (suhu, pH, nutrisi), petani dapat mencegah kegagalan panen dan menjaga kualitas tanaman secara optimal.',
@@ -415,7 +418,7 @@ class ProjectSeeder extends Seeder
                     'Notifikasi peringatan dini otomatis ketika mendeteksi pembacaan sensor yang tidak wajar'
                 ],
                 'funding_awards' => [],
-                'tech_field' => 'IoT',
+                'tech_field' => 'Internet of Things',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'logo_mitra' => ['img/logo.png'],
@@ -453,7 +456,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'VROOM',
                 'supervisor' => 'MDB',
-                'type' => 'hardware',
+                'type' => 'Hardware-Based',
                 'logo' => '/img/vroom/logo_vroom.jpeg',
                 'tagline' => 'Media Pembelajaran Membaca Berbasis VR untuk Anak Disleksia',
                 'description' => 'Media pembelajaran berbasis Virtual Reality (VR) yang dirancang untuk membantu anak penyandang disleksia meningkatkan kemampuan membaca melalui pengalaman belajar yang interaktif dan menyenangkan. Dengan menggabungkan teknologi VR dan gamifikasi, VROOM menghadirkan aktivitas belajar yang lebih menarik, meningkatkan fokus, motivasi, serta membantu anak mengenali huruf dan kata dengan lebih efektif.',
@@ -466,7 +469,7 @@ class ProjectSeeder extends Seeder
                 'funding_awards' => [
                     'Pendanaan Innovillage 2024 sebesar Rp 14.127.223'
                 ],
-                'tech_field' => 'VR/AR',
+                'tech_field' => 'Virtual & Augmented Reality',
                 'prestasi_level' => 'nasional',
                 'partners' => [
                     'WAROENG INKLUSI MALANG',
@@ -508,7 +511,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'Jejak Tanahku',
                 'supervisor' => 'MDB',
-                'type' => 'web',
+                'type' => 'Web-Based',
                 'logo' => '/img/ta-rafli/logo_jejak_tanahku.png',
                 'tagline' => 'Sistem Pencatatan dan Validasi Riwayat Sertifikat Tanah Terintegrasi Blockchain',
                 'description' => 'Jejak Tanahku adalah platform inovatif berbasis web terintegrasi blockchain yang dirancang untuk meningkatkan keamanan, transparansi, dan efisiensi dalam pencatatan hak atas tanah. Platform ini mengurangi ketergantungan pada pihak ketiga dan bekerjasama langsung dengan Kantor Pertanahan Kota Surabaya II.',
@@ -541,7 +544,7 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'EdgeTani',
                 'supervisor' => 'MDB',
-                'type' => 'hardware',
+                'type' => 'Hardware-Based',
                 'logo' => '/img/ta-cisa/logo_edgetani.png',
                 'tagline' => 'Smart Fertigation System for Melon Cultivation',
                 'description' => 'Edge Tani adalah sistem fertigasi presisi berbasis Industrial IoT yang membantu proses penyiraman, pencampuran nutrisi, monitoring sensor, dan kontrol aktuator secara otomatis melalui satu perangkat edge berbasis Raspberry Pi.
@@ -554,7 +557,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                     'Integrasi Industrial'
                 ],
                 'funding_awards' => [],
-                'tech_field' => 'IoT',
+                'tech_field' => 'Internet of Things',
                 'prestasi_level' => 'nasional',
                 'partners' => [
                     'Rooftop Telkom University Surabaya'
@@ -581,7 +584,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
             [
                 'name' => 'EcoSortix',
                 'supervisor' => 'FZK',
-                'type' => 'mobile',
+                'type' => 'Mobile-Based',
                 'logo' => '/img/pcd-adis/logo ecosortix bg.png',
                 'tagline' => 'EcoSortix: Aplikasi Pemilah Sampah Cerdas Berbasis AI Klasifikasi Citra',
                 'description' => 'EcoSortix adalah aplikasi mobile cerdas berbasis klasifikasi citra AI untuk mengidentifikasi dan memilah sampah organik serta anorganik secara instan. Terintegrasi dengan fitur peta TPS/TPA, pelaporan sampah, edukasi lingkungan, serta gamifikasi tantangan berhadiah reward menarik.',
@@ -591,7 +594,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                     'Reward & Eco Challenge yaitu Gamifikasi tantangan kelestarian lingkungan dan sistem penukaran poin reward'
                 ],
                 'funding_awards' => [],
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'logo_mitra' => ['img/logo.png'],
@@ -649,7 +652,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
             [
                 'name' => 'Kora',
                 'supervisor' => 'MUN',
-                'type' => 'mobile',
+                'type' => 'Mobile-Based',
                 'logo' => '/img/mobile-reza/logo mobile dwiki.PNG',
                 'tagline' => 'Aplikasi Workout Tracker & Monitoring Kesehatan Kebugaran Terintegrasi',
                 'description' => 'Kora adalah aplikasi kebugaran berbasis mobile terintegrasi yang dirancang untuk membantu melacak dan memantau aktivitas olahraga pengguna secara mandiri, lengkap dengan Running Tracker berbasis GPS, pencatatan nutrisi harian, hingga pengukuran berkala tubuh.',
@@ -661,7 +664,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                     'Workout Schedule untuk menjadwalkan latihan fisik harian secara personal'
                 ],
                 'funding_awards' => [],
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'logo_mitra' => ['img/logo.png'],
@@ -720,7 +723,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
             [
                 'name' => 'FreshNet',
                 'supervisor' => 'FZK',
-                'type' => 'mobile',
+                'type' => 'Mobile-Based',
                 'logo' => '/img/pcd-yuliana/logo/Logo_FreshNet.png',
                 'tagline' => 'Aplikasi Deteksi Kesegaran Ikan Praktis & Objektif Berbasis AI CNN',
                 'description' => 'FreshNet menghadirkan solusi praktis untuk mendeteksi kesegaran ikan secara cepat, objektif, dan mudah. Dengan dukungan teknologi AI berbasis Convolutional Neural Network (CNN), aplikasi ini menganalisis citra mata atau insang ikan untuk memberikan hasil berupa tingkat kesegaran, nilai confidence, serta rekomendasi kelayakan konsumsi.',
@@ -732,7 +735,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                     'Panduan edukatif interaktif mengenai ciri-ciri ikan segar dan tips pemilihan'
                 ],
                 'funding_awards' => [],
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'logo_mitra' => ['img/logo.png'],
@@ -747,7 +750,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                     ],
                     [
                         'nickname' => 'Meisya',
-                        'fullname' => 'Meisya Ma’rifa Nur',
+                        'fullname' => 'Meisya Maâ€™rifa Nur',
                         'role' => 'Android Developer',
                         'photo' => '/img/pcd-yuliana/foto_tim/Meisya Marifa Nur.jpeg',
                         'social_media' => ['instagram' => 'https://instagram.com/'],
@@ -784,20 +787,20 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
             [
                 'name' => 'FrutoSense',
                 'supervisor' => 'FZK',
-                'type' => 'mobile',
+                'type' => 'Mobile-Based',
                 'logo' => '/img/pcd-gandi/Logo FrutoSense.png',
                 'tagline' => 'Deteksi Jenis, Kematangan, dan Kesegaran Buah Real-Time Berbasis AI Multi-Model MobileNetV2',
                 'description' => 'FrutoSense adalah aplikasi mobile inovatif yang dikembangkan untuk membantu pengguna mengidentifikasi jenis, tingkat kematangan, dan tingkat kesegaran buah secara real-time langsung melalui kamera smartphone. Aplikasi ini mengintegrasikan 3 model AI MobileNetV2 yang berjalan secara paralel di backend FastAPI, terhubung dengan REST API Laravel 11 dan database PostgreSQL.',
                 'features' => [
-                    'Klasifikasi 3 Jenis Buah (Variety Model) — Apple, Banana, Orange (Akurasi 97.48%)',
-                    'Deteksi Tingkat Kematangan (Ripeness Model) — Unripe, Ripe, Overripe (Akurasi 92.67%)',
-                    'Penilaian Tingkat Kesegaran (Freshness Model) — Fresh, Unfresh (Akurasi 97.92%)',
+                    'Klasifikasi 3 Jenis Buah (Variety Model) â€” Apple, Banana, Orange (Akurasi 97.48%)',
+                    'Deteksi Tingkat Kematangan (Ripeness Model) â€” Unripe, Ripe, Overripe (Akurasi 92.67%)',
+                    'Penilaian Tingkat Kesegaran (Freshness Model) â€” Fresh, Unfresh (Akurasi 97.92%)',
                     'Inferensi AI Real-Time Paralel dengan FastAPI & TensorFlow 2.18 Engine',
                     'Sistem REST API Backend Menggunakan Laravel 11 dengan Autentikasi Sanctum',
                     'Antarmuka Pengguna Mobile yang Responsif & Interaktif Berbasis Flutter 3.11+ & Dart 3'
                 ],
                 'funding_awards' => null,
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Teknologi Informasi Telkom University Surabaya'],
                 'logo_mitra' => ['img/logo.png'],
@@ -851,7 +854,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
             [
                 'name' => 'VoxSight AI',
                 'supervisor' => 'YOH',
-                'type' => 'hardware',
+                'type' => 'Hardware-Based',
                 'logo' => '/img/VoxSight AI/logo_voxsightAI.png',
                 'tagline' => 'VoxSight AI: Kacamata Pintar Pemandu Tunanetra Berbasis AI',
                 'description' => 'VoxSight AI adalah alat bantu mobilitas berupa kacamata pintar berbasis Artificial Intelligence (AI) untuk penyandang disabilitas netra. Dilengkapi dengan analisis lingkungan visual, identifikasi mata uang, identifikasi literatur melalui OCR, serta sistem umpan balik audio untuk mendukung kemandirian aktivitas sehari-hari.',
@@ -864,7 +867,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
                 'funding_awards' => [
                     'Pendanaan Innovilage sebesar Rp. 21.440.000'
                 ],
-                'tech_field' => 'AI',
+                'tech_field' => 'Artificial Intelligence',
                 'prestasi_level' => 'nasional',
                 'partners' => [
                     'SLB A Yayasan Pendidikan Anak Buta Surabaya'
@@ -924,7 +927,7 @@ Project ini dikembangkan untuk budidaya melon pada media tanam substrat dengan k
             [
                 'name' => 'Automatic Weather Station',
                 'supervisor' => 'CAP',
-                'type' => 'hardware',
+                'type' => 'Hardware-Based',
                 'logo' => 'reynanda.svg',
                 'tagline' => 'Smart Irrigation for Sustainable Urban Farming',
                 'description' => 'Smart Longan Irrigation System adalah aplikasi monitoring dan kontrol irigasi berbasis Internet of Things (IoT) dan Machine Learning yang dirancang untuk mendukung budidaya kelengkeng di lingkungan urban seperti rooftop farming. Sistem ini mampu memantau kondisi lingkungan secara real-time menggunakan berbagai sensor, kemudian memanfaatkan model Artificial Intelligence berbasis Random Forest untuk memprediksi kondisi cuaca serta menentukan durasi penyiraman yang paling optimal.
@@ -936,7 +939,7 @@ Melalui dashboard monitoring, pengguna dapat melihat data kelembaban tanah, suhu
                     'Remote Dashboard untuk Monitoring & Kontrol Pompa'
                 ],
                 'funding_awards' => [],
-                'tech_field' => 'IoT',
+                'tech_field' => 'Internet of Things',
                 'prestasi_level' => 'nasional',
                 'partners' => ['Telkom University'],
                 'logo_mitra' => ['img/logo tel-u.jpeg'],
@@ -962,8 +965,21 @@ Melalui dashboard monitoring, pengguna dapat melihat data kelembaban tanah, suhu
             ]
         ];
 
+        $supervisors = Supervisor::pluck('id', 'code');
+        $types = ProjectType::pluck('id', 'name');
+        $techFields = TechField::pluck('id', 'name');
+
         foreach ($projects as $proj) {
+            $code = $proj['supervisor'] ?? null;
+            $typeSlug = $proj['type'] ?? null;
+            $fieldSlug = $proj['tech_field'] ?? null;
+
+            $proj['supervisor_id'] = ($code && isset($supervisors[$code])) ? $supervisors[$code] : null;
+            $proj['project_type_id'] = ($typeSlug && isset($types[$typeSlug])) ? $types[$typeSlug] : null;
+            $proj['tech_field_id'] = ($fieldSlug && isset($techFields[$fieldSlug])) ? $techFields[$fieldSlug] : null;
+
             Project::create($proj);
         }
     }
 }
+

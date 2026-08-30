@@ -14,14 +14,17 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('supervisor'); // MDB, FZK, MUN, YOH, CAP
-            $table->enum('type', ['web', 'mobile', 'hardware']);
+            $table->foreignId('supervisor_id')->nullable()->constrained('supervisors')->nullOnDelete();
+            $table->foreignId('project_type_id')->nullable()->constrained('project_types')->nullOnDelete();
+            $table->foreignId('tech_field_id')->nullable()->constrained('tech_fields')->nullOnDelete();
+            $table->string('supervisor')->nullable(); // MDB, FZK, MUN, YOH, CAP
+            $table->string('type')->default('web');
             $table->string('logo')->nullable();
             $table->string('tagline')->nullable();
             $table->text('description')->nullable();
             $table->json('features')->nullable(); // array of features
             $table->json('funding_awards')->nullable(); // array of awards/funding
-            $table->enum('tech_field', ['AI', 'Networking & Cyber Security', 'IoT', 'VR/AR', 'Others'])->default('Others');
+            $table->string('tech_field')->default('Others');
             $table->enum('prestasi_level', ['nasional', 'internasional'])->default('nasional'); // nasional, internasional
             $table->json('partners')->nullable(); // array of partners
             $table->json('logo_mitra')->nullable(); // array of partner logos/photos

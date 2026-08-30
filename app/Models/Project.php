@@ -9,8 +9,13 @@ class Project extends Model
 {
     use HasFactory;
 
+    protected $with = ['supervisorRelation', 'projectTypeRelation', 'techFieldRelation'];
+
     protected $fillable = [
         'name',
+        'supervisor_id',
+        'project_type_id',
+        'tech_field_id',
         'supervisor',
         'type',
         'logo',
@@ -65,5 +70,20 @@ class Project extends Model
         } else {
             $this->attributes['external_url'] = $value;
         }
+    }
+
+    public function supervisorRelation()
+    {
+        return $this->belongsTo(Supervisor::class, 'supervisor_id');
+    }
+
+    public function projectTypeRelation()
+    {
+        return $this->belongsTo(ProjectType::class, 'project_type_id');
+    }
+
+    public function techFieldRelation()
+    {
+        return $this->belongsTo(TechField::class, 'tech_field_id');
     }
 }
